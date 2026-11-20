@@ -29,6 +29,7 @@ export async function pantallaAjustes(raiz, ctx) {
       <label class="campo"><span>Tarifa de la luz ($ por kWh)</span><input name="tarifa_kwh_cop" inputmode="numeric" value="${esc(a.tarifa_kwh_cop)}"><small>${tarifa ? `Referencia: pliego tarifario de ${esc(tarifa.empresa)} de ${esc(/^\d{4}-\d{2}$/.test(tarifa.fecha || '') ? `${MESES[Number(tarifa.fecha.slice(5)) - 1]} de ${tarifa.fecha.slice(0, 4)}` : tarifa.fecha)} (costo unitario según la Res. CREG 119 de 2007), estrato ${esc(tarifa.estrato)}, ${pesos(tarifa.cop_kwh)} por kWh. ` : ''}La de tu recibo es la que vale.</small></label>
       <label class="campo"><span>Huevos por cubeta</span><input name="huevos_por_cubeta" inputmode="numeric" value="${esc(a.huevos_por_cubeta)}"></label>
       <label class="campo"><span>Estilo del mapa</span><select name="estilo_mapa">${opciones([['juguete', 'Juguete (recomendado)'], ['diorama', 'Diorama']], a.estilo_mapa === 'diorama' ? 'diorama' : 'juguete')}</select><small>El estilo Satélite está apagado: las fotos de Esri solo se pueden usar con su programa o con suscripción (sus términos del 21-abr-2025). La finca escaneada se ve siempre en Juguete.</small></label>
+      <label class="campo"><span>Gráficos del mapa</span><select name="graficos_mapa">${opciones([['nuevo', 'Nuevos: pasto, flores y sombras nítidas'], ['clasico', 'De antes: más livianos']], a.graficos_mapa === 'clasico' ? 'clasico' : 'nuevo')}</select><small>Solo cambian el estilo Juguete. Si el mapa se traba en este teléfono, prueba los de antes: dibujan menos cosas. Los animales se mueven igual con los dos.</small></label>
       <button class="btn ancho">Guardar ajustes</button>
     </form>
 
@@ -65,6 +66,7 @@ export async function pantallaAjustes(raiz, ctx) {
       est.ajustes.tarifa_kwh_cop = leerNumero(f.tarifa_kwh_cop, { entero: true }) ?? est.ajustes.tarifa_kwh_cop
       est.ajustes.huevos_por_cubeta = leerNumero(f.huevos_por_cubeta, { entero: true }) || 30
       est.ajustes.estilo_mapa = f.estilo_mapa
+      est.ajustes.graficos_mapa = f.graficos_mapa === 'clasico' ? 'clasico' : 'nuevo'
     }, { mensaje: 'Ajustes guardados' })
   })
   raiz.querySelector('[data-descargar]').addEventListener('click', () => {

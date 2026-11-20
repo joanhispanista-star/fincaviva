@@ -11,6 +11,7 @@ import * as THREE from '../vendor/three/three.module.js'
 import { cargarRelieve, crearRelieve } from './relieve.js'
 import * as M from './modelos.js'
 import { Controles } from './controles.js'
+import { crearVida } from './vida.js'
 
 export const ESTILOS = {
   // escalaEdificios: en los estilos de juego las construcciones se agrandan un
@@ -62,6 +63,8 @@ export const FINCA_EJEMPLO = {
     { id: 'bosque', tipo: 'bosque', x: -68, z: -44, radio: 30, etiqueta: '🌳 Bosque nativo' },
     { id: 'invernadero', tipo: 'invernadero', x: -10, z: 46, plan: true, etiqueta: '🏗️ Invernadero · plan' },
     { id: 'reservorio', tipo: 'reservorio', x: -42, z: -6, plan: true, etiqueta: '💧 Reservorio · plan' },
+    // Sale como «plan» hasta que exista un sistema Ganado; entonces lleva sus vacas (finca.js).
+    { id: 'potrero', tipo: 'potrero', x: -14, z: -44, plan: true, etiqueta: '🐄 Potrero · plan' },
   ],
   camino: [[95, 1], [76, 0], [62, -1], [46, -12], [32, -28]],
 }
@@ -179,10 +182,13 @@ function hayBosque(x, z, h, pend, finca) {
   return ruido(x + 913, z - 377, 260) > 0.6 || pend > 0.62 || (h < 2300 && ruido(x, z, 180) > 0.5)
 }
 
-function colorSuelo(x, z, h, pend, finca, estilo) {
+function colorSuelo(x, z, h, pend, finca, estilo, nuevo = false) {
   if (estilo.satelite) return _c.setRGB(1, 1, 1)
   if (dentroLindero(x, z, finca.lindero)) {
     _c.copy(COL.finca).lerp(COL.p2, ruido(x, z, 18) * 0.35)
+    // Gráficos nuevos: el potrero no es de un solo verde. Manchas más grandes
+    // de pasto más oscuro y un grano fino, vértice a vértice.
+    if (nuevo) _c.lerp(COL.p4, Math.max(0, ruido(x + 300, z - 120, 46) - 0.45) * 0.5).offsetHSL(0, 0, (hash2(Math.round(x), Math.round(z)) - 0.5) * 0.045)
     return _c
   }
   if (hayBosque(x, z, h, pend, finca)) return _c.copy(COL.bosque).lerp(COL.bosqueOsc, ruido(x, z, 40))
@@ -199,8 +205,9 @@ function colorSuelo(x, z, h, pend, finca, estilo) {
 // Rejilla de `lado` metros con celdas de `paso`. Si hay `hueco`, no dibuja los
 // cuadros que caen dentro (ahí va la malla más fina) y la baja un poco para que
 // en el borde la fina quede encima sin parpadeo.
-function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0, colorDe, uvDe = null }) {
+function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0, colorDe, uvDe = null, facetas = false }) {
   const n = Math.round(lado / paso) + 1
+  if (facetas) return mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n })
   const pos = new Float32Array(n * n * 3)
   const col = new Float32Array(n * n * 3)
   const uv = uvDe ? new Float32Array(n * n * 2) : null
@@ -245,6 +252,42 @@ function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0
   g.setAttribute('color', new THREE.BufferAttribute(col, 3))
   if (uv) g.setAttribute('uv', new THREE.BufferAttribute(uv, 2))
   g.setIndex(indices)
+  g.computeVertexNormals()
+  return g
+}
+
+// Gráficos nuevos: el mismo relieve, pero cada triángulo de un solo color (el
+// de su centro) y con un tono apenas distinto al del vecino. Con el color en los
+// vértices, el borde entre un potrero y otro salía como una mancha borrosa en
+// escalera; en facetas sale nítido, que es como se ve un paisaje de juguete.
+// Cuesta memoria (cada triángulo lleva sus tres vértices), no triángulos.
+function mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n }) {
+  const H = new Float32Array(n * n)
+  for (let f = 0; f < n; f++)
+    for (let c = 0; c < n; c++) H[f * n + c] = (suave ? rel.alturaSuave(-lado / 2 + c * paso, -lado / 2 + f * paso) : rel.alturaEn(-lado / 2 + c * paso, -lado / 2 + f * paso))
+  const total = (n - 1) * (n - 1) * 2
+  const pos = new Float32Array(total * 9), col = new Float32Array(total * 9)
+  let o = 0
+  const cara = (x1, z1, h1, x2, z2, h2, x3, z3, h3, semilla) => {
+    // Pendiente de la cara: la de su plano.
+    const ux = x2 - x1, uy = h2 - h1, uz = z2 - z1, vx = x3 - x1, vy = h3 - h1, vz = z3 - z1
+    const nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx
+    const k = colorDe((x1 + x2 + x3) / 3, (z1 + z2 + z3) / 3, (h1 + h2 + h3) / 3, Math.hypot(nx, nz) / (Math.abs(ny) || 1e-6))
+    k.offsetHSL(0, 0, (semilla - 0.5) * 0.035)
+    pos.set([x1, h1 - h0 - bajar, z1, x2, h2 - h0 - bajar, z2, x3, h3 - h0 - bajar, z3], o)
+    col.set([k.r, k.g, k.b, k.r, k.g, k.b, k.r, k.g, k.b], o)
+    o += 9
+  }
+  for (let f = 0; f < n - 1; f++)
+    for (let c = 0; c < n - 1; c++) {
+      const x0 = -lado / 2 + c * paso, z0 = -lado / 2 + f * paso, x1 = x0 + paso, z1 = z0 + paso
+      const a = H[f * n + c], b = H[f * n + c + 1], d = H[(f + 1) * n + c], e = H[(f + 1) * n + c + 1]
+      cara(x0, z0, a, x0, z1, d, x1, z0, b, hash2(c * 2, f))
+      cara(x1, z0, b, x0, z1, d, x1, z1, e, hash2(c * 2 + 1, f))
+    }
+  const g = new THREE.BufferGeometry()
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3))
+  g.setAttribute('color', new THREE.BufferAttribute(col, 3))
   g.computeVertexNormals()
   return g
 }
@@ -356,6 +399,13 @@ export function direccionSol(hora, diaDelAnio, lat = 4.68) {
 // ---------- El mundo ----------
 export async function crearMundo(lienzo, op = {}) {
   const estilo = ESTILOS[op.estilo] || ESTILOS.juguete
+  // Los gráficos nuevos (22-nov-2026) son solo del estilo Juguete, el único que
+  // se mejora: pasto, flores y piedras, parches de tierra, modelos sombreados
+  // por altura, sombras nítidas de cerca y una luz más cálida. Con
+  // `graficos: 'clasico'` el mapa se dibuja como antes (para comparar, o para
+  // devolverse si en el teléfono pesa).
+  const nuevo = estilo === ESTILOS.juguete && op.graficos !== 'clasico'
+  M.sombreadoPorAltura(nuevo)
   const base = op.base || './'
   const finca = girarFinca(op.finca || FINCA_EJEMPLO)
   const etiquetas = []
@@ -391,14 +441,18 @@ export async function crearMundo(lienzo, op = {}) {
       cc.push(k.r, k.g, k.b)
     }
     cielo.setAttribute('color', new THREE.Float32BufferAttribute(cc, 3))
-    escena.add(new THREE.Mesh(cielo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, fog: false, depthWrite: false })))
+    // Gráficos nuevos: el cielo no pasa por la curva de tonos del resto de la
+    // escena, que lo dejaba gris. Queda del azul que se escogió.
+    escena.add(new THREE.Mesh(cielo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, fog: false, depthWrite: false, toneMapped: !nuevo })))
     escena.fog = new THREE.Fog(horizonte, estilo.niebla[0], estilo.niebla[1])
   }
 
   // Luz: sol real a la hora pedida + luz de cielo.
   const hora = op.hora ?? estilo.hora
   const sol = direccionSol(hora, op.diaDelAnio ?? 322)
-  const luzSol = new THREE.DirectionalLight('#fff1d6', 2.4 * Math.max(0.15, Math.sin(Math.max(0.05, sol.elevacion))) + 0.6)
+  // Gráficos nuevos: sol un poco más cálido y fuerte, y cielo más azul en lo
+  // que queda a la sombra. Así los volúmenes se leen sin subir el brillo.
+  const luzSol = new THREE.DirectionalLight(nuevo ? '#ffe9c4' : '#fff1d6', (2.4 * Math.max(0.15, Math.sin(Math.max(0.05, sol.elevacion))) + 0.6) * (nuevo ? 1.12 : 1))
   luzSol.position.copy(sol.vector).multiplyScalar(600)
   luzSol.castShadow = true
   luzSol.shadow.mapSize.set(2048, 2048)
@@ -408,17 +462,17 @@ export async function crearMundo(lienzo, op = {}) {
   sc.near = 10
   sc.far = 1600
   luzSol.shadow.bias = -0.0006
-  luzSol.shadow.normalBias = 0.6
+  luzSol.shadow.normalBias = nuevo ? 0.4 : 0.6
   escena.add(luzSol, luzSol.target)
-  escena.add(new THREE.HemisphereLight('#cfe8ff', '#6b5a3c', estilo.diorama ? 1.15 : 1.0))
+  escena.add(nuevo ? new THREE.HemisphereLight('#bfdcff', '#7d6a42', 0.9) : new THREE.HemisphereLight('#cfe8ff', '#6b5a3c', estilo.diorama ? 1.15 : 1.0))
 
   // Materiales compartidos (antes del terreno: el bosque del terreno ya los usa).
   const mat = new THREE.MeshLambertMaterial({ vertexColors: true, flatShading: true })
   const matPlan = new THREE.MeshBasicMaterial({ color: '#59c8ff', transparent: true, opacity: 0.32, depthWrite: false })
   const matPlanBorde = new THREE.LineBasicMaterial({ color: '#bfefff', transparent: true, opacity: 0.9 })
   const matSuelo = new THREE.MeshLambertMaterial({ vertexColors: true, flatShading: !estilo.satelite })
-  const colorDe = (x, z, h, pend) => colorSuelo(x, z, h, pend, finca, estilo)
-  const info = { estilo: op.estilo || 'juguete', satelite: null }
+  const colorDe = (x, z, h, pend) => colorSuelo(x, z, h, pend, finca, estilo, nuevo)
+  const info = { estilo: op.estilo || 'juguete', graficos: nuevo ? 'nuevo' : 'clasico', satelite: null }
 
   if (estilo.diorama) {
     const d = mallaDiorama(rel, h0, estilo.lado, 4, colorDe)
@@ -441,7 +495,7 @@ export async function crearMundo(lienzo, op = {}) {
         info.satelite = 'sin conexión: ' + e.message
       }
     }
-    const gCerca = mallaRelieve(rel, h0, { ...cerca, suave: true, colorDe, uvDe })
+    const gCerca = mallaRelieve(rel, h0, { ...cerca, suave: true, colorDe, uvDe, facetas: nuevo })
     const mCerca = new THREE.Mesh(gCerca, matCerca)
     mCerca.receiveShadow = true
     escena.add(mCerca)
@@ -484,11 +538,14 @@ export async function crearMundo(lienzo, op = {}) {
   // `toque`: radio (m) de una zona invisible alrededor, para que un banderín o
   // un trípode de pocos centímetros se pueda tocar con el dedo.
   const matInvisible = new THREE.MeshBasicMaterial({ visible: false })
+  const ocupado = []
   function poner(geom, x, z, rot = 0, { plan = false, sombra = true, etiqueta = null, id = null, clase = null, alto = 3, edificio = false, toque = 0 } = {}) {
     const r = geom.boundingBox ? Math.max(geom.boundingBox.max.x - geom.boundingBox.min.x, geom.boundingBox.max.z - geom.boundingBox.min.z) / 2 : 1
     // Se apoya en el punto más bajo bajo la planta para que nada quede flotando en la ladera.
     let y = Infinity
     for (const [dx, dz] of [[0, 0], [r, r], [-r, r], [r, -r], [-r, -r]]) y = Math.min(y, suelo(x + dx * 0.8, z + dz * 0.8))
+    // Donde hay algo construido o sembrado no crece el pasto suelto (vida.pasto).
+    if (!plan) ocupado.push([x, z, r * (edificio ? estilo.escalaEdificios || 1 : 1) + 0.5])
     const g = new THREE.Group()
     const malla = new THREE.Mesh(geom, plan ? matPlan : mat)
     malla.castShadow = sombra && !plan
@@ -518,6 +575,12 @@ export async function crearMundo(lienzo, op = {}) {
     return g
   }
 
+  // Lo que se mueve (mapa/vida.js). `controles` se crea más abajo: por eso el
+  // punto que se está mirando se pide con una función y no se pasa ya resuelto.
+  const vida = crearVida({ escena, mat, suelo, local, poner, animables, tocables, estilo, camara, objetivo: () => controles.objetivo, distancia: () => controles.dist })
+  // A qué se le puede pedir «acércame» y dónde se para la cámara (ver acercarA).
+  const acercables = new Map()
+
   for (const o of finca.objetos) {
     const plan = !!o.plan
     const comun = { plan, etiqueta: o.etiqueta, id: o.id, clase: o.clase }
@@ -527,7 +590,12 @@ export async function crearMundo(lienzo, op = {}) {
       case 'galpon': poner(M.geomGalpon(), o.x, o.z, o.rot, { ...comun, alto: 5.5, edificio: true }); break
       case 'panel': poner(M.geomPanelSolar(), o.x, o.z, o.rot, { ...comun, alto: 3.5, edificio: true }); break
       case 'compostera': poner(M.geomCompostera(), o.x, o.z, o.rot, { ...comun, alto: 2.8, edificio: true }); break
-      case 'lombricultivo': poner(M.geomLombricultivo(), o.x, o.z, o.rot, { ...comun, alto: 2.8, edificio: true }); break
+      // El que ya existe va en dos piezas, con lombrices que se ven de cerca; el
+      // que es «plan» no tiene lombrices: sería dibujar lo que no hay.
+      case 'lombricultivo':
+        if (plan) poner(M.geomLombricultivo(), o.x, o.z, o.rot, { ...comun, alto: 2.8, edificio: true })
+        else acercables.set(o.id, vida.lombricultivo(o, comun))
+        break
       // En la finca de ejemplo el invernadero y el reservorio traen plan: true;
       // en una escaneada los decide quien los marcó.
       case 'invernadero': poner(M.geomInvernadero(), o.x, o.z, o.rot, { ...comun, alto: 5 }); break
@@ -541,6 +609,9 @@ export async function crearMundo(lienzo, op = {}) {
         const a = (o.ancho || 26) / 2, f = (o.fondo || 18) / 2
         cerca([local(o, -a, -f), local(o, a, -f), local(o, a, f), local(o, -a, f)], { cada: 3, plan })
         poner(M.geomBandera(M.PALETA.hoja), o.x, o.z, o.rot, { ...comun, alto: 4.2, toque: 3 })
+        // Sin vacas anotadas (o.vacas ausente o 0) el potrero queda vacío, y un
+        // potrero que todavía es «plan» no tiene animales.
+        if (!plan) vida.vacas(o, o.vacas)
         break
       }
       case 'marca': poner(M.geomBandera(), o.x, o.z, o.rot, { ...comun, alto: 4.2, toque: 3 }); break
@@ -552,15 +623,30 @@ export async function crearMundo(lienzo, op = {}) {
           const a = o.ancho / 2, f = o.fondo / 2
           cerca([local(o, -a, -f), local(o, a, -f), local(o, a, f), local(o, -a, f)], { cada: 2, plan })
         } else poner(M.geomCerco(o.ancho, o.fondo), o.x, o.z, o.rot, { sombra: true, plan })
+        // Donde escarban gallinas no queda pasto: tierra pelada, y sin matas encima.
+        if (nuevo && !plan && o.gallinas !== 0) {
+          vida.parche(o, o.ancho + 3, o.fondo + 3, '#a98558')
+          ocupado.push([o.x, o.z, Math.min(o.ancho, o.fondo) / 2])
+        }
         gallinas(o, plan)
         break
       }
       case 'huerta': {
+        if (nuevo && !plan) vida.parche(o, o.camas.length * 2.1 + 2, 8, '#7b5a3a', 0.55)
         o.camas.forEach((cultivo, i) => {
           // Las camas van a lo largo de la curva de nivel y se separan ladera
           // abajo: así el agua no arrastra el suelo entre surcos.
           const [x, z] = local(o, (i - (o.camas.length - 1) / 2) * 2.1, 0)
-          poner(M.geomCama(5, 1.2, cultivo), x, z, o.rot, { sombra: true, plan })
+          const g = poner(M.geomCama(5, 1.2, cultivo), x, z, o.rot, { sombra: true, plan })
+          // Gráficos nuevos: la cama se acuesta sobre la ladera. Apoyada en su
+          // punto más bajo (como una casa) quedaba enterrada y solo asomaban las matas.
+          if (nuevo) {
+            const alto = (dx, dz) => suelo(...local({ x, z, rot: o.rot }, dx, dz))
+            g.position.y = suelo(x, z)
+            g.rotation.order = 'YXZ'
+            g.rotation.x = -Math.atan2(alto(0, 2.5) - alto(0, -2.5), 5)
+            g.rotation.z = Math.atan2(alto(0.6, 0) - alto(-0.6, 0), 1.2)
+          }
         })
         etiquetas.push({ id: o.id, texto: o.etiqueta, plan, punto: new THREE.Vector3(o.x, suelo(o.x, o.z) + 3, o.z) })
         break
@@ -596,6 +682,9 @@ export async function crearMundo(lienzo, op = {}) {
   // dibujar una cerca que nadie midió.
   if (!finca.linderoProvisional) cerca(finca.lindero)
   if (finca.camino) camino(finca.camino)
+  // Las garzas solo cruzan en el estilo Juguete, que es el paisaje abierto.
+  if (estilo === ESTILOS.juguete) vida.pajaros()
+  if (nuevo) vida.pasto({ lindero: finca.lindero, enFinca: (x, z, margen) => dentroLindero(x, z, finca.lindero, margen), ocupado, camino: finca.camino })
 
   function gallinas(o, plan) {
     // Sin gallinas anotadas, el parque queda vacío: el mapa no inventa animales.
@@ -740,12 +829,14 @@ export async function crearMundo(lienzo, op = {}) {
       const l = listas[t]
       if (!l.length) continue
       const im = new THREE.InstancedMesh(M.geomArbol(t), mat, l.length)
-      const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3()
+      const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), tinte = new THREE.Color()
       l.forEach(([x, y, z, r], i) => {
         q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), r * 6.28)
         s.setScalar((0.8 + r * 0.6) * estilo.escalaArboles)
         m4.compose(new THREE.Vector3(x, y - 0.3, z), q, s)
         im.setMatrixAt(i, m4)
+        // Gráficos nuevos: ningún bosque tiene todos los árboles del mismo verde.
+        if (nuevo) im.setColorAt(i, tinte.setRGB(0.86 + hash2(i, 11) * 0.26, 0.9 + hash2(i, 17) * 0.18, 0.8 + hash2(i, 23) * 0.3))
       })
       im.castShadow = true
       esc.add(im)
@@ -839,6 +930,8 @@ export async function crearMundo(lienzo, op = {}) {
     azimut: az0,
     objetivo: [cvx, suelo(cvx, cvz), cvz],
     suelo,
+    // Hasta 3 m: lo justo para ver las lombrices en su lecho, o una gallina de cerca.
+    minDist: 3,
     maxDist: estilo.diorama ? 1100 : 1400,
     radioMax: estilo.diorama ? 110 : 500,
     alTocar: (nx, ny) => {
@@ -869,6 +962,42 @@ export async function crearMundo(lienzo, op = {}) {
     })
   }
 
+  let sombraMedio = 170 // medio lado, en metros, del cuadro que cubre el mapa de sombras
+  // Un cuadro: mueve la cámara y lo que está vivo `dt` segundos, y dibuja.
+  function paso(dt) {
+    controles.actualizar(dt)
+    // De cerca (las lombrices están a 4 m) el plano cercano de la cámara tiene
+    // que acercarse o cortaría lo que se mira. De lejos se queda en 1 m: con
+    // uno más corto las montañas del fondo parpadean.
+    const cercano = THREE.MathUtils.clamp(controles.dist / 20, 0.15, 1)
+    if (camara.near !== cercano) {
+      camara.near = cercano
+      camara.updateProjectionMatrix()
+    }
+    for (const f of animables) f(dt)
+    // Gráficos nuevos: el cuadro de la sombra se encoge al acercarse. El mismo
+    // mapa de sombras repartido en menos terreno da sombras nítidas y pegadas a
+    // las patas; con el cuadro fijo de 340 m, de cerca eran manchas corridas.
+    // Cambia por escalones: ajustarlo en cada cuadro haría temblar las sombras.
+    if (nuevo) {
+      const medio = THREE.MathUtils.clamp(controles.dist * 1.8, 25, 170)
+      if (medio > sombraMedio * 1.2 || medio < sombraMedio / 1.2 || (medio === 170 && sombraMedio !== 170)) {
+        sombraMedio = medio
+        sc.left = sc.bottom = -medio
+        sc.right = sc.top = medio
+        sc.updateProjectionMatrix()
+        luzSol.shadow.normalBias = Math.max(0.05, 0.4 * (medio / 170))
+      }
+    }
+    // La sombra sigue a la cámara: solo importa cerca de donde se mira.
+    luzSol.target.position.copy(controles.objetivo)
+    luzSol.position.copy(controles.objetivo).addScaledVector(sol.vector, 600)
+    renderer.render(escena, camara)
+    const lista = proyectarEtiquetas()
+    op.alDibujar?.(lista)
+    return lista
+  }
+
   let ultimo = performance.now()
   let vivo = true
   function cuadro() {
@@ -876,28 +1005,29 @@ export async function crearMundo(lienzo, op = {}) {
     const ahora = performance.now()
     const dt = Math.min(0.1, (ahora - ultimo) / 1000)
     ultimo = ahora
-    controles.actualizar(dt)
-    for (const f of animables) f(dt)
-    // La sombra sigue a la cámara: solo importa cerca de donde se mira.
-    luzSol.target.position.copy(controles.objetivo)
-    luzSol.position.copy(controles.objetivo).addScaledVector(sol.vector, 600)
-    renderer.render(escena, camara)
-    op.alDibujar?.(proyectarEtiquetas())
+    paso(dt)
     requestAnimationFrame(cuadro)
   }
   // Un dibujo inmediato, sin esperar al primer cuadro: con el panel oculto
   // requestAnimationFrame no corre y la pantalla quedaría negra.
-  controles.actualizar(0)
-  renderer.render(escena, camara)
-  op.alDibujar?.(proyectarEtiquetas())
+  paso(0)
   requestAnimationFrame(cuadro)
 
   return {
     escena, camara, renderer, controles, info, relieve: rel,
-    dibujar() {
-      controles.actualizar(0)
-      renderer.render(escena, camara)
-      return proyectarEtiquetas()
+    dibujar: () => paso(0),
+    // Avanza el mundo a mano (pruebas y pantallazos: con el panel oculto el
+    // navegador no llama al ciclo de dibujo).
+    paso,
+    // Lleva la cámara hasta algo que se mira de cerca (hoy, el lombricultivo).
+    // Devuelve false si a ese objeto no hay cómo acercarse.
+    acercarA(id) {
+      const a = acercables.get(id)
+      if (!a) return false
+      // De los dos extremos del lecho, el que quede más cerca de donde ya está la cámara.
+      const deFrente = Math.cos(a.largo - controles.azimut) >= 0
+      controles.volar(a.objetivo, { dist: a.dist, elev: a.elev, azimut: deFrente ? a.largo : a.largo + Math.PI })
+      return true
     },
     destruir() {
       vivo = false

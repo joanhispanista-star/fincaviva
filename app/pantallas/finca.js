@@ -19,9 +19,22 @@ import { resumen, avesVivas } from '../../lib/libro.js'
 import { calcularXP, nivelDe, misionesDeSemana, arbolesSembrados, racha } from '../../lib/juego.js'
 import { rangoMes, inicioSemana, MESES, fechaCorta } from '../../lib/fechas.js'
 import { crearFincaDePrueba } from '../../lib/demo.js'
+import { ganadoDelMapa } from '../../lib/rebano.js'
 import { esc, pesos, porcentaje, enlazar } from '../ui.js'
 
 const huevosDe = (estado, fecha) => estado.registros.filter((r) => r.fecha === fecha && r.tipo === 'produccion' && r.datos?.producto?.startsWith('huevo')).reduce((s, r) => s + (r.datos.cantidad || 0), 0)
+
+// Las vacas del libro (el tamaño del sistema Ganado) van al primer potrero que
+// ya existe: `o.vacas` es cuántas se dibujan y el letrero dice cuántas hay.
+// Devuelve la cuenta para que la ficha explique qué es dibujo y qué no.
+function ponerGanado(estado, potreros) {
+  const g = ganadoDelMapa(estado.sistemas, potreros)
+  for (const o of potreros) {
+    o.vacas = o.id === g.potrero ? g.dibujadas : 0
+    if (o.id === g.potrero) o.etiqueta += ` · ${g.animales} ${g.animales === 1 ? 'animal' : 'animales'}`
+  }
+  return g
+}
 
 // La finca del mapa según lo anotado.
 function fincaDelEstado(estado, hoy) {
@@ -47,7 +60,9 @@ function fincaDelEstado(estado, hoy) {
     if (o.id === 'panel') real(o, 'energia', '☀️')
     if (o.id === 'tanque') real(o, 'agua', '💧')
     if (o.id === 'bosque' && arboles > 0) o.etiqueta = `🌳 Bosque nativo · ${arboles} sembrados`
+    if (o.id === 'potrero') real(o, 'ganado', '🐄')
   }
+  f.ganado = ponerGanado(estado, f.objetos.filter((o) => o.tipo === 'potrero'))
   return f
 }
 
@@ -74,6 +89,7 @@ function fincaEscaneada(estado, hoy) {
     if (o.tipo === 'frutales') { o.filas = 3; o.columnas = 4 }
     if (o.tipo === 'bosque') o.radio = 18
   }
+  f.ganado = ponerGanado(estado, f.objetos.filter((o) => o.tipo === 'potrero'))
   f.objetos.push(...parques)
   return f
 }
@@ -219,7 +235,25 @@ export async function pantallaFinca(raiz, ctx) {
   const ficha = raiz.querySelector('.ficha-mapa')
   // Qué sistema lleva las cuentas de cada cosa del mapa: en la finca de ejemplo
   // lo dice el id del objeto; en la escaneada, la clase del sitio marcado.
-  const sistemaPara = { galpon: 'gallinas', huerta: 'cultivo', compost: 'compost', lombriz: 'lombricultura', panel: 'energia', tanque: 'agua', bosque: 'bosque' }
+  const sistemaPara = { galpon: 'gallinas', huerta: 'cultivo', compost: 'compost', lombriz: 'lombricultura', panel: 'energia', tanque: 'agua', bosque: 'bosque', potrero: 'ganado' }
+  // Lo que el mapa dibuja sin haberlo medido ni contado, dicho en la ficha del
+  // sitio: las vacas son las del libro, pero su color y su potrero son dibujo;
+  // las lombrices son solo dibujo.
+  function notaDeDibujo(o, sitio) {
+    const clase = sitio ? sitio.clase : o.id === 'lombriz' ? 'lombricultivo' : o.id
+    const notas = []
+    if (clase === 'potrero' && !o.plan) {
+      const g = fincaMapa.ganado
+      if (g.potrero === o.id) {
+        notas.push(`Son ${g.animales === 1 ? 'el animal' : `los ${g.animales} animales`} de tu sistema Ganado. El color y en qué potrero pastan son dibujo: la app no sabe la raza ni dónde están hoy.`)
+        if (g.dibujadas < g.animales) notas.push(`En el dibujo caben ${g.dibujadas}; el letrero dice ${g.animales === 1 ? 'el que tienes' : `los ${g.animales} que tienes`}.`)
+      } else if (g.potrero) notas.push('Las vacas se dibujan en el primer potrero que marcaste: la app no sabe en cuál están hoy.')
+      else if (g.hatos) notas.push('Para ver aquí las vacas, escribe cuántas hay en «Animales hoy», en la ficha del sistema Ganado.')
+      if (sitio) notas.push('El cerco se dibuja de 26 × 18 m: el escáner marca un punto, no mide el potrero.')
+    }
+    if (clase === 'lombricultivo' && !o.plan) notas.push('De cerca se ven lombrices en el lecho. Son un dibujo: la app no las cuenta.')
+    return notas.map((t) => `<p class="suave chico" style="margin:6px 0 0">${esc(t)}</p>`).join('')
+  }
   let fotoAbierta = null
   const soltarFoto = () => { if (fotoAbierta) URL.revokeObjectURL(fotoAbierta); fotoAbierta = null }
   function alTocar(o) {
@@ -242,8 +276,11 @@ export async function pantallaFinca(raiz, ctx) {
           ? ''
           : `<p class="suave" style="margin:6px 0 10px">Para llevar sus cuentas, créalo como sistema.</p><a class="btn ancho" href="#/nuevo-sistema/${tipoSistema || 'otro'}">Crear el sistema</a>`
     const medida = sitio ? `<p class="suave chico" style="margin:6px 0 0">Marcado con el celular el ${fechaCorta(sitio.fecha)} · GPS a ±${sitio.precision} m</p>` : ''
-    ficha.innerHTML = `<div class="tarjeta" style="margin:0"><div class="fila-flex"><b class="crece" style="font-size:16px">${esc(o.etiqueta || o.id)}</b><button class="icono-btn" data-cerrar aria-label="Cerrar">✕</button></div>${medida}<div data-foto></div>${accion}</div>`
+    const acercar = !o.plan && (sitio ? sitio.clase === 'lombricultivo' : o.id === 'lombriz') ? '<button class="btn suave ancho" data-acercar style="margin-top:10px">🔍 Acercarme a las lombrices</button>' : ''
+    ficha.innerHTML = `<div class="tarjeta" style="margin:0"><div class="fila-flex"><b class="crece" style="font-size:16px">${esc(o.etiqueta || o.id)}</b><button class="icono-btn" data-cerrar aria-label="Cerrar">✕</button></div>${medida}${notaDeDibujo(o, sitio)}<div data-foto></div>${acercar}${accion}</div>`
     ficha.querySelector('[data-cerrar]').addEventListener('click', () => { soltarFoto(); ficha.innerHTML = '' })
+    // La ficha se cierra al volar: tapaba justo lo que se va a mirar.
+    ficha.querySelector('[data-acercar]')?.addEventListener('click', () => { if (mundo?.acercarA(o.id)) { soltarFoto(); ficha.innerHTML = '' } })
     // La foto del sitio, si se le tomó una al marcarlo.
     if (sitio?.foto) {
       urlFoto(sitio.foto).then((u) => {
@@ -266,12 +303,17 @@ export async function pantallaFinca(raiz, ctx) {
       // La finca escaneada va siempre en Juguete: el Diorama recorta un cuadro
       // fijo de 240 m y una finca de verdad no tiene por qué caber ahí.
       estilo: !terreno && estado.ajustes.estilo_mapa === 'diorama' ? 'diorama' : 'juguete',
+      // «De antes» en Ajustes: sin pasto ni flores, para un teléfono al que le pese.
+      graficos: estado.ajustes.graficos_mapa === 'clasico' ? 'clasico' : 'nuevo',
       finca: fincaMapa,
       relieveDatos,
       alDibujar: pintarEtiquetas,
       alTocar,
     })
     if (!vivo) mundo.destruir()
+    // Solo en el computador de desarrollo: una manija para avanzar el mapa a
+    // mano en las pruebas (con el panel oculto el navegador no lo dibuja solo).
+    if (location.hostname === 'localhost') globalThis.FINCA_MAPA = mundo
   } catch (err) {
     console.error(err)
     raiz.classList.add('sin-3d')

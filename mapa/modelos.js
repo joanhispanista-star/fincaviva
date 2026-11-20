@@ -27,7 +27,45 @@ export const PALETA = {
 }
 
 // Una pieza: geometría + color + posición/giro/escala, lista para unir.
-export function parte(geom, color, { p = [0, 0, 0], r = [0, 0, 0], s = [1, 1, 1] } = {}) {
+// Gráficos realistas: cada pieza puede decir qué foto la viste (`tex`: 'teja',
+// 'pared', 'madera'…). `usarTexturas` recibe de mapa/mundo.js cuántos metros
+// cubre una repetición de cada una; sin eso `tex` no hace nada y el modelo
+// queda de colores planos, como siempre.
+let METROS = {}
+export function usarTexturas(indice) {
+  METROS = {}
+  for (const [clave, d] of Object.entries(indice || {})) if (d.repetible && d.metros) METROS[clave] = d.metros
+}
+
+// Dónde cae la foto sobre la pieza, en metros. Una caja ya trae cada cara de 0
+// a 1: basta estirarla a lo que mide la cara, y así una teja mide lo mismo en
+// el techo de la casa que en cualquier otro, esté como esté de inclinado. Lo
+// que no es caja (un hastial, un cilindro) se proyecta de frente.
+function coordenadasDeTextura(geom, g, s, metros) {
+  const n = g.attributes.position.count
+  const uv = new Float32Array(n * 2)
+  if (!metros) return uv
+  const d = geom.parameters
+  if (geom.type === 'BoxGeometry' && g.attributes.uv && n === 36) {
+    const x = d.width * s[0], y = d.height * s[1], z = d.depth * s[2]
+    const cara = [[z, y], [z, y], [x, z], [x, z], [x, y], [x, y]] // ±x, ±y, ±z, en el orden en que three.js arma la caja
+    const o = g.attributes.uv.array
+    for (let i = 0; i < n; i++) {
+      const [a, b] = cara[Math.floor(i / 6)]
+      uv[i * 2] = (o[i * 2] * a) / metros
+      uv[i * 2 + 1] = (o[i * 2 + 1] * b) / metros
+    }
+  } else {
+    const q = g.attributes.position.array
+    for (let i = 0; i < n; i++) {
+      uv[i * 2] = (q[i * 3] + q[i * 3 + 2]) / metros
+      uv[i * 2 + 1] = q[i * 3 + 1] / metros
+    }
+  }
+  return uv
+}
+
+export function parte(geom, color, { p = [0, 0, 0], r = [0, 0, 0], s = [1, 1, 1], tex = '' } = {}) {
   const g = geom.index ? geom.toNonIndexed() : geom.clone()
   _e.set(r[0], r[1], r[2])
   _q.setFromEuler(_e)
@@ -42,29 +80,66 @@ export function parte(geom, color, { p = [0, 0, 0], r = [0, 0, 0], s = [1, 1, 1]
     col[i * 3 + 2] = c.b
   }
   g.setAttribute('color', new THREE.BufferAttribute(col, 3))
-  if (g.attributes.uv) g.deleteAttribute('uv')
+  const viste = METROS[tex] ? tex : ''
+  g.setAttribute('uv', new THREE.BufferAttribute(coordenadasDeTextura(geom, g, s, METROS[viste]), 2))
+  g.userData.tex = viste
   return g
 }
 
-export function unir(partes) {
+// Sombreado por altura (gráficos nuevos del estilo Juguete): cada modelo sale
+// un poco más oscuro abajo y más claro arriba, como si el suelo le quitara luz.
+// Se hornea en el color de los vértices: no le cuesta nada al teléfono. Lo
+// prende mapa/mundo.js antes de armar los modelos.
+let SOMBREADO = false
+export function sombreadoPorAltura(encendido) {
+  SOMBREADO = !!encendido
+}
+
+export function unir(piezas, { sombreado = SOMBREADO } = {}) {
+  // Las piezas se juntan por textura: cada tanda es un «grupo» de la geometría
+  // y se dibuja con su material (ver `poner` en mapa/mundo.js). Sin texturas
+  // queda un solo grupo y nada cambia.
+  const tanda = (g) => g.userData.tex || ''
+  const partes = [...piezas].sort((a, b) => (tanda(a) < tanda(b) ? -1 : tanda(a) > tanda(b) ? 1 : 0))
   let total = 0
   for (const g of partes) total += g.attributes.position.count
   const pos = new Float32Array(total * 3)
   const nor = new Float32Array(total * 3)
   const col = new Float32Array(total * 3)
-  let o = 0
+  const uv = new Float32Array(total * 2)
+  const r = new THREE.BufferGeometry()
+  const texturas = []
+  let o = 0, inicio = 0
   for (const g of partes) {
+    if (!texturas.length || texturas[texturas.length - 1] !== tanda(g)) {
+      if (texturas.length) r.addGroup(inicio, o - inicio, texturas.length - 1)
+      texturas.push(tanda(g))
+      inicio = o
+    }
     pos.set(g.attributes.position.array, o * 3)
     nor.set(g.attributes.normal.array, o * 3)
     col.set(g.attributes.color.array, o * 3)
+    if (g.attributes.uv) uv.set(g.attributes.uv.array, o * 2)
     o += g.attributes.position.count
   }
-  const r = new THREE.BufferGeometry()
+  r.addGroup(inicio, o - inicio, texturas.length - 1)
+  if (texturas.length === 1 && !texturas[0]) r.clearGroups()
+  r.userData.texturas = texturas
   r.setAttribute('position', new THREE.BufferAttribute(pos, 3))
   r.setAttribute('normal', new THREE.BufferAttribute(nor, 3))
   r.setAttribute('color', new THREE.BufferAttribute(col, 3))
+  r.setAttribute('uv', new THREE.BufferAttribute(uv, 2))
   r.computeBoundingSphere()
   r.computeBoundingBox()
+  const y0 = r.boundingBox.min.y, alto = r.boundingBox.max.y - y0
+  if (sombreado && alto > 0.05) {
+    for (let i = 0; i < total; i++) {
+      const k = 0.74 + 0.34 * Math.pow((pos[i * 3 + 1] - y0) / alto, 0.75)
+      col[i * 3] = Math.min(1, col[i * 3] * k)
+      col[i * 3 + 1] = Math.min(1, col[i * 3 + 1] * k)
+      col[i * 3 + 2] = Math.min(1, col[i * 3 + 2] * k)
+    }
+  }
   return r
 }
 
@@ -74,33 +149,33 @@ const bola = (r, detalle = 1) => new THREE.IcosahedronGeometry(r, detalle)
 const cono = (r, h, lados = 7) => new THREE.ConeGeometry(r, h, lados)
 
 // Techo a dos aguas: dos láminas inclinadas con alero. La cumbrera va a lo largo de x.
-function techo(ancho, fondo, altoParedes, subida, color, alero = 0.35, grosor = 0.08) {
+function techo(ancho, fondo, altoParedes, subida, color, alero = 0.35, grosor = 0.08, tex = '') {
   const mitad = fondo / 2 + alero
   const largo = Math.hypot(mitad, subida)
   const ang = Math.atan2(subida, mitad)
   return [
-    parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, mitad / 2 - alero / 2 + 0.02], r: [ang, 0, 0] }),
-    parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, -mitad / 2 + alero / 2 - 0.02], r: [-ang, 0, 0] }),
+    parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, mitad / 2 - alero / 2 + 0.02], r: [ang, 0, 0], tex }),
+    parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, -mitad / 2 + alero / 2 - 0.02], r: [-ang, 0, 0], tex }),
   ]
 }
 
 // Hastial: el triángulo de pared bajo el techo, como prisma que llena el entretecho.
-function hastiales(ancho, fondo, altoParedes, subida, color) {
+function hastiales(ancho, fondo, altoParedes, subida, color, tex = '') {
   const forma = new THREE.Shape([new THREE.Vector2(-fondo / 2, 0), new THREE.Vector2(fondo / 2, 0), new THREE.Vector2(0, subida)])
   const g = new THREE.ExtrudeGeometry(forma, { depth: ancho, bevelEnabled: false })
   // La forma queda en XY y se extruye en Z; girada 90° queda el triángulo en ZY
   // con la punta arriba, y la extrusión a lo ancho de la casa (eje X).
   g.rotateY(Math.PI / 2)
   g.translate(-ancho / 2, altoParedes, 0)
-  return parte(g, color)
+  return parte(g, color, { tex })
 }
 
 export function geomGalpon({ ancho = 4, fondo = 3, alto = 2.2 } = {}) {
   const P = PALETA
   const zocalo = alto * 0.5
   const partes = [
-    parte(caja(ancho + 0.4, 0.15, fondo + 0.4), P.concreto, { p: [0, 0.075, 0] }),
-    parte(caja(ancho, zocalo, fondo), P.madera, { p: [0, 0.15 + zocalo / 2, 0] }),
+    parte(caja(ancho + 0.4, 0.15, fondo + 0.4), P.concreto, { p: [0, 0.075, 0], tex: 'concreto' }),
+    parte(caja(ancho, zocalo, fondo), P.madera, { p: [0, 0.15 + zocalo / 2, 0], tex: 'madera' }),
     // Malla arriba: ventila el amoníaco sin dejar entrar al zorro.
     parte(caja(ancho - 0.06, alto - zocalo - 0.15, fondo - 0.06), P.malla, { p: [0, 0.15 + zocalo + (alto - zocalo - 0.15) / 2, 0] }),
     parte(caja(0.8, 1.7, 0.06), P.puerta, { p: [ancho * 0.25, 0.15 + 0.85, fondo / 2 + 0.03] }),
@@ -109,8 +184,8 @@ export function geomGalpon({ ancho = 4, fondo = 3, alto = 2.2 } = {}) {
     // Nidales por fuera, del lado oriental (se recogen los huevos sin entrar).
     parte(caja(0.5, 0.45, fondo * 0.7), P.maderaOscura, { p: [-ancho / 2 - 0.25, 0.9, 0] }),
     parte(caja(0.62, 0.06, fondo * 0.75), P.zinc, { p: [-ancho / 2 - 0.27, 1.16, 0], r: [0, 0, -0.35] }),
-    ...techo(ancho, fondo, alto + 0.15, 0.9, P.zinc),
-    hastiales(ancho, fondo, alto + 0.15, 0.9, P.madera),
+    ...techo(ancho, fondo, alto + 0.15, 0.9, P.zinc, 0.35, 0.08, 'zinc'),
+    hastiales(ancho, fondo, alto + 0.15, 0.9, P.madera, 'madera'),
   ]
   return unir(partes)
 }
@@ -166,20 +241,20 @@ export function geomGallina() {
 export function geomCasa({ ancho = 9, fondo = 6, alto = 2.6 } = {}) {
   const P = PALETA
   const partes = [
-    parte(caja(ancho + 2.2, 0.2, fondo + 0.6), P.concreto, { p: [0, 0.1, 0.9] }),
-    parte(caja(ancho, alto, fondo), P.pared, { p: [0, 0.2 + alto / 2, 0] }),
-    parte(caja(ancho + 0.02, 0.6, fondo + 0.02), P.zocalo, { p: [0, 0.5, 0] }),
+    parte(caja(ancho + 2.2, 0.2, fondo + 0.6), P.concreto, { p: [0, 0.1, 0.9], tex: 'concreto' }),
+    parte(caja(ancho, alto, fondo), P.pared, { p: [0, 0.2 + alto / 2, 0], tex: 'pared' }),
+    parte(caja(ancho + 0.02, 0.6, fondo + 0.02), P.zocalo, { p: [0, 0.5, 0], tex: 'pared' }),
     parte(caja(1, 2, 0.06), P.puerta, { p: [0, 1.2, fondo / 2 + 0.03] }),
     ...[-2.8, 2.8].map((x) => parte(caja(1.2, 1, 0.06), P.vidrio, { p: [x, 1.7, fondo / 2 + 0.03] })),
     ...[-2.8, 2.8].map((x) => parte(caja(1.4, 1.2, 0.04), P.zocalo, { p: [x, 1.7, fondo / 2 + 0.01] })),
-    ...techo(ancho, fondo + 2.2, alto + 0.2, 1.5, P.teja, 0.5, 0.12).map((g) => {
+    ...techo(ancho, fondo + 2.2, alto + 0.2, 1.5, P.teja, 0.5, 0.12, 'teja').map((g) => {
       g.translate(0, 0, 1.1)
       return g
     }),
     // El techo cubre también el corredor, así que su triángulo va corrido hacia el frente.
-    hastiales(ancho, fondo + 2.2, alto + 0.2, 1.5, P.pared).translate(0, 0, 1.1),
+    hastiales(ancho, fondo + 2.2, alto + 0.2, 1.5, P.pared, 'pared').translate(0, 0, 1.1),
     // Corredor: postes de madera bajo el alero.
-    ...[-4, -1.3, 1.3, 4].map((x) => parte(caja(0.15, alto, 0.15), P.maderaOscura, { p: [x, 0.2 + alto / 2, fondo / 2 + 1.6] })),
+    ...[-4, -1.3, 1.3, 4].map((x) => parte(caja(0.15, alto, 0.15), P.maderaOscura, { p: [x, 0.2 + alto / 2, fondo / 2 + 1.6], tex: 'madera' })),
     // Chimenea del fogón de leña.
     parte(caja(0.6, 1.4, 0.6), P.tejaOscura, { p: [ancho / 2 - 1.2, alto + 1.4, -1] }),
   ]
@@ -190,8 +265,8 @@ export function geomCasa({ ancho = 9, fondo = 6, alto = 2.6 } = {}) {
 export function geomCama(largo = 4, ancho = 1.2, cultivo = 'hoja') {
   const P = PALETA
   const partes = [
-    parte(caja(ancho, 0.25, largo), P.maderaOscura, { p: [0, 0.125, 0] }),
-    parte(caja(ancho - 0.12, 0.06, largo - 0.12), P.tierra, { p: [0, 0.27, 0] }),
+    parte(caja(ancho, 0.25, largo), P.maderaOscura, { p: [0, 0.125, 0], tex: 'madera' }),
+    parte(caja(ancho - 0.12, 0.06, largo - 0.12), P.tierra, { p: [0, 0.27, 0], tex: 'tierra' }),
   ]
   const filas = cultivo === 'maiz' ? 2 : 3
   const porFila = Math.floor(largo / (cultivo === 'maiz' ? 0.5 : 0.35))
@@ -221,29 +296,172 @@ export function geomCompostera() {
   const partes = []
   for (let i = 0; i < 3; i++) {
     const x = (i - 1) * 1.15
-    for (const dz of [-0.5, 0.5]) partes.push(parte(caja(1.05, 0.9, 0.06), P.madera, { p: [x, 0.45, dz] }))
-    partes.push(parte(caja(0.06, 0.9, 1.05), P.madera, { p: [x - 0.52, 0.45, 0] }))
+    for (const dz of [-0.5, 0.5]) partes.push(parte(caja(1.05, 0.9, 0.06), P.madera, { p: [x, 0.45, dz], tex: 'madera' }))
+    partes.push(parte(caja(0.06, 0.9, 1.05), P.madera, { p: [x - 0.52, 0.45, 0], tex: 'madera' }))
     partes.push(parte(bola(0.48, 1), i === 2 ? P.tierra : P.tierraClara, { p: [x, 0.45 - i * 0.1, 0], s: [1, 0.55 + (2 - i) * 0.15, 1] }))
   }
-  partes.push(parte(caja(0.06, 0.9, 1.05), P.madera, { p: [1.7, 0.45, 0] }))
+  partes.push(parte(caja(0.06, 0.9, 1.05), P.madera, { p: [1.7, 0.45, 0], tex: 'madera' }))
   return unir(partes)
 }
 
-export function geomLombricultivo() {
+// El lombricultivo va en dos piezas: el lecho con sus postes, y el techo de
+// paja aparte, porque al acercar la cámara el techo se desvanece para dejar ver
+// las lombrices (mapa/vida.js). El lecho mide por dentro 0,98 × 2,9 m y su
+// tierra queda a LECHO_LOMBRIZ.y del piso: de ahí salen las lombrices.
+export const LECHO_LOMBRIZ = { ancho: 0.98, largo: 2.9, y: 0.485 }
+
+function partesLecho() {
   const P = PALETA
-  return unir([
-    parte(caja(1.1, 0.45, 3), P.madera, { p: [0, 0.225, 0] }),
-    parte(caja(0.98, 0.05, 2.9), P.tierra, { p: [0, 0.46, 0] }),
+  return [
+    parte(caja(1.1, 0.45, 3), P.madera, { p: [0, 0.225, 0], tex: 'madera' }),
+    parte(caja(0.98, 0.05, 2.9), P.tierra, { p: [0, 0.46, 0], tex: 'tierra' }),
     ...[-1, 1].flatMap((sz) => [-1, 1].map((sx) => parte(caja(0.08, 1.4, 0.08), P.maderaOscura, { p: [sx * 0.6, 0.7, sz * 1.45] }))),
-    parte(caja(1.6, 0.05, 3.4), P.paja, { p: [0, 1.42, 0], r: [0, 0, 0.12] }),
+  ]
+}
+const partesTecho = () => [parte(caja(1.6, 0.05, 3.4), PALETA.paja, { p: [0, 1.42, 0], r: [0, 0, 0.12], tex: 'paja' })]
+
+// De una sola pieza: así se dibuja el que todavía es «plan».
+export function geomLombricultivo() {
+  return unir([...partesLecho(), ...partesTecho()])
+}
+
+export function geomLombricultivoPartes() {
+  const P = PALETA
+  // Lo que comen: cáscaras y sobras de cocina sobre la tierra. Se ven solo de cerca.
+  const sobras = [
+    [-0.28, -1.05, P.hojaClara, 0.4], [0.22, -0.62, P.naranja, 1.1], [-0.1, -0.2, P.pared, 2.0], [0.3, 0.35, P.hoja, 0.7],
+    [-0.3, 0.75, P.amarillo, 1.6], [0.12, 1.1, P.hojaClara, 2.6], [-0.18, 1.25, P.pared, 0.2], [0.33, -1.2, P.hojaOscura, 1.9],
+  ].map(([x, z, color, giro]) => parte(caja(0.11, 0.012, 0.07), color, { p: [x, LECHO_LOMBRIZ.y + 0.006, z], r: [0, giro, 0] }))
+  return {
+    lecho: unir([...partesLecho(), ...sobras]),
+    // El techo no lleva sombreado por altura: es una lámina, quedaría de un solo tono igual.
+    techo: unir(partesTecho(), { sombreado: false }),
+  }
+}
+
+// Un anillo de lombriz: cada lombriz son varios, que se mueven uno tras otro.
+export function geomAnilloLombriz() {
+  return unir([parte(bola(1, 0), PALETA.blanco)], { sombreado: false })
+}
+
+// La vaca va en cuatro geometrías blancas que se tiñen por instancia: el cuerpo
+// y la cabeza con el color del pelo, las manchas con el suyo, y las patas (una
+// geometría, cuatro por vaca) para que caminen. Lo que debe quedar oscuro o
+// rosado con cualquier pelo (pezuñas, ojos, hocico, ubre) lleva ese tono en el
+// vértice y el tinte solo lo multiplica.
+// Mira hacia +x. La cabeza tiene el origen en la base del cuello y las patas en
+// la cadera: quien las dibuja las pone en VACA.cuello y VACA.caderas y las gira.
+export const VACA = {
+  cuello: [0.7, 1.08, 0],
+  caderas: [[0.55, 0.74, 0.22], [0.55, 0.74, -0.22], [-0.6, 0.74, 0.22], [-0.6, 0.74, -0.22]],
+  cabezaArriba: 0.3, // rad sobre el lomo
+  cabezaAbajo: -1.15, // rad: el hocico llega al pasto
+}
+
+export function geomVaca() {
+  const B = PALETA.blanco, oscuro = '#2e2a28', rosado = '#f2b8b4'
+  // Las cuatro son piezas que se tiñen y se mueven sueltas: sin sombreado por
+  // altura, que oscurecería cada pata desde su propia punta.
+  const suelta = { sombreado: false }
+  const cuerpo = unir([
+    parte(caja(1.55, 0.72, 0.66), B, { p: [0, 1.02, 0] }),
+    parte(bola(0.42, 1), B, { p: [-0.05, 0.86, 0], s: [1.5, 0.75, 0.86] }),
+    parte(bola(0.3, 0), B, { p: [0.55, 1.36, 0], s: [1, 0.6, 0.9] }),
+    parte(caja(0.05, 0.62, 0.05), B, { p: [-0.81, 1.04, 0], r: [0, 0, -0.12] }),
+    parte(caja(0.09, 0.16, 0.09), oscuro, { p: [-0.86, 0.67, 0] }),
+    parte(bola(0.17, 0), rosado, { p: [-0.35, 0.62, 0], s: [1.2, 0.8, 1] }),
+  ], suelta)
+  // Un poco más anchas que el cuerpo, para que no parpadeen contra él.
+  const manchas = unir([
+    parte(caja(0.42, 0.74, 0.69), B, { p: [0.36, 1.02, 0] }),
+    parte(caja(0.5, 0.4, 0.69), B, { p: [-0.45, 1.19, 0] }),
+  ], suelta)
+  const cabeza = unir([
+    parte(caja(0.6, 0.34, 0.28), B, { p: [0.3, 0, 0] }),
+    parte(caja(0.46, 0.32, 0.32), B, { p: [0.72, 0.03, 0] }),
+    parte(caja(0.14, 0.22, 0.28), rosado, { p: [1.0, -0.02, 0] }),
+    ...[-1, 1].map((s) => parte(caja(0.07, 0.11, 0.2), B, { p: [0.52, 0.17, s * 0.24], r: [s * 0.4, 0, 0] })),
+    ...[-1, 1].map((s) => parte(caja(0.04, 0.06, 0.03), oscuro, { p: [0.8, 0.1, s * 0.165] })),
+  ], suelta)
+  const pata = unir([
+    parte(caja(0.14, 0.66, 0.14), B, { p: [0, -0.33, 0] }),
+    parte(caja(0.15, 0.09, 0.15), oscuro, { p: [0, -0.695, 0] }),
+  ], suelta)
+  return { cuerpo, manchas, cabeza, pata }
+}
+
+// Garza del ganado: blanca, pico amarillo y patas largas hacia atrás. Es la que
+// anda con las vacas de la Sabana y cruza en bandadas. El cuerpo mira hacia +x;
+// el ala es una sola geometría (nace en el origen y se abre hacia +z) que se
+// usa dos veces por pájaro y se gira para aletear.
+export function geomPajaro() {
+  const P = PALETA
+  const cuerpo = unir([
+    parte(bola(0.11, 0), P.blanco, { s: [2.2, 0.8, 0.8] }),
+    parte(caja(0.2, 0.05, 0.05), P.blanco, { p: [0.32, 0.03, 0] }),
+    parte(cono(0.03, 0.14, 4), P.amarillo, { p: [0.48, 0.03, 0], r: [0, 0, -Math.PI / 2] }),
+    parte(caja(0.3, 0.02, 0.03), '#4a4a44', { p: [-0.36, -0.03, 0] }),
+  ], { sombreado: false })
+  const ala = unir([
+    parte(caja(0.24, 0.02, 0.34), P.blanco, { p: [0, 0, 0.19] }),
+    parte(caja(0.16, 0.02, 0.28), '#e9e9e4', { p: [-0.02, 0, 0.48] }),
+  ], { sombreado: false })
+  return { cuerpo, ala }
+}
+
+// ---------- Detalle del suelo (gráficos nuevos del estilo Juguete) ----------
+// Van por miles, instanciados y sin sombra propia: por eso cada uno son unos
+// pocos triángulos sueltos y no un modelo. Cada triángulo va dos veces, una por
+// cara: con un material «de dos caras» three.js le voltea la normal a la cara
+// de atrás y media mata sale negra, alumbrada desde el suelo.
+
+function triangulos(lista) {
+  const pos = [], col = []
+  const c = new THREE.Color()
+  for (const [a, b, d, [ka, kb, kd]] of lista) {
+    pos.push(...a, ...b, ...d, ...a, ...d, ...b)
+    for (const k of [ka, kb, kd, ka, kd, kb]) {
+      c.set(k)
+      col.push(c.r, c.g, c.b)
+    }
+  }
+  const g = new THREE.BufferGeometry()
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3))
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3))
+  // Todas las normales hacia arriba: una hoja recibe la misma luz que el suelo
+  // donde crece. Con su normal de verdad (de lado) cada mata salía casi negra.
+  g.setAttribute('normal', new THREE.Float32BufferAttribute(new Float32Array(pos.length).map((_, i) => (i % 3 === 1 ? 1 : 0)), 3))
+  return g
+}
+
+// Mata de pasto: cuatro hojas cortas, del verde del potrero abajo y claras en la punta.
+export function geomMata() {
+  const base = '#63a83c', punta = '#9fd65e'
+  return triangulos([[0.3, 0.4, 0.16], [1.9, 0.3, 0.2], [3.4, 0.36, 0.14], [4.9, 0.27, 0.21]].map(([a, alto, cae]) => {
+    const cx = Math.cos(a), cz = Math.sin(a)
+    return [[-cz * 0.09, 0, cx * 0.09], [cz * 0.09, 0, -cx * 0.09], [cx * cae, alto, cz * cae], [base, base, punta]]
+  }))
+}
+
+// Flor de potrero (diente de león, trébol): el tallo y un rombo que se tiñe por instancia.
+export function geomFlor() {
+  const tallo = '#6fae4a', B = '#ffffff'
+  return triangulos([
+    [[-0.02, 0, 0], [0.02, 0, 0], [0, 0.24, 0], [tallo, tallo, tallo]],
+    [[-0.09, 0.25, 0], [0, 0.27, 0.09], [0.09, 0.25, 0], [B, B, B]],
+    [[-0.09, 0.25, 0], [0.09, 0.25, 0], [0, 0.27, -0.09], [B, B, B]],
   ])
+}
+
+export function geomPiedra() {
+  return unir([parte(bola(0.3, 0), '#9d998f', { p: [0, 0.08, 0], s: [1.25, 0.6, 1] })], { sombreado: false })
 }
 
 // Tanque de 1.000 litros sobre su base: recoge la lluvia del techo.
 export function geomTanque({ azul = false } = {}) {
   const P = PALETA
   return unir([
-    parte(caja(1.5, 0.6, 1.5), P.concreto, { p: [0, 0.3, 0] }),
+    parte(caja(1.5, 0.6, 1.5), P.concreto, { p: [0, 0.3, 0], tex: 'concreto' }),
     parte(cil(0.62, 0.66, 1.3, 12), azul ? P.tanqueAzul : P.tanque, { p: [0, 1.25, 0] }),
     parte(cil(0.25, 0.25, 0.12, 10), azul ? P.tanqueAzul : P.tanque, { p: [0, 1.96, 0] }),
   ])
@@ -339,7 +557,7 @@ export function geomNube(semilla = 1) {
 
 // Poste de cerca (instanciado a lo largo del lindero).
 export function geomPoste() {
-  return unir([parte(caja(0.12, 1.5, 0.12), PALETA.maderaOscura, { p: [0, 0.75, 0] })])
+  return unir([parte(caja(0.12, 1.5, 0.12), PALETA.maderaOscura, { p: [0, 0.75, 0], tex: 'madera' })])
 }
 
 // ---------- Lo que solo aparece en una finca escaneada ----------

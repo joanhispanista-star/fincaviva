@@ -161,6 +161,10 @@ export async function pantallaFicha(raiz, ctx, [id, periodo = 'mes30']) {
       ${siempre.length || plan.length ? `<h3 class="seccion">Sanidad${edad != null ? `: lo que sigue (tienen ${edad} semanas)` : ''}</h3><div class="lista">${siempre.map((p) => itemSanidad(p, 'Siempre')).join('')}${plan.map((p) => itemSanidad(p, `Semana ${p.semana}`)).join('')}</div>` : ''}`
   } else {
     cuerpo = `<div class="kpis"><div class="kpi grande"><small>Costos del periodo</small><b>${pesos(costos?.total || 0)}</b><i>${regs.filter((r) => r.fecha >= desde).length} registros en el periodo</i></div></div>`
+    // El ganado no tiene «Llegada» ni «Salida» de animales: cuántos hay se
+    // escribe aquí. Sin esto el número quedaba fijo desde el día en que se creó
+    // el sistema, y el mapa seguiría dibujando una vaca que ya se vendió.
+    if (s.tipo === 'ganado') cuerpo += `<form class="fila-flex" data-hato style="gap:8px;align-items:flex-end;margin:12px 0 4px"><label class="campo crece" style="margin:0"><span>Animales hoy</span><input name="tamano" inputmode="numeric" value="${esc(s.tamano ?? '')}"></label><button class="btn">Guardar</button></form><p class="suave chico">Son los que se dibujan en el potrero del mapa. Cámbialo cuando nazca, llegue o salga un animal.</p>`
   }
 
   const filasCosto = [['Insumos usados', 'insumos'], ['Gastos', 'gastos'], ['Depreciación (lo que dura)', 'depreciacion'], ['Energía', 'energia'], ['Mano de obra', 'mano_obra']]
@@ -193,6 +197,11 @@ export async function pantallaFicha(raiz, ctx, [id, periodo = 'mes30']) {
     if (!anteriores.open || anteriores.dataset.listo) return
     anteriores.dataset.listo = '1'
     anteriores.insertAdjacentHTML('beforeend', listaRegistros(regs.slice(40), estado))
+  })
+  raiz.querySelector('[data-hato]')?.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const n = Math.max(0, Math.round(leerNumero(new FormData(e.target).get('tamano')) || 0))
+    ctx.cambiar((est) => { est.sistemas.find((x) => x.id === s.id).tamano = n }, { mensaje: n === 1 ? 'Queda 1 animal' : `Quedan ${n} animales` })
   })
   raiz.querySelector('[data-archivar]').addEventListener('click', () => {
     if (!confirm('¿Archivar? Deja de aparecer en la lista, pero sus registros y sus cuentas se quedan.')) return

@@ -37,6 +37,7 @@ export class Controles {
       this.punteros.set(e.pointerId, { x: e.clientX, y: e.clientY, boton: e.button })
       this.movido = 0
       this.vel.az = this.vel.el = 0
+      this._vuelo = null // el dedo manda: tocar el mapa corta el vuelo
     })
     el.addEventListener('pointermove', (e) => {
       const p = this.punteros.get(e.pointerId)
@@ -80,6 +81,7 @@ export class Controles {
       'wheel',
       (e) => {
         e.preventDefault()
+        this._vuelo = null
         this._acercar(Math.exp(e.deltaY * 0.0012))
       },
       { passive: false }
@@ -106,7 +108,32 @@ export class Controles {
     if (dist) this.dist = dist
   }
 
+  // Lo mismo que `ir`, pero volando: un salto en seco desorienta (no se sabe
+  // dónde quedó uno en la finca); un vuelo corto deja ver el camino.
+  volar(objetivo, { dist = this.dist, elev = this.elev, azimut = this.azimut } = {}, segundos = 1.6) {
+    this.vel.az = this.vel.el = 0
+    // El giro va por el lado corto: de 350° a 10° son 20°, no 340°.
+    const giro = Math.atan2(Math.sin(azimut - this.azimut), Math.cos(azimut - this.azimut))
+    this._vuelo = {
+      t: 0, segundos,
+      de: { objetivo: this.objetivo.clone(), dist: this.dist, elev: this.elev, azimut: this.azimut },
+      a: { objetivo: new THREE.Vector3(objetivo[0], objetivo[1], objetivo[2]), dist: THREE.MathUtils.clamp(dist, this.minDist, this.maxDist), elev: THREE.MathUtils.clamp(elev, this.minElev, this.maxElev), azimut: this.azimut + giro },
+    }
+  }
+
   actualizar(dt) {
+    if (this._vuelo) {
+      const v = this._vuelo
+      v.t = Math.min(1, v.t + dt / v.segundos)
+      const k = v.t * v.t * (3 - 2 * v.t) // arranca y frena suave
+      this.objetivo.lerpVectors(v.de.objetivo, v.a.objetivo, k)
+      // La distancia se interpola por proporción: de 100 m a 4 m, un vuelo
+      // parejo en metros pasaría casi todo el tiempo lejos y caería de golpe.
+      this.dist = v.de.dist * Math.pow(v.a.dist / v.de.dist, k)
+      this.elev = v.de.elev + (v.a.elev - v.de.elev) * k
+      this.azimut = v.de.azimut + (v.a.azimut - v.de.azimut) * k
+      if (v.t >= 1) this._vuelo = null
+    }
     if (this.punteros.size === 0 && (this.vel.az || this.vel.el)) {
       // Inercia: el giro sigue un momento después de soltar, como en los juegos.
       this.azimut += this.vel.az
@@ -125,7 +152,9 @@ export class Controles {
       this.objetivo.z + this.dist * ce * Math.cos(this.azimut)
     )
     // Nunca bajo la montaña: en una ladera, girar hacia arriba metería la cámara en el cerro.
-    const piso = this.suelo(c.position.x, c.position.z) + 4
+    // De lejos se guardan 4 m; de cerca menos, o al acercarse al lombricultivo
+    // la cámara quedaría mirando recto hacia abajo.
+    const piso = this.suelo(c.position.x, c.position.z) + Math.min(4, Math.max(0.7, this.dist * 0.33))
     if (c.position.y < piso) c.position.y = piso
     c.lookAt(this.objetivo)
   }
