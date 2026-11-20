@@ -1,0 +1,613 @@
+{
+  "tecnicas": [
+    {
+      "id": "suelo-nivel-a-curvas",
+      "titulo": "Nivel A: mide tu ladera y traza curvas a nivel",
+      "categoria": "suelo",
+      "nivel": 1,
+      "resumen": "Con tres palos, una cuerda y una piedra haces un nivel A para medir la pendiente y marcar las curvas a nivel donde irán barreras, zanjas y surcos.",
+      "por_que": "En ladera, lo que se siembra a favor de la pendiente se lo lleva la lluvia. La curva a nivel es la línea por donde el agua no corre: sobre ella van las barreras vivas, las zanjas y los surcos. El nivel A cuesta casi nada y te da el dato de pendiente para buscar en la tabla de «Dosis y uso» la distancia entre curvas.",
+      "materiales": [
+        {"item": "Palo recto de 2 m para las patas", "cantidad": 2, "unidad": "unidad", "costo_cop": null},
+        {"item": "Palo de 1,10 m para el travesaño", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Cuerda fina (mecate)", "cantidad": 2.5, "unidad": "m", "costo_cop": null},
+        {"item": "Clavos de 3 pulgadas", "cantidad": 3, "unidad": "unidad", "costo_cop": null},
+        {"item": "Piedra para la plomada", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Estacas de 30 cm para calibrar", "cantidad": 2, "unidad": "unidad", "costo_cop": null},
+        {"item": "Cinta métrica", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Cruza los dos palos de 2 m y clávalos juntos a 5 cm de la punta de arriba.",
+        "Ábrelos hasta que entre las puntas de abajo haya 2 m.",
+        "Clava el travesaño de 1,10 m a 1 m de cada punta de abajo.",
+        "Amarra la piedra a la cuerda y cuélgala del clavo de arriba, de modo que quede al menos una cuarta por debajo del travesaño.",
+        "Calibra: clava dos estacas a 2 m una de otra, apoya el aparato sobre ellas y marca en el travesaño por dónde pasa la cuerda. Gíralo, vuelve a marcar y señala el punto medio entre las dos marcas: ese es el nivel.",
+        "Mide la pendiente: deja la pata de arriba en el suelo y levanta la de abajo hasta que la cuerda pase por la marca del medio. Mide en centímetros la altura de esa pata y divídela entre 2: ese es el porcentaje (70 cm ÷ 2 = 35 %).",
+        "Repite la medida en 5 puntos del lote y saca el promedio.",
+        "Busca en la tabla la distancia entre curvas que corresponde a tu pendiente.",
+        "Marca la línea madre: una fila de estacas desde el punto más alto hasta el más bajo del lote, separadas según la tabla.",
+        "Desde la estaca más alta, camina con el aparato hacia el lindero buscando puntos a nivel y clava una estaca en cada uno.",
+        "Endereza a ojo, por grupos de diez, las estacas que se salen de la línea.",
+        "Traza solo las curvas que vas a construir esa semana y construye siempre de arriba hacia abajo."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "Al calibrar, la cuerda cae en la misma marca aunque gires el aparato, y las 5 medidas de pendiente se parecen entre sí. Las estacas de cada curva forman una línea suave, sin subidas ni bajadas bruscas.",
+      "errores_comunes": [
+        "Usar el aparato sin calibrarlo.",
+        "Medir la pendiente en un solo punto en vez de cinco.",
+        "Trazar todas las curvas de una vez: las estacas se pierden antes de construir.",
+        "Construir de abajo hacia arriba: el agua de arriba daña las obras nuevas."
+      ],
+      "dosis_o_uso": "Distancia entre curvas según la pendiente (SCIAF 2018): 2 % → 30 m; 5 % → 28 m; 8 % → 24 m; 10 % → 20 m; 14 % → 18 m; 16 % → 16 m; 20 % → 14 m; 25 % → 12 m; 30 % → 10 m; 35 % → 8 m; 40 % → 6 m; 45 % → 4 m.",
+      "mision": {
+        "titulo": "Mide tu ladera",
+        "como_se_cumple": "Anotar como Medición, en el sistema del cultivo de ese lote, las 5 lecturas de pendiente en centímetros. Sacar a mano el promedio y anotar la pendiente en porcentaje (centímetros ÷ 2). Trazar una curva a nivel y anotar su largo en metros. Tomar con el celular una foto de las estacas.",
+        "xp": 60
+      },
+      "fuentes": [
+        {"titulo": "SCIAF (2018). El aparato A y las curvas a nivel", "url": "https://sciaf.org.uk/assets/000/001/631/1.1_Booklet_-_A-frame_%28SPANISH%29_original_original.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-barrera-viva",
+      "titulo": "Barrera viva de pasto sobre la curva a nivel",
+      "categoria": "suelo",
+      "nivel": 1,
+      "resumen": "Una fila tupida de pasto sembrada sobre la curva a nivel frena la tierra que arrastra la lluvia. En Nariño, a 2.710 m, redujo la pérdida de suelo en un 63 %.",
+      "por_que": "En el ensayo de la Universidad de Nariño (papa, pendiente de 31 a 42 %), las barreras de pasto Phalaris bajaron la pérdida de suelo de 450 a 165 kg por hectárea en un ciclo. Es la obra más sencilla después de trazar las curvas, y el pasto que se corta sirve de cobertura para el suelo.",
+      "materiales": [
+        {"item": "Macollas de pasto Phalaris (pasto brasilero) para 10 m de barrera", "cantidad": 100, "unidad": "unidad", "costo_cop": null},
+        {"item": "Palín o azadón para abrir el surco", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Traza la curva a nivel con el nivel A (técnica «Nivel A»).",
+        "Abre un surco pequeño siguiendo exactamente las estacas.",
+        "Siembra las macollas en el surco, una cada 10 cm, como en el ensayo de Nariño.",
+        "Tapa y apisona con el pie para que la raíz quede firme.",
+        "Resiembra los huecos que queden: la barrera funciona si es continua.",
+        "Cuando el pasto crezca, córtalo y deja lo cortado sobre el suelo, arriba de la barrera.",
+        "Repite en la siguiente curva, a la distancia que indica la tabla del nivel A."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "Después de los aguaceros se acumula tierra justo arriba de la barrera y abajo no aparecen surcos de erosión. La fila queda continua, sin huecos.",
+      "errores_comunes": [
+        "Sembrar la barrera a ojo, sin curva a nivel: el agua se va hacia la parte baja y abre una cárcava.",
+        "Dejar huecos en la fila.",
+        "Dejar que el pasto se meta en el cultivo sin cortarlo."
+      ],
+      "dosis_o_uso": "Una planta cada 10 cm, es decir 100 por cada 10 m. En el ensayo las barreras estaban a 19 m entre sí; en pendientes fuertes la tabla del nivel A pide curvas más juntas (de 6 a 10 m entre 30 y 40 %).",
+      "mision": {
+        "titulo": "Primera barrera viva",
+        "como_se_cumple": "Anotar la barrera como Siembra, en el sistema del cultivo de ese lote, con la especie, las macollas sembradas y la fecha. Anotar su largo en metros (mínimo 10) como Medición. Marcar sus extremos con estacas y tomar con el celular una foto de la barrera.",
+        "xp": 80
+      },
+      "fuentes": [
+        {"titulo": "Alvarado Narváez, K. et al. (2011). Pérdida de suelo por erosión hídrica en diferentes sistemas de producción con papa. Revista de Ciencias Agrícolas 28(1)", "url": "https://dialnet.unirioja.es/descarga/articulo/5104125.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "SCIAF (2018). El aparato A y las curvas a nivel", "url": "https://sciaf.org.uk/assets/000/001/631/1.1_Booklet_-_A-frame_%28SPANISH%29_original_original.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-zanja-infiltracion",
+      "titulo": "Zanja de infiltración: siembra el agua de lluvia",
+      "categoria": "agua",
+      "nivel": 2,
+      "resumen": "Un canal de 40 × 40 cm cavado sobre la curva a nivel atrapa el agua que escurre por la ladera y la mete al suelo, en vez de dejar que se lleve la tierra.",
+      "por_que": "En ladera, el agua de los aguaceros corre por encima y arrastra suelo. La zanja la detiene y la deja entrar despacio: menos erosión y más humedad guardada para la época seca. Se recomienda en pendientes de 10 a 40 %, y conviene probar primero con una zanja piloto.",
+      "materiales": [
+        {"item": "Pala", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Pica o barretón", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Nivel A ya calibrado", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Pasto o plantas para sembrar el bordo de una zanja piloto", "cantidad": 10, "unidad": "m", "costo_cop": null}
+      ],
+      "pasos": [
+        "Mide la pendiente con el nivel A: la zanja se recomienda entre 10 y 40 %.",
+        "Traza la curva a nivel donde irá la zanja.",
+        "Empieza con una zanja piloto corta y mira cómo se comporta en el primer aguacero antes de hacer más.",
+        "Cava siguiendo la curva: unos 40 cm de ancho en la base y 40 cm de profundidad.",
+        "Pon la tierra que sacas abajo de la zanja, formando un bordo, y apisónala.",
+        "Siembra pasto o plantas en el bordo para que no se desmorone.",
+        "Después de cada aguacero fuerte, saca el sedimento y repara el bordo."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "Tras un aguacero, la zanja retiene agua que se infiltra en horas o pocos días, y debajo de ella no aparecen surcos de erosión. Si el agua se queda estancada muchos días, ese suelo no infiltra bien y no conviene hacer más zanjas ahí (estimado).",
+      "errores_comunes": [
+        "Cavarla fuera de nivel: el agua corre hacia el extremo bajo, se desborda y abre una cárcava.",
+        "Hacer muchas zanjas sin probar antes una piloto.",
+        "No sacar el sedimento: la zanja se llena y deja de servir.",
+        "Hacerla en pendientes de más de 40 %."
+      ],
+      "dosis_o_uso": "Pendientes de 10 a 40 %. Medida típica: 40 cm de base por 40 cm de fondo, siguiendo la curva a nivel, con el bordo sembrado del lado de abajo (CSIRO 2020).",
+      "mision": {
+        "titulo": "Zanja que siembra agua",
+        "como_se_cumple": "Anotar como Medición, en el sistema del cultivo o del agua, el largo de la zanja en metros y el ancho y la profundidad en centímetros. Marcar sus extremos con estacas y tomar con el celular una foto. Después del primer aguacero, anotar como Nota si retuvo agua y en cuántas horas se infiltró.",
+        "xp": 120
+      },
+      "fuentes": [
+        {"titulo": "CSIRO Chile (2020). Ficha 1.3: Zanjas de infiltración", "url": "https://research.csiro.au/rag-chile/wp-content/uploads/sites/374/2020/10/1.3-Ficha_zanjas.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-abono-verde-avena-vicia",
+      "titulo": "Abono verde de tierra fría: vicia, avena y nabo",
+      "categoria": "suelo",
+      "nivel": 1,
+      "resumen": "Siembra una mezcla de vicia, avena y nabo forrajero para cubrir el suelo, darle materia orgánica y nitrógeno, y dejar descansar el lote entre cosechas.",
+      "por_que": "En Turmequé (Boyacá), entre 2.300 y 2.860 m, la UPTC comparó 13 mezclas de abonos verdes y la mejor fue vicia × avena × nabo forrajero. La avena y el nabo cubren el suelo y la vicia, que es leguminosa, aporta nitrógeno. El haba y el chocho también son leguminosas de clima frío, pero no se encontraron ensayos en tu zona: pruébalos en franjas.",
+      "materiales": [
+        {"item": "Semilla de vicia (40 % de la mezcla; en el estudio, Vicia atropurpurea)", "cantidad": 40, "unidad": "g", "costo_cop": null},
+        {"item": "Semilla de avena (30 % de la mezcla)", "cantidad": 30, "unidad": "g", "costo_cop": null},
+        {"item": "Semilla de nabo forrajero (30 % de la mezcla)", "cantidad": 30, "unidad": "g", "costo_cop": null}
+      ],
+      "pasos": [
+        "Escoge un lote que vaya a descansar o una franja entre cultivos.",
+        "Prepara la mezcla con las proporciones del estudio: 40 % vicia, 30 % avena y 30 % nabo forrajero.",
+        "Siembra sobre las curvas a nivel o en surcos atravesados a la pendiente, nunca a favor de ella.",
+        "Anota la fecha de siembra y los gramos por m² que usaste: el estudio no publica esa cifra en su resumen.",
+        "A las pocas semanas arranca una planta de vicia y mira la raíz: las bolitas (nódulos) son las que fijan nitrógeno.",
+        "Córtalo cuando empiece a florecer (práctica común, no medida en el estudio) y déjalo sobre el suelo como cobertura.",
+        "Siembra el siguiente cultivo y compáralo con una franja que no tuvo abono verde."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "El suelo queda tapado por completo, la vicia tiene nódulos en la raíz y el cultivo que siembras después crece mejor que en la franja sin abono verde.",
+      "errores_comunes": [
+        "Sembrar a favor de la pendiente.",
+        "Dejar que la mezcla suelte semilla: se vuelve maleza en el siguiente cultivo.",
+        "Sembrar solo avena: sin la leguminosa no hay aporte de nitrógeno."
+      ],
+      "dosis_o_uso": "Proporción de semilla 40 % vicia, 30 % avena y 30 % nabo forrajero (Viteri et al. 2008). El resumen del estudio no da la cantidad de semilla por m²: registra la que uses y compara.",
+      "mision": {
+        "titulo": "Suelo vestido de verde",
+        "como_se_cumple": "Anotar como Siembra, en el sistema del cultivo de ese lote, cada semilla de la mezcla: los gramos en «Plantas o semillas», con «(g)» junto al nombre (por ejemplo «Vicia (g)»), los m² y la fecha. Anotar como Nota la fecha de corte. Tomar con el celular una foto de una raíz de vicia con nódulos.",
+        "xp": 70
+      },
+      "fuentes": [
+        {"titulo": "Viteri, S., Martínez, J. y Bermúdez, Á. (2008). Selección de abonos verdes para los suelos de Turmequé (Boyacá). Agronomía Colombiana 26(2)", "url": "https://revistas.unal.edu.co/index.php/agrocol/article/view/13519", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-compost-pila",
+      "titulo": "Compost en pila caliente",
+      "categoria": "abono",
+      "nivel": 1,
+      "resumen": "Mezcla materiales ricos en nitrógeno, como la gallinaza, con materiales secos, como la poda, con la humedad justa, y en 3 a 6 meses tienes compost maduro.",
+      "por_que": "El compost le devuelve al suelo la materia orgánica que la ladera pierde, y el calor de la pila mata patógenos y semillas de maleza. Con la mezcla correcta (C:N de 25 a 35 al empezar) la pila se calienta sin oler a amoníaco. Es la base de otros abonos, como el té de compost y los sustratos de semillero.",
+      "materiales": [
+        {"item": "Gallinaza con cama (C:N 18:1)", "cantidad": 100, "unidad": "kg", "costo_cop": null},
+        {"item": "Restos de poda o rastrojo picados (C:N 44:1)", "cantidad": 100, "unidad": "kg", "costo_cop": null},
+        {"item": "Termómetro de vástago largo", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Plástico o techo para cubrir la pila", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Escoge un sitio casi plano (menos de 4 % de pendiente) y protegido de la lluvia fuerte.",
+        "Pica los materiales en trozos de 10 a 15 cm.",
+        "Mezcla mitad gallinaza con cama y mitad poda: así queda cerca de 30:1.",
+        "Moja mientras armas y haz la prueba del puño: al apretar, el material queda apelmazado pero no escurre agua (45 a 60 % de humedad).",
+        "Arma la pila de 1,5 a 2 m de alto y de 1,5 a 3 m de ancho.",
+        "Mide la temperatura en el centro: debe subir hasta unos 65 °C. Si pasa de 70 °C, voltéala.",
+        "Voltéala cada semana durante las primeras 3 o 4 semanas y después cada dos semanas, llevando lo de afuera hacia el centro.",
+        "Si huele a amoníaco, le falta material seco; agrégalo al voltear.",
+        "Cuando ya no se caliente después de voltearla, está madura: entre los 3 y los 6 meses.",
+        "Si quieres, ciérnela con una malla de 1,6 cm y guárdala bajo techo."
+      ],
+      "listo_en_dias": 90,
+      "como_saber_si_salio_bien": "Huele a tierra, es oscuro y ya no se reconocen los materiales. Al voltearlo no se vuelve a calentar. Prueba de la bolsa: 100 g de compost húmedo en una bolsa cerrada durante 2 días; si la bolsa se infla, todavía no está maduro.",
+      "errores_comunes": [
+        "Usar gallinaza sola: con C:N de 7:1 se recalienta y huele a amoníaco.",
+        "Hacer una pila muy pequeña, que no se calienta.",
+        "Dejarla descubierta bajo la lluvia.",
+        "Usar el compost antes de que madure."
+      ],
+      "dosis_o_uso": "Compost semimaduro: 4 a 5 kg/m² en hortalizas. Cultivos extensivos: 7 a 10 t/ha. Compost maduro: del 20 al 50 % de la mezcla de sustrato para semilleros (FAO 2013).",
+      "mision": {
+        "titulo": "Tu primera pila caliente",
+        "como_se_cumple": "Registrar la pila con los kg de cada material y la fecha de armado, y al menos 4 lecturas de temperatura en días distintos, una de ellas de 50 °C o más.",
+        "xp": 100
+      },
+      "fuentes": [
+        {"titulo": "FAO (2013). Manual de compostaje del agricultor", "url": "https://www.bivica.org/files/compostaje-manual.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-gallinaza-compostada",
+      "titulo": "Gallinaza que no quema: compostarla bien",
+      "categoria": "gallinas",
+      "nivel": 2,
+      "resumen": "La gallinaza de tus gallinas es el abono más rico de la finca, pero cruda quema y trae patógenos. Mézclala con cama y poda y compóstala en caliente.",
+      "por_que": "La gallinaza pura tiene una relación C:N de 7:1: le sobra nitrógeno, que en la pila sale como amoníaco. Mezclada mitad y mitad con poda queda cerca de 30:1. El calor de la pila mata la Salmonella y la E. coli. Si buscas el sello ecológico, la certificadora exige compostar el estiércol, salvo que lo incorpores al suelo al menos 120 días antes de la cosecha (90 si lo comestible no toca el suelo). Lo pide el Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016, y su vigencia está en duda por el Decreto 1468 de 2020.",
+      "materiales": [
+        {"item": "Gallinaza con cama recogida del gallinero", "cantidad": 50, "unidad": "kg", "costo_cop": null},
+        {"item": "Restos de poda o rastrojo picados", "cantidad": 50, "unidad": "kg", "costo_cop": null},
+        {"item": "Termómetro de vástago largo", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Báscula o balanza colgante", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Pesa cada semana la gallinaza que recoges y regístrala: es el dato real de tus gallinas.",
+        "Guárdala bajo techo y tapada mientras juntas suficiente: con la lluvia pierde nitrógeno como amoníaco.",
+        "Usa cama seca en el gallinero; la FAO recomienda mezclarla con harina de rocas.",
+        "Mezcla mitad gallinaza con cama y mitad poda picada.",
+        "Moja hasta pasar la prueba del puño: apelmazado, sin escurrir.",
+        "Arma la pila y mide la temperatura en el centro: debe pasar de 55 °C.",
+        "Voltéala para que todo el material pase por el centro caliente, con el calendario del compost en pila.",
+        "Úsala cuando esté madura y ya no se recaliente al voltearla."
+      ],
+      "listo_en_dias": 90,
+      "como_saber_si_salio_bien": "La pila pasó de 55 °C (a esa temperatura la Salmonella y la E. coli mueren en unos 60 minutos; a 60 °C, en 15 a 20 minutos), no huele a amoníaco y al final ya no se recalienta.",
+      "errores_comunes": [
+        "Echar gallinaza fresca directo a las hortalizas.",
+        "Dejarla al aire libre bajo la lluvia.",
+        "Usar pollinaza de pollos de engorde: es más húmeda y puede traer residuos de coccidiostáticos y antibióticos.",
+        "No pesarla: sin ese dato no sabrás cuánto abono produce tu finca."
+      ],
+      "dosis_o_uso": "Como el compost semimaduro: 4 a 5 kg/m² en hortalizas. Si la aplicas sin compostar, incorpórala al suelo al menos 120 días antes de cosechar si lo comestible toca el suelo, o 90 días si no lo toca. Es lo que exige la certificadora si buscas el sello ecológico (Anexo I del Reglamento, en el texto del art. 11 de la Res. 199 de 2016, de vigencia en duda), y es prudente aunque no certifiques. Referencia: una ponedora comercial produce unos 31,5 kg de gallinaza fresca al año, con 1,84 % de N.",
+      "mision": {
+        "titulo": "Pesa tu oro negro",
+        "como_se_cumple": "Registrar 4 semanas seguidas de gallinaza recogida (kg por semana) y una pila de gallinaza compostada con los kg de gallinaza y de poda y una lectura de temperatura de 55 °C o más.",
+        "xp": 150
+      },
+      "fuentes": [
+        {"titulo": "FAO (2013). Manual de compostaje del agricultor", "url": "https://www.bivica.org/files/compostaje-manual.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "FAO, Williams, C. M. (2013). Características de la gallinaza de las aves de corral", "url": "http://www.fao.org/4/i3531s/i3531s05.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "USDA-NRCS (2008). Agricultural Waste Management Field Handbook, capítulo 4", "url": "https://directives.nrcs.usda.gov/sites/default/files2/1712930943/17165.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "CNAOH Honduras y Zamorano. Manual de abonos orgánicos y manejo de plagas y enfermedades en agricultura orgánica", "url": "https://cenida.una.edu.ni/relectronicos/REF08C733.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "FAO y PESA El Salvador (2011). Elaboración y uso del bocashi", "url": "https://prometeo.matem.unam.mx/recursos/VariosNiveles/iCartesiLibri/recursos/Compostaje_y_lombricultivo/docs/fao.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución 199 de 2016 del MADR, Anexo I", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Decreto 1468 de 2020 (vigencia de los reglamentos técnicos)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-bocashi",
+      "titulo": "Bocashi: abono fermentado en dos semanas",
+      "categoria": "abono",
+      "nivel": 2,
+      "resumen": "Abono fermentado que se hace en 8 a 15 días con gallinaza, tierra, salvado, carbón, ceniza y levadura, volteándolo a diario para que no se recaliente.",
+      "por_que": "Es mucho más rápido que el compost y aprovecha la gallinaza de tus gallinas. La FAO cuenta que productores que sacaban tierra del bosque para hacerlo la reemplazaron por bocashi viejo como inóculo, para no dañar el bosque. En tierra fría puede tardar más que en las guías de clima cálido (estimado).",
+      "materiales": [
+        {"item": "Tierra", "cantidad": 40, "unidad": "kg", "costo_cop": null},
+        {"item": "Gallinaza madura (la receta dice guano)", "cantidad": 40, "unidad": "kg", "costo_cop": null},
+        {"item": "Harinilla o salvado", "cantidad": 20, "unidad": "kg", "costo_cop": null},
+        {"item": "Carbón en trozos pequeños", "cantidad": 3, "unidad": "kg", "costo_cop": null},
+        {"item": "Ceniza", "cantidad": 5, "unidad": "kg", "costo_cop": null},
+        {"item": "Cáscara de huevo molida", "cantidad": 1, "unidad": "kg", "costo_cop": null},
+        {"item": "Yogur natural", "cantidad": 1, "unidad": "l", "costo_cop": null},
+        {"item": "Panela (la receta dice chancaca)", "cantidad": 25, "unidad": "g", "costo_cop": null},
+        {"item": "Levadura seca", "cantidad": 20, "unidad": "g", "costo_cop": null},
+        {"item": "Agua", "cantidad": 15, "unidad": "l", "costo_cop": null}
+      ],
+      "pasos": [
+        "Trabaja bajo techo, sobre piso firme. Disuelve la panela, la levadura y el yogur en el agua.",
+        "Extiende los materiales secos en capas y mézclalos bien con la pala.",
+        "Moja con la mezcla líquida poco a poco y haz la prueba del puño: se apelmaza sin escurrir.",
+        "Día 1: arma un montón de unos 50 cm de alto y tápalo.",
+        "Día 2: se calienta (la guía del PNUD habla de unos 50 °C). Voltéalo 2 o 3 veces y bájalo a 30 cm.",
+        "Día 3: voltéalo 3 veces y déjalo de 30 cm. Día 4: voltéalo 3 veces y bájalo a 15 cm.",
+        "Días 5 y 6: déjalo de 10 cm de alto y destapado.",
+        "Día 7: extiéndelo plano. Día 8: está listo si ya está frío, seco y suelto.",
+        "Controla el calor con un machete enterrado 5 minutos: si la hoja sale tan caliente que no aguantas la mano, voltéalo. La FAO recomienda no pasar de 45 °C.",
+        "Guárdalo en sacos que respiren, bajo techo, hasta 6 meses.",
+        "Separa un poco para la próxima tanda: sirve de inóculo en lugar de tierra del bosque."
+      ],
+      "listo_en_dias": 15,
+      "como_saber_si_salio_bien": "Queda frío, seco y suelto, con olor a fermento, sin olor a podrido ni a amoníaco, y ya no se calienta al moverlo.",
+      "errores_comunes": [
+        "Mojarlo de más: se pudre en vez de fermentar.",
+        "No voltearlo a diario: se recalienta.",
+        "Sacar tierra o mantillo del bosque cada vez: usa bocashi viejo como inóculo.",
+        "Agregar harina de sangre o de huesos vacunos, que algunas guías sugieren: la Res. ICA 991 de 2001 prohíbe usarlas como abono, según la nota del Anexo I del Reglamento de la Res. MADR 187 de 2006 (texto del art. 11 de la Res. 199 de 2016).",
+        "Ponerlo pegado al tallo: déjalo a 10 o 15 cm."
+      ],
+      "dosis_o_uso": "PNUD: 0,5 kg/m² en suelo bueno y 1 kg/m² en suelo pobre; 0,5 kg por frutal. La FAO da dosis mayores: unos 1,8 kg/m² (4 lb) en suelos que ya vienen recibiendo compost o bocashi, y hasta 4,5 kg/m² (10 lb) donde nunca se aplicó bocashi. Siempre a 10 a 15 cm del tallo. Variante FAO: 25 a 50 kg de harina de rocas por tonelada de bocashi, en lugar de la cal agrícola de la receta de la FAO. En esta receta ese papel lo hace la ceniza: la harina de rocas puede ir en su lugar.",
+      "mision": {
+        "titulo": "Bocashi de 8 días",
+        "como_se_cumple": "Registrar una tanda con los kg de cada ingrediente y la fecha, al menos 5 volteos con fecha y temperatura, y los kg de bocashi obtenidos al final.",
+        "xp": 120
+      },
+      "fuentes": [
+        {"titulo": "PNUD Chile (2015). Recetas caseras de abonos orgánicos y biopesticidas", "url": "https://files.acquia.undp.org/public/migration/cl/undp_cl_medioambiente_Recetas-abonos-biopesticidas.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "FAO y PESA El Salvador (2011). Elaboración y uso del bocashi", "url": "https://prometeo.matem.unam.mx/recursos/VariosNiveles/iCartesiLibri/recursos/Compostaje_y_lombricultivo/docs/fao.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución 199 de 2016 del MADR, Anexo I", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-lombricompost",
+      "titulo": "Lombricompost con lombriz roja californiana",
+      "categoria": "abono",
+      "nivel": 2,
+      "resumen": "La lombriz roja californiana convierte estiércol y residuos en humus. En tierra fría necesita techo y abrigo, porque trabaja mejor entre 19 y 25 °C.",
+      "por_que": "El humus de lombriz es un abono maduro que aprovecha estiércol y residuos de cocina. Si buscas el sello ecológico, la certificadora lo acepta estabilizado (lombricompuestos, Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016). A 2.600 m el frío frena a la lombriz: si tu finca se parece a Obonuco (Nariño, 2.710 m, 13 °C de promedio), la cama necesita techo y protección (estimado).",
+      "materiales": [
+        {"item": "Lombriz roja californiana (Eisenia foetida)", "cantidad": 1, "unidad": "kg", "costo_cop": null},
+        {"item": "Cama de 1 m de ancho y 50 a 60 cm de fondo (1 m² para empezar)", "cantidad": 1, "unidad": "m2", "costo_cop": null},
+        {"item": "Techo o cubierta contra sol y lluvia", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Construye la cama bajo techo, de 1 m de ancho y 50 a 60 cm de fondo, protegida del sol, la lluvia y los animales.",
+        "Prepara el sustrato inicial: 3 partes de tierra por 1 de material fresco, o 2 de compost por 1 de fresco.",
+        "Prueba la comida: pon unas lombrices encima; si se entierran rápido, la comida está bien.",
+        "Siembra 1 kg de lombrices por m².",
+        "Aliméntalas por capas de máximo 15 cm, hasta 4 capas.",
+        "Mantén la humedad entre 70 y 80 %: al apretar un puñado deben salir 7 u 8 gotas.",
+        "Para cosechar, deja de alimentarlas de 8 a 15 días y pon trampas de comida fresca encima: las lombrices suben a ellas. Haz 3 trampas de unos 5 días cada una y recuperas cerca del 95 %.",
+        "Seca el humus a la sombra hasta 40 a 50 % de humedad y guárdalo en sacos."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "El humus queda oscuro y suelto, huele a tierra y no tiene restos reconocibles; las lombrices se ven sanas y se multiplican.",
+      "errores_comunes": [
+        "Dejar la cama al sol o a la lluvia.",
+        "Echar demasiada comida de una vez, en capas de más de 15 cm.",
+        "Dejar que la cama se seque o se encharque.",
+        "Sacar el humus sin trampear antes: te llevas las lombrices.",
+        "No abrigarla del frío en tierra fría."
+      ],
+      "dosis_o_uso": "Por analogía con el compost maduro: del 20 al 50 % de la mezcla de sustrato para semilleros, o como abono de siembra. Densidad máxima en la cama: 40.000 lombrices por m³.",
+      "mision": {
+        "titulo": "Criadero de lombrices",
+        "como_se_cumple": "Crear el sistema de lombricultura con los m² de la cama. Registrar como Medición los kg de lombrices sembradas y la fecha; 4 alimentaciones con fecha, con Alimento si lo que les echas ya está en el inventario o, si no, como Nota; y la primera cosecha de humus como Cosecha, en kg.",
+        "xp": 120
+      },
+      "fuentes": [
+        {"titulo": "FAO (2013). Manual de compostaje del agricultor", "url": "https://www.bivica.org/files/compostaje-manual.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "CNAOH Honduras y Zamorano. Manual de abonos orgánicos y manejo de plagas y enfermedades en agricultura orgánica", "url": "https://cenida.una.edu.ni/relectronicos/REF08C733.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución MADR 199 de 2016", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-te-de-compost",
+      "titulo": "Té de compost aireado",
+      "categoria": "abono",
+      "nivel": 2,
+      "resumen": "Un saco de compost maduro dentro de agua con aire durante 24 a 36 horas da un líquido color caramelo para regar o asperjar las plantas.",
+      "por_que": "Estira el compost: con poco material abonas más área por las hojas o con el riego. Solo se hace con compost maduro, porque el inmaduro puede llevar patógenos. La bomba de aire gasta electricidad: súmala a la cuenta de la luz de la finca (la app no deja registrar equipos).",
+      "materiales": [
+        {"item": "Compost maduro", "cantidad": 2, "unidad": "kg", "costo_cop": null},
+        {"item": "Agua", "cantidad": 20, "unidad": "l", "costo_cop": null},
+        {"item": "Saco o media de tela", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Bomba de aire de acuario con manguera", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Balde o caneca", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Echa 2 kg de compost maduro en el saco y amárralo.",
+        "Sumérgelo en 20 litros de agua: es la proporción de 10 % en peso por volumen.",
+        "Conecta la bomba de aire: 2 horas prendida y 1 apagada, durante 24 a 36 horas.",
+        "Huele de vez en cuando: si huele mal, le falta aire.",
+        "Cuando el líquido tenga color caramelo, saca el saco y usa el té.",
+        "Devuelve el compost del saco a la pila o al suelo."
+      ],
+      "listo_en_dias": 2,
+      "como_saber_si_salio_bien": "El líquido queda color caramelo y con olor agradable. Si huele a podrido, le faltó oxígeno: mejor no lo eches a las hojas.",
+      "errores_comunes": [
+        "Usar compost inmaduro, que puede llevar patógenos a las hojas.",
+        "Dejarlo sin aire: se pudre.",
+        "Dejar la bomba prendida días enteros sin necesidad."
+      ],
+      "dosis_o_uso": "Al follaje o con el agua de riego (FAO 2013). Variante sin bomba (PNUD): té de bocashi, 4 kg en 36 L de agua durante 7 días, revolviendo dos veces al día; se diluyen 2 L en 8 L y se asperja cada 10 días, por la tarde.",
+      "mision": {
+        "titulo": "Té para la huerta",
+        "como_se_cumple": "Registrar una tanda con los kg de compost, los litros de agua, las horas de aireación y el lote donde se aplicó. Anotar como Nota los vatios de la bomba y las horas que estuvo prendida, y sacar a mano los kWh: vatios × horas ÷ 1.000.",
+        "xp": 60
+      },
+      "fuentes": [
+        {"titulo": "FAO (2013). Manual de compostaje del agricultor", "url": "https://www.bivica.org/files/compostaje-manual.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "PNUD Chile (2015). Recetas caseras de abonos orgánicos y biopesticidas", "url": "https://files.acquia.undp.org/public/migration/cl/undp_cl_medioambiente_Recetas-abonos-biopesticidas.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-biol-estiercol",
+      "titulo": "Biol de estiércol de vaca",
+      "categoria": "abono",
+      "nivel": 2,
+      "resumen": "Abono líquido fermentado en un tarro cerrado con estiércol fresco, leche, melaza y ceniza. Se asperja diluido sobre las plantas.",
+      "por_que": "Aprovecha el estiércol fresco sin esperar los meses del compost y se aplica a las hojas. Si buscas el sello ecológico, la certificadora solo acepta el estiércol líquido fermentado, en diluciones adecuadas y con necesidad reconocida por ella (Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016).",
+      "materiales": [
+        {"item": "Estiércol fresco de vaca (de 3,6 a 4,5 kg)", "cantidad": 4, "unidad": "kg", "costo_cop": null},
+        {"item": "Leche (o 400 ml de suero)", "cantidad": 200, "unidad": "ml", "costo_cop": null},
+        {"item": "Melaza (o 400 ml de jugo de caña)", "cantidad": 200, "unidad": "ml", "costo_cop": null},
+        {"item": "Ceniza", "cantidad": 300, "unidad": "g", "costo_cop": null},
+        {"item": "Agua", "cantidad": 18, "unidad": "l", "costo_cop": null},
+        {"item": "Tarro plástico de 20 L con tapa hermética", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Manguera delgada y botella con agua para la salida de gases", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "En un balde, disuelve el estiércol con la ceniza en 10 litros de agua.",
+        "Añade la melaza y la leche y revuelve hasta que quede parejo.",
+        "Pásalo al tarro y completa con agua hasta 18 litros.",
+        "Tapa herméticamente y conecta la manguera de la tapa a una botella llena de agua: así salen los gases sin que entre aire.",
+        "Déjalo fermentar al menos 20 días, o hasta que deje de burbujear.",
+        "Cuélalo antes de echarlo a la bomba de espalda."
+      ],
+      "listo_en_dias": 20,
+      "como_saber_si_salio_bien": "La botella deja de burbujear. Un olor agrio a fermento es normal; un olor a podrido indica que entró aire (estimado).",
+      "errores_comunes": [
+        "Dejar entrar aire: la tapa debe quedar hermética.",
+        "Aplicarlo sin diluir.",
+        "Usarlo antes de que termine de fermentar.",
+        "Asperjarlo sobre hojas o frutos que se comen crudos (lechuga, cilantro, fresa), o echarlo al pie de ellos cerca de la cosecha: lleva estiércol fresco sin compostar, que puede traer microbios que enferman. Por prudencia, trátalo como el estiércol sin compostar: échalo al suelo al menos 120 días antes de cosechar si lo comestible toca el suelo, o 90 si no lo toca."
+      ],
+      "dosis_o_uso": "De 5 a 10 L de biol en 100 L de agua, o de 1 a 1,5 L por bomba de 20 L. Variante 2: en lugar de la ceniza, 450 g (1 lb) de hojas de leguminosa y 50 g de levadura; fermenta más rápido y está lista cuando deja de burbujear.",
+      "mision": {
+        "titulo": "Biol propio",
+        "como_se_cumple": "Registrar la tanda con sus ingredientes y la fecha de tapado, la fecha en que dejó de burbujear, y una aplicación con litros, dilución y lote.",
+        "xp": 90
+      },
+      "fuentes": [
+        {"titulo": "CNAOH Honduras y Zamorano. Manual de abonos orgánicos y manejo de plagas y enfermedades en agricultura orgánica", "url": "https://cenida.una.edu.ni/relectronicos/REF08C733.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución 199 de 2016 del MADR, Anexo I", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-purin-ortiga",
+      "titulo": "Purín de ortiga",
+      "categoria": "abono",
+      "nivel": 1,
+      "resumen": "Ortiga fresca fermentada en agua: a los 2 días sirve como abono foliar rápido y entre 2 y 3 semanas se vuelve purín.",
+      "por_que": "La ortiga crece sola en tierra fría y no cuesta nada. Con un balde y agua haces un abono líquido para semilleros y cultivos. Si buscas el sello ecológico, la certificadora acepta las preparaciones de hierbas y los extractos vegetales solo con necesidad reconocida por ella (Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016). El purín de ortiga no aparece con ese nombre: si certificas, pregúntale a la certificadora antes de usarlo.",
+      "materiales": [
+        {"item": "Ortiga fresca", "cantidad": 3, "unidad": "kg", "costo_cop": null},
+        {"item": "Agua", "cantidad": 20, "unidad": "l", "costo_cop": null},
+        {"item": "Balde o caneca con tapa", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Guantes", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Corta 3 kg de ortiga fresca con guantes.",
+        "Pícala y échala en 20 litros de agua.",
+        "Para un abono foliar rápido, cuélalo a los 2 días.",
+        "Para purín, déjalo de 2 a 3 semanas y revuélvelo dos veces al día.",
+        "Está listo cuando casi deja de hacer burbujas.",
+        "Cuélalo y úsalo dentro de los 3 meses."
+      ],
+      "listo_en_dias": 14,
+      "como_saber_si_salio_bien": "Al revolverlo casi no salen burbujas.",
+      "errores_comunes": [
+        "Aplicarlo sin diluir.",
+        "Guardarlo más de 3 meses.",
+        "Olvidar revolverlo."
+      ],
+      "dosis_o_uso": "Diluido 1 en 10 para semilleros; 2 L en 8 L de agua para cultivos en crecimiento (PNUD 2015).",
+      "mision": {
+        "titulo": "La maleza que abona",
+        "como_se_cumple": "Registrar una tanda con los kg de ortiga, los litros de agua y la fecha, y una aplicación con la dilución y el lote. Tomar con el celular una foto de la aplicación.",
+        "xp": 40
+      },
+      "fuentes": [
+        {"titulo": "PNUD Chile (2015). Recetas caseras de abonos orgánicos y biopesticidas", "url": "https://files.acquia.undp.org/public/migration/cl/undp_cl_medioambiente_Recetas-abonos-biopesticidas.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución MADR 199 de 2016", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-caldo-bordeles",
+      "titulo": "Caldo bordelés al 1 %",
+      "categoria": "plagas",
+      "nivel": 3,
+      "resumen": "Fungicida de sulfato de cobre y cal. Si buscas el sello ecológico, la certificadora solo lo acepta si reconoce la necesidad, la prescripción y la dosis. Funciona, pero el cobre se queda en el suelo: úsalo poco y anota cada aplicación.",
+      "por_que": "Si buscas el sello ecológico, es de los pocos fungicidas que la certificadora acepta, con dos condiciones: que ella reconozca la necesidad, la prescripción y la dosis, y que lo uses de forma que minimice la acumulación de cobre en el suelo (Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016). Aunque no certifiques, cuida esa acumulación: el cobre no se va y afecta la vida del suelo que estás recuperando. Por eso anota el sulfato de cobre de cada aplicación en la unidad que sale junto al nombre del insumo (si dice «kg», 300 g son 0,3 kg) y suma tú lo de cada lote en el año: la app no hace esa suma.",
+      "materiales": [
+        {"item": "Sulfato de cobre", "cantidad": 1, "unidad": "kg", "costo_cop": null},
+        {"item": "Cal viva o hidratada", "cantidad": 1, "unidad": "kg", "costo_cop": null},
+        {"item": "Agua", "cantidad": 100, "unidad": "l", "costo_cop": null},
+        {"item": "Recipientes plásticos de 10 L y de 100 L", "cantidad": 2, "unidad": "unidad", "costo_cop": null},
+        {"item": "Machete limpio para la prueba", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Guantes, gafas y tapabocas", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Ponte guantes, gafas y tapabocas.",
+        "Disuelve el sulfato de cobre en 10 litros de agua, en un recipiente plástico.",
+        "Disuelve la cal en 90 litros de agua.",
+        "Vierte el cobre sobre la cal, nunca al revés, revolviendo.",
+        "Prueba del machete: mete la hoja limpia en el caldo. Si sale con manchas de óxido, falta cal: agrega más y repite.",
+        "Aplícalo de inmediato o en máximo 3 días.",
+        "Anota la aplicación en el sistema del cultivo de ese lote, como «Abono o aplicación», con el sulfato de cobre como insumo y la cantidad de sulfato que llevó el caldo que echaste. Cada litro de caldo al 1 % lleva 10 g de sulfato de cobre; si lo diluyes, cuenta solo los litros de caldo, no los de agua. Escribe esa cantidad en la unidad que sale junto al nombre del insumo: si dice «kg», 300 g son 0,3 kg. Así llevas tú la cuenta del cobre de cada lote."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "El machete sale limpio, sin manchas de óxido.",
+      "errores_comunes": [
+        "Echar la cal sobre el cobre en vez del cobre sobre la cal.",
+        "Prepararlo en recipientes de hierro.",
+        "Aplicarlo en plántulas pequeñas o en floración.",
+        "Repetir aplicaciones sin llevar la cuenta del cobre."
+      ],
+      "dosis_o_uso": "Proporción caldo:agua según el cultivo (Restrepo 2007, citado por CNAOH): 3:1 en cebolla, ajo y remolacha; 1:1 en frijol, repollo, pepino, coles y zapallo; 2:1 en tomate y papa. No aplicar en plántulas pequeñas ni en floración.",
+      "mision": {
+        "titulo": "Cobre con cuenta",
+        "como_se_cumple": "Registrar cada aplicación como «Abono o aplicación», en el sistema del cultivo de ese lote, con el sulfato de cobre que llevó el caldo y la fecha. Escribir la cantidad en la unidad que sale junto al nombre del insumo: si dice «kg», 300 g son 0,3 kg. Anotar como Nota los litros de caldo y la dilución. Llevar a mano la suma de gramos de cada lote en el año: la app no la hace.",
+        "xp": 80
+      },
+      "fuentes": [
+        {"titulo": "CNAOH Honduras y Zamorano. Manual de abonos orgánicos y manejo de plagas y enfermedades en agricultura orgánica", "url": "https://cenida.una.edu.ni/relectronicos/REF08C733.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución 199 de 2016 del MADR, Anexo I", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-caldo-sulfocalcico",
+      "titulo": "Caldo sulfocálcico",
+      "categoria": "plagas",
+      "nivel": 3,
+      "resumen": "Azufre y cal hervidos en agua hasta color ladrillo. Sirve contra ácaros y trips, pero quema las cucurbitáceas y el frijol en flor.",
+      "por_que": "El caldo sulfocálcico se hace con dos materiales. Pero se prepara hirviendo, suelta vapores de azufre y es fuerte para algunas plantas: por eso es de nivel 3. Si buscas el sello ecológico, la certificadora lo acepta solo con necesidad reconocida por ella (Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016).",
+      "materiales": [
+        {"item": "Azufre en polvo", "cantidad": 20, "unidad": "kg", "costo_cop": null},
+        {"item": "Cal", "cantidad": 10, "unidad": "kg", "costo_cop": null},
+        {"item": "Agua", "cantidad": 100, "unidad": "l", "costo_cop": null},
+        {"item": "Olla o caneca metálica para hervir", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Aceite vegetal (2 cucharadas por envase)", "cantidad": 30, "unidad": "ml", "costo_cop": null},
+        {"item": "Guantes, gafas y tapabocas", "cantidad": 1, "unidad": "unidad", "costo_cop": null}
+      ],
+      "pasos": [
+        "Prepáralo al aire libre, lejos de la casa y de los animales, con guantes, gafas y tapabocas.",
+        "Pon a hervir los 100 litros de agua en la olla metálica.",
+        "Echa juntos el azufre y la cal al agua hirviendo y revuelve sin parar.",
+        "Sigue hirviendo y revolviendo hasta que el caldo tome color vino tinto o ladrillo.",
+        "Retíralo del fuego y deja que se enfríe.",
+        "Cuélalo y guárdalo en envases oscuros, con 2 cucharadas de aceite encima y bien tapados."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "El caldo toma color vino tinto o ladrillo.",
+      "errores_comunes": [
+        "Aplicarlo en cucurbitáceas (ahuyama, calabacín, pepino) o en frijol florecido.",
+        "Prepararlo en un sitio cerrado, con los vapores del azufre.",
+        "Guardarlo en envases transparentes o sin la capa de aceite."
+      ],
+      "dosis_o_uso": "Por bomba de 20 L (Restrepo 2007, citado por CNAOH): de ½ a 1 L en cebolla, frijol y habichuela; 2 L contra ácaros en frutales; ¾ L contra trips. Nunca en cucurbitáceas ni en frijol en flor.",
+      "mision": {
+        "titulo": "Maestro del caldo",
+        "como_se_cumple": "Registrar la preparación con los kg de azufre y de cal, los litros y la fecha, y una aplicación con dosis por bomba, cultivo y lote. Antes de aplicar, revisar que el cultivo no sea una cucurbitácea ni frijol en flor: la app no avisa.",
+        "xp": 100
+      },
+      "fuentes": [
+        {"titulo": "CNAOH Honduras y Zamorano. Manual de abonos orgánicos y manejo de plagas y enfermedades en agricultura orgánica", "url": "https://cenida.una.edu.ni/relectronicos/REF08C733.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Resolución 199 de 2016 del MADR, Anexo I", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    },
+    {
+      "id": "suelo-analisis-laboratorio",
+      "titulo": "Análisis de suelo en laboratorio",
+      "categoria": "suelo",
+      "nivel": 1,
+      "resumen": "Toma una muestra de 20 a 30 puntos, mándala a AGROSAVIA ($179.700) y en 15 a 20 días sabrás el pH, el aluminio, la materia orgánica y los nutrientes del lote.",
+      "por_que": "Sin análisis, cualquier dosis de cal o de roca fosfórica es adivinar. En la zona los suelos suelen ser ácidos, con aluminio y con el fósforo amarrado; el análisis dice cuánto. Si el suelo es de ceniza volcánica, pide también la retención fosfórica (IGAC, $80.000). Es la línea base para saber si el suelo mejora.",
+      "materiales": [
+        {"item": "Pala o palín limpio", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Balde plástico limpio", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Cuchillo limpio", "cantidad": 1, "unidad": "unidad", "costo_cop": null},
+        {"item": "Muestra compuesta de suelo", "cantidad": 1, "unidad": "kg", "costo_cop": null},
+        {"item": "Análisis de fertilidad de AGROSAVIA (pago en Efecty, convenio 110675)", "cantidad": 1, "unidad": "unidad", "costo_cop": 179700}
+      ],
+      "pasos": [
+        "Divide la finca en zonas parejas: mismo relieve, uso, color, textura e historia de cal o abono. Cada zona es una muestra.",
+        "Paga en Efecty (convenio 110675) y recibe la bolsa de seguridad.",
+        "Recorre la zona en zigzag y toma de 20 a 30 submuestras.",
+        "En cada punto limpia el pasto y abre un hoyo de 20 a 30 cm para cultivos de ciclo corto, o de 40 a 60 cm para frutales.",
+        "Corta una tajada de la pared del hoyo, recórtale los bordes y échala al balde.",
+        "Mezcla todo con las manos limpias y separa cerca de 1 kg en la bolsa (AGROSAVIA pide de 750 g a 1 kg).",
+        "Llena el formato de la bolsa y escribe bien su número.",
+        "Envíala por Servientrega al C. I. Tibaitatá, km 14 vía Bogotá–Mosquera, con la tirilla de pago.",
+        "Cuando lleguen los resultados por correo, guárdalos y anota como Medición, en el sistema del cultivo de ese lote, el pH, el aluminio y la materia orgánica."
+      ],
+      "listo_en_dias": 20,
+      "como_saber_si_salio_bien": "El informe trae pH, acidez intercambiable, materia orgánica, bases, fósforo, elementos menores, CICE y una recomendación. Si la recomendación es química, pide que te la traduzcan a cal dolomita natural y roca fosfórica.",
+      "errores_comunes": [
+        "Tomar la muestra en un solo punto.",
+        "Mezclar zonas distintas en una sola muestra.",
+        "Muestrear justo después de echar cal o abono.",
+        "Usar baldes o bolsas sucias de fertilizante."
+      ],
+      "dosis_o_uso": "Una muestra por zona pareja, cada 1 a 2 años (estimado). Otras opciones: IGAC Q-01 Caracterización básica, $125.000, y Q-12 Retención fosfórica, $80.000 (catálogo 2025, enero de 2026); Universidad Jorge Tadeo Lozano SQ-13 Fertilidad para agricultura orgánica, $298.000 (lista 2026).",
+      "mision": {
+        "titulo": "Conoce tu suelo",
+        "como_se_cumple": "Anotar como Nota, en el sistema del cultivo de ese lote y con la fecha del muestreo, el número de submuestras y el laboratorio. Cuando llegue el informe, guardarlo y anotar como Medición el pH, el aluminio y la materia orgánica.",
+        "xp": 150
+      },
+      "fuentes": [
+        {"titulo": "AGROSAVIA. Preguntas frecuentes: análisis de suelos", "url": "https://www.agrosavia.co/atenci%C3%B3n-al-usuario/preguntas-frecuentes", "fecha_consulta": "2026-11-18"},
+        {"titulo": "AGROSAVIA. ¡Antes de sembrar, el suelo debe analizar!", "url": "https://repository.agrosavia.co/server/api/core/bitstreams/0f583f9f-0a1b-4bb5-bd2a-4f1980974e34/content", "fecha_consulta": "2026-11-18"},
+        {"titulo": "IGAC. Catálogo de productos y servicios 2025 (ajuste de enero de 2026)", "url": "https://www.igac.gov.co/sites/default/files/2026-01/catalogo_productos_servicios_2025_03_ajuste_a.pdf", "fecha_consulta": "2026-11-18"},
+        {"titulo": "Universidad Jorge Tadeo Lozano. Lista de precios del Laboratorio de Suelos y Aguas 2026", "url": "https://www.utadeo.edu.co/sites/tadeo/files/node/wysiwyg/lista_de_precios_laboratorio_de_suelos_y_aguas_2026.pdf", "fecha_consulta": "2026-11-18"}
+      ]
+    }
+  ]
+}

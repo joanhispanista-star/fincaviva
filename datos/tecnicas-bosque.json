@@ -1,0 +1,339 @@
+{
+  "tecnicas": [
+    {
+      "id": "bosque-vivero-nativas",
+      "titulo": "Vivero casero de árboles nativos",
+      "categoria": "bosque",
+      "nivel": 2,
+      "resumen": "Críe sus propias plántulas nativas con semilla de árboles de la vereda, para sembrar al empezar las lluvias sin depender de comprarlas.",
+      "por_que": "No encontramos precios publicados de plántulas nativas y el vivero municipal no siempre tiene la especie que usted necesita. Con semilla de árboles sanos de su zona, las plantas salen adaptadas a su altura. Y si la CAR entrega semilla nativa a los viveros municipales, como anunció en 2026, un vivero propio le permite criarla.",
+      "materiales": [
+        { "item": "Bolsas de vivero", "cantidad": 100, "unidad": "unidad", "costo_cop": null },
+        { "item": "Tierra del lote", "cantidad": 40, "unidad": "kg", "costo_cop": null },
+        { "item": "Compost maduro", "cantidad": 20, "unidad": "kg", "costo_cop": null },
+        { "item": "Arena", "cantidad": 20, "unidad": "kg", "costo_cop": null },
+        { "item": "Polisombra", "cantidad": 6, "unidad": "m2", "costo_cop": null },
+        { "item": "Regadera de lluvia fina", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja 3 a 5 árboles madre sanos de cada especie, en su finca o en la vereda, y pida permiso al dueño del predio.",
+        "El roble, el nogal, el pino romerón y el pino colombiano están en veda nacional (resoluciones del INDERENA 0316 de 1974, 1408 de 1975 y 1132 de 1975). De esas especies, consiga la plántula en un vivero o pregunte a la CAR antes de recoger semilla.",
+        "Recoja frutos maduros del árbol, sepárelos por especie y anote en la app la fecha y el árbol madre.",
+        "Quite la pulpa de los frutos carnosos y siembre pronto: no tenemos datos de cuánto aguanta guardada la semilla de cada especie.",
+        "Prepare la mezcla (sugerida, ESTIMADA: 2 partes de tierra del lote, 1 de compost maduro y 1 de arena) y llene las bolsas.",
+        "Siembre 1 o 2 semillas por bolsa, poco profundas, bajo polisombra, y riegue para mantener húmedo sin encharcar.",
+        "Cada semana anote como Medición cuántas germinaron de cada especie. Cuando las plántulas estén firmes, sáquelas al sol poco a poco antes de llevarlas al campo."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "Hay plántulas con hojas verdes y firmes. Calcule a mano el porcentaje de germinación de cada especie: germinadas ÷ sembradas × 100. Ese porcentaje es su dato, porque no encontramos cifras publicadas para la zona.",
+      "errores_comunes": [
+        "Recoger semilla de un solo árbol: mejor de varios árboles madre, para que las plantas no salgan todas iguales.",
+        "Recoger frutos podridos del suelo.",
+        "Dejar las bolsas a pleno sol desde el primer día.",
+        "Encharcar el semillero.",
+        "Llevar al campo plántulas que nunca recibieron sol directo."
+      ],
+      "dosis_o_uso": "Empiece el semillero varios meses antes de la temporada de lluvias en que quiere sembrar (abril-mayo u octubre-noviembre son los meses más lluviosos en la normal del IDEAM de la estación Acapulco). Una bolsa por plántula.",
+      "mision": {
+        "titulo": "Mi semillero nativo",
+        "como_se_cumple": "Anotar como Medición, en su sistema de bosque, cuántas semillas sembró de una especie y, a los 60 días, cuántas germinaron.",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "SDA Bogotá - Anexo 3. Listado de especies potenciales arbóreas para restauración en el Distrito Capital (2026)", "url": "https://www.ambientebogota.gov.co/documents/10184/9204829/03+Anexo.+Listado+de+especies+potenciales+arbo%C2%B4reas+a+implementar+en+procesos+de+restauracio%C2%B4n+de+a%C2%B4reas+del+Distrito+Capital.pdf/07941a5f-d502-42ee-ad71-ff290ae4d988", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Bogota.gov.co - Continúan las estrategias para reverdecer Cundinamarca en 2026 (1-mar-2026)", "url": "https://bogota.gov.co/cundinamarca/continuan-las-estrategias-para-reverdecer-cundinamarca-en-2026", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resultados Vivero Ciudadano Biodiverso 2024-II (Cerros de Bogotá)", "url": "https://cerrosdebogota.org/wp-content/uploads/2025/05/Resultados-Vivero-Ciudadano-Biodiverso-2024-II.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Anexo de la Circular MinAmbiente 8201-2-808 de 2019 (especies en veda)", "url": "https://www.minambiente.gov.co/wp-content/uploads/2021/10/Circular-MADS-8201-2-808-del-09-12-2019-Anexo.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-sembrar-arbol",
+      "titulo": "Sembrar un árbol nativo que sí sobreviva",
+      "categoria": "bosque",
+      "nivel": 1,
+      "resumen": "Cómo sembrar una plántula nativa en ladera para que pase el primer año: hueco, plateo de 1,5 m, tutor y revisión cada 3 meses.",
+      "por_que": "La mayoría del esfuerzo se pierde si la plántula muere el primer año por pasto, verano o animales. La SDA de Bogotá exige a sus siembras limpiar la maleza en un radio de al menos 1,5 m y hacer mantenimiento al menos cada 3 meses el primer año y cada 6 el segundo. Contar cuántas siguen vivas dice si la finca está ganando bosque.",
+      "materiales": [
+        { "item": "Plántula nativa", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Compost o bocashi maduro", "cantidad": 1, "unidad": "kg", "costo_cop": null },
+        { "item": "Estaca o tutor", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja una especie nativa que se dé a su altura. El sitio depende de su función: aliso, tíbar o arboloco cerca del agua; arrayán, corono o cajeto para las aves.",
+        "Siembre al empezar las lluvias; evite diciembre a febrero y julio-agosto, los meses más secos de la normal del IDEAM de la zona.",
+        "Haga un hueco más ancho y hondo que la bolsa (sugerido 30 x 30 x 30 cm, ESTIMADO); en ladera, deje del lado de abajo un borde de tierra en media luna que ataje el agua.",
+        "Quite la bolsa sin romper el pan de tierra, deje el cuello de la planta a ras del suelo, mezcle el abono con la tierra del hueco y apriete con las manos.",
+        "Clave el tutor si hay viento y limpie el pasto en un radio de 1,5 m (plateo).",
+        "Anote la siembra en la app: especie y número de árboles. Marque cada árbol con una estaca numerada. La foto, tómela con el celular: los registros de la app todavía no llevan fotos ni puntos GPS.",
+        "Revise cada 3 meses el primer año y cada 6 el segundo: plateo, resiembra de las muertas y conteo de vivas y muertas. Anote el conteo como Medición."
+      ],
+      "listo_en_dias": 90,
+      "como_saber_si_salio_bien": "A los 90 días la planta tiene hojas nuevas y sigue firme. En cada revisión calcule a mano la supervivencia: vivas ÷ sembradas × 100.",
+      "errores_comunes": [
+        "Sembrar en pleno verano.",
+        "Dejar el pasto pegado a la plántula: le roba agua y luz.",
+        "Enterrar el cuello de la planta o dejar raíces al aire.",
+        "Dejar entrar ganado o gallinas a una siembra recién hecha.",
+        "Poner aliso en ladera seca: ICRAF dice que suele necesitar humedad extra en el suelo."
+      ],
+      "dosis_o_uso": "Distancias ESTIMADAS: 3 m entre árboles y 1,5 m entre arbustos; en núcleos, más junto. Plateo de 1,5 m de radio en cada mantenimiento.",
+      "mision": {
+        "titulo": "Mis primeros 10 árboles",
+        "como_se_cumple": "Sembrar 10 árboles marcados con estaca numerada, anotarlos en la app como Siembra y, en la revisión de los 90 días, anotar como Medición que al menos 7 siguen vivos.",
+        "xp": 100
+      },
+      "fuentes": [
+        { "titulo": "SDA Bogotá - Lineamientos para la implementación de Áreas de Vida en el Distrito Capital (abril de 2026)", "url": "https://www.ambientebogota.gov.co/documents/10184/9204786/LINEAMIENTOS+AREAS+DE+VIDA+VERSION+260416.pdf/75f3fe08-cb60-495d-960d-225b2a06f670", "fecha_consulta": "2026-11-18" },
+        { "titulo": "ICRAF Agroforestree Database 4.0 - Alnus acuminata", "url": "https://apps.worldagroforestry.org/treedb/AFTPDFS/Alnus_acuminata.PDF", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-nucleos",
+      "titulo": "Islas de bosque (núcleos)",
+      "categoria": "bosque",
+      "nivel": 2,
+      "resumen": "En vez de llenar el potrero, siembre islas de 9 plantas con una percha en el centro y deje que aves y viento llenen el resto con semillas.",
+      "por_que": "Sembrar un potrero entero es caro. Los núcleos concentran las plantas en pocos puntos y atraen aves que traen semillas de otros árboles. La SDA nombra la nucleación entre los enfoques de restauración para el campo, según la Guía Técnica para la Restauración Ecológica de los Ecosistemas de Colombia (2012). El diseño de abajo es una propuesta para probar y medir.",
+      "materiales": [
+        { "item": "Plántulas nativas (pioneras y de crecimiento medio o lento)", "cantidad": 9, "unidad": "unidad", "costo_cop": null },
+        { "item": "Alambre o malla para cercar el núcleo", "cantidad": 20, "unidad": "m", "costo_cop": null },
+        { "item": "Postes", "cantidad": 5, "unidad": "unidad", "costo_cop": null },
+        { "item": "Vara seca con ramas para percha", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja potreros o claros cerca de un parche de monte o de una quebrada y marque los núcleos con estacas, separados 15 a 20 m (ESTIMADO).",
+        "Cerque cada núcleo (unos 5 x 5 m) para que no entren vacas ni gallinas.",
+        "Siembre 9 plantas en un cuadro de 3 x 3 a 1,5 m entre sí (ESTIMADO): pioneras como aliso, arboloco, cedrillo o camargo en el borde; arrayán, corono, gaque o encenillo adentro.",
+        "Clave la percha en el centro.",
+        "En cada mantenimiento limpie el pasto y anote en la app las plantas nuevas que nacen y que nadie sembró."
+      ],
+      "listo_en_dias": 90,
+      "como_saber_si_salio_bien": "Las 9 plantas siguen vivas en las revisiones. Con los meses aparecen plántulas que nadie sembró dentro o cerca del núcleo: cuéntelas en cada revisión, son la regeneración.",
+      "errores_comunes": [
+        "Hacer los núcleos lejos de todo monte: llegan menos aves con semillas.",
+        "No cercarlos.",
+        "Poner solo pioneras o solo especies lentas.",
+        "Sembrar en verano."
+      ],
+      "dosis_o_uso": "Diseño sugerido (ESTIMADO): 9 plantas por núcleo a 1,5 m, cerca de unos 5 x 5 m (20 m de alambre), núcleos a 15-20 m; revisión cada 3 meses el primer año.",
+      "mision": {
+        "titulo": "Mi primera isla de bosque",
+        "como_se_cumple": "Sembrar y cercar un núcleo, anotar sus 9 plantas en la app como Siembra y, en la revisión de los 90 días, anotar como Medición cuántas siguen vivas.",
+        "xp": 150
+      },
+      "fuentes": [
+        { "titulo": "SDA Bogotá - Lineamientos para la implementación de Áreas de Vida en el Distrito Capital (abril de 2026)", "url": "https://www.ambientebogota.gov.co/documents/10184/9204786/LINEAMIENTOS+AREAS+DE+VIDA+VERSION+260416.pdf/75f3fe08-cb60-495d-960d-225b2a06f670", "fecha_consulta": "2026-11-18" },
+        { "titulo": "SDA Bogotá - Anexo 3. Listado de especies potenciales arbóreas para restauración en el Distrito Capital (2026)", "url": "https://www.ambientebogota.gov.co/documents/10184/9204829/03+Anexo.+Listado+de+especies+potenciales+arbo%C2%B4reas+a+implementar+en+procesos+de+restauracio%C2%B4n+de+a%C2%B4reas+del+Distrito+Capital.pdf/07941a5f-d502-42ee-ad71-ff290ae4d988", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-cerca-viva",
+      "titulo": "Cerca viva de nativas",
+      "categoria": "bosque",
+      "nivel": 1,
+      "resumen": "Cambie postes muertos por una hilera de arbustos y árboles nativos que divida corrales, dé refugio a las aves y una los parches de monte.",
+      "por_que": "Una cerca viva hace dos trabajos: divide los corrales y sirve de camino para la fauna. La SDA explica, para Bogotá, que las coberturas de arbustos funcionan como corredores y eslabones de la red ecológica. No leímos una ficha que diga qué nativa de la zona prende mejor como poste vivo: anote cuáles le funcionan a usted.",
+      "materiales": [
+        { "item": "Plántulas de arbustos y árboles nativos", "cantidad": 20, "unidad": "unidad", "costo_cop": null },
+        { "item": "Alambre de apoyo mientras crecen", "cantidad": 20, "unidad": "m", "costo_cop": null },
+        { "item": "Compost o bocashi maduro", "cantidad": 10, "unidad": "kg", "costo_cop": null }
+      ],
+      "pasos": [
+        "Trace la línea de la cerca con estacas y cuerda: un lindero o la división entre dos corrales.",
+        "Al empezar las lluvias, siembre un arbusto cada 1 m y un árbol cada 3 m (ESTIMADO), alternando especies: laurel de cera, cucharo, arrayán, hayuelo, chilco.",
+        "Mientras crecen, sostenga el alambre en postes de apoyo y mantenga los animales lejos de las plantas.",
+        "En cada mantenimiento haga plateo de 1,5 m y resiembre las que mueran.",
+        "Desde el segundo año, haga podas de formación para que la cerca se cierre por abajo."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "La hilera no tiene huecos grandes, las aves se posan en ella y su conteo de vivas por especie le dice cuál prende mejor en su finca.",
+      "errores_comunes": [
+        "Una sola especie en toda la cerca.",
+        "Dejar que el ganado la ramonee el primer año.",
+        "Sembrar en verano.",
+        "No reponer las que mueren."
+      ],
+      "dosis_o_uso": "Distancias sugeridas (ESTIMADAS): 1 m entre arbustos y un árbol cada 3 m; plateo de 1,5 m en cada mantenimiento.",
+      "mision": {
+        "titulo": "20 metros vivos",
+        "como_se_cumple": "Sembrar 20 m de cerca viva, anotar sus plantas en la app como Siembra y, a los 6 meses, anotar como Medición cuántas siguen vivas de cada especie.",
+        "xp": 100
+      },
+      "fuentes": [
+        { "titulo": "SDA Bogotá - Lineamientos para la implementación de Áreas de Vida en el Distrito Capital (abril de 2026)", "url": "https://www.ambientebogota.gov.co/documents/10184/9204786/LINEAMIENTOS+AREAS+DE+VIDA+VERSION+260416.pdf/75f3fe08-cb60-495d-960d-225b2a06f670", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resultados Vivero Ciudadano Biodiverso 2024-II (Cerros de Bogotá)", "url": "https://cerrosdebogota.org/wp-content/uploads/2025/05/Resultados-Vivero-Ciudadano-Biodiverso-2024-II.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-cosecha-lluvia",
+      "titulo": "Cosechar la lluvia del techo",
+      "categoria": "agua",
+      "nivel": 2,
+      "resumen": "Con canaletas, un desviador de primeras aguas y un tanque de 1.000 L, el techo del galpón o de la casa le da el agua de las gallinas.",
+      "por_que": "La ley permite usar sin concesión la lluvia que cae en su predio mientras corre por él (Decreto 1076, art. 2.2.3.2.16.1). Con la normal del IDEAM de la estación Acapulco (849 mm al año), 24 m² de techo darían unos 16.000 L al año si se pierde 1 de cada 5 litros. La lluvia de satélite de la zona da el doble o el triple: por eso hay que medir.",
+      "materiales": [
+        { "item": "Tanque de 1.000 L con tapa", "cantidad": 1, "unidad": "unidad", "costo_cop": 541900 },
+        { "item": "Canaleta", "cantidad": 6, "unidad": "m", "costo_cop": null },
+        { "item": "Bajante", "cantidad": 3, "unidad": "m", "costo_cop": null },
+        { "item": "Desviador de primeras aguas", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Malla para hojas en la canaleta", "cantidad": 6, "unidad": "m", "costo_cop": null },
+        { "item": "Pluviómetro", "cantidad": 1, "unidad": "unidad", "costo_cop": 59900 }
+      ],
+      "pasos": [
+        "Mida el techo en planta (largo x ancho visto desde arriba, no a lo largo de la inclinación) y anótelo como Medición en su sistema de agua.",
+        "Instale canaletas con caída hacia el bajante y malla para las hojas.",
+        "Ponga un desviador de primeras aguas antes del tanque: la Resolución 0844 de 2018 (art. 34) describe un interceptor que separa el primer lavado del techo.",
+        "Asiente el tanque en una base firme y nivelada; si va a regar por gravedad, en el punto más alto posible. Recuerde que 1.000 L pesan una tonelada.",
+        "Tape el tanque para proteger el agua de animales y vectores, como lo describe la misma norma.",
+        "Instale el pluviómetro en un sitio abierto y anote la lluvia cada mañana.",
+        "Anote como Medición el nivel del tanque antes y después de cada aguacero. Calcule su coeficiente real: litros que entraron ÷ (mm × m²). La app todavía no hace esa cuenta."
+      ],
+      "listo_en_dias": 30,
+      "como_saber_si_salio_bien": "Después de un aguacero el tanque sube y el agua sale clara. Con 30 días de datos ya tiene su coeficiente real. Si da mucho menos de 0,8, revise fugas, canaletas tapadas o un desviador que bota demasiado.",
+      "errores_comunes": [
+        "Medir el techo por la inclinación y no en planta.",
+        "No poner desviador de primeras aguas.",
+        "Dejar el tanque destapado.",
+        "Dimensionar con lluvia de satélite: en esta zona da el doble o el triple de la que mide la estación del IDEAM.",
+        "Tomarla sin filtro ni desinfección: la Resolución 0844 incluye el tratamiento entre los componentes de estos sistemas."
+      ],
+      "dosis_o_uso": "litros = mm de lluvia × m² de techo × coeficiente (0,8 ESTIMADO hasta que usted mida el suyo). Para 50 gallinas a 250 ml cada una (12,5 L al día, una cifra con margen para dimensionar el tanque), 1.000 L llenos alcanzan para unos 80 días sin lluvia.",
+      "mision": {
+        "titulo": "El agua que cae del cielo",
+        "como_se_cumple": "Anotar 30 días seguidos la lluvia del pluviómetro y el nivel del tanque, y calcular a mano el coeficiente real de su techo.",
+        "xp": 150
+      },
+      "fuentes": [
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.14.3 a 2.2.3.2.16.18, aguas lluvias (Normograma de la Cancillería)", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr029.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución 0844 de 2018 de MinVivienda, art. 34", "url": "https://normas.cra.gov.co/gestor/docs/resolucion_minviviendact_0844_2018.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Homecenter - tanques de agua de 1.000 litros", "url": "https://www.homecenter.com.co/homecenter-co/search?Ntt=tanque%20agua%201000%20litros", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Homecenter - pluviómetros", "url": "https://www.homecenter.com.co/homecenter-co/search?Ntt=pluviometro", "fecha_consulta": "2026-11-18" },
+        { "titulo": "NASA POWER - climatología de precipitación 2001-2025, punto 4,66 N; 74,32 O", "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=-74.32&latitude=4.66&format=JSON", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Open-Meteo - precipitación diaria ERA5 2001-2024", "url": "https://archive-api.open-meteo.com/v1/archive?latitude=4.70&longitude=-74.28&start_date=2001-01-01&end_date=2024-12-31&daily=precipitation_sum&models=era5&timezone=America%2FBogota", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-proteger-nacimiento",
+      "titulo": "Proteger un nacimiento",
+      "categoria": "agua",
+      "nivel": 3,
+      "resumen": "Ubique cada nacimiento, mida su caudal con balde y cronómetro, cérquelo y deje volver el bosque en 100 m a la redonda, como pide el Decreto 1076 de 2015.",
+      "por_que": "La ley obliga al dueño a mantener en bosque los nacimientos en por lo menos 100 m a la redonda (Decreto 1076, art. 2.2.1.1.18.2). Es también el agua que usted mismo va a usar. Medir el caudal cada mes, antes y después de proteger, le da su propia serie para comparar los veranos.",
+      "materiales": [
+        { "item": "Balde con marca de 10 litros", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Alambre o cerca para rodear el círculo de 100 m", "cantidad": 628, "unidad": "m", "costo_cop": null },
+        { "item": "Plántulas de especies de ronda para los claros (cantidad ESTIMADA)", "cantidad": 50, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Camine la finca en verano y en invierno y marque con una estaca cada punto donde brota agua. Mida en el terreno, con cinta o con pasos, 100 m a la redonda desde el borde del nacimiento y por lo menos 30 m a cada lado de la quebrada que sale de él: es área forestal protectora (Decreto 1076 de 2015, art. 2.2.1.1.18.2, num. 1, lits. a y b). El mapa de la app todavía es de ejemplo y no dibuja esa franja.",
+        "Mida el caudal: cuente los segundos que tarda en llenarse el balde de 10 L; litros por segundo = 10 ÷ segundos. Repita 3 veces y promedie.",
+        "Saque ganado y gallinas del círculo con una cerca; si el círculo pasa al predio vecino, hable con el vecino.",
+        "No queme, no guadañe, no fumigue ni eche gallinaza dentro del círculo; la ley prohíbe verter basuras, desechos o sustancias tóxicas al agua (Decreto 1076, art. 2.2.1.1.18.1).",
+        "Deje regenerar y siembre en los claros especies de ronda: tíbar, corono, arrayán, raque y arboloco, y aliso donde haya humedad.",
+        "Si necesita agua de ahí, tómela sin hacer obras en el cauce. Si la familia vive en la finca y la usa para la casa y la producción de subsistencia, no necesita concesión, pero sí inscribirse en el RURH de la CAR (Ley 1955 de 2019, art. 279). Para algo más que la subsistencia, la derivación exige concesión de la CAR (Decreto 1076, art. 2.2.3.2.7.1).",
+        "Mida el caudal cada mes, siempre en el mismo punto, y anótelo como Medición en litros por segundo."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "El círculo se va cerrando de monte: lo ve en la foto que usted toma cada año con el celular, desde el mismo punto. Sus mediciones mensuales de caudal quedan anotadas en la app: con ellas compara los veranos de antes y después de proteger.",
+      "errores_comunes": [
+        "Hacer una obra o un pozo dentro del nacimiento: una obra en el cauce exige autorización de ocupación de cauce de la CAR (Decreto 1076, art. 2.2.3.2.12.1), y un pozo, permiso de exploración (art. 2.2.3.2.16.4).",
+        "Medir el caudal un solo día.",
+        "Dejar que los animales beban directo en el nacimiento.",
+        "Sembrar especies que no son de la zona."
+      ],
+      "dosis_o_uso": "Franja legal: 100 m a la redonda medidos desde la periferia del nacimiento, unas 3,1 ha. Cerca completa del círculo: 2 × 3,1416 × 100 m ≈ 628 m.",
+      "mision": {
+        "titulo": "Guardián del nacimiento",
+        "como_se_cumple": "Marcar el nacimiento con una estaca, anotar en la app su caudal medido con balde y cronómetro y anotar como Trabajo el primer tramo de cerca.",
+        "xp": 200
+      },
+      "fuentes": [
+        { "titulo": "Decreto 1449 de 1977 con notas de compilación en el Decreto 1076 de 2015 (CRA)", "url": "https://normas.cra.gov.co/Gestor/Docs/decreto_1449_1977.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "MinAmbiente - Concepto jurídico sobre rondas hídricas y áreas forestales protectoras (radicado 2022E1032420)", "url": "https://www.minambiente.gov.co/wp-content/uploads/2024/09/Concep_221031_004823.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.10.19 a 2.2.3.2.14.2, ocupación de cauces (Normograma de la Cancillería)", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr028.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.4.4 a 2.2.3.2.8.8, concesiones (Normograma de la Cancillería)", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr026.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.16.1 a 2.2.3.2.16.4", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr029.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Concepto MinAmbiente 2024E1047497 (RURH y vivienda rural dispersa)", "url": "https://www.minambiente.gov.co/wp-content/uploads/2024/09/concep_241202_048120-REGISTRO-USUARIOS-RECURSO-HIDRICO-VIVIENDAS-RURALES-DISPERSAS-Y-COMUNIDADES-ORGANIZADAS.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-conteo-aves",
+      "titulo": "Contar aves en 15 minutos",
+      "categoria": "bosque",
+      "nivel": 1,
+      "resumen": "Párese 15 minutos en el mismo punto, anote cada ave que vea u oiga y repita cada mes: así sabe si la finca está ganando vida.",
+      "por_que": "En un cuadro de unos 22 x 20 km alrededor de la vía, GBIF reúne 361.388 registros de 721 especies de aves, la mayoría de eBird. Contar en su finca siempre igual convierte la biodiversidad en un número que sube o baja, y sus listas pueden servir a la ciencia si las comparte en eBird o iNaturalist.",
+      "materiales": [
+        { "item": "Binoculares (opcional)", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja 1 a 3 puntos fijos (borde del monte, un núcleo, la cerca viva) y márquelos con una estaca.",
+        "Vaya temprano en la mañana y quédese 15 minutos en silencio en cada punto.",
+        "Anote cada especie que vea u oiga y cuántos individuos.",
+        "Si no sabe el nombre, tómele una foto o grabe el canto con el celular para identificarla después. Los registros de la app todavía no llevan fotos ni sonidos.",
+        "Repita en los mismos puntos y a la misma hora cada mes.",
+        "Si quiere, comparta la lista en eBird o iNaturalist."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "Tiene listas comparables mes a mes con cuántas especies contó en cada punto. Con el tiempo usted verá si los núcleos y las cercas vivas suman visitantes.",
+      "errores_comunes": [
+        "Cambiar de punto o de hora cada vez.",
+        "Contar dos veces la misma ave que va y vuelve.",
+        "Anotar solo las que ve y no las que oye.",
+        "Confiar en la memoria: anote en el momento."
+      ],
+      "dosis_o_uso": "15 minutos por punto, una vez al mes, temprano en la mañana.",
+      "mision": {
+        "titulo": "Ojo de pájaro",
+        "como_se_cumple": "Anotar como Nota, en su sistema de bosque, 3 conteos de 15 minutos que sumen al menos 5 especies distintas.",
+        "xp": 60
+      },
+      "fuentes": [
+        { "titulo": "GBIF - aves en el cuadro 4,58-4,76 N y 74,22-74,42 O, conteo por especie", "url": "https://api.gbif.org/v1/occurrence/search?taxonKey=212&geometry=POLYGON((-74.42%204.58,-74.22%204.58,-74.22%204.76,-74.42%204.76,-74.42%204.58))&limit=0&facet=speciesKey&speciesKey.facetLimit=1000", "fecha_consulta": "2026-11-18" },
+        { "titulo": "GBIF - EOD, eBird Observation Dataset", "url": "https://api.gbif.org/v1/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "bosque-gallinas-y-depredadores",
+      "titulo": "Gallinas a salvo sin matar fauna",
+      "categoria": "gallinas",
+      "nivel": 2,
+      "resumen": "Gallinero cerrado de noche, malla firme y escondites de arbustos: proteja las gallinas de chuchas, comadrejas y gavilanes sin cazar ni envenenar.",
+      "por_que": "Alrededor de la vía hay registros en GBIF de gavilán caminero (3.366), cernícalo, águila de páramo, chuchas, comadreja y zorro perro. La fauna silvestre pertenece a la Nación (Decreto-Ley 2811 de 1974, art. 248): no se caza ni se envenena por cuenta propia. Encerrar bien de noche y anotar cada ataque sí está en sus manos.",
+      "materiales": [
+        { "item": "Malla firme para paredes y puerta del galpón (cantidad ESTIMADA para un galpón pequeño)", "cantidad": 20, "unidad": "m2", "costo_cop": null },
+        { "item": "Malla o polisombra para cubrir el corral (cantidad ESTIMADA)", "cantidad": 30, "unidad": "m2", "costo_cop": null },
+        { "item": "Pasador o candado que un animal no abra", "cantidad": 2, "unidad": "unidad", "costo_cop": null },
+        { "item": "Linterna", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Antes de traer las gallinas, revise el galpón de noche con linterna y tape todo hueco, por pequeño que sea.",
+        "Use malla firme en paredes y puerta; entiérrela 30 a 40 cm o haga un faldón hacia afuera para que no excaven por debajo (medida ESTIMADA).",
+        "Encierre las gallinas al atardecer, todas las noches, con un pasador que un animal no abra.",
+        "En el corral de día, deje arbustos o una cerca viva donde se escondan del gavilán; si los ataques siguen, cubra el corral con malla o polisombra.",
+        "No deje concentrado, sobras ni huevos rotos afuera.",
+        "Anote cada ataque en el sistema del gallinero. Las gallinas perdidas van como «Salida o muerte», con motivo «Depredador». La hora y los rastros (huellas, plumas, huevos comidos) van como Nota. La foto, guárdela en el celular: los registros de la app todavía no llevan fotos.",
+        "Si un animal silvestre vuelve una y otra vez, consulte a la CAR; no lo cace ni lo envenene."
+      ],
+      "listo_en_dias": 30,
+      "como_saber_si_salio_bien": "Pasan 30 noches seguidas sin pérdidas. Si hay un ataque, lo que usted anotó le ayuda a ver a qué hora y por dónde entró.",
+      "errores_comunes": [
+        "Dejar el gallinero abierto aunque sea una noche.",
+        "Malla delgada que se rompe o se dobla.",
+        "Corral sin escondites, a cielo abierto.",
+        "Dejar comida o huevos afuera.",
+        "Usar veneno: mata también perros, aves y otra fauna."
+      ],
+      "dosis_o_uso": "Cierre todos los días al atardecer; revise malla y pasadores una vez al mes.",
+      "mision": {
+        "titulo": "30 noches seguras",
+        "como_se_cumple": "Cerrar el gallinero al atardecer 30 noches seguidas y anotar como Trabajo la revisión de la malla y de la puerta.",
+        "xp": 120
+      },
+      "fuentes": [
+        { "titulo": "GBIF - registros de posibles depredadores en el cuadro de la vía (ejemplo: gavilán caminero)", "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Rupornis%20magnirostris&geometry=POLYGON((-74.42%204.58,-74.22%204.58,-74.22%204.76,-74.42%204.76,-74.42%204.58))&limit=1", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto-Ley 2811 de 1974, arts. 229 a 266, fauna silvestre (Normograma de la Cancillería)", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_2811_1974_pr006.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "requisitos": [
+    {
+      "id": "rspp-ica",
+      "tema": "ica",
+      "requisito": "Registrar el predio en el ICA como predio pecuario (RSPP), con la especie aves, el área, la infraestructura y la capacidad",
+      "aplica_desde": "Desde que el predio produzca aves o huevos para vender. La norma no fija número mínimo de aves y el predio avícola incluye las aves de traspatio",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "En una oficina del ICA, una entidad con convenio o la herramienta tecnológica del ICA. Llevar cédula o RUT, ubicación y hectáreas del predio y datos de contacto. Actualizarlo cuando cambien los datos. La resolución no menciona tarifa: confirmar en la oficina",
+      "norma": "Resolución ICA 090464 de 2021",
+      "articulo": "Arts. 3.13, 3.14, 4, 5 y 9",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_90464_2021.htm"
+    },
+    {
+      "id": "vacuna-newcastle",
+      "tema": "ica",
+      "requisito": "Vacunar todas las aves contra Newcastle y llevar el registro de vacunación",
+      "aplica_desde": "Desde la primera ave, en todo el país, también aves de traspatio",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Plan de vacunación aprobado por médico veterinario o MVZ. Referencia técnica de la Res. 3651 de 2014, escrita para granjas GAB: Marek el día 1; en ponedoras al menos 3 vacunas vivas y 1 oleosa de Newcastle en el levante y revacunación con vacuna viva cada 10 semanas en producción. El ICA vigila y registra la vacunación y puede multar hasta con 100 salarios mínimos a quien incumpla la Ley 1255",
+      "norma": "Ley 1255 de 2008; Resolución ICA 3651 de 2014",
+      "articulo": "Ley 1255: arts. 10, 11 y 22; Res. 3651: art. 16 y anexo 1.7.1",
+      "fuente": "https://normograma.invima.gov.co/normograma/compilacion/docs/ley_1255_2008.htm"
+    },
+    {
+      "id": "emergencia-influenza-aviar-2026",
+      "tema": "ica",
+      "requisito": "Cumplir la emergencia sanitaria nacional por influenza aviar de alta patogenicidad H5N1: bioseguridad, control de aves silvestres y plagas, y aviso inmediato al ICA ante signos de enfermedad o caída de la producción",
+      "aplica_desde": "Resolución expedida el 2 de julio de 2026; rige desde su publicación en el Diario Oficial (art. 8; la fecha de publicación no se verificó), también para aves de traspatio. Dura máximo 12 meses, prorrogables una vez hasta por 6 meses",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "No mover aves enfermas; no mover ni vender aves muertas; no sacar gallinaza sin higienizarla o sin autorización; no visitar otras granjas si el ICA lo desaconseja; avisar al ICA de inmediato. Sanciones según la Ley 1955 de 2019, arts. 156 y 157",
+      "norma": "Resolución ICA 00012995 de 2026",
+      "articulo": "Arts. 2, 3.1, 4 y 7",
+      "fuente": "https://www.ica.gov.co/getattachment/35b84fdc-0a5a-4d2f-b0a6-9be473a68b4d/2026R00012995.aspx"
+    },
+    {
+      "id": "gab-desde-200-aves",
+      "tema": "ica",
+      "requisito": "Certificación de Granja Avícola Biosegura (GAB)",
+      "aplica_desde": "Desde 200 aves («igual o superior a doscientas»). Con 20 a 50 gallinas no es exigible",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Si la finca llega a 200 aves: solicitarla al ICA; el certificado dura 3 años. Las distancias mínimas de 50 m, 500 m y 3 km aplican a granjas GAB nuevas",
+      "norma": "Resolución ICA 3651 de 2014; Concepto Jurídico ICA 014 de 2022",
+      "articulo": "Res. 3651: arts. 3.16, 4.2 y 7",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_3651_2014.htm"
+    },
+    {
+      "id": "aves-de-granja-certificada",
+      "tema": "ica",
+      "requisito": "Comprar pollitas o ponedoras a una granja GAB certificada por el ICA, vacunadas y con su registro de vacunas",
+      "aplica_desde": "Al comprar las primeras aves. Recomendado para la finca; el ICA lo exige en programas sociales (aves de al menos 16 semanas, vacunación completa y muestreo de Newcastle, influenza aviar, bronquitis, laringotraqueítis y salmonela)",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Pedir al vendedor el número de certificado GAB, el plan de vacunación aplicado y el soporte de compra. Si busca certificación orgánica, las pollitas deben entrar con máximo 18 semanas (art. 13 del Reglamento de la Res. 187 de 2006, en el texto que le dio el art. 3 de la Res. 199 de 2016)",
+      "norma": "Concepto Jurídico ICA 014 de 2022 (interpretación, no vinculante)",
+      "articulo": null,
+      "fuente": "https://www.ica.gov.co/getattachment/5f47577d-e51b-4f4f-bdd4-cab8abf62254/2022CJ014.aspx"
+    },
+    {
+      "id": "gsmi-no-cundinamarca",
+      "tema": "ica",
+      "requisito": "Guía Sanitaria de Movilización Interna (GSMI) para mover gallinas vivas",
+      "aplica_desde": "Solo dentro de Arauca, Cesar, La Guajira y Norte de Santander; no en Cundinamarca",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Ninguno en Cundinamarca. Revisar si el ICA cambia la regla durante la emergencia por influenza aviar",
+      "norma": "Resolución ICA 8940 de 2024",
+      "articulo": "Art. 2, parágrafo",
+      "fuente": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_8940_2024.htm"
+    },
+    {
+      "id": "sin-registro-invima",
+      "tema": "invima",
+      "requisito": "Registro, permiso o notificación sanitaria del INVIMA",
+      "aplica_desde": "No se exige para huevo fresco en cáscara ni para frutas y hortalizas frescas sin transformar. Si se vende algo transformado (conservas, salsas, mermeladas), la excepción deja de servir",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Ninguno",
+      "norma": "Resolución 2674 de 2013 (Minsalud), modificada por la Resolución 3168 de 2015; Comunicado INVIMA 4000-3312-20",
+      "articulo": "Res. 2674: art. 37; Res. 3168: art. 1",
+      "fuente": "https://www.invima.gov.co/biblioteca/recomendaciones-ivc-huevo-en-cascara"
+    },
+    {
+      "id": "huevo-mayor-riesgo",
+      "tema": "invima",
+      "requisito": "Manejar el huevo como alimento de mayor riesgo: no vender huevos rotos o que gotean, con olor o apariencia rara, con heces en la cáscara o guardados para incubar; no pasar huevos de una cubeta a otra; transportarlo separado de otros alimentos; si va refrigerado, mantener la cadena de frío y decirlo en la etiqueta",
+      "aplica_desde": "Desde el primer huevo vendido",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "No hay trámite previo; lo revisan las secretarías de salud en las inspecciones. Los huevos no aptos se desnaturalizan (Ley 9 de 1979, art. 402)",
+      "norma": "Resolución 719 de 2015 (Minsalud); Ley 9 de 1979; Comunicado INVIMA 4000-3312-20",
+      "articulo": "Res. 719: anexo técnico 10.1.1; Ley 9: art. 402",
+      "fuente": "https://www.invima.gov.co/biblioteca/download/77406"
+    },
+    {
+      "id": "huevo-fertil-no-apto",
+      "tema": "invima",
+      "requisito": "No vender como huevo de mesa huevos fértiles o de incubadora: lote de postura sin gallo, y el gallo de cría en lote aparte",
+      "aplica_desde": "Desde el primer huevo vendido. Es el criterio que el INVIMA da a las autoridades sanitarias, tomado del código de higiene del Codex CAC/RCP 15-1976",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Separar el gallo de las ponedoras; si hay lote de cría, sus huevos no van a la venta de mesa",
+      "norma": "Comunicado INVIMA 4000-3312-20; Ley 9 de 1979",
+      "articulo": "Comunicado, numeral 4; Ley 9: art. 402",
+      "fuente": "https://www.invima.gov.co/biblioteca/download/77406"
+    },
+    {
+      "id": "rotulado-presentacion-empacada",
+      "tema": "etiqueta",
+      "requisito": "Etiquetar la cubeta o caja con envoltura (termoencogible, PET, tapa): nombre del alimento, contenido neto, nombre y dirección del productor o empacador, lote, fecha e instrucciones de conservación. El huevo no está exento de fecha",
+      "aplica_desde": "Cuando el huevo se vende empacado. No aplica al huevo suelto que el cliente escoge. Las frutas y hortalizas frescas empacadas llevan etiqueta pero están exentas de fecha",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Diseñar e imprimir la etiqueta; no se registra ante nadie. Si se vende como materia prima a restaurantes y el volumen impide rotular, llevar un registro con la misma información",
+      "norma": "Resolución 5109 de 2005 (Minprotección); Comunicado INVIMA 4000-3312-20",
+      "articulo": "Arts. 2, 5 (5.1 a 5.8), 5.6.3 literal g y 12 parágrafo 4",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minproteccion_5109_2005.htm"
+    },
+    {
+      "id": "empaques-nuevos",
+      "tema": "etiqueta",
+      "requisito": "Las cubetas de cartón moldeado y los plásticos desechables se usan una sola vez; prohibido usar empaques con marcas o leyendas de otros productos; las bandejas plásticas reutilizables se lavan y desinfectan",
+      "aplica_desde": "Desde el primer huevo vendido en cubeta o caja",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Comprar cubetas nuevas y anotar su costo por unidad en la app",
+      "norma": "Resolución 834 de 2013; Resolución 683 de 2012; Resolución 4143 de 2012; Comunicado INVIMA 4000-3312-20",
+      "articulo": "Res. 683: art. 6, parágrafo; Res. 4143: art. 14",
+      "fuente": "https://www.invima.gov.co/biblioteca/download/77406"
+    },
+    {
+      "id": "organico-requiere-certificado",
+      "tema": "organico",
+      "requisito": "Para decir «orgánico», «ecológico» o «biológico» o usar el sello Alimento Ecológico: certificación de un organismo de control acreditado ante el ONAC",
+      "aplica_desde": "Desde que la palabra o el sello aparezcan en la etiqueta, la publicidad, las redes o la oferta del producto",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Pedir cotización a certificadoras acreditadas (ISO/IEC 17065) y confirmar que su alcance cubra el huevo. Periodo de conversión registrado, máximo 3 años",
+      "norma": "Resolución MADR 187 de 2006; Resolución MADR 199 de 2016; Resolución 148 de 2004 (sello); Ley 1480 de 2011",
+      "articulo": "Res. 187: arts. 3, 16, 17 y 20; Reglamento de la Res. 187: art. 42, en el texto del art. 9 de la Res. 199; Ley 1480: arts. 5 num. 13 y 30",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0187_2006.htm"
+    },
+    {
+      "id": "organico-reglas-gallinas",
+      "tema": "organico",
+      "requisito": "Reglas para certificar gallinas: pollitas con máximo 18 semanas al entrar, hasta 20 % de alimento convencional en las condiciones del art. 19 literal j, sin antibióticos ni promotores de crecimiento, forraje en la ración",
+      "aplica_desde": "Solo si decide certificar la producción de huevo como ecológica",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Lo verifica la certificadora",
+      "norma": "Resolución MADR 199 de 2016",
+      "articulo": "Reglamento de la Res. 187: art. 13 (texto del art. 3 de la Res. 199) y art. 19, literales j, l y q (texto del art. 4 de la Res. 199)",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0199_2016.htm"
+    },
+    {
+      "id": "reglamento-ecologico-en-proyecto",
+      "tema": "organico",
+      "requisito": "Seguir el proyecto de reglamento técnico obligatorio de producción ecológica del MinAgricultura: certificación obligatoria por organismos acreditados ante el ONAC o un miembro del IAF, BPA certificadas en cultivos y bienestar animal certificado en producción pecuaria",
+      "aplica_desde": "Todavía no aplica: es un proyecto sin firmar, publicado el 18 de septiembre de 2026. Si se expide así, rige 6 meses después de publicado, con 12 meses de transición, y deroga las Res. 148 de 2004, 036 de 2007, 187 de 2006 y 199 de 2016",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Ninguno hoy. Revisar cada mes si se expidió",
+      "norma": "Proyecto de resolución del Ministerio de Agricultura y Desarrollo Rural (18-sep-2026)",
+      "articulo": "Arts. 4, 6, 7, 8, 15 y 16 del proyecto",
+      "fuente": "https://www.redjurista.com/Compilaciones2018/tablas_ProyectosNormas/2026/09/18/pr_ma_0036aj_2026.pdf"
+    },
+    {
+      "id": "rut",
+      "tema": "impuestos",
+      "requisito": "Inscribirse en el RUT de la DIAN y, si es no responsable de IVA, registrar esa condición y entregar copia del RUT a los compradores responsables de IVA",
+      "aplica_desde": "Antes de venderle a un comprador responsable de IVA (empresas, tiendas formales, restaurantes)",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "Inscripción en la DIAN con la actividad agropecuaria. No repartir las ventas entre familiares para no pasar el tope: la DIAN puede desconocerlo",
+      "norma": "Estatuto Tributario, art. 437 parágrafo 3 (citado por la DIAN)",
+      "articulo": "Art. 437, parágrafo 3",
+      "fuente": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf"
+    },
+    {
+      "id": "no-responsable-iva-sin-factura",
+      "tema": "impuestos",
+      "requisito": "Condición de no responsable de IVA y no obligado a facturar como pequeño agricultor o ganadero",
+      "aplica_desde": "Si cumple todas las condiciones: ingresos brutos de la actividad menores a 3.500 UVT ($183.309.000 en 2026) en el año anterior y en el actual; un solo establecimiento; sin franquicias, concesiones ni regalías; no ser usuario aduanero; sin contratos gravados de 3.500 UVT o más; consignaciones de actividades gravadas que no pasen de 3.500 UVT",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Llevar el control de ingresos en la app. Para el huevo hay zona gris (ET art. 477 par. 2): consultar contador. Quien factura sin estar obligado queda obligado",
+      "norma": "Estatuto Tributario art. 437 par. 3; DUR 1625 de 2016 art. 1.6.1.4.3 num. 3; Resolución DIAN 165 de 2023 art. 8; Oficio DIAN 904241 de 2021",
+      "articulo": "ET 437 par. 3; DUR 1.6.1.4.3 num. 3; Res. 165 art. 8 num. 3 y parágrafo 1",
+      "fuente": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf"
+    },
+    {
+      "id": "iva-huevo-zona-gris",
+      "tema": "impuestos",
+      "requisito": "Aclarar con un contador o con un concepto de la DIAN si, como productor de huevo (bien exento), queda como responsable de IVA aunque sea pequeño",
+      "aplica_desde": "Antes de la primera venta a empresas, tiendas formales o restaurantes",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Si resulta responsable: factura electrónica, declaraciones de IVA y contabilidad, con derecho a pedir devolución del IVA pagado en insumos llevando cuentas separadas (Oficio DIAN 901292 de 2021)",
+      "norma": "Estatuto Tributario arts. 477 par. 2, 437 par. 3 y 440; Oficio DIAN 901292 de 2021",
+      "articulo": "ET art. 477, parágrafo 2",
+      "fuente": "https://normativa.colpensiones.gov.co/colpensiones/docs/estatuto_tributario_pr019.htm"
+    },
+    {
+      "id": "documento-soporte-lo-hace-el-comprador",
+      "tema": "impuestos",
+      "requisito": "Cuando un comerciante o empresa le compra sin factura, el comprador elabora el documento soporte; el campesino entrega nombre, cédula o NIT y copia del RUT",
+      "aplica_desde": "En cada venta a un comprador que necesite soportar el costo; puede ser por operación o acumulado semanal por proveedor. La obligación es del comprador",
+      "obligatorio": false,
+      "costo_cop": null,
+      "tramite": "Electrónico si el comprador factura electrónicamente; en papel si no, según la doctrina DIAN de 2022 con la Res. 167 de 2021. Confirmar con un contador si la Res. 165 de 2023 cambió esos detalles",
+      "norma": "DUR 1625 de 2016; Resolución DIAN 167 de 2021; Resolución DIAN 165 de 2023; Concepto Unificado DIAN 0106 de 2022",
+      "articulo": "DUR art. 1.6.1.4.12; Res. 167 arts. 2 y 19; Res. 165 art. 44",
+      "fuente": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf"
+    },
+    {
+      "id": "facturacion-electronica-si-supera",
+      "tema": "impuestos",
+      "requisito": "Facturar electrónicamente si deja de cumplir las condiciones de no responsable, si se inscribe en el Régimen Simple o si decide facturar",
+      "aplica_desde": "Al superar alguno de los topes de 3.500 UVT, al entrar al Régimen Simple o al optar por facturar",
+      "obligatorio": false,
+      "costo_cop": 0,
+      "tramite": "La DIAN ofrece una solución gratuita de facturación electrónica; un software privado se cotiza aparte",
+      "norma": "DUR 1625 de 2016 art. 1.6.1.4.2 num. 3; Resolución DIAN 165 de 2023; Concepto Unificado DIAN 0106 de 2022",
+      "articulo": "Res. 165: arts. 7, 8 parágrafo 1 y 38",
+      "fuente": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf"
+    },
+    {
+      "id": "libro-fiscal",
+      "tema": "impuestos",
+      "requisito": "Llevar el libro fiscal de registro de operaciones diarias: fecha, producto, cantidad y valor de cada venta",
+      "aplica_desde": "Según la DIAN, lo llevan los no responsables de IVA. Si aplica igual al huevo exento y a las hortalizas excluidas, confirmarlo con el contador; la app lo lleva de todos modos",
+      "obligatorio": true,
+      "costo_cop": null,
+      "tramite": "El registro diario de ventas de la app sirve de libro",
+      "norma": "Estatuto Tributario arts. 616 y 652; Oficio DIAN 904241 de 2021",
+      "articulo": "ET art. 616",
+      "fuente": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf"
+    }
+  ],
+  "palabras": [
+    {
+      "palabra": "orgánico",
+      "se_puede_sin_certificar": false,
+      "por_que": "Lo que se venda con este nombre debe estar respaldado por la certificación de un organismo de control. Es sinónimo de ecológico y biológico",
+      "norma": "Resolución MADR 187 de 2006, arts. 3 y 16; Ley 1480 de 2011, art. 5 num. 13"
+    },
+    {
+      "palabra": "ecológico",
+      "se_puede_sin_certificar": false,
+      "por_que": "Sinónimo legal de orgánico: exige certificación",
+      "norma": "Resolución MADR 187 de 2006, arts. 3 y 16"
+    },
+    {
+      "palabra": "biológico",
+      "se_puede_sin_certificar": false,
+      "por_que": "Sinónimo legal de orgánico: exige certificación",
+      "norma": "Resolución MADR 187 de 2006, arts. 3 y 16"
+    },
+    {
+      "palabra": "sello Alimento Ecológico",
+      "se_puede_sin_certificar": false,
+      "por_que": "El sello oficial exige certificación, y la etiqueta lleva además la identificación del organismo de control",
+      "norma": "Resolución 148 de 2004; Resolución MADR 187 de 2006, art. 17; Reglamento de la Res. 187, art. 42, en el texto del art. 9 de la Resolución MADR 199 de 2016"
+    },
+    {
+      "palabra": "en conversión a orgánico",
+      "se_puede_sin_certificar": false,
+      "por_que": "Supone estar en el periodo de conversión registrado y controlado, de máximo 3 años",
+      "norma": "Resolución MADR 187 de 2006, art. 20"
+    },
+    {
+      "palabra": "bio / eco",
+      "se_puede_sin_certificar": false,
+      "por_que": "No se verificó si la norma colombiana reserva estos prefijos. Se evitan por prudencia, porque el consumidor los entiende como orgánico y eso puede inducir a error",
+      "norma": "Ley 1480 de 2011, art. 5 num. 13"
+    },
+    {
+      "palabra": "agroecológico",
+      "se_puede_sin_certificar": true,
+      "por_que": "Ninguna norma encontrada lo reserva y la política pública lo usa. Debe ser verdad. Para ventajas en compras públicas cuenta el reconocimiento del MinAgricultura",
+      "norma": "Ley 1480 de 2011, arts. 5 num. 13 y 23; Resolución MADR 331 de 2024; Ley 2046 de 2020, art. 9 par."
+    },
+    {
+      "palabra": "en transición agroecológica",
+      "se_puede_sin_certificar": true,
+      "por_que": "Describe un proceso; debe poder mostrarse con los registros de la finca",
+      "norma": "Ley 1480 de 2011, art. 23"
+    },
+    {
+      "palabra": "campesino",
+      "se_puede_sin_certificar": true,
+      "por_que": "No es palabra reservada; debe ser cierto",
+      "norma": "Ley 1480 de 2011, arts. 5 num. 13 y 23"
+    },
+    {
+      "palabra": "de gallinas criollas",
+      "se_puede_sin_certificar": true,
+      "por_que": "Describe la raza; debe ser cierto",
+      "norma": "Ley 1480 de 2011, art. 23"
+    },
+    {
+      "palabra": "huevo azul / huevo verde",
+      "se_puede_sin_certificar": true,
+      "por_que": "Describe el color de la cáscara",
+      "norma": "Ley 1480 de 2011, art. 23"
+    },
+    {
+      "palabra": "gallinas en pastoreo",
+      "se_puede_sin_certificar": true,
+      "por_que": "Sin definición legal; debe ser cierto. Durante la emergencia por influenza aviar puede tocar encerrarlas, y entonces deja de serlo",
+      "norma": "Ley 1480 de 2011; Resolución ICA 00012995 de 2026"
+    },
+    {
+      "palabra": "libre de jaula",
+      "se_puede_sin_certificar": true,
+      "por_que": "Sin definición legal; debe ser cierto. El Proyecto de Ley 09 de 2026 del Senado sobre jaulas todavía no es ley",
+      "norma": "Ley 1480 de 2011"
+    },
+    {
+      "palabra": "más sano / más nutritivo",
+      "se_puede_sin_certificar": false,
+      "por_que": "Lo anunciado obliga al anunciante y, sin prueba, es publicidad engañosa. Un certificado orgánico tampoco lo prueba",
+      "norma": "Ley 1480 de 2011, arts. 5 num. 13, 29 y 30"
+    }
+  ],
+  "certificadoras": [
+    {
+      "nombre": "Kiwa BCS Öko Garantie de Colombia (código ONAC 13-CPR-002, acreditada desde febrero de 2014)",
+      "acreditada_onac": true,
+      "costo_aprox_cop": null,
+      "fuente": "https://www.kiwa.com/co/es-co/tipo-de-servicio/certificacion/certificacion-organica-colombia/"
+    },
+    {
+      "nombre": "Control Union Services S.A.C., Lima (código ONAC 15-CPR-005, vigente hasta el 2030-08-23; alcance: productos primarios agrícolas ecológicos y alimentos ecológicos transformados, Res. 187 de 2006 y 199 de 2016)",
+      "acreditada_onac": true,
+      "costo_aprox_cop": null,
+      "fuente": "https://peru.controlunion.com/wp-content/uploads/sites/5/2025/08/15-CPR-005_ONAC.pdf"
+    }
+  ],
+  "spg": {
+    "estado_legal": "No es certificación oficial. La Res. MADR 331 de 2024 (Política Pública de Agroecología) dice que los SPG otorgan «sellos simbólicos o sociales», deja pendiente un programa de reconocimiento y propone puntaje diferencial en compras públicas y prioridad en la alimentación escolar. No autoriza a usar «orgánico», «ecológico», «biológico» ni el sello oficial. El proyecto de reglamento ecológico del 18-sep-2026 no los menciona",
+    "norma": "Resolución MADR 000331 de 2024, art. 3 num. 11 y lineamientos 3.5, 3.6 y 3.9; cita la Resolución 464 de 2017, lineamiento 5.2",
+    "como_entrar": "Acercarse a una red o mercado agroecológico de la región (la Res. 331 nombra, entre otros, la Red de Mercados Agroecológicos de Bogotá Región y Tierra Verde en Tenjo) y preguntar si opera con garantía participativa. Los requisitos y costos los fija cada red: no verificados",
+    "fuente": "https://sidn.ramajudicial.gov.co/SIDN/NORMATIVA/TEXTOS_COMPLETOS/8_RESOLUCIONES/RESOLUCIONES%202024/MADR%20Resoluci%C3%B3n%20000331%20de%202024.pdf"
+  },
+  "impuestos": {
+    "iva_huevo": "Exento con derecho a devolución: «Huevos frescos de gallina», partida 04.07.21.90.00 (ET art. 477). El productor es el avicultor (art. 440) y puede descontar el IVA de los insumos llevando cuentas separadas (Oficio DIAN 901292 de 2021). Zona gris: el art. 477 par. 2 trata a los productores de bienes exentos como responsables con contabilidad, y el art. 437 par. 3 deja como no responsables a los pequeños agricultores y ganaderos por debajo de 3.500 UVT. No se encontró doctrina que diga cuál prima: consultar contador",
+    "iva_hortalizas": "Excluidas (ET art. 424): papas, tomates, cebollas, ajos, puerros, coles, lechugas, zanahorias, remolachas, rábanos, pepinos, hortalizas de vaina, demás hortalizas frescas, yuca y raíces similares; también frutas frescas de las partidas 08.03 a 08.10 (plátanos, aguacates, guayabas, cítricos y demás frutas frescas). No se cobra IVA ni se recupera el de los insumos",
+    "facturacion": "No está obligado a facturar quien cumpla el ET art. 437 par. 3 (DUR 1625 de 2016 art. 1.6.1.4.3 num. 3; Res. DIAN 165 de 2023 art. 8 num. 3; Oficio DIAN 904241 de 2021). Quien solo vende bienes excluidos por debajo de 3.500 UVT tampoco (num. 7); el huevo no cabe ahí por ser exento. Quien opta por facturar queda obligado (art. 8 par. 1); el Régimen Simple siempre factura electrónicamente; la DIAN ofrece facturación gratuita (Res. 165 art. 38). Tope 2026: 3.500 UVT = $183.309.000",
+    "documento_soporte": "Lo elabora el comprador que le compra a un no obligado a facturar (DUR 1625 de 2016 art. 1.6.1.4.12): por operación o acumulado semanal por proveedor; electrónico si el comprador factura electrónicamente y en papel si no (Res. DIAN 167 de 2021 arts. 2 y 19, según la doctrina DIAN de 2022). El campesino entrega nombre, cédula o NIT y copia del RUT con su condición de no responsable. Confirmar con un contador si la Res. 165 de 2023 cambió detalles",
+    "fuentes": [
+      "https://normativa.colpensiones.gov.co/colpensiones/docs/estatuto_tributario_pr017.htm",
+      "https://normativa.colpensiones.gov.co/colpensiones/docs/estatuto_tributario_pr019.htm",
+      "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_901292_2021.htm",
+      "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf",
+      "https://incp.org.co/agendatributariaincp/noticias/2025/12/dian-fijo-en-52-374-en-valor-de-la-uvt-para-el-ano-gravable-2026/"
+    ]
+  },
+  "canales": [
+    {
+      "id": "venta-en-finca",
+      "nombre": "Venta en la finca y puesto sobre la vía",
+      "tipo": "directo",
+      "donde": "La finca y un puesto en la vía Mosquera–La Mesa",
+      "como_entrar": "Aviso visible, cubetas nuevas y precio fijo. El huevo suelto o en cubeta sin envoltura no lleva etiqueta",
+      "precio_tipico": "No verificado: anotar en la app el precio real de cada venta",
+      "fuente": "Estimado: canal razonable para el tamaño de la finca, sin fuente que lo verifique"
+    },
+    {
+      "id": "canasta-semanal",
+      "nombre": "Canasta semanal a domicilio",
+      "tipo": "suscripcion",
+      "donde": "Familias de Bogotá, Mosquera, Funza y Madrid",
+      "como_entrar": "Lista de WhatsApp, pedido fijo y entrega un día fijo. Si va en caja cerrada, etiqueta con lote y fecha",
+      "precio_tipico": "No verificado",
+      "fuente": "Estimado: canal razonable para el tamaño de la finca, sin fuente que lo verifique"
+    },
+    {
+      "id": "mercados-agroecologicos",
+      "nombre": "Mercados y ferias agroecológicas de Bogotá y la Sabana",
+      "tipo": "mercado",
+      "donde": "Red de Mercados Agroecológicos de Bogotá Región; Tierra Verde (red de agroecológicos de Tenjo); feria agroecológica de la Universidad Nacional; Feria Agroecológica UNIMINUTO (sede no verificada)",
+      "como_entrar": "Contactarlos y preguntar requisitos, costos y si operan con garantía participativa (SPG)",
+      "precio_tipico": "No verificado",
+      "fuente": "https://sidn.ramajudicial.gov.co/SIDN/NORMATIVA/TEXTOS_COMPLETOS/8_RESOLUCIONES/RESOLUCIONES%202024/MADR%20Resoluci%C3%B3n%20000331%20de%202024.pdf"
+    },
+    {
+      "id": "tiendas-sabana-occidente",
+      "nombre": "Tiendas y minimercados de la Sabana occidente",
+      "tipo": "tienda",
+      "donde": "Mosquera, Madrid, Funza, Bojacá y La Mesa",
+      "como_entrar": "Muestra, precio por cubeta y día fijo de entrega. Si la tienda es responsable de IVA, darle copia del RUT",
+      "precio_tipico": "No verificado",
+      "fuente": "Estimado: canal razonable para el tamaño de la finca, sin fuente que lo verifique"
+    },
+    {
+      "id": "restaurantes-panaderias-bogota",
+      "nombre": "Restaurantes y panaderías",
+      "tipo": "restaurante",
+      "donde": "Bogotá",
+      "como_entrar": "Registro de lote y fecha de cada entrega (Res. 5109 de 2005, art. 12 par. 4); el comprador hace el documento soporte",
+      "precio_tipico": "No verificado",
+      "fuente": "Estimado: canal razonable para el tamaño de la finca, sin fuente que lo verifique"
+    },
+    {
+      "id": "mayoristas-bogota",
+      "nombre": "Plazas mayoristas de Bogotá",
+      "tipo": "mercado",
+      "donde": "Corabastos, Paloquemao y Plaza Las Flores (Bogotá)",
+      "como_entrar": "Venderle a un mayorista; usar el precio semanal del DANE como referencia",
+      "precio_tipico": "Huevo rojo AA: $536 por unidad en Corabastos, semana del 2026-11-07. Es precio mayorista; quien le vende a un intermediario recibe menos (estimado)",
+      "fuente": "https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "id": "compras-publicas-asociacion",
+      "nombre": "Compras públicas de alimentos",
+      "tipo": "institucional",
+      "donde": "Entidades que compran alimentos con recursos públicos (Ley 2046 de 2020, art. 3); la Res. 331 de 2024 menciona la alimentación escolar (PAE)",
+      "como_entrar": "Por medio de una asociación de productores o de un operador con contrato; los contratistas deben participar en ruedas de negocios (Ley 2046, art. 7 lit. c)",
+      "precio_tipico": "No verificado",
+      "fuente": "https://normograma.invima.gov.co/compilacion/docs/ley_2046_2020.htm"
+    }
+  ],
+  "precios_huevo": [
+    {
+      "tipo": "Huevo rojo AA (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 536,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07 (mín. 530, máx. 550): https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo AA (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 538,
+      "lugar": "Bogotá, D.C., Paloquemao",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo AA (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 567,
+      "lugar": "Bogotá, D.C., Plaza Las Flores",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo extra (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 556,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo A (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 521,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo B (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 499,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo AA, mínimo de las últimas 50 semanas (precio mayorista DANE-SIPSA)",
+      "presentacion": "unidad",
+      "cop": 329,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-01",
+      "fuente": "DANE SIPSA, operación promediosSipsaSemanaMadr, semana que inicia el 2026-01-17: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo AA, calculado 12 x 536 (precio mayorista DANE-SIPSA)",
+      "presentacion": "docena",
+      "cop": 6432,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "Calculado a partir del precio por unidad del DANE SIPSA, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    },
+    {
+      "tipo": "Huevo rojo AA, calculado 30 x 536 (precio mayorista DANE-SIPSA)",
+      "presentacion": "cubeta-30",
+      "cop": 16080,
+      "lugar": "Bogotá, D.C., Corabastos",
+      "fecha": "2026-11",
+      "fuente": "Calculado a partir del precio por unidad del DANE SIPSA, semana que inicia el 2026-11-07: https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService"
+    }
+  ],
+  "compras_publicas": {
+    "conclusion": "La Ley 2046 de 2020 obliga a las entidades que compran alimentos con recursos públicos a comprar al menos el 30 % del valor de su presupuesto de alimentos a pequeños productores locales y a la agricultura campesina, familiar y comunitaria (art. 7 lit. a). Los pliegos dan mínimo 10 % del puntaje a quien se comprometa a comprar más (lit. b) y los contratistas deben ir a ruedas de negocios (lit. c). Con 20 a 50 gallinas la finca no puede garantizar sola entregas continuas: el camino es una asociación de productores o venderle a un operador con contrato que necesite cumplir el 30 % local. Lo agroecológico reconocido por el MinAgricultura puede pesar en las fichas técnicas (art. 9 par.)",
+    "numeros": "Estimado con 0,5 huevos por gallina al día: 20 gallinas = 10 huevos al día, 70 a la semana (2,3 cubetas de 30), unos 304 al mes; 50 gallinas = 25 al día, 175 a la semana (5,8 cubetas), unos 760 al mes. A precio mayorista DANE del huevo rojo AA en Corabastos ($536 por unidad, semana del 2026-11-07) eso vale unos $163.000 y $407.000 al mes. La demanda real de los programas públicos de la zona no se verificó",
+    "fuente": "https://normograma.invima.gov.co/compilacion/docs/ley_2046_2020.htm"
+  },
+  "fuentes": [
+    { "titulo": "Resolución ICA 090464 de 2021 (registro de predios pecuarios, RSPP)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_90464_2021.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución ICA 3651 de 2014 (granjas avícolas bioseguras)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_3651_2014.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Concepto Jurídico ICA 014 de 2022", "url": "https://www.ica.gov.co/getattachment/5f47577d-e51b-4f4f-bdd4-cab8abf62254/2022CJ014.aspx", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución ICA 8940 de 2024 (movilización de animales)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_8940_2024.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Ley 1255 de 2008 (Newcastle e influenza aviar)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/ley_1255_2008.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución ICA 00012995 de 2026 (emergencia por influenza aviar H5N1)", "url": "https://www.ica.gov.co/getattachment/35b84fdc-0a5a-4d2f-b0a6-9be473a68b4d/2026R00012995.aspx", "fecha_consulta": "2026-11-18" },
+    { "titulo": "INVIMA, recomendaciones de inspección del huevo en cáscara", "url": "https://www.invima.gov.co/biblioteca/recomendaciones-ivc-huevo-en-cascara", "fecha_consulta": "2026-11-18" },
+    { "titulo": "INVIMA, Comunicado externo 4000-3312-20 (PDF)", "url": "https://www.invima.gov.co/biblioteca/download/77406", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución 2674 de 2013 (Minsalud), art. 37", "url": "https://jurinfo.jep.gov.co/Normograma/Compilacion/docs/resolucion_minsaludps_2674_2013.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución 719 de 2015 (Minsalud), clasificación de alimentos por riesgo", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minsaludps_0719_2015.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución 5109 de 2005 (rotulado de alimentos envasados)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minproteccion_5109_2005.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución MADR 187 de 2006 (productos agropecuarios ecológicos)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0187_2006.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución MADR 199 de 2016", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Proyecto de reglamento técnico de producción ecológica, MADR, 18 de septiembre de 2026", "url": "https://www.redjurista.com/Compilaciones2018/tablas_ProyectosNormas/2026/09/18/pr_ma_0036aj_2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Decreto 1468 de 2020 (revisión de reglamentos técnicos)", "url": "https://normas.cra.gov.co/gestor/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Resolución MADR 000331 de 2024 (Política Pública de Agroecología)", "url": "https://sidn.ramajudicial.gov.co/SIDN/NORMATIVA/TEXTOS_COMPLETOS/8_RESOLUCIONES/RESOLUCIONES%202024/MADR%20Resoluci%C3%B3n%20000331%20de%202024.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Kiwa Colombia, certificación orgánica (acreditación ONAC 13-CPR-002)", "url": "https://www.kiwa.com/co/es-co/tipo-de-servicio/certificacion/certificacion-organica-colombia/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Certificado de acreditación ONAC 15-CPR-005, Control Union Services S.A.C.", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2025/08/15-CPR-005_ONAC.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Ley 1480 de 2011 (Estatuto del Consumidor)", "url": "https://normograma.invima.gov.co/compilacion/docs/ley_1480_2011.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Gaceta del Congreso 957 de 2026 (Proyecto de Ley 09 de 2026 Senado)", "url": "https://www.redjurista.com/Compilaciones2018/gacetasCongreso/2026/gc_0957_2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Gaceta del Congreso 1743 de 2026 (Proyecto de Ley 09 de 2026 Senado)", "url": "https://www.redjurista.com/Compilaciones2018/gacetasCongreso/2026/gc_1743_2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Estatuto Tributario, arts. 424 a 440 (bienes excluidos; productor de huevo)", "url": "https://normativa.colpensiones.gov.co/colpensiones/docs/estatuto_tributario_pr017.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Estatuto Tributario, art. 477 (bienes exentos)", "url": "https://normativa.colpensiones.gov.co/colpensiones/docs/estatuto_tributario_pr019.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Oficio DIAN 901292 de 2021 (IVA del avicultor)", "url": "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_901292_2021.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Respuesta DIAN 2026DP000161206 (cita los oficios 904241 de 2021 y 903438 de 2020, el Concepto Unificado 0106 de 2022 y la Res. 165 de 2023)", "url": "https://www.dian.gov.co/atencionciudadano/contactenos/Annimos%20PQRS/Respuesta-2026DP000161206-2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "INCP: la DIAN fijó la UVT de 2026 en $52.374 (Res. DIAN 000238 de 2025)", "url": "https://incp.org.co/agendatributariaincp/noticias/2025/12/dian-fijo-en-52-374-en-valor-de-la-uvt-para-el-ano-gravable-2026/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Ley 2046 de 2020 (compras públicas a pequeños productores locales)", "url": "https://normograma.invima.gov.co/compilacion/docs/ley_2046_2020.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "DANE, SIPSA, servicio web público de precios mayoristas (operación promediosSipsaSemanaMadr)", "url": "https://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService", "fecha_consulta": "2026-11-18" }
+  ]
+}

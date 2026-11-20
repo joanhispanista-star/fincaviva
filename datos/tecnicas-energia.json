@@ -1,0 +1,217 @@
+{
+  "tecnicas": [
+    {
+      "id": "energia-medir-un-equipo",
+      "titulo": "Mide lo que gasta un equipo",
+      "categoria": "energia",
+      "nivel": 1,
+      "resumen": "Con un medidor de enchufe usted sabe cuántos kWh gasta de verdad la incubadora, la nevera o la criadora, en vez de adivinar con la placa.",
+      "por_que": "Los equipos con termostato o motor casi nunca gastan lo que dice su placa: la incubadora prende y apaga, la nevera depende del frío del cuarto. En tierra fría la incubadora y la criadora pueden gastar más de lo calculado. Medir 24 horas convierte un estimado en un dato, y con datos se calcula el costo real de cada huevo.",
+      "materiales": [
+        { "item": "Medidor de consumo de enchufe (vatímetro)", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Conecte el medidor al tomacorriente y el equipo al medidor.",
+        "Ponga el contador del medidor en cero (cada modelo tiene su botón; mire el manual).",
+        "Anote la hora de inicio y los vatios que marca en ese momento.",
+        "Deje el equipo trabajando normal 24 horas; si es la nevera o la incubadora en uso, mejor una semana.",
+        "Anote los kWh acumulados y las horas que pasaron: kWh por día = kWh medidos ÷ días.",
+        "Anote el resultado en la app como Medición en el sistema de Energía: en «Qué se midió», el equipo y las horas que lo midió; en valor, los kWh por día. La app no tiene ficha de equipos.",
+        "Compare con la placa: si gasta mucho más, revise empaques, termostato y el sitio donde está el equipo."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "El medidor muestra kWh acumulados que crecen con el tiempo, y si repite la medición otro día parecido la cifra diaria se parece. En un cuarto frío, la incubadora gasta más de noche que de día.",
+      "errores_comunes": [
+        "Mirar solo los vatios del momento: un equipo con termostato a veces marca 80 W y a veces 0; lo que cuenta son los kWh acumulados.",
+        "Medir menos de un día completo.",
+        "Conectar un equipo de más potencia que la que aguanta el medidor (está impresa en él).",
+        "Olvidar ponerlo en cero antes de empezar."
+      ],
+      "dosis_o_uso": "Una medición de 24 horas por equipo; repetirla una vez al año o cuando cambie la temperatura del cuarto. Costo del día = kWh del día × tarifa de su factura (990,53 pesos por kWh en estrato 4 en octubre de 2026, Enel). Si el equipo es del gallinero, anote cada mes en Cuentas, como gasto de ese sistema, el costo del día × los días que trabajó: así cuenta en el costo por huevo. Si además anota la factura de Enel como gasto general, réstele esa parte para no contarla dos veces.",
+      "mision": {
+        "titulo": "Mi primer equipo medido",
+        "como_se_cumple": "Medir un equipo al menos 24 horas y anotar en la app, como Medición, sus kWh por día, con el equipo y las horas medidas en «Qué se midió».",
+        "xp": 50
+      },
+      "fuentes": [
+        { "titulo": "University of Alaska Fairbanks, LPM-00840 (2020): un bombillo de 250 W gasta 6 kWh al día", "url": "https://uaf.edu/ces/publications/database/agriculture-livestock/selecting-chicks.php", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Enel Colombia, pliego tarifario de octubre de 2026", "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "energia-leer-el-contador",
+      "titulo": "Lee el contador de Enel cada semana",
+      "categoria": "energia",
+      "nivel": 1,
+      "resumen": "Anotar la lectura del contador el mismo día y a la misma hora cada semana le dice cuánta energía gasta la finca. Así usted ve venir una factura alta antes de que llegue.",
+      "por_que": "La factura llega una vez al mes, cuando ya no hay nada que hacer. Con lecturas semanales se ve el salto cuando se prende la criadora o la bomba y se corrige a tiempo. Además, en estratos 1 a 3 solo el consumo de subsistencia tiene tarifa subsidiada. Son 130 kWh al mes si la cabecera de su municipio está a 1.000 m o más según el IGAC, y 173 si está más abajo. Cuenta la altura de la cabecera, no la de la finca (Res. UPME 0355 de 2004, arts. 1 y 3). Saber cuántos lleva le ayuda a no pasarse.",
+      "materiales": [
+        { "item": "Celular para tomar foto del contador", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Ubique el contador de Enel y compare su número de serie con el que aparece en la factura.",
+        "Escoja un día y una hora fijos, por ejemplo el domingo a las 7 de la mañana.",
+        "Tome una foto del contador con el celular y anote los kWh (los números enteros).",
+        "Reste la lectura anterior: eso es lo que gastó la finca en la semana.",
+        "Anote la lectura en la app como Medición en el sistema de Energía: «Lectura del contador» en «Qué se midió» y los kWh como valor. El factor de ajuste de Dosis y uso lo calcula usted: la app no lo hace.",
+        "Si en estratos 1 a 3 gasta más de 30 kWh en una semana (130 kWh ÷ 4,3 semanas; 40 kWh si su subsistencia es de 173), va camino de pasarse del consumo subsidiado."
+      ],
+      "listo_en_dias": 28,
+      "como_saber_si_salio_bien": "Tiene cuatro lecturas seguidas y la suma del mes se parece a los kWh de la factura (las fechas de lectura de Enel no coinciden exactamente con las suyas).",
+      "errores_comunes": [
+        "Leer a horas distintas cada semana.",
+        "Confundir el número de serie del contador con la lectura.",
+        "Saltarse una semana y dividir mal después."
+      ],
+      "dosis_o_uso": "Una lectura por semana, siempre igual. Consumo de la semana = lectura de hoy − lectura anterior. Factor de ajuste = kWh del contador en la semana ÷ suma de los kWh que usted estimó para sus equipos en esa misma semana.",
+      "mision": {
+        "titulo": "Un mes de lecturas",
+        "como_se_cumple": "Anotar en la app, como Medición, 4 lecturas semanales seguidas del contador, sin saltarse ninguna semana. La foto de cada lectura se toma con el celular: los registros de la app no llevan fotos.",
+        "xp": 60
+      },
+      "fuentes": [
+        { "titulo": "Enel Colombia, pliego tarifario de octubre de 2026 (consumo de subsistencia de 130 kWh-mes en municipios cuya cabecera está a 1.000 m o más según el IGAC, Resolución UPME 0355 de 2004, arts. 1 y 3)", "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución UPME 0355 de 2004", "url": "https://gestornormativo.creg.gov.co/gestor/entorno/docs/resolucion_upme_0355_2004.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "energia-clueca-en-vez-de-bombillo",
+      "titulo": "Cría con gallina clueca en vez de bombillo",
+      "categoria": "energia",
+      "nivel": 2,
+      "resumen": "Una gallina clueca incuba 10 a 12 huevos y cría los pollitos sin gastar luz. Un bombillo de criadora gasta 6 kWh al día: unos 178.000 pesos por un mes de cría.",
+      "por_que": "En tierra fría el bombillo de 250 W prende día y noche durante semanas y es lo que más energía gasta en la finca: más que todo lo demás junto. La FAO reporta que la incubación natural da alrededor de 80 % de nacimientos, y que los pollitos se quedan con la madre 9 a 10 semanas, protegidos y abrigados.",
+      "materiales": [
+        { "item": "Nidal o caja con paja seca", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Huevos fértiles de menos de 7 días", "cantidad": 12, "unidad": "unidad", "costo_cop": null },
+        { "item": "Huevos falsos o piedras lisas para animar la cloquera", "cantidad": 3, "unidad": "unidad", "costo_cop": null },
+        { "item": "Bebedero y comedero junto al nido", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja una gallina que se queda en el nido, dejó de poner y cloquea. La cloquera se puede animar con huevos falsos o piedras (FAO).",
+        "Revísela antes de empezar: no debe tener piojos ni ácaros (la FAO pide revisar parásitos externos).",
+        "Guarde los huevos para incubar a 12-14 °C y máximo 7 días (FAO). Un cuarto fresco de la finca puede estar en ese rango: compruébelo con un termómetro.",
+        "Ponga 10 a 12 huevos. La FAO acepta hasta 14-16 por nido, pero con más de 10 los nacimientos suelen bajar según el tamaño de la gallina. Si agrega huevos de otras gallinas, hágalo entre el día 1 y el 4, al atardecer.",
+        "Forre el nido con paja y póngalo en un sitio seco y abrigado: la FAO recomienda abrigar el sitio del nido cuando las noches bajan de 20 °C, y en esta finca siempre bajan.",
+        "Deje agua y comida al lado del nido para que la gallina no se levante mucho.",
+        "Espere 20 a 21 días sin abrir el nido a cada rato.",
+        "Anote la nidada en la app, en el sistema de sus gallinas, con dos Mediciones: «Huevos puestos a incubar», con la fecha en que empezó, y «Pollitos nacidos», con la fecha en que nacieron. Deje los pollitos con la madre 9 a 10 semanas; un comedero donde solo entren los pollitos reduce la mortalidad (FAO). Vacúnelos contra Newcastle: la ley lo exige (Ley 1255 de 2008, art. 10)."
+      ],
+      "listo_en_dias": 21,
+      "como_saber_si_salio_bien": "Nacen 8 o más pollitos de cada 10 huevos (la FAO considera normal un 80 % y satisfactorio un 75-80 %) y la gallina los recoge bajo las alas por la noche.",
+      "errores_comunes": [
+        "Poner demasiados huevos: la gallina no los cubre todos y se enfrían los de las orillas.",
+        "Guardar los huevos más de 7 días o en un sitio caliente antes de ponerlos.",
+        "Dejar el nido en el suelo húmedo o donde entra el viento.",
+        "No revisar piojos y ácaros: la gallina puede abandonar el nido."
+      ],
+      "dosis_o_uso": "Una clueca por cada 10-12 huevos. Para 30-40 pollitos, ponga 3 o 4 cluecas a la vez para que nazcan juntos. Ahorro: cada mes de bombillo de 250 W que se evita son 180 kWh, unos 178.000 pesos con la tarifa de Enel de octubre de 2026 (990,53 pesos por kWh). Vender pollitos o huevo fértil exige registro y licencia del ICA (Res. ICA 3650 de 2014). El huevo fértil tampoco se vende como huevo de mesa (comunicado INVIMA 4000-3312-20 de 2020).",
+      "mision": {
+        "titulo": "Primera nidada sin enchufe",
+        "como_se_cumple": "Anotar en la app una nidada con clueca, como Medición en el sistema de sus gallinas: los huevos puestos a incubar, con la fecha de inicio, y los pollitos nacidos a los 21 días.",
+        "xp": 120
+      },
+      "fuentes": [
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 5: Incubation and hatching", "url": "https://www.fao.org/4/y5169e/y5169e06.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: General management", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "University of Alaska Fairbanks, LPM-00840 (2020)", "url": "https://uaf.edu/ces/publications/database/agriculture-livestock/selecting-chicks.php", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 3650 de 2014 (material genético aviar)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_3650_2014.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Ley 1255 de 2008 (Newcastle)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/ley_1255_2008.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Comunicado INVIMA 4000-3312-20 (huevo fértil)", "url": "https://www.invima.gov.co/biblioteca/download/77406", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "energia-panel-galpon",
+      "titulo": "Dimensiona un panel solar para el galpón",
+      "categoria": "energia",
+      "nivel": 3,
+      "resumen": "Calcule cuántos vatios de panel y cuánta batería necesita el galpón para luz, cerca, una bomba pequeña y la placa de calor de los pollitos, aun en semanas de neblina.",
+      "por_que": "Un sistema solar mal calculado deja a los pollitos sin calor una noche de neblina. Bien calculado, un panel de 580 W y una batería de litio de 1,28 kWh alcanzan para un galpón de 12 V. Se justifica si la red no llega al galpón o se va la luz; por ahorro solo no se paga: esa carga en la red vale unos 3.000 pesos al mes.",
+      "materiales": [
+        { "item": "Panel solar de 580 W", "cantidad": 1, "unidad": "unidad", "costo_cop": 494900 },
+        { "item": "Batería de litio LiFePO4 12,8 V 100 Ah (1,28 kWh)", "cantidad": 1, "unidad": "unidad", "costo_cop": 1260480 },
+        { "item": "Controlador de carga MPPT para batería de litio de 12 V que acepte el voltaje del panel", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Cable solar, fusibles y breaker de corriente continua", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Placa de calor para pollitos que funcione a 12 V (verifique en la ficha técnica del fabricante)", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Haga la lista de lo que va en el galpón, con vatios y horas: luz LED 18 W × 3 h = 54 Wh; cerca 0,6 W × 24 h ≈ 14 Wh; bomba de 12 V de 60 W × 0,5 h = 30 Wh (estimado); placa de calor 18 W × 24 h = 432 Wh, solo en época de cría.",
+        "Sume: unos 98 Wh en un día normal y unos 530 Wh en época de cría.",
+        "Use las horas sol pico (HSP) del peor mes: 4,41 en junio en la zona alta de Bojacá (PVGIS-NSRDB). Si su ladera es de neblina, multiplíquelas por 0,56.",
+        "Panel = Wh por día ÷ (HSP del peor mes × 0,76). Con cría y neblina: 530 ÷ (4,41 × 0,56 × 0,76) ≈ 282 W; súmele 10 % por la batería: unos 311 W. Un panel de 580 W cubre con margen.",
+        "Batería: la de 1,28 kWh entrega unos 1.024 Wh si se usa solo hasta el 80 % (el fabricante da más de 4.000 ciclos al 80 %). Alcanza para unos 10 días de consumo normal o 2 días de cría sin sol.",
+        "Escoja un controlador MPPT que acepte el voltaje del panel y cargue baterías de litio de 12 V, y ponga un fusible entre la batería y el controlador.",
+        "Instale el panel con 10 a 15 grados de inclinación para que la lluvia lo lave y sin sombra en las horas de sol (estimado de buena práctica).",
+        "Durante una semana, anote cada día en la app, como Medición en el sistema de Energía, la producción que muestra el controlador. Compárela usted con el cálculo."
+      ],
+      "listo_en_dias": 7,
+      "como_saber_si_salio_bien": "La batería amanece por encima de la mitad de carga después de una noche de cría, y tras tres días seguidos de neblina todavía tiene carga. La producción que muestra el controlador se parece al cálculo: 0,58 kW × HSP × 0,76.",
+      "errores_comunes": [
+        "Calcular con el mes más soleado en vez del peor mes.",
+        "Olvidar la noche: la batería debe cubrir todas las horas sin sol.",
+        "Conectar un bombillo infrarrojo de 250 W: gasta 6 kWh al día, casi cinco veces lo que guarda toda la batería.",
+        "Comprar panel, controlador y batería de voltajes que no son compatibles entre sí."
+      ],
+      "dosis_o_uso": "Vatios de panel = Wh por día ÷ (HSP del peor mes × 0,76), más 10 % si hay batería. Batería útil = kWh de la batería × 0,8. Si en vez de batería quiere conectarse a la red de Enel, el trámite es otro (Resolución CREG 174 de 2021) y exige la documentación del RETIE. Si la bomba va a sacar agua de una quebrada o de un pozo, pregunte en la CAR antes de instalarla. Para tomar el agua: si la familia vive en la finca y el agua es para la casa y la producción de subsistencia, no necesita concesión, pero sí inscribirse en el RURH (Ley 1955 de 2019, art. 279); para algo más, el agua exige concesión (Decreto 1076 de 2015, art. 2.2.3.2.7.1). Abrir un pozo pide permiso de exploración (art. 2.2.3.2.16.4) también si el agua es para la casa: la inscripción en el RURH reemplaza la concesión, no ese permiso.",
+      "mision": {
+        "titulo": "Galpón con sol propio",
+        "como_se_cumple": "Anotar en la app el cálculo del sistema solar como Nota (cargas, HSP usada, vatios de panel y kWh de batería) y, como Medición, 7 días seguidos de producción leída del controlador.",
+        "xp": 200
+      },
+      "fuentes": [
+        { "titulo": "PVGIS 5.2 (JRC), PVGIS-NSRDB, zona alta de Bojacá (2.577 m)", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.73&lon=-74.34&peakpower=1&loss=14&angle=0&aspect=0&outputformat=json", "fecha_consulta": "2026-11-18" },
+        { "titulo": "PVGIS 5.2 (JRC), PVGIS-NSRDB, vertiente de San Antonio del Tequendama (1.587 m)", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.62&lon=-74.35&peakpower=1&loss=14&optimalangles=1&outputformat=json", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Homecenter, panel monocristalino Znshine de 580 W", "url": "https://www.homecenter.com.co/homecenter-co/product/734560/panel-solar-monocristalino-580w-hc-16bb-n-dv-znshine/734560/", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Emergente, batería LiFePO4 MUST 12 V 100 Ah", "url": "https://www.emergente.com.co/producto/bateria-de-litio-12v-100ah-must", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Brinsea, placas EcoGlow de 12-18 W", "url": "https://brinsea.com/t-ecoglow.aspx", "fecha_consulta": "2026-11-18" },
+        { "titulo": "CREG, Resolución 174 de 2021", "url": "https://gestornormativo.creg.gov.co/gestor/entorno/docs/resolucion_creg_0174_2021.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.6.1 y 2.2.3.2.7.1", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr026.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.16.1 a 2.2.3.2.16.4", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr029.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Concepto MinAmbiente 2024E1047497 (RURH y vivienda rural dispersa)", "url": "https://www.minambiente.gov.co/wp-content/uploads/2024/09/concep_241202_048120-REGISTRO-USUARIOS-RECURSO-HIDRICO-VIVIENDAS-RURALES-DISPERSAS-Y-COMUNIDADES-ORGANIZADAS.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "energia-secador-solar-granos",
+      "titulo": "Seca el grano con el sol",
+      "categoria": "energia",
+      "nivel": 2,
+      "resumen": "Un túnel de plástico de invernadero calienta el aire y seca maíz, fríjol o haba para guardarlos sin hongos y sin pagar electricidad.",
+      "por_que": "El grano húmedo se pudre y se llena de hongos; para guardarlo, la FAO pide 12 a 14 % de humedad. Un secador eléctrico de 500 W gasta unos 4 kWh por tanda; el sol lo hace gratis. En tierra fría y con lluvias, secar al aire libre es lento: el túnel protege de la lluvia y calienta el aire.",
+      "materiales": [
+        { "item": "Plástico transparente de invernadero", "cantidad": 12, "unidad": "m2", "costo_cop": null },
+        { "item": "Listones de madera o guadua para la estructura", "cantidad": 20, "unidad": "m", "costo_cop": null },
+        { "item": "Malla plástica o angeo para la bandeja", "cantidad": 4, "unidad": "m2", "costo_cop": null },
+        { "item": "Plástico negro o lona oscura para el piso", "cantidad": 4, "unidad": "m2", "costo_cop": null },
+        { "item": "Termómetro", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Balanza de cocina", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja un sitio con sol desde temprano, sin sombra y protegido del viento fuerte.",
+        "Arme un túnel de unos 2 m de largo por 2 m de ancho (medidas de ejemplo, estimado): piso oscuro, bandeja de malla levantada del suelo y techo de plástico transparente.",
+        "Deje una abertura abajo en un extremo, por donde entra el aire, y otra arriba en el otro extremo, por donde sale el aire húmedo.",
+        "Pese el grano húmedo y calcule el peso al que debe llegar: peso final = peso inicial × (100 − humedad inicial) ÷ (100 − humedad final). La humedad inicial se mide con un medidor de humedad de granos o en una cooperativa.",
+        "Extienda el grano en capa delgada sobre la malla (unos 2-3 cm, estimado).",
+        "Mida la temperatura adentro al mediodía: no debe pasar de 60 °C si el grano es para las gallinas, ni de 40 °C si es semilla (FAO). Si se pasa, abra más las ventilaciones.",
+        "Revuelva el grano 2 o 3 veces al día y tápelo de noche para que no recoja humedad.",
+        "Pese cada día. Cuando llegue al peso calculado, guárdelo; si el peso se estanca antes, el aire está muy húmedo: siga otro día de sol. Anote el lote en la app como Nota, en el sistema del cultivo de donde salió el grano: kg húmedos, kg secos, días de secado y temperatura máxima."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "El lote llega al peso calculado para 12-14 % de humedad, el grano está duro y no aparece moho después de dos semanas guardado.",
+      "errores_comunes": [
+        "Capa de grano muy gruesa: se seca arriba y se pudre abajo.",
+        "Dejarlo destapado de noche: recupera humedad.",
+        "Pasarse de 40 °C con semilla: puede no germinar.",
+        "Guardar el grano antes de llegar al peso calculado."
+      ],
+      "dosis_o_uso": "Meta para guardar: 12-14 % de humedad (FAO). Temperatura máxima: 60 °C para alimento de animales y 40 °C para semilla (FAO). Ejemplo: 10 kg de maíz con 25 % de humedad deben quedar en 8,6 kg para llegar a 13 %.",
+      "mision": {
+        "titulo": "Primer lote secado al sol",
+        "como_se_cumple": "Anotar en la app, como Nota, un lote con kg húmedos, kg secos, días de secado y la temperatura máxima medida dentro del secador.",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "FAO. Manual de manejo poscosecha de granos a nivel rural: los granos y su calidad, secado de los granos", "url": "https://www.fao.org/4/x5027s/x5027S02.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    }
+  ]
+}

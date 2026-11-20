@@ -1,0 +1,310 @@
+{
+  "tecnicas": [
+    {
+      "id": "gallinas-cama-profunda",
+      "titulo": "Cama profunda seca en el galpón",
+      "categoria": "gallinas",
+      "nivel": 1,
+      "resumen": "Una capa de 15 cm de viruta o cascarilla que se voltea cada semana y se repone donde se moja. Mantiene el piso seco y tibio y al final del ciclo se vuelve abono.",
+      "por_que": "A 2.600 m el problema no es solo el frío: es la humedad. La cama mojada trae coccidiosis y amoníaco. La FAO pide voltear la cama a menudo y cambiarla cuando se moja, y como mucho 3 o 4 gallinas por m² en cama profunda. La cama vieja, compostada, abona la huerta: la gallinaza no se bota.",
+      "materiales": [
+        { "item": "Viruta de madera o cascarilla de arroz (15 cm sobre 12 m²)", "cantidad": 1800, "unidad": "l", "costo_cop": null },
+        { "item": "Cal para el piso antes de poner la cama", "cantidad": 10, "unidad": "kg", "costo_cop": null },
+        { "item": "Horquilla o rastrillo", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Tarima o bloque para subir el bebedero", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Saque la gallinaza vieja, barra, lave y encale el piso (procedimiento de alistamiento de Solla 2018).",
+        "Riegue la viruta o la cascarilla seca hasta 15 cm de espesor (Solla 2018).",
+        "Ponga el bebedero sobre una tarima o en un rincón con desagüe, para que el goteo no caiga en la cama.",
+        "Cada semana voltee la cama con la horquilla y agregue una capa delgada de material nuevo.",
+        "Retire el mismo día cualquier parche mojado o en costra y reemplácelo por material seco (FAO).",
+        "Al vaciar el galpón, lleve la cama vieja a la compostera antes de usarla en la huerta."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "Un puñado de cama apretado en la mano no escurre ni queda hecho bola, y agachado a la altura de las gallinas no huele a amoníaco.",
+      "errores_comunes": [
+        "Dejar el bebedero directo sobre la cama: el goteo la moja.",
+        "Poner menos de 10 cm de material: se apelmaza rápido.",
+        "Meter más de 3 o 4 gallinas por m² (FAO): no alcanza a secarse.",
+        "Usar la cama fresca en la huerta sin compostarla."
+      ],
+      "dosis_o_uso": "15 cm de espesor (Solla 2018); máximo 3-4 aves por m² en cama profunda (FAO 2004). Voltear cada semana y cambiar lo mojado de inmediato.",
+      "mision": {
+        "titulo": "Cuatro semanas de cama seca",
+        "como_se_cumple": "Durante 4 semanas seguidas, una vez por semana, anote como Nota en el sistema del gallinero el estado de la cama: seca, húmeda o en costra. Si quiere foto, tómela con el celular: los registros de la app no llevan fotos. Cuando lleve 4 semanas seguidas con la cama seca, marque «Lo hice».",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial", "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 6: sanidad", "url": "https://www.fao.org/4/y5169e/y5169e07.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-pastoreo-rotativo",
+      "titulo": "Pastoreo rotativo en cuatro potreros",
+      "categoria": "gallinas",
+      "nivel": 2,
+      "resumen": "Las 30 gallinas salen a unos 630 m² divididos en cuatro potreros con malla. Cada semana cambian de potrero y los otros tres descansan y rebrotan.",
+      "por_que": "Si las gallinas pisan siempre el mismo sitio, lo vuelven barro. Rotando, abonan el suelo de forma pareja y el pasto alcanza a recuperarse. Si busca el sello ecológico, la certificadora además exige que no vivan siempre encerradas, que el área al aire libre esté cubierta de vegetación en su mayor parte y que no pasen de 488 gallinas por hectárea (Reglamento de la Res. MADR 187 de 2006: art. 14 e, art. 15 b y Anexo V; su vigencia está en duda por el Decreto 1468 de 2020).",
+      "materiales": [
+        { "item": "Malla de gallinero de 1,5 m de alto", "cantidad": 100, "unidad": "m", "costo_cop": null },
+        { "item": "Postes de madera o guadua", "cantidad": 34, "unidad": "unidad", "costo_cop": null },
+        { "item": "Puertas o pasos desde el galpón a cada potrero", "cantidad": 4, "unidad": "unidad", "costo_cop": null },
+        { "item": "Área total de pastoreo para 30 gallinas", "cantidad": 630, "unidad": "m2", "costo_cop": null }
+      ],
+      "pasos": [
+        "Mida el terreno junto al galpón: para 30 gallinas cuente unos 630 m², 21 m² por gallina. Esa cifra sale del tope de 488 gallinas por hectárea que exige la certificadora para el sello ecológico (Anexo V del Reglamento de la Res. MADR 187 de 2006). Sin sello, sirve de guía: con menos espacio el potrero se pela antes.",
+        "Divídalo en cuatro potreros de unos 160 m² que tengan salida al galpón.",
+        "Encierre con malla de 1,5 m y entierre el borde inferior para que no entren perros ni zorros por debajo.",
+        "Deje el comedero y el bebedero bajo techo, no en el potrero, para no atraer aves silvestres. Mientras dure la emergencia por influenza aviar, el ICA pide controlar su presencia (Res. ICA 00012995 de 2026, art. 3.1.2). Esa emergencia dura hasta 12 meses, prorrogables 6: revise en ica.gov.co si sigue vigente. Controlar no es cazar: la fauna silvestre es de la Nación (Decreto-Ley 2811 de 1974, art. 248).",
+        "Abra un solo potrero por semana; con cuatro, cada uno descansa tres semanas (cálculo).",
+        "Si en un potrero se ve tierra pelada, sáquelo de la rotación y siémbrele pasto o forraje.",
+        "Siembre árboles o arbustos forrajeros en los bordes: dan sombra y refugio. Si busca el sello ecológico, la certificadora pide asociar pastos con árboles o arbustos (Reglamento de la Res. MADR 187 de 2006, art. 18 b)."
+      ],
+      "listo_en_dias": 28,
+      "como_saber_si_salio_bien": "Al sacar a las gallinas de un potrero, sigue verde en su mayor parte, y la entrada del galpón no está encharcada ni pelada.",
+      "errores_comunes": [
+        "Dejar abiertos todos los potreros a la vez: las gallinas se quedan cerca del galpón y lo pelan.",
+        "Cerca sin enterrar: la FAO advierte que el depredador que entra una vez vuelve la noche siguiente.",
+        "Dejar alimento afuera: atrae aves silvestres y roedores.",
+        "Dejar las gallinas afuera de noche."
+      ],
+      "dosis_o_uso": "Si busca el sello ecológico: máximo 488 gallinas ponedoras por hectárea en pastoreo permanente, unos 21 m² por gallina. Lo exige la certificadora según el Anexo V del Reglamento de la Res. MADR 187 de 2006, de vigencia en duda por el Decreto 1468 de 2020. Sin sello, úselo de guía.",
+      "mision": {
+        "titulo": "Primera vuelta completa",
+        "como_se_cumple": "Mida los cuatro potreros y anote el área de cada uno como Medición en el sistema del gallinero. Si quiere un plano, dibújelo en un papel: el mapa de la app es de ejemplo y no deja marcar potreros. Durante 4 semanas, anote como Nota cada cambio de potrero. Cuando lleve 4 cambios anotados, marque «Lo hice».",
+        "xp": 120
+      },
+      "fuentes": [
+        { "titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006, versión 01 (copia de Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 00012995 de 2026 (emergencia por influenza aviar)", "url": "https://www.ica.gov.co/getattachment/35b84fdc-0a5a-4d2f-b0a6-9be473a68b4d/2026R00012995.aspx", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1468 de 2020 (vigencia de los reglamentos técnicos)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto-Ley 2811 de 1974, arts. 248 y 252 (fauna silvestre)", "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_2811_1974_pr006.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-crianza-clueca",
+      "titulo": "Sacar pollitos con gallina clueca",
+      "categoria": "gallinas",
+      "nivel": 2,
+      "resumen": "Una gallina clueca empolla unos 10 huevos fértiles durante 21 días y cría a los pollitos sin calefacción eléctrica. Así la finca repone su propio lote.",
+      "por_que": "Una criadora eléctrica de 250 W gasta unos 6 kWh al día (cálculo) y a 2.600 m las noches son frías. La clueca da el calor gratis y enseña a comer. La FAO aconseja no ponerle más de 10 huevos, porque con más baja el nacimiento, y considera normal que nazcan 8 de cada 10. En araucanas espere menos.",
+      "materiales": [
+        { "item": "Huevos fértiles del corral de cría, de menos de 7 días", "cantidad": 10, "unidad": "unidad", "costo_cop": null },
+        { "item": "Caja o nido aparte en un rincón tranquilo", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Paja seca para el nido", "cantidad": 2, "unidad": "kg", "costo_cop": null },
+        { "item": "Linterna para mirar los huevos al trasluz", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Huevos falsos (de madera o yeso) para inducir la cluequez", "cantidad": 3, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Guarde los huevos para incubar a 12-14 °C y 75-85 % de humedad, máximo 7 días (FAO).",
+        "Escoja una gallina que siga echada en el nido; si quiere animarla, déjele huevos falsos (FAO).",
+        "Pásela de noche a un nido aparte, con agua y comida cerca, lejos del resto del lote.",
+        "Márquele a cada huevo la fecha con lápiz y póngale unos 10: una gallina cubre 14-16, pero con más de 10 baja el nacimiento (FAO).",
+        "Al día 7, mire cada huevo al trasluz con la linterna y retire los claros, que no tienen embrión (FAO).",
+        "No la moleste del día 18 al 21; los pollitos nacen entre los días 20 y 21 (FAO).",
+        "Deje los pollitos con la mamá unas 9 o 10 semanas (FAO), con alimento de iniciación y un bebedero poco hondo.",
+        "Antes de la primera nidada, pregúntele al veterinario o al ICA si debe vacunar contra Marek a los pollitos que nazcan en la finca. La Res. ICA 3651 de 2014 pide esa vacuna el primer día, en la planta de incubación, pero en su capítulo para granjas bioseguras de 200 aves o más. Lo que sí obliga a cualquier lote, aunque sea pequeño, es vacunar contra Newcastle (Ley 1255 de 2008, art. 10)."
+      ],
+      "listo_en_dias": 21,
+      "como_saber_si_salio_bien": "Nacen cerca de 8 de cada 10 huevos puestos (FAO). En araucanas, menos es normal: en Chile se midió 43 % de incubabilidad (Figueroa 2014). Anote cada nidada como Medición en el sistema del gallinero y compare a mano una con otra.",
+      "errores_comunes": [
+        "Ponerle más de 10 huevos a una sola clueca.",
+        "Guardar los huevos en la nevera o más de una semana.",
+        "Cruzar gallo mechudo con gallina mechuda: el gen de los mechones es letal y muchos pollitos mueren en el cascarón (Livestock Conservancy).",
+        "Vender esos huevos fértiles o los pollitos: son material genético aviar, y venderlos exige registro y licencia del ICA (Res. ICA 3650 de 2014). El registro del predio (RSPP) es otro trámite y no los reemplaza. Tampoco venda el huevo fértil como huevo de mesa: el INVIMA lo da por no apto para el consumo (comunicado 4000-3312-20 de 2020)."
+      ],
+      "dosis_o_uso": "Unos 10 huevos por clueca, 21 días de incubación, revisión al trasluz el día 7 y pollitos con la mamá 9-10 semanas (FAO 2004).",
+      "mision": {
+        "titulo": "Mi primera nidada",
+        "como_se_cumple": "En el sistema del gallinero, anote una Nota con la fecha en que se echó la gallina. Anote como Medición los huevos puestos, los claros del día 7 y los pollitos nacidos. Saque a mano el % de nacimiento: nacidos entre huevos puestos, por 100. Cuando nazca la nidada y tenga la cuenta, marque «Lo hice».",
+        "xp": 150
+      },
+      "fuentes": [
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 5: incubación", "url": "https://www.fao.org/4/y5169e/y5169e06.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Figueroa, M. (2014). Evaluación y características de la gallina araucana como ave de postura (ficha ANID)", "url": "https://investigadores.anid.cl//en/public_search/work?id=525001", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Livestock Conservancy: Araucana chicken", "url": "https://livestockconservancy.org/araucana-chicken/", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 3650 de 2014 (material genético aviar)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_3650_2014.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 3651 de 2014 (granjas avícolas bioseguras; vacunación en el art. 16)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_3651_2014.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Ley 1255 de 2008 (Newcastle)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/ley_1255_2008.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 090464 de 2021 (registro de predios pecuarios, RSPP)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_90464_2021.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Comunicado INVIMA 4000-3312-20 (huevo fértil)", "url": "https://www.invima.gov.co/biblioteca/download/77406", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-huevo-limpio-seco",
+      "titulo": "Recoger y limpiar el huevo en seco",
+      "categoria": "gallinas",
+      "nivel": 1,
+      "resumen": "Recoja seguido, limpie en seco solo el huevo apenas manchado, pese y clasifique por tamaño, y guarde en un sitio fresco. Un huevo limpio se vende mejor.",
+      "por_que": "Un huevo que pasa horas en el nido se ensucia, se rompe o se lo comen. Solla pide recoger mínimo 5 veces al día y limpiar los sucios en seco, con esponjilla metálica. Los rotos, los que tienen excremento y los fértiles no van a la venta: el INVIMA los da por no aptos para el consumo (comunicado 4000-3312-20 de 2020). Para vender, aunque sean pocas gallinas, el predio tiene que estar registrado antes en el ICA (RSPP, Res. ICA 090464 de 2021). El huevo empacado lleva rótulo completo, con fecha (Res. 5109 de 2005). No reutilice cubetas de cartón moldeado ni use empaques de otros productos (comunicado INVIMA 4000-3312-20). Si debe cobrar IVA o facturar no está claro en la norma: que lo decida un contador.",
+      "materiales": [
+        { "item": "Esponjilla metálica para limpiar en seco", "cantidad": 2, "unidad": "unidad", "costo_cop": null },
+        { "item": "Báscula de cocina digital (precisión de 1 g)", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Canasta acolchada para recoger", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Paja o viruta limpia para los nidos", "cantidad": 5, "unidad": "kg", "costo_cop": null }
+      ],
+      "pasos": [
+        "Recoja varias veces al día; Solla aconseja mínimo 5 veces, con el 90 % recogido antes del mediodía.",
+        "Separe en el momento los rotos y los muy sucios: no van a la venta.",
+        "Limpie en seco, con la esponjilla metálica, solo las manchas pequeñas (Solla 2018).",
+        "Pese cada huevo para separarlo por tamaño. Si quiere llevar el dato, anote como Medición en el sistema del gallinero el peso de 10 huevos. Las clases por peso (Jumbo, AAA, AA, A…) se atribuyen a la NTC 1240 de Icontec, una norma de pago que no se pudo leer. Por eso la app no muestra esa tabla ni la da por regla: pregúntele a su comprador qué clase pide y con qué peso.",
+        "Guarde a 10-13 °C y 70-80 % de humedad, en un sitio solo para huevos (Solla 2018).",
+        "Cambie la cama de los nidos cada semana (Solla 2018): un nido limpio da un huevo limpio."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "En la semana, los huevos sucios y rotos suman 5 % o menos del total. Es la pérdida que usa el modelo de Finagro para una granja pequeña de Ubaté.",
+      "errores_comunes": [
+        "Recoger una sola vez, en la tarde.",
+        "Guardar los huevos en la cocina caliente o junto a la gallinaza.",
+        "Guardar los rotos y los muy sucios junto a los buenos.",
+        "Mezclar en la venta los huevos del corral de cría: son fértiles, se guardan para incubar y no se venden como huevo de mesa (comunicado INVIMA 4000-3312-20 de 2020)."
+      ],
+      "dosis_o_uso": "Recolección mínima de 5 veces al día, limpieza en seco y almacenamiento a 10-13 °C con 70-80 % de humedad relativa (Solla 2018).",
+      "mision": {
+        "titulo": "Semana limpia",
+        "como_se_cumple": "Durante 7 días seguidos, anote todos los huevos recogidos en «Huevos del día» y, aparte, como Medición, cuántos salieron sucios y cuántos rotos. Al final de la semana saque la cuenta a mano: sucios más rotos, entre el total, por 100. Si da 5 % o menos, marque «Lo hice».",
+        "xp": 60
+      },
+      "fuentes": [
+        { "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial", "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Finagro, Marco de Referencia Agroeconómico: huevos comercial, Ubaté (abril de 2018)", "url": "https://www.finagro.com.co/sites/default/files/2022-05/huevos_comercial_cundinamarca.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 090464 de 2021 (registro de predios pecuarios, RSPP)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_90464_2021.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Comunicado INVIMA 4000-3312-20 (huevo fértil)", "url": "https://www.invima.gov.co/biblioteca/download/77406", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución 5109 de 2005 (rótulo de alimentos envasados)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minproteccion_5109_2005.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-control-acaros",
+      "titulo": "Ácaros y piojos sin organofosforados",
+      "categoria": "plagas",
+      "nivel": 2,
+      "resumen": "Revise las perchas de noche con linterna, deje un baño de polvo con ceniza de madera y limpie con jabón potásico, agua caliente y cal. Sin organofosforados ni organoclorados.",
+      "por_que": "Los ácaros se esconden de día en grietas y perchas y pican de noche; con los piojos, bajan la postura (FAO). Use un antiparasitario convencional solo como último recurso: con diagnóstico del veterinario y respetando el tiempo de retiro de la etiqueta. Si busca el sello ecológico, la certificadora no acepta organofosforados ni organoclorados como antiparasitarios externos. Además pide el doble del tiempo de retiro y dejar anotado cada uso (Reglamento de la Res. MADR 187 de 2006, art. 20 h, i y j; su vigencia está en duda por el Decreto 1468 de 2020).",
+      "materiales": [
+        { "item": "Ceniza de madera tamizada para el baño de polvo", "cantidad": 10, "unidad": "l", "costo_cop": null },
+        { "item": "Tierra seca para mezclar con la ceniza", "cantidad": 20, "unidad": "l", "costo_cop": null },
+        { "item": "Cajón para el baño de polvo, bajo techo", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Jabón potásico", "cantidad": 1, "unidad": "kg", "costo_cop": null },
+        { "item": "Cal para blanquear paredes y grietas", "cantidad": 10, "unidad": "kg", "costo_cop": null },
+        { "item": "Linterna y toalla de papel blanca", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Una vez al mes, de noche, pase una toalla de papel blanca por debajo de las perchas y mire con la linterna si quedan puntos rojos o grises que se mueven.",
+        "Revise también debajo de las alas y alrededor de la cloaca de varias gallinas: ahí viven los piojos (FAO).",
+        "Mantenga bajo techo un cajón con tierra seca y ceniza de madera para que las gallinas se bañen solas (FAO).",
+        "Si encuentra ácaros, saque las perchas, lávelas con jabón potásico y agua caliente o vapor, y blanquee paredes y grietas con cal. Si busca el sello ecológico, son productos que la certificadora acepta (Anexo IV del Reglamento de la Res. MADR 187 de 2006).",
+        "Selle las grietas y retire con frecuencia el excremento y las plumas (FAO).",
+        "Repita la revisión nocturna a la semana. Si la plaga sigue, llame al veterinario antes de usar cualquier producto convencional."
+      ],
+      "listo_en_dias": 7,
+      "como_saber_si_salio_bien": "En la revisión nocturna, la toalla de papel sale limpia de las perchas y de los nidos.",
+      "errores_comunes": [
+        "Revisar de día: los ácaros están escondidos en las grietas.",
+        "Fumigar con un insecticida organofosforado si busca el sello ecológico: la certificadora no lo acepta (Reglamento de la Res. MADR 187 de 2006, art. 20 j).",
+        "Olvidar los nidos y las rendijas de la madera.",
+        "Usar tierra diatomácea sin preguntarle a la certificadora, si busca el sello ecológico: la acepta solo con necesidad reconocida por ella (Anexo I del Reglamento de la Res. MADR 187 de 2006, en el texto del art. 11 de la Res. 199 de 2016)."
+      ],
+      "dosis_o_uso": "Baño de polvo permanente con ceniza de madera (FAO). Limpieza con jabón de potasio o sodio, vapor de agua, hipoclorito de sodio o cal. Si busca el sello ecológico, la certificadora acepta esos productos (Anexo IV del Reglamento de la Res. MADR 187 de 2006).",
+      "mision": {
+        "titulo": "Noche de linterna",
+        "como_se_cumple": "Una vez al mes, durante 3 meses, haga la revisión nocturna de perchas y nidos. Anote cada revisión como Sanidad en el sistema del gallinero, con el resultado: limpio o con ácaros. Si quiere foto, tómela con el celular: los registros de la app no llevan fotos. Con 3 revisiones anotadas, marque «Lo hice».",
+        "xp": 100
+      },
+      "fuentes": [
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 6: sanidad", "url": "https://www.fao.org/4/y5169e/y5169e07.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006, versión 01 (copia de Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución MADR 199 de 2016", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1468 de 2020 (vigencia de los reglamentos técnicos)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-nido-y-percha",
+      "titulo": "Nidos y perchas a la medida",
+      "categoria": "gallinas",
+      "nivel": 1,
+      "resumen": "Ocho nidos de 30 × 30 × 45 cm para 30 gallinas y 6 m de percha con tabla de excrementos. Duermen arriba, ponen en el nido y la cama no se ensucia.",
+      "por_que": "Una gallina sin sitio en la percha duerme en el piso y ensucia la cama. Una sin nido pone en cualquier parte, y ese huevo se ensucia o se pierde. Las medidas vienen de Solla (nidos) y de la FAO (perchas), y la tabla de excrementos recoge la gallinaza más rica de la noche.",
+      "materiales": [
+        { "item": "Nidos de madera de 30 × 30 × 45 cm", "cantidad": 8, "unidad": "unidad", "costo_cop": null },
+        { "item": "Varas o listones de 2 a 3 cm de grueso para perchas", "cantidad": 6, "unidad": "m", "costo_cop": null },
+        { "item": "Tabla o lámina para recoger excrementos bajo las perchas", "cantidad": 3, "unidad": "m2", "costo_cop": null },
+        { "item": "Viruta o paja para los nidos", "cantidad": 5, "unidad": "kg", "costo_cop": null }
+      ],
+      "pasos": [
+        "Haga 1 nido por cada 4 gallinas, de 30 cm de ancho, 30 cm de alto y 45 cm de fondo (Solla 2018); para 30 gallinas, 8 nidos.",
+        "Ubíquelos a 50 cm del piso en la parte oscura del galpón, con 10 cm de viruta o paja (Solla 2018).",
+        "Calcule 20 cm de percha por gallina (FAO: 15-20 cm); para 30 gallinas, 6 m, por ejemplo tres varas de 2 m.",
+        "Ponga la primera vara a 20-25 cm de la pared y las demás cada 30-40 cm (FAO).",
+        "Ponga la tabla de excrementos a máximo 75 cm del piso, las perchas unos 20 cm por encima, y deje que la tabla sobresalga 30 cm por delante de la última vara (FAO).",
+        "Haga las perchas desmontables, para lavarlas y revisarlas contra ácaros."
+      ],
+      "listo_en_dias": 2,
+      "como_saber_si_salio_bien": "Al anochecer todas las gallinas están en las perchas, ninguna en el piso ni dentro de los nidos, y casi todos los huevos aparecen en los nidos.",
+      "errores_comunes": [
+        "Menos de 15 cm de percha por gallina: las que no caben duermen en el piso.",
+        "Nidos en el sitio más iluminado del galpón.",
+        "Perchas fijas con grietas, donde se esconden los ácaros.",
+        "No cambiar la cama del nido cada semana (Solla)."
+      ],
+      "dosis_o_uso": "1 nido por cada 4 gallinas (Solla 2018; la FAO y Hy-Line dicen 1 por cada 5) y 15-20 cm de percha por gallina (FAO; Hy-Line pide 10-15).",
+      "mision": {
+        "titulo": "Casa lista",
+        "como_se_cumple": "Anote como Medición en el sistema del gallinero el número de nidos y los metros de percha. Haga la cuenta a mano: debe haber 1 nido por cada 4 gallinas y al menos 15 cm de percha por gallina. Si quiere foto, tómela con el celular: los registros de la app no llevan fotos. Si las cuentas dan, marque «Lo hice».",
+        "xp": 70
+      },
+      "fuentes": [
+        { "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial", "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Hy-Line Brown, guía de estándares, sistemas alternativos (mayo de 2026)", "url": "https://www.hyline.com/filesimages/Hy-Line-Products/Hy-Line-Product-PDFs/Brown/Brown%20Alt/BRN%20ALT%20STD%20ENG.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "gallinas-prueba-del-gallo",
+      "titulo": "La prueba del gallo: huevo verde casi seguro",
+      "categoria": "gallinas",
+      "nivel": 3,
+      "resumen": "Cruce el gallo «araucano» con gallinas de huevo marrón y mire el huevo de sus hijas. Si 7 seguidas ponen verde o azul, el gallo es casi con certeza puro: todas sus hijas con gallinas marrones pondrán verde.",
+      "por_que": "El azul lo da un solo gen dominante (O), y el gallo lo lleva sin mostrarlo. Un gallo O/o da la mitad de hijas sin color; uno O/O da el 100 % con color, y con madres de huevo marrón el 100 % pone verde. Saberlo permite que la finca críe sus propias pollas de color en vez de comprarlas a ciegas.",
+      "materiales": [
+        { "item": "Gallo candidato hijo de gallina de huevo azul o verde", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Gallinas de huevo marrón o blanco (o/o) para el corral de cría", "cantidad": 8, "unidad": "unidad", "costo_cop": null },
+        { "item": "Anillos de colores para las patas", "cantidad": 20, "unidad": "unidad", "costo_cop": null },
+        { "item": "Malla para el corral de cría aparte", "cantidad": 20, "unidad": "m", "costo_cop": null }
+      ],
+      "pasos": [
+        "Arme un corral de cría aparte con el gallo candidato y de 6 a 10 gallinas de huevo marrón (proporción estimada, de práctica común).",
+        "Si esas gallinas estuvieron con otro gallo, espere 4 semanas antes de guardar huevos para incubar: pueden guardar semen del gallo anterior 3 semanas o algo más. Desde entonces, marque esos huevos como «para incubar» y no los mezcle con el huevo de mesa.",
+        "Saque pollitos con una clueca (técnica «Sacar pollitos con gallina clueca») y ponga un anillo a cada pollita.",
+        "Cuando empiecen a poner (hacia la semana 24), anote como Nota en el sistema del gallinero el anillo de cada hija y el color de su primer huevo. La foto guárdela en el celular: los registros de la app no llevan fotos.",
+        "Si una sola hija pone huevo marrón o crema sin tono verde y, al partirlo, la cáscara es blanca por dentro (la que lleva el azul es azul o verdosa también por dentro), el gallo no es puro (es O/o, o ni siquiera lleva el gen): sáquelo del corral de cría.",
+        "Si 7 hijas seguidas ponen verde o azul, el gallo es casi con certeza O/O: un gallo O/o sacaría 7 hijas seguidas así solo 1 vez de cada 128."
+      ],
+      "listo_en_dias": 190,
+      "como_saber_si_salio_bien": "El gallo tiene 7 o más hijas evaluadas, todas de huevo verde o azul y ninguna marrón. Desde ese momento puede dar el gallo por puro casi con certeza: un gallo que no fuera puro sacaría 7 hijas seguidas de huevo verde o azul como mucho 1 vez de cada 128. Sus hijas con gallinas marrones pondrán verde.",
+      "errores_comunes": [
+        "Juzgar al gallo por su aspecto: el gen no se ve en el gallo y los rasgos de la araucana se mezclan (Livestock Conservancy).",
+        "Usar madres de huevo azul: si son O/O la prueba no sirve, porque toda hija hereda el azul de la madre.",
+        "Confundir un verde muy pálido con crema: compare siempre con la misma carta de colores y con buena luz.",
+        "Cruzar gallo mechudo con gallina mechuda (gen letal).",
+        "Vender pollitos o huevos fértiles del corral de cría: exige registro y licencia del ICA como productor de material genético aviar (Res. ICA 3650 de 2014)."
+      ],
+      "dosis_o_uso": "Mínimo 7 hijas evaluadas por gallo. Con madres o/o, cada hija de un gallo O/o tiene 1 de 2 probabilidades de salir sin color.",
+      "mision": {
+        "titulo": "Gallo probado",
+        "como_se_cumple": "Anote como Nota en el sistema del gallinero el anillo de cada hija y el color de su primer huevo. La foto guárdela en el celular: los registros de la app no llevan fotos. Lleve la cuenta a mano: con 7 hijas verdes o azules, el gallo es casi con certeza O/O; con la primera hija marrón (cáscara blanca por dentro), no es puro. Cuando tenga el resultado, marque «Lo hice».",
+        "xp": 200
+      },
+      "fuentes": [
+        { "titulo": "Wang, Z. et al. (2013). An EAV-HP insertion in 5′ flanking region of SLCO1B3 causes blue eggshell in the chicken. PLoS Genetics", "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003183", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Livestock Conservancy: Araucana chicken", "url": "https://livestockconservancy.org/araucana-chicken/", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Cackle Hatchery: F2 Olive Egger", "url": "https://www.cacklehatchery.com/product/f2-olive-egger/", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución ICA 3650 de 2014 (material genético aviar)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/resolucion_ica_3650_2014.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    }
+  ]
+}

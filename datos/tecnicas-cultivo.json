@@ -1,0 +1,294 @@
+{
+  "tecnicas": [
+    {
+      "id": "cultivo-cama-alta",
+      "titulo": "Cama alta de huerta (1,25 × 8 m)",
+      "categoria": "suelo",
+      "nivel": 1,
+      "resumen": "Cama de 1,25 × 8 m aflojada a fondo, con 5 kg de compost por m² y unos 20 cm más alta que el pasillo. No se pisa nunca: así se siembra más junto y se cosecha más por m².",
+      "por_que": "La FAO calcula que 30 a 40 m² bien llevados dan verduras frescas todo el año a un hogar. La cama alta drena el agua de las lluvias de abril-mayo y octubre-noviembre, y no pisarla deja el suelo suelto. Con 16 camas iguales, la rotación de 4 años es fácil de organizar: 4 camas por grupo.",
+      "materiales": [
+        { "item": "Compost maduro (5 kg por m²)", "cantidad": 50, "unidad": "kg", "costo_cop": null },
+        { "item": "Estacas", "cantidad": 4, "unidad": "unidad", "costo_cop": null },
+        { "item": "Cuerda para marcar", "cantidad": 20, "unidad": "m", "costo_cop": null },
+        { "item": "Pala o horquilla", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Rastrojo o paja para cubrir el suelo", "cantidad": 10, "unidad": "kg", "costo_cop": null }
+      ],
+      "pasos": [
+        "Marque con estacas y cuerda un rectángulo de 1,25 × 8 m (10 m²), atravesado a la pendiente para que el agua no corra a lo largo de la cama (práctica general de ladera).",
+        "Afloje la tierra tan hondo como permita la pala, sin dejar terrones grandes.",
+        "Reparta 50 kg de compost maduro (5 kg por m², FAO 2000) y mézclelo con la capa de arriba.",
+        "Suba a la cama la tierra de los pasillos hasta que quede unos 20 cm más alta (FAO 2000).",
+        "Siembre con las distancias de cada cultivo (las fichas de cultivos todavía no están en la app) y marque la cama con su número y su grupo de rotación.",
+        "Trabaje siempre desde el pasillo: la cama no se pisa nunca.",
+        "Entre una cosecha y la siguiente, cubra el suelo con rastrojo para que no quede desnudo; el ICA (2012) recomienda las coberturas."
+      ],
+      "listo_en_dias": 2,
+      "como_saber_si_salio_bien": "Una varilla entra sin esfuerzo unos 20 cm, una hora después de un aguacero no hay charcos en la cama, y la primera cosecha queda pesada y anotada para comparar a mano los kilos por m² con las siguientes.",
+      "errores_comunes": [
+        "Pisar la cama al cosechar o al regar.",
+        "Usar estiércol fresco en vez de compost maduro: la FAO 2007 lo desaconseja.",
+        "Hacer la cama más ancha de lo que alcanza el brazo desde el pasillo.",
+        "Dejar el suelo desnudo entre cultivos."
+      ],
+      "dosis_o_uso": "5 kg de compost maduro por m² antes de cada siembra (FAO 2000): una cama de 10 m² lleva 50 kg.",
+      "mision": {
+        "titulo": "Primera cama viva",
+        "como_se_cumple": "Anotar el compost en el sistema de cultivo de la huerta como «Abono o aplicación», con la fecha y los kg. Anotar en una Nota el número de la cama, su largo y su ancho. Tomar una foto de la cama con el celular: los registros de la app todavía no llevan fotos.",
+        "xp": 50
+      },
+      "fuentes": [
+        { "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: cultivo vegetal intensivo", "url": "https://www.fao.org/4/v5290s/v5290s36.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Almoguera Sánchez y Martínez-Madrid (2018). Comunicación sobre el método biointensivo (UCM)", "url": "https://www.ucm.es/agroecologia/file/comunicacion-oral-biointensivo-congreso-agroecologia-2018", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos, Anexo 1 (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "ICA (2012). Manejo fitosanitario del cultivo de hortalizas", "url": "https://www.ica.gov.co/getattachment/bb883b42-80da-4ae5-851f-4db05edf581b/Manejo-fitosanitario-del-cultivo-de-hortalizas.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-semillero",
+      "titulo": "Semillero protegido junto a la casa",
+      "categoria": "cultivo",
+      "nivel": 1,
+      "resumen": "Semillero alto, cercado y cerca de la casa para lechuga, repollo, brócoli, coliflor, acelga, cebolla cabezona y uchuva. Se trasplanta cuando la plántula ya tiene sus primeras hojas.",
+      "por_que": "Las plántulas recién nacidas son las que más se pierden por babosas, aguaceros y heladas. Tenerlas juntas en un sitio vigilado, cerca de la casa, deja libre la cama varias semanas más, y en ese tiempo cabe otra cosecha corta, como el rábano.",
+      "materiales": [
+        { "item": "Tierra fina tamizada", "cantidad": 30, "unidad": "kg", "costo_cop": null },
+        { "item": "Arena", "cantidad": 10, "unidad": "kg", "costo_cop": null },
+        { "item": "Compost cernido", "cantidad": 10, "unidad": "kg", "costo_cop": null },
+        { "item": "Tablas o guaduas para el borde", "cantidad": 4, "unidad": "unidad", "costo_cop": null },
+        { "item": "Malla o cerca contra gallinas y pájaros", "cantidad": 6, "unidad": "m", "costo_cop": null },
+        { "item": "Hierba seca para cubrir la siembra", "cantidad": 2, "unidad": "kg", "costo_cop": null }
+      ],
+      "pasos": [
+        "Escoja un sitio cerca de la casa, soleado y fácil de regar (FAO 2000).",
+        "Haga una cama de 1 × 2 m unos 15 cm más alta que el suelo, con tierra fina mezclada con arena y compost cernido (FAO 2000).",
+        "Ciérquela: las gallinas y los pájaros acaban un semillero en una mañana.",
+        "Siembre en hileras o en bandejas y cubra con una capa delgada de hierba seca hasta que nazcan (FAO 2000).",
+        "Riegue con regadera de chorro fino, de preferencia en la mañana (estimado).",
+        "Trasplante a la cama cuando la plántula eche sus primeras hojas (FAO 2006), en hileras a 30-50 cm para las coles; la uchuva se trasplanta a los 2 meses (FAO 2007).",
+        "Anote cuántas plántulas sembró y cuántas llegaron vivas al trasplante."
+      ],
+      "listo_en_dias": 30,
+      "como_saber_si_salio_bien": "Al trasplante, al menos 8 de cada 10 plántulas están sanas, derechas y con raíz blanca (meta propia, estimada). Si se pierden más, revise babosas, exceso de agua o frío.",
+      "errores_comunes": [
+        "Tierra pesada sin arena: se encharca y pudre las raíces.",
+        "Sembrar muy tupido: las plántulas se estiran y quedan débiles.",
+        "Dejar el semillero sin cerca.",
+        "Trasplantar a pleno sol o en temporada de heladas sin protección (estimado)."
+      ],
+      "dosis_o_uso": "Cantidades estimadas para un semillero de 1 × 2 m, que da plántulas para varias camas. En tierra fría las coles y la lechuga suelen tardar de 4 a 6 semanas hasta el trasplante (estimado); la uchuva, 2 meses (FAO 2007).",
+      "mision": {
+        "titulo": "Semillero en marcha",
+        "como_se_cumple": "Registrar una siembra en semillero (cultivo, fecha y número de plántulas) y, al trasplantar, cuántas sobrevivieron.",
+        "xp": 40
+      },
+      "fuentes": [
+        { "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: semilleros", "url": "https://www.fao.org/4/v5290s/v5290s39.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2006). Crear y manejar un huerto escolar: fichas de alimentos", "url": "https://www.fao.org/4/a0218s/a0218s13.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-asociaciones",
+      "titulo": "Cultivos que se ayudan",
+      "categoria": "cultivo",
+      "nivel": 2,
+      "resumen": "Sembrar juntos cultivos que se ayudan: maíz con haba o arveja; ibia con chugua, cubio y cebolla larga; repollo con lechuga, rábano y cebolla; uchuva con caléndula.",
+      "por_que": "Las leguminosas aportan nitrógeno al cultivo vecino (FAO 2000). La caléndula ayuda a la uchuva contra los trips (FAO 2007) y el ajo ayuda a repeler plagas (FAO 2000). Mezclar tubérculos y variedades es uno de los controles de gusanos que recomienda la FAO 2007. Y el suelo pasa menos tiempo desnudo.",
+      "materiales": [
+        { "item": "Semilla de maíz de altura", "cantidad": 100, "unidad": "g", "costo_cop": null },
+        { "item": "Semilla de haba", "cantidad": 200, "unidad": "g", "costo_cop": null },
+        { "item": "Semilla de caléndula", "cantidad": 5, "unidad": "g", "costo_cop": null }
+      ],
+      "pasos": [
+        "Maíz con haba o arveja: siembre el maíz en surcos de 80-90 cm (FAO 2007) y la leguminosa entre surcos; el maíz le sirve de tutor a la arveja trepadora (estimado).",
+        "Ibia con chugua, cubio y cebolla larga: alterne surcos de cada uno a 60 cm (Clavijo y otros 2011; FAO 2007).",
+        "Repollo con lechuga, rábano y cebolla: siembre lechuga o rábano entre los repollos recién trasplantados (Manual de Cali 2014); se cosechan antes de que el repollo cierre (estimado).",
+        "Uchuva con caléndula: matas de caléndula entre las uchuvas y en los bordes (FAO 2007; cuántas, estimado).",
+        "Ajo en los bordes de las camas, porque ayuda a repeler plagas (FAO 2000).",
+        "Anote en la app qué asoció y en qué cama, y pese por separado la cosecha de cada cultivo."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "Al final del ciclo, la suma de kilos de los cultivos asociados en la cama supera lo que dio un solo cultivo en una cama igual, y se contaron menos plagas. Compárelo con lo anotado: la app todavía no hace esa cuenta.",
+      "errores_comunes": [
+        "Surcos de maíz muy juntos: tapan del sol a lo que crece abajo (estimado).",
+        "Sembrar todo el mismo día cuando uno crece mucho más rápido que el otro (estimado).",
+        "No pesar por separado: sin eso no se sabe si la asociación sirvió."
+      ],
+      "dosis_o_uso": "Cantidades de semilla estimadas para una cama de 10 m².",
+      "mision": {
+        "titulo": "Dos o tres cultivos, una cama",
+        "como_se_cumple": "Anotar como Siembra al menos dos cultivos de esta lista que compartan una cama. Anotar en una Nota el número de esa cama. Al cosechar, anotar los kg de cada cultivo como una Cosecha aparte.",
+        "xp": 60
+      },
+      "fuentes": [
+        { "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: asociación de cultivos", "url": "https://www.fao.org/4/v5290s/v5290s35.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Borrero y Martínez (2014). Manual de agricultura urbana y periurbana, Cali", "url": "https://images.engormix.com/externalFiles/6_AGRICULTURAURBANA-PERIURBANA-MANUAL.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Clavijo, Combariza y Barón (2011). Agronomía Colombiana 29(2): 315-322", "url": "https://revistas.unal.edu.co/index.php/agrocol/article/download/14301/30374/108879", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-rotacion-4-anios",
+      "titulo": "La rueda de 4 años",
+      "categoria": "suelo",
+      "nivel": 2,
+      "resumen": "Repartir la huerta en 4 grupos de camas y mover cada familia un grupo por año: leguminosas, luego crucíferas, luego papa, luego tubérculos andinos, cebollas y raíces.",
+      "por_que": "Hongos del suelo como la hernia de las crucíferas y la pudrición blanca de la cebolla se acumulan si la misma familia repite cama (ICA 2012; RHS). La FAO aconseja no repetir la misma familia más de dos años. Rotar también reparte el abono: las leguminosas dejan nitrógeno para lo que sigue.",
+      "materiales": [
+        { "item": "Estacas o letreros para numerar las camas", "cantidad": 16, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Numere las 16 camas y agrúpelas en 4 grupos de 4: A, B, C y D.",
+        "Primer año: A leguminosas, B crucíferas, C papa, D tubérculos andinos, cebollas y raíces.",
+        "Cada año, cada familia pasa al grupo siguiente: lo que estuvo en A pasa a B, lo de B a C, lo de C a D y lo de D a A.",
+        "La lechuga puede ir en huecos de cualquier grupo; el cilantro y el perejil cuentan como raíces, porque son de la familia de la zanahoria.",
+        "Si aparece hernia (raíces hinchadas en repollo o brócoli), no siembre crucíferas en esa cama hasta corregir el suelo; el ICA (2012) indica encalar hasta pH 7-7,5 al menos 6 semanas antes de sembrarlas.",
+        "Si aparece moho blanco (Sclerotinia), la rotación sola no basta: sus esclerocios viven 3 años o más; drene y retire los residuos (ICA 2012)."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "En sus anotaciones, ninguna cama repite familia en años seguidos, y con los años bajan los casos de hernia y de pudrición blanca.",
+      "errores_comunes": [
+        "Contar la papa criolla aparte de la papa: es la misma familia.",
+        "Olvidar que el rábano es crucífera.",
+        "Poner ibia donde hubo ibia: va después de la papa (FAO 2007).",
+        "Creer que la rotación lo cura todo: el moho blanco necesita drenaje y limpieza."
+      ],
+      "dosis_o_uso": "Un ciclo completo dura 4 años; lleve la cuenta cama por cama en sus anotaciones.",
+      "mision": {
+        "titulo": "Plano de la rueda",
+        "como_se_cumple": "Marcar las 16 camas con estacas o letreros numerados. Anotar en una Nota el número de cada cama, su grupo (A, B, C o D) y la familia sembrada este año.",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "Royal Horticultural Society (RHS). Crop rotation", "url": "https://www.rhs.org.uk/vegetables/crop-rotation", "fecha_consulta": "2026-11-18" },
+        { "titulo": "ICA (2012). Manejo fitosanitario del cultivo de hortalizas", "url": "https://www.ica.gov.co/getattachment/bb883b42-80da-4ae5-851f-4db05edf581b/Manejo-fitosanitario-del-cultivo-de-hortalizas.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: cultivo vegetal intensivo", "url": "https://www.fao.org/4/v5290s/v5290s36.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-preparados-contra-plagas",
+      "titulo": "Preparados caseros contra plagas, a prueba",
+      "categoria": "plagas",
+      "nivel": 2,
+      "resumen": "Tres preparados de la guía FAO de cultivos andinos: ají contra gusanos de la hoja, infusión de plantas aromáticas y jabón contra pulgones. Siempre se prueban primero en pocas plantas.",
+      "por_que": "Salen baratos y de la misma finca. Pero la propia FAO advierte que no se han determinado sus concentraciones ni las épocas oportunas de aplicación. Por eso aquí se tratan como un ensayo: se cuentan las plagas antes y después, en plantas tratadas y sin tratar.",
+      "materiales": [
+        { "item": "Ají picante seco (1 cucharadita por litro)", "cantidad": 5, "unidad": "g", "costo_cop": null },
+        { "item": "Hierbabuena, ajo o cebolla picados (30-40 g por litro)", "cantidad": 40, "unidad": "g", "costo_cop": null },
+        { "item": "Jabón de barra para lavar, rallado (1 cucharada por litro)", "cantidad": 15, "unidad": "g", "costo_cop": null },
+        { "item": "Agua", "cantidad": 3, "unidad": "l", "costo_cop": null },
+        { "item": "Atomizador o bomba manual", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Marque 10 plantas que va a tratar y 10 iguales que no va a tratar, y cuente la plaga en cada una (día 0).",
+        "Ají: 1 cucharadita de ají en 1 litro de agua, en tres aplicaciones contra los gusanos de la hoja (FAO 2007).",
+        "Infusión: 30-40 g de hierbabuena, ajo o cebolla picados por litro de agua, 1-2 horas de reposo, y colar. La FAO 2007 da esa proporción para plantas biocidas; usarla con ajo y cebolla es estimado.",
+        "Jabón: 1 cucharada de jabón de lavar por litro de agua caliente, contra pulgones, y dejar enfriar antes de aplicar (FAO 2007, sin el kerosene de la receta original).",
+        "Pruebe primero en 2 o 3 hojas y espere un día para ver si las quema (estimado).",
+        "Aplique en la tarde, sin sol fuerte (estimado), mojando también el envés de las hojas.",
+        "El día 5, cuente otra vez la plaga en las 20 plantas y registre los dos conteos."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "El día 5, las plantas tratadas tienen claramente menos plaga que las no tratadas. Para la polilla de las coles y los muques, el ICA usa como umbral 1 larva por cada 10 plantas: por debajo de eso no hace falta aplicar.",
+      "errores_comunes": [
+        "Agregar kerosene, como trae la receta original: contamina el suelo y el agua, y aquí se descarta.",
+        "Usar tabaco, que la guía nombra: la nicotina es tóxica para quien aplica y para los animales, y aquí se descarta (criterio propio).",
+        "Aplicar a todo el cultivo sin probar antes en pocas plantas.",
+        "No anotar el resultado: sin conteo no se aprende nada."
+      ],
+      "dosis_o_uso": "Ají: 1 cucharadita por litro, tres aplicaciones. Infusión: 30-40 g de planta por litro, 1-2 h de reposo. Jabón: 1 cucharada por litro de agua caliente. Fuente: FAO 2007, que advierte que estas concentraciones no están validadas.",
+      "mision": {
+        "titulo": "Prueba con testigo",
+        "como_se_cumple": "Registrar el conteo de plaga en 10 plantas tratadas y 10 sin tratar el día 0 y el día 5, con el preparado y la dosis usados.",
+        "xp": 100
+      },
+      "fuentes": [
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos, Anexo 2: biocidas (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "ICA (2012). Manejo fitosanitario del cultivo de hortalizas", "url": "https://www.ica.gov.co/getattachment/bb883b42-80da-4ae5-851f-4db05edf581b/Manejo-fitosanitario-del-cultivo-de-hortalizas.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-semilla-propia",
+      "titulo": "Semilla propia y papa sana",
+      "categoria": "cultivo",
+      "nivel": 3,
+      "resumen": "Guardar semilla de las mejores plantas (haba, arveja, maíz, quinua, cilantro y tubérculos andinos) y renovar la papa con semilla certificada en vez de sembrar papa de mercado.",
+      "por_que": "Fedepapa reporta que solo cerca del 5 % del área de papa se siembra con semilla certificada, y advierte que sembrar papa comercial propaga plagas y enfermedades. En los tubérculos andinos, la semilla sana y la mezcla de variedades son el control principal (FAO 2007). La semilla guardada viene de plantas que ya se dieron en la finca y ahorra compras.",
+      "materiales": [
+        { "item": "Frascos de vidrio con tapa", "cantidad": 10, "unidad": "unidad", "costo_cop": null },
+        { "item": "Cinta o lana para marcar las plantas madre", "cantidad": 5, "unidad": "m", "costo_cop": null },
+        { "item": "Muña seca, como repelente en el almacén", "cantidad": 50, "unidad": "g", "costo_cop": null },
+        { "item": "Papel o toalla para la prueba de germinación", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Marque con cinta las 5 a 10 plantas más sanas y productivas de cada cultivo antes de cosechar el resto (estimado).",
+        "Deje madurar la semilla en la planta: grano duro en haba, arveja, maíz y quinua; flores secas en el cilantro.",
+        "La zanahoria da la raíz el primer año y la semilla el segundo: deje unas plantas sin cosechar (FAO 2006).",
+        "Seque a la sombra, limpie y guarde en frasco cerrado con etiqueta (cultivo, cama y fecha); un poco de muña ayuda contra los insectos del almacén (FAO 2007).",
+        "Tubérculos andinos: guarde tubérculos sanos, sin golpes ni gusanos, de plantas sin síntomas (la FAO 2007 recomienda semilla sana).",
+        "Papa: renueve con semilla certificada; AGROSAVIA produce minitubérculos (Fedepapa). No siembre papa de mercado.",
+        "Antes de sembrar, ponga 10 semillas en papel húmedo y cuente cuántas germinan."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "En la prueba de papel germinan al menos 8 de 10 (meta propia, estimada; hay especies que germinan menos, como la curuba, entre 45 y 60 %, según la FAO 2007), y las plantas de semilla propia rinden igual o más que las de semilla comprada.",
+      "errores_comunes": [
+        "Guardar semilla de la primera planta que se espigó: así se seleccionan plantas que se espigan antes de tiempo (estimado).",
+        "Guardar semilla húmeda: se pudre o se agorgoja.",
+        "Sembrar papa de mercado como semilla (Fedepapa).",
+        "Guardar semilla de híbridos comprados en sobre: la planta hija no sale igual a la madre (estimado)."
+      ],
+      "dosis_o_uso": "Para los tubérculos andinos, la FAO 2007 da de 700 a 1.300 kg de semilla por hectárea según la especie, es decir, de 70 a 130 g por m².",
+      "mision": {
+        "titulo": "Banco de semillas de la finca",
+        "como_se_cumple": "Anotar 5 lotes de semilla propia, cada uno como Cosecha: cultivo, fecha y peso en g, con destino «Se guarda». Anotar el resultado de su prueba de germinación como Medición: cuántas de 10 germinaron.",
+        "xp": 150
+      },
+      "fuentes": [
+        { "titulo": "Fedepapa. Ficha técnica del proyecto FNFP-F-FP-35-62: semilla certificada (2024)", "url": "https://fedepapa.com/home/wp-content/uploads/2026/02/8.-Ficha-tecnica-SEMILLA-CERTIFICADA-2024.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "FAO (2006). Crear y manejar un huerto escolar: fichas de alimentos", "url": "https://www.fao.org/4/a0218s/a0218s13.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "cultivo-guardia-de-heladas",
+      "titulo": "Guardia contra la helada",
+      "categoria": "cultivo",
+      "nivel": 2,
+      "resumen": "En noches despejadas de la temporada seca, sobre todo en enero, cubrir al atardecer la lechuga, la acelga, la uchuva, la arracacha y las plántulas, y anotar la mínima de cada mañana.",
+      "por_que": "El DANE registra heladas, temperaturas bajo 0 °C, en enero en Cundinamarca y Boyacá, en meses secos y con poca nubosidad, de madrugada. En la Sabana, las más dañadas fueron la lechuga Batavia y la acelga. La uchuva sufre daño irreparable bajo 0 °C y la arracacha necesita 7-8 meses sin heladas (FAO 2007).",
+      "materiales": [
+        { "item": "Tela de cobertura liviana o plástico", "cantidad": 18, "unidad": "m2", "costo_cop": null },
+        { "item": "Arcos de varilla o guadua para sostenerla", "cantidad": 6, "unidad": "unidad", "costo_cop": null },
+        { "item": "Termómetro de máximas y mínimas", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Ponga el termómetro de mínimas a la altura de las plantas, en la parte más baja de la huerta: el aire frío baja por la ladera y se queda en lo hondo (estimado).",
+        "En temporada seca, mire el cielo al atardecer: despejado y sin viento es noche de riesgo (el DANE asocia las heladas con poca nubosidad).",
+        "Antes de que caiga el sol, cubra lo sensible con la tela sobre los arcos, sin que toque las hojas (estimado).",
+        "Destape en la mañana, cuando ya haya sol.",
+        "Anote la mínima cada mañana en la app.",
+        "Planee el calendario: lo muy sensible se siembra en marzo-abril para cosecharlo antes de diciembre; para la temporada de heladas quedan los cultivos que la toleran, como cubio, repollo y cebollas."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "Tras una madrugada con mínima bajo 0 °C, las plantas cubiertas no tienen hojas quemadas (negras y blandas) y las descubiertas sí. Compárelo y anótelo.",
+      "errores_comunes": [
+        "Cubrir tarde, cuando el suelo ya perdió el calor del día (estimado).",
+        "Dejar que el plástico toque las hojas: por ahí pasa el frío (estimado).",
+        "Olvidar destapar: de día, las plantas se cocinan bajo el plástico.",
+        "Guiarse por el pronóstico de Bogotá: la ladera tiene su propio clima, y manda el termómetro de la finca."
+      ],
+      "dosis_o_uso": "Unos 18 m² de tela cubren una cama de 1,25 × 8 m montada sobre arcos (estimado). El riesgo mayor está en enero, en noches despejadas (DANE 2020).",
+      "mision": {
+        "titulo": "Guardián de la madrugada",
+        "como_se_cumple": "Registrar la temperatura mínima 14 mañanas seguidas en temporada seca y al menos una noche en que cubrió las plantas.",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "DANE-SIPSA. Informe de heladas, 21 de febrero de 2020", "url": "https://www.dane.gov.co/files/investigaciones/agropecuario/sipsa/heladas/informe-heladas-21-feb-2020.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Tapia y Fries (2007). Guía de campo de los cultivos andinos (FAO y ANPE)", "url": "https://www.fao.org/4/ai185s/ai185s.pdf", "fecha_consulta": "2026-11-18" }
+      ]
+    }
+  ]
+}

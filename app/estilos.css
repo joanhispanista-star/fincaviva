@@ -1,0 +1,219 @@
+/* Finca Viva — estilos de la app.
+   Tema claro a propósito: se usa al aire libre, con sol, y con las manos sucias.
+   Por eso los botones son grandes (48 px mínimo) y los campos usan letra de
+   16 px: con menos, Safari del iPhone hace zoom al tocar el campo y descuadra todo. */
+
+:root {
+  color-scheme: light;
+  --tinta: #1f2a1c;
+  --tinta-suave: #5d6553;
+  --papel: #fffdf6;
+  --fondo: #f6efd9;
+  --linea: #e4dcc6;
+  --verde: #3f8f3a;
+  --verde-osc: #2c6a2a;
+  --verde-claro: #e3f2dc;
+  --oro: #f4b63c;
+  --oro-osc: #b9770e;
+  --cielo: #59c8ff;
+  --rojo: #b93a2e;
+  --rojo-claro: #fbe3df;
+  --sombra: 0 6px 18px rgba(20, 40, 20, 0.18);
+  --radio: 18px;
+  --nav: 74px;
+}
+
+* { box-sizing: border-box; }
+/* Sin esto, el atributo hidden pierde contra cualquier display: grid o flex
+   de una clase (pasó con .dos: el campo de "insumo nuevo" salía siempre). */
+[hidden] { display: none !important; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--verde-osc); }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+
+/* ---------- Esqueleto ---------- */
+#app { min-height: 100vh; }
+.pantalla { max-width: 680px; margin: 0 auto; padding: max(14px, env(safe-area-inset-top)) 14px calc(var(--nav) + 40px + env(safe-area-inset-bottom)); }
+.cabeza { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; min-height: 48px; }
+.cabeza h1 { font-size: 22px; flex: 1; }
+.atras { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--papel); box-shadow: var(--sombra); font-size: 28px; line-height: 1; cursor: pointer; }
+.seccion { margin: 22px 0 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--tinta-suave); }
+
+.tarjeta { background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 14px 16px; margin-bottom: 12px; }
+.tarjeta.plana { box-shadow: none; border: 1px solid var(--linea); }
+.tarjeta.tocable { cursor: pointer; }
+.tarjeta h2 { font-size: 17px; margin-bottom: 6px; }
+.suave { color: var(--tinta-suave); font-size: 14px; }
+.chico { font-size: 12px; }
+.fila-flex { display: flex; gap: 10px; align-items: center; }
+.fila-flex > .crece { flex: 1; min-width: 0; }
+.derecha { text-align: right; }
+.verde { color: var(--verde-osc); }
+.rojo { color: var(--rojo); }
+
+/* ---------- Navegación de abajo ---------- */
+#nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; gap: 4px;
+  padding: 6px 8px max(8px, env(safe-area-inset-bottom)); background: rgba(255, 253, 246, 0.96); border-top: 1px solid var(--linea); backdrop-filter: blur(8px); }
+#nav a { flex: 1; max-width: 120px; display: grid; justify-items: center; gap: 2px; padding: 6px 2px; border-radius: 14px; text-decoration: none; color: var(--tinta-suave); font-size: 11px; font-weight: 700; }
+#nav a span { font-size: 23px; line-height: 1; }
+#nav a.activo { color: var(--verde-osc); background: var(--verde-claro); }
+#nav a.anotar { color: #4a2f00; background: linear-gradient(180deg, #ffd166, #f4a72c); box-shadow: 0 3px 0 var(--oro-osc); transform: translateY(-8px); }
+
+/* ---------- Botones ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 10px 18px; border: 0; border-radius: 14px;
+  font-weight: 800; font-size: 15px; color: #fff; background: linear-gradient(180deg, #5cb85c, var(--verde)); box-shadow: 0 3px 0 var(--verde-osc); cursor: pointer; text-decoration: none; }
+.btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--verde-osc); }
+.btn.oro { color: #4a2f00; background: linear-gradient(180deg, #ffd166, #f4a72c); box-shadow: 0 3px 0 var(--oro-osc); }
+.btn.suave { color: var(--verde-osc); background: var(--papel); box-shadow: inset 0 0 0 2px var(--verde); }
+.btn.peligro { background: linear-gradient(180deg, #d9584b, var(--rojo)); box-shadow: 0 3px 0 #7d241c; }
+.btn.chico { min-height: 38px; padding: 6px 12px; font-size: 13px; }
+.btn.ancho { width: 100%; }
+.botonera { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.botonera .btn { flex: 1 1 140px; }
+.icono-btn { border: 0; background: none; font-size: 20px; padding: 8px; cursor: pointer; border-radius: 10px; }
+
+/* ---------- Indicadores ---------- */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.kpi { background: var(--papel); border-radius: 16px; padding: 12px 14px; box-shadow: var(--sombra); }
+.kpi small { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: var(--tinta-suave); }
+.kpi b { display: block; font-size: 22px; margin-top: 2px; }
+.kpi i { display: block; font-style: normal; font-size: 12px; color: var(--tinta-suave); margin-top: 2px; }
+.kpi.grande { grid-column: 1 / -1; }
+.kpi.grande b { font-size: 30px; }
+.barra { height: 9px; border-radius: 9px; background: #e5e9dc; overflow: hidden; }
+.barra i { display: block; height: 100%; background: linear-gradient(90deg, #7ed957, var(--verde)); border-radius: 9px; }
+.barra.oro i { background: linear-gradient(90deg, #ffd166, #f4a72c); }
+
+/* ---------- Listas ---------- */
+.lista { background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); overflow: hidden; margin-bottom: 12px; }
+.lista .item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--linea); min-height: 56px; }
+.lista .item:first-child { border-top: 0; }
+.lista .item.tocable { cursor: pointer; }
+.lista .emoji { font-size: 24px; width: 32px; text-align: center; flex: none; }
+.lista .cuerpo { flex: 1; min-width: 0; }
+.lista .cuerpo b { display: block; font-size: 15px; }
+/* Sin el :not, esta regla le ganaba a .etiqueta (más específica) y la pastilla
+   «obligatoria» o «estimado» salía como una barra a todo lo ancho. */
+.lista .cuerpo span:not(.etiqueta) { display: block; font-size: 13px; color: var(--tinta-suave); overflow: hidden; text-overflow: ellipsis; }
+/* «De dónde sale» dentro de un ítem: la norma y sus notas, del mismo tamaño
+   chico (el <b> del título y .suave traían su propio tamaño). */
+.lista .cuerpo details b { display: inline; font-size: inherit; }
+.lista .cuerpo details .suave { font-size: inherit; }
+.lista .valor { font-weight: 800; white-space: nowrap; }
+.vacio { text-align: center; padding: 26px 16px; color: var(--tinta-suave); }
+.vacio .emoji { font-size: 42px; display: block; margin-bottom: 6px; }
+.etiqueta { display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 10px; background: var(--verde-claro); color: var(--verde-osc); vertical-align: middle; }
+.etiqueta.oro { background: #fff1cc; color: #7a5200; }
+.etiqueta.rojo { background: var(--rojo-claro); color: var(--rojo); }
+.etiqueta.cielo { background: #dff4ff; color: #04506f; }
+
+/* ---------- Formularios ---------- */
+.campo { display: block; margin-bottom: 14px; }
+.campo > span { display: block; font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+.campo input, .campo select, .campo textarea { width: 100%; min-height: 48px; padding: 10px 12px; font-size: 16px; border: 2px solid var(--linea); border-radius: 12px; background: #fff; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: none; border-color: var(--verde); }
+.campo small { display: block; margin-top: 4px; font-size: 12px; color: var(--tinta-suave); }
+.marcar { display: flex; align-items: center; gap: 10px; min-height: 48px; font-weight: 700; margin-bottom: 10px; }
+.marcar input { width: 24px; height: 24px; accent-color: var(--verde); }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ob-error { background: var(--rojo-claro); color: var(--rojo); border-radius: 12px; padding: 10px 14px; font-weight: 700; margin-bottom: 12px; }
+.ob-error ul { margin: 4px 0 0; padding-left: 18px; font-weight: 600; }
+.nota { background: #fff4cc; color: #6b4e00; border-radius: 12px; padding: 10px 14px; font-size: 14px; margin-bottom: 12px; }
+.nota.cielo { background: #dff4ff; color: #04506f; }
+.contador { display: flex; align-items: center; gap: 8px; }
+.contador button { width: 48px; height: 48px; border-radius: 14px; border: 0; font-size: 24px; font-weight: 800; background: var(--verde-claro); color: var(--verde-osc); cursor: pointer; flex: none; }
+.contador input { text-align: center; font-size: 22px !important; font-weight: 800; }
+.huevo { width: 22px; height: 28px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; display: inline-block; vertical-align: middle; border: 1px solid rgba(0, 0, 0, 0.15); flex: none; }
+.huevo.azul { background: #a9d6e5; } .huevo.verde { background: #b7d3a8; } .huevo.marron { background: #c99a6e; } .huevo.crema { background: #f1e3c6; }
+
+/* ---------- Pestañas y chips ---------- */
+.pestanas { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 12px; scrollbar-width: none; }
+.pestanas button { flex: none; min-height: 40px; padding: 6px 14px; border-radius: 20px; border: 2px solid var(--linea); background: var(--papel); font-weight: 700; font-size: 14px; cursor: pointer; }
+.pestanas button.activo { border-color: var(--verde); background: var(--verde-claro); color: var(--verde-osc); }
+
+/* ---------- Avisos flotantes y celebraciones ---------- */
+#aviso { position: fixed; left: 50%; bottom: calc(var(--nav) + 26px + env(safe-area-inset-bottom)); transform: translate(-50%, 20px); opacity: 0; z-index: 40;
+  background: var(--tinta); color: #fff; padding: 10px 18px; border-radius: 22px; font-weight: 700; font-size: 14px; transition: 0.25s; pointer-events: none; max-width: 90vw; text-align: center; }
+#aviso.ver { opacity: 1; transform: translate(-50%, 0); }
+#aviso.xp { background: linear-gradient(180deg, #ffd166, #f4a72c); color: #4a2f00; }
+#aviso.error { background: var(--rojo); }
+.velo { position: fixed; inset: 0; z-index: 50; background: rgba(20, 30, 15, 0.55); display: grid; place-items: center; padding: 20px; }
+.celebra { background: var(--papel); border-radius: 24px; padding: 26px 22px; text-align: center; max-width: 340px; box-shadow: var(--sombra); animation: salta 0.5s; }
+.celebra .grande { font-size: 64px; }
+@keyframes salta { 0% { transform: scale(0.6); opacity: 0; } 70% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
+
+/* ---------- Calendario ---------- */
+.mes { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.mes .dsem { text-align: center; font-size: 11px; font-weight: 800; color: var(--tinta-suave); padding: 4px 0; }
+.mes .dia { min-height: 54px; border-radius: 10px; background: var(--papel); padding: 4px; font-size: 12px; position: relative; border: 2px solid transparent; }
+.mes .dia.fuera { opacity: 0.35; }
+.mes .dia.hoy { border-color: var(--verde); }
+.mes .dia.lluvia { background: #e6f4fb; }
+.mes .dia b { font-size: 13px; }
+.mes .dia .luna { position: absolute; right: 3px; top: 2px; font-size: 15px; }
+.mes .dia .marcas { display: block; font-size: 11px; line-height: 1.2; margin-top: 2px; }
+
+/* ---------- Pantalla de la finca (mapa) ---------- */
+.finca #lienzo { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.finca #etiquetas { position: fixed; inset: 0; pointer-events: none; z-index: 3; }
+.etq { position: absolute; left: 0; top: 0; pointer-events: auto; cursor: pointer; background: rgba(255, 253, 246, 0.94); padding: 3px 9px; border-radius: 12px; font-size: 12px; font-weight: 700; white-space: nowrap; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }
+.etq.plan { background: rgba(89, 200, 255, 0.92); color: #04344d; border: 1px dashed #fff; }
+.hud { position: fixed; z-index: 5; pointer-events: none; }
+.hud > * { pointer-events: auto; }
+.hud-arriba { top: max(10px, env(safe-area-inset-top)); left: 10px; right: 10px; display: flex; flex-wrap: wrap; gap: 8px; max-width: 760px; margin: 0 auto; }
+.jugador { flex: 1 1 0; min-width: 0; display: flex; gap: 8px; align-items: center; padding: 6px 12px 6px 6px; margin: 0; cursor: pointer; }
+.jugador > div:last-child { flex: 1; min-width: 0; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe08a, #f4b63c); display: grid; place-items: center; font-size: 22px; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); flex: none; }
+.jugador b { display: block; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jugador .nivel { font-size: 11px; font-weight: 700; color: var(--verde-osc); white-space: nowrap; margin-bottom: 3px; }
+.plata { margin: 0; padding: 6px 14px; text-align: center; cursor: pointer; }
+.plata small { display: block; font-size: 10px; font-weight: 800; color: var(--tinta-suave); white-space: nowrap; letter-spacing: 0.02em; }
+.plata b { font-size: 19px; }
+.chips { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { margin: 0; padding: 5px 11px; font-size: 13px; font-weight: 700; white-space: nowrap; border-radius: 16px; cursor: pointer; }
+.hud-misiones { right: 10px; top: 140px; width: min(300px, calc(100vw - 20px)); }
+.hud-misiones .tarjeta { margin: 0; padding: 10px 12px; }
+.mision { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; padding: 6px 0; border-top: 1px dashed var(--linea); }
+.mision:first-of-type { border-top: 0; }
+.mision .xp { margin-left: auto; font-weight: 800; color: var(--oro-osc); font-size: 12px; white-space: nowrap; }
+.mision.hecha span:nth-child(2) { color: var(--tinta-suave); text-decoration: line-through; }
+.hud-abajo { left: 10px; right: 10px; bottom: calc(var(--nav) + 14px + env(safe-area-inset-bottom)); display: flex; gap: 8px; justify-content: center; }
+.hud-abajo .btn { flex: 1; max-width: 150px; min-height: 52px; font-size: 13px; flex-direction: column; gap: 0; padding: 6px; }
+.hud-abajo .btn span { font-size: 22px; }
+.hud-aviso { left: 10px; right: 10px; bottom: calc(var(--nav) + 84px + env(safe-area-inset-bottom)); text-align: center; }
+.hud-aviso span { display: inline-block; padding: 5px 10px; font-size: 11px; font-weight: 700; background: #fff4cc; color: #6b4e00; border-radius: 10px; box-shadow: var(--sombra); }
+.hud-credito { right: 6px; bottom: calc(var(--nav) + 2px + env(safe-area-inset-bottom)); font-size: 9px; color: rgba(0, 0, 0, 0.55); background: rgba(255, 255, 255, 0.6); padding: 1px 6px; border-radius: 6px; }
+.ficha-mapa { left: 50%; transform: translateX(-50%); bottom: calc(var(--nav) + 80px + env(safe-area-inset-bottom)); width: min(92vw, 380px); }
+.sin-3d { padding-top: 190px; }
+@media (max-width: 720px) {
+  .hud-misiones { display: none; }
+  .hud-misiones.abierta { display: block; top: 132px; }
+}
+@media (min-width: 721px) { .boton-misiones { display: none; } }
+
+/* ---------- Panorámicas: el visor y la captura (los usan Escanear y el mapa de Finca) ---------- */
+.velo.pano { padding: 0; background: #000; place-items: stretch; }
+.pano-caja { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.pano-caja img, .pano-caja video { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; touch-action: none; }
+.velo.pano.captura video { object-fit: cover; }
+.pano-arriba { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: max(10px, env(safe-area-inset-top)) 12px 16px; color: #fff; background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent); }
+.pano-arriba .icono-btn { color: #fff; font-size: 22px; background: rgba(0, 0, 0, 0.4); width: 44px; height: 44px; border-radius: 50%; }
+.pano-abajo { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 2px; padding: 22px 14px calc(14px + env(safe-area-inset-bottom)); color: #fff; font-weight: 700; background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), transparent); }
+.pano-abajo .suave { color: rgba(255, 255, 255, 0.78); font-weight: 400; font-size: 13px; }
+.pano-flecha { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 76px; border: 0; border-radius: 14px; background: rgba(0, 0, 0, 0.38); color: #fff; font-size: 40px; line-height: 1; cursor: pointer; }
+.pano-flecha.izq { left: 8px; }
+.pano-flecha.der { right: 8px; }
+/* El anillo de la captura: doce puntos (uno por foto, el de arriba es el norte) y la aguja del rumbo. */
+.pano-anillo { position: absolute; top: calc(max(10px, env(safe-area-inset-top)) + 96px); left: 50%; width: 0; height: 0; }
+.pano-anillo i { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); border: 1px solid rgba(255, 255, 255, 0.85); }
+.pano-anillo i.hecho { background: #7ed957; border-color: #fff; }
+.pano-anillo [data-aguja] { position: absolute; left: -8px; top: -9px; width: 16px; color: #ffd166; font-size: 14px; line-height: 18px; text-align: center; }
+.velo.pano.destello::after { content: ''; position: absolute; inset: 0; background: #fff; opacity: 0.5; pointer-events: none; }
+.ficha-mapa img.foto-sitio { display: block; width: 100%; max-height: 180px; object-fit: cover; border-radius: 12px; margin-top: 10px; }

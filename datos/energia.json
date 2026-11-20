@@ -1,0 +1,388 @@
+{
+  "equipos": [
+    {
+      "id": "bombillos-led-galpon",
+      "nombre": "Bombillos LED del galpón (2 de 9 W)",
+      "emoji": "💡",
+      "sistema": "gallinas",
+      "vatios": 18,
+      "horas_dia_tipicas": 3,
+      "dias_mes": 30,
+      "notas": "Estimado: 9 W es la potencia impresa en un bombillo LED común. Las 3 horas suponen alargar el día con luz artificial; en esta latitud (4,6° norte) el día dura unas 12 horas todo el año (dato astronómico aproximado). Si no se alarga el día, el consumo es casi cero. El programa de luz se decide en la ficha de gallinas.",
+      "alternativa_sin_energia": "No alargar el día con luz artificial, o poner tejas traslúcidas para tener buena luz natural de día."
+    },
+    {
+      "id": "criadora-infrarroja-250w",
+      "nombre": "Bombillo infrarrojo de criadora (250 W)",
+      "emoji": "🔥",
+      "sistema": "gallinas",
+      "vatios": 250,
+      "horas_dia_tipicas": 24,
+      "dias_mes": 30,
+      "notas": "Un bombillo de 250 W gasta 6 kWh al día (Extensión de la Universidad de Alaska Fairbanks, LPM-00840, revisada en 2020). Se empieza a 32-33 °C (90-92 °F) y se baja 3-4 °C (5-7 °F) por semana (misma fuente); con 12-14 °C de ambiente la cría puede pedir calor 5 a 6 semanas (estimado a partir de esa regla). Un mes de cría son 180 kWh: más que todo el resto de la finca junta. Es el equipo que más energía gasta.",
+      "alternativa_sin_energia": "Gallina clueca: la FAO reporta alrededor de 80 % de nacimientos y los pollitos se quedan con la madre 9 a 10 semanas. Si hay que usar electricidad, una placa de calor de contacto de 12-18 W."
+    },
+    {
+      "id": "placa-calor-pollitos",
+      "nombre": "Placa de calor de contacto para pollitos",
+      "emoji": "🐣",
+      "sistema": "gallinas",
+      "vatios": 18,
+      "horas_dia_tipicas": 24,
+      "dias_mes": 30,
+      "notas": "El fabricante Brinsea dice que sus placas EcoGlow usan 12-18 W frente a 250 W de la mayoría de bombillos de calor. Los pollitos se calientan tocando la placa por debajo. Un mes: unos 13 kWh contra 180 kWh del bombillo infrarrojo.",
+      "alternativa_sin_energia": "Gallina clueca."
+    },
+    {
+      "id": "incubadora-pequena",
+      "nombre": "Incubadora pequeña (48 a 56 huevos)",
+      "emoji": "🥚",
+      "sistema": "gallinas",
+      "vatios": 80,
+      "horas_dia_tipicas": 12,
+      "dias_mes": 21,
+      "notas": "Estimado: 80-90 W es la potencia de placa que aparece en avisos de incubadoras de 48-56 huevos a 110 V; no se pudo abrir una ficha oficial. El termostato prende y apaga la resistencia: las 12 horas a plena potencia por día son una suposición para un cuarto a 12-14 °C. Mídala con un medidor de enchufe, porque en un cuarto frío puede gastar más. Una incubación de gallina dura 20-21 días (FAO 2004).",
+      "alternativa_sin_energia": "Gallina clueca: la FAO acepta hasta 14-16 huevos por nido, pero con más de 10 los nacimientos suelen bajar según el tamaño de la gallina."
+    },
+    {
+      "id": "bomba-agua-electrica",
+      "nombre": "Bomba de agua eléctrica (0,5 HP)",
+      "emoji": "💧",
+      "sistema": "agua",
+      "vatios": 550,
+      "horas_dia_tipicas": 1,
+      "dias_mes": 30,
+      "notas": "Estimado: 0,5 HP son 373 W en el eje (1 HP = 745,7 W); del enchufe toma más por las pérdidas del motor y de la bomba, y 550 W es una suposición. Lea la placa de su bomba (vatios, o amperios por voltios) y cuente los minutos que trabaja al día.",
+      "alternativa_sin_energia": "Tanque en la parte alta de la ladera y reparto por gravedad; ariete hidráulico si hay una quebrada con caída. Derivar agua de una quebrada para riego o abrevaderos necesita concesión de aguas (Decreto 1076 de 2015, art. 2.2.3.2.7.1)."
+    },
+    {
+      "id": "bomba-riego",
+      "nombre": "Bomba de riego eléctrica (1 HP)",
+      "emoji": "🚿",
+      "sistema": "cultivos",
+      "vatios": 1000,
+      "horas_dia_tipicas": 1,
+      "dias_mes": 15,
+      "notas": "Estimado: 1 HP son 746 W en el eje; del enchufe unos 1.000 W (suposición). Solo en época seca, por eso 15 días al mes. Lea la placa de su motobomba.",
+      "alternativa_sin_energia": "Tanque en la parte alta de la ladera y riego por goteo por gravedad."
+    },
+    {
+      "id": "energizador-cerca",
+      "nombre": "Energizador de cerca eléctrica (12 V, de batería)",
+      "emoji": "⚡",
+      "sistema": "gallinas",
+      "vatios": 0.6,
+      "horas_dia_tipicas": 24,
+      "dias_mes": 30,
+      "notas": "Estimado: un energizador pequeño de batería consume del orden de 50 mA a 12 V, unos 0,6 W. El buscador mostró 49 mA para un Gallagher B60, pero la ficha del fabricante no abrió. Los energizadores de enchufe pueden gastar distinto: lea la placa o la ficha de su modelo.",
+      "alternativa_sin_energia": "Encerrar las gallinas de noche en un gallinero bien cerrado y con malla."
+    },
+    {
+      "id": "nevera-250-l",
+      "nombre": "Nevera de 250 litros",
+      "emoji": "🧊",
+      "sistema": "casa",
+      "vatios": 33,
+      "horas_dia_tipicas": 24,
+      "dias_mes": 30,
+      "notas": "Estimado: 33 W es el promedio de todo el día, no la potencia del compresor; equivale a unos 24 kWh al mes. En fichas de tiendas colombianas de neveras No Frost de 250 L aparecen etiquetas RETIQ de 22 a 29 kWh/mes (búsqueda del 18-nov-2026; no se pudo abrir una ficha). El dato real de su nevera está en su etiqueta RETIQ.",
+      "alternativa_sin_energia": null
+    },
+    {
+      "id": "molino-granos",
+      "nombre": "Molino eléctrico de granos (motor de 2 HP)",
+      "emoji": "⚙️",
+      "sistema": "procesamiento",
+      "vatios": 1500,
+      "horas_dia_tipicas": 0.1,
+      "dias_mes": 30,
+      "notas": "Estimado: 2 HP son unos 1.500 W (1 HP = 745,7 W). Moler el grano diario de 50 gallinas (unos 5-6 kg, si cada una come alrededor de 110 g al día, estimado) toma minutos: 0,1 h son 6 minutos. El motor es grande, pero trabaja poco y gasta poco.",
+      "alternativa_sin_energia": "Molino manual de disco."
+    },
+    {
+      "id": "picapasto",
+      "nombre": "Picapasto eléctrico (motor de 2 HP)",
+      "emoji": "🌿",
+      "sistema": "procesamiento",
+      "vatios": 1500,
+      "horas_dia_tipicas": 0.25,
+      "dias_mes": 30,
+      "notas": "Estimado: motor de 2 HP, unos 1.500 W; 15 minutos al día para picar forraje verde. Mídalo o cuente los minutos reales.",
+      "alternativa_sin_energia": "Machete o picadora manual, o que las gallinas pastoreen el forraje directamente."
+    },
+    {
+      "id": "secador-electrico",
+      "nombre": "Secador eléctrico de alimentos o granos",
+      "emoji": "🌽",
+      "sistema": "procesamiento",
+      "vatios": 500,
+      "horas_dia_tipicas": 8,
+      "dias_mes": 4,
+      "notas": "Estimado: 500 W es una suposición para un deshidratador doméstico; 8 horas por tanda y 4 tandas al mes. Para grano de animales la FAO pide no pasar de 60 °C, y de 40 °C si es semilla.",
+      "alternativa_sin_energia": "Secador solar de túnel con plástico de invernadero."
+    },
+    {
+      "id": "cargador-celular",
+      "nombre": "Cargador de celular",
+      "emoji": "📱",
+      "sistema": "casa",
+      "vatios": 10,
+      "horas_dia_tipicas": 2,
+      "dias_mes": 30,
+      "notas": "Estimado: cargador común de 5-10 W, unas 2 horas al día.",
+      "alternativa_sin_energia": "Cargador USB con un panel solar pequeño."
+    },
+    {
+      "id": "router-wifi",
+      "nombre": "Router o módem de internet",
+      "emoji": "📶",
+      "sistema": "casa",
+      "vatios": 8,
+      "horas_dia_tipicas": 24,
+      "dias_mes": 30,
+      "notas": "Estimado: 6-10 W prendido todo el día. La etiqueta del adaptador (voltios por amperios) da el máximo, no el consumo real: mídalo con un medidor de enchufe.",
+      "alternativa_sin_energia": null
+    },
+    {
+      "id": "luz-casa",
+      "nombre": "Luz de la casa (6 bombillos LED de 9 W)",
+      "emoji": "🏠",
+      "sistema": "casa",
+      "vatios": 54,
+      "horas_dia_tipicas": 5,
+      "dias_mes": 30,
+      "notas": "Estimado: 6 bombillos de 9 W prendidos 5 horas al día.",
+      "alternativa_sin_energia": null
+    }
+  ],
+  "tarifas": [
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: primeros 130 kWh del mes (consumo de subsistencia)",
+      "estrato": "1",
+      "cop_kwh": 411.2028,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: lo que pase de 130 kWh en el mes",
+      "estrato": "1",
+      "cop_kwh": 990.5273,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: primeros 130 kWh del mes (consumo de subsistencia)",
+      "estrato": "2",
+      "cop_kwh": 514.0035,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: lo que pase de 130 kWh en el mes",
+      "estrato": "2",
+      "cop_kwh": 990.5273,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: primeros 130 kWh del mes (consumo de subsistencia)",
+      "estrato": "3",
+      "cop_kwh": 841.9482,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: lo que pase de 130 kWh en el mes",
+      "estrato": "3",
+      "cop_kwh": 990.5273,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: todo consumo",
+      "estrato": "4",
+      "cop_kwh": 990.5273,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: todo consumo",
+      "estrato": "5 y 6",
+      "cop_kwh": 1188.6328,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "No residencial, nivel de tensión 1, propiedad Enel: industrial y comercial con contribución, tarifa sencilla",
+      "estrato": null,
+      "cop_kwh": 1188.6328,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "No residencial, nivel de tensión 1, propiedad Enel: oficial e industrial sin contribución, tarifa sencilla",
+      "estrato": null,
+      "cop_kwh": 990.5273,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Componente de comercialización (Cv) del costo unitario, nivel 1: lo que se cobra por cada kWh de crédito de energía de un autogenerador de hasta 100 kW (Resolución CREG 174 de 2021, art. 25)",
+      "estrato": null,
+      "cop_kwh": 81.3122,
+      "fecha": "2026-10",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: todo consumo (mes anterior, para ver cuánto cambia la tarifa)",
+      "estrato": "4",
+      "cop_kwh": 863.6052,
+      "fecha": "2026-08",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego%20tarifario%20digital%20_agosto_2026.pdf"
+    },
+    {
+      "empresa": "Enel Colombia",
+      "tipo": "Residencial, nivel de tensión 1, propiedad Enel: primeros 130 kWh del mes (mes anterior)",
+      "estrato": "1",
+      "cop_kwh": 408.1123,
+      "fecha": "2026-08",
+      "fuente": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego%20tarifario%20digital%20_agosto_2026.pdf"
+    }
+  ],
+  "solar": {
+    "hsp_mensual": [
+      { "mes": 1, "hsp": 5.17 },
+      { "mes": 2, "hsp": 5.34 },
+      { "mes": 3, "hsp": 4.84 },
+      { "mes": 4, "hsp": 4.67 },
+      { "mes": 5, "hsp": 4.46 },
+      { "mes": 6, "hsp": 4.41 },
+      { "mes": 7, "hsp": 4.48 },
+      { "mes": 8, "hsp": 4.46 },
+      { "mes": 9, "hsp": 4.55 },
+      { "mes": 10, "hsp": 4.63 },
+      { "mes": 11, "hsp": 4.61 },
+      { "mes": 12, "hsp": 4.65 }
+    ],
+    "precio_panel_cop_w": 853,
+    "precio_bateria_cop_kwh": 984750,
+    "precio_inversor_cop_kw": 991708,
+    "perdidas_pct": 24,
+    "fecha": "2026-11",
+    "fuentes": [
+      "HSP: PVGIS 5.2 (Centro Común de Investigación de la Comisión Europea), base PVGIS-NSRDB, superficie horizontal, punto 4,73 N -74,34 O a 2.577 m (zona alta de Bojacá, la misma altura de la finca): https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.73&lon=-74.34&peakpower=1&loss=14&angle=0&aspect=0&outputformat=json",
+      "OJO, ladera con neblina: la misma base da solo 2,36-2,83 HSP en la vertiente de San Antonio del Tequendama (4,62 N -74,35 O, 1.587 m), el 56 % de lo de Bojacá. Si la finca está del lado de La Mesa y tiene neblina, multiplicar las HSP por 0,56: https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.62&lon=-74.35&peakpower=1&loss=14&optimalangles=1&outputformat=json",
+      "Comparación: NASA POWER (climatología 2001-2025, celda grande) da 4,45-4,92 HSP para 4,62 N -74,35 O: https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-74.35&latitude=4.62&format=JSON",
+      "Pérdidas: 24 % es la relación entre la energía que calcula PVGIS para 1 kWp (con 14 % de pérdidas del sistema más temperatura) y la radiación del mismo punto (3,93/5,17 en enero, 3,37/4,41 en junio). Con batería, sumar unos 10 % más (estimado).",
+      "Panel: Homecenter, panel monocristalino Znshine de 580 W a 494.900 pesos (sin stock el 18-nov-2026), 853 pesos por vatio: https://www.homecenter.com.co/homecenter-co/product/734560/panel-solar-monocristalino-580w-hc-16bb-n-dv-znshine/734560/",
+      "Batería: Emergente, LiFePO4 MUST 12,8 V 100 Ah (1,28 kWh) a 1.260.480 pesos con IVA, más de 4.000 ciclos al 80 %: https://www.emergente.com.co/producto/bateria-de-litio-12v-100ah-must",
+      "Inversor: Solartex, inversor híbrido Powest de 3 kVA (2,4 kW), 24 V, con controlador MPPT de 80 A incluido, a 2.380.100 pesos: https://solartex.co/tienda/producto/inversor-hibrido-monofasico-on-off-grid-3kw-24v-pw3k24v-powest"
+    ]
+  },
+  "incentivos": [
+    {
+      "norma": "Ley 1715 de 2014, art. 11, modificado por el art. 8 de la Ley 2099 de 2021",
+      "que_da": "Deducir del impuesto de renta hasta el 50 % de lo invertido en el sistema solar, repartido en máximo 15 años contados desde el año siguiente a la entrada en operación, sin pasar del 50 % de la renta líquida de cada año. Es para los obligados a declarar renta y exige el certificado de la UPME. Los beneficios de la Ley 1715 siguen vigentes 30 años contados desde el 1 de julio de 2021 (art. 14-1, agregado por el art. 55 de la Ley 2099).",
+      "aplica_persona_natural": "depende",
+      "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_1715_2014.htm"
+    },
+    {
+      "norma": "Ley 1715 de 2014, art. 12, modificado por el art. 9 de la Ley 2099 de 2021",
+      "que_da": "Comprar los equipos, elementos y servicios del proyecto sin IVA. Exige que la UPME evalúe y certifique el proyecto. Según la UPME, pueden pedirlo personas naturales o jurídicas; el trámite es en línea (Resolución UPME 135 de 2025): la UPME tiene 10 días hábiles para revisar que la solicitud esté completa y hasta 20 días para evaluar un proyecto de fuentes no convencionales. El primer ciclo de 2026 abrió el 15 de febrero. El certificado se pide ANTES de comprar.",
+      "aplica_persona_natural": "si",
+      "fuente": "https://docs.upme.gov.co/SalaPrensa/ComunicadosPrensa/Comunicado_66_UPME_incentivos_tributarios_2025-12-10.pdf"
+    },
+    {
+      "norma": "Ley 1715 de 2014, art. 13, modificado por el art. 10 de la Ley 2099 de 2021",
+      "que_da": "No pagar aranceles al importar maquinaria, equipos y materiales del proyecto que no se fabriquen en Colombia. Se pide a la DIAN al menos 15 días hábiles antes de importar y exige el certificado de la UPME. Solo sirve a quien importa directamente.",
+      "aplica_persona_natural": "depende",
+      "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_1715_2014.htm"
+    },
+    {
+      "norma": "Ley 1715 de 2014, art. 14, modificado por el art. 11 de la Ley 2099 de 2021",
+      "que_da": "Depreciación acelerada de los equipos: hasta 33,33 % al año. Solo le sirve a quien declara renta y lleva los equipos como activos de un negocio; exige el certificado de la UPME.",
+      "aplica_persona_natural": "depende",
+      "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_1715_2014.htm"
+    },
+    {
+      "norma": "Ley 1715 de 2014, art. 8, y Resolución CREG 174 de 2021, art. 25 (texto modificado por el art. 28 de la Resolución CREG 101 072 de 2025)",
+      "que_da": "Entregar a la red de Enel lo que sobre de los paneles. Para un sistema solar de hasta 100 kW, lo que entregue en el mes hasta completar lo que tomó de la red se le abona kWh por kWh (crédito de energía), y por cada kWh abonado le cobran solo el componente de comercialización (81,31 pesos por kWh en octubre de 2026). Lo que entregue por encima de lo que consumió se paga al MCm, un valor que publica el ASIC, con un tope cuando supera el precio de escasez (parágrafo 1, modificado por el art. 26 de la Resolución CREG 101 097 de 2026). El pago al precio de bolsa del régimen de transición (parágrafo transitorio del art. 28 de la Resolución CREG 101 072 de 2025, modificado por el art. 4 de la 101 087 de 2025) es solo para los AGPE que ya existían y operaban cuando se expidió esa resolución, no para un sistema nuevo. Hay que hacer el trámite de conexión con Enel y cumplir el RETIE.",
+      "aplica_persona_natural": "si",
+      "fuente": "https://gestornormativo.creg.gov.co/gestor/entorno/docs/resolucion_creg_0174_2021.htm"
+    }
+  ],
+  "medicion": [
+    {
+      "metodo": "Leer el contador de Enel cada semana, el mismo día y a la misma hora",
+      "costo_cop": 0,
+      "precision": "La del contador oficial, pero solo da el total de la finca",
+      "notas": "Consumo de la semana = lectura de hoy menos la anterior. Sirve para ajustar los estimados de cada equipo: factor = kWh del contador dividido por la suma de los kWh estimados."
+    },
+    {
+      "metodo": "Calcular con la placa del equipo (vatios por horas por días)",
+      "costo_cop": 0,
+      "precision": "Baja en equipos con termostato o motor (nevera, incubadora, bomba), que gastan distinto de lo que dice la placa",
+      "notas": "kWh al mes = vatios x horas al día x días al mes / 1.000. Es el punto de partida; marcarlo como estimado en la app."
+    },
+    {
+      "metodo": "Medidor de consumo de enchufe (vatímetro)",
+      "costo_cop": 60000,
+      "precision": "Buena para equipos que se enchufan, dentro de la potencia máxima impresa en el medidor",
+      "notas": "Precio ESTIMADO, no verificado el 18-nov-2026 (se agotaron las búsquedas): es un orden de magnitud; confirme en la tienda. Ideal para la incubadora, la nevera, la criadora y el router: se mide 24 horas o una semana."
+    },
+    {
+      "metodo": "Contador de energía por circuito (medidor de riel DIN en el tablero)",
+      "costo_cop": 120000,
+      "precision": "Alta: mide todo lo que cuelga de ese circuito, por ejemplo todo el galpón",
+      "notas": "Precio ESTIMADO, no verificado; no incluye la instalación, que debe hacer un electricista. Un contador por sistema (galpón, casa, riego) permite repartir los kWh sin adivinar."
+    },
+    {
+      "metodo": "Monitor wifi (pinza en el tablero o enchufe inteligente con medición)",
+      "costo_cop": 150000,
+      "precision": "Buena; guarda el historial en el celular",
+      "notas": "Precio ESTIMADO, no verificado. Necesita wifi donde está el tablero; en la finca puede no haber señal."
+    },
+    {
+      "metodo": "Pantalla o app del controlador solar",
+      "costo_cop": 0,
+      "precision": "Media; mide lo que produce el panel y lo que entra a la batería",
+      "notas": "Si el controlador muestra los kWh o Wh del día, anotarlos cada día una semana y compararlos con el cálculo: panel en kW x HSP x 0,76."
+    }
+  ],
+  "fuentes": [
+    { "titulo": "Enel Colombia. Pliego tarifario de energía eléctrica, octubre de 2026 (tarifas reguladas por la CREG, $/kWh)", "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Enel Colombia. Pliego tarifario de energía eléctrica, agosto de 2026", "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego%20tarifario%20digital%20_agosto_2026.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NASA POWER. Climatología 2001-2025 de radiación solar en superficie (ALLSKY_SFC_SW_DWN), punto 4,62 N -74,35 O", "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-74.35&latitude=4.62&format=JSON", "fecha_consulta": "2026-11-18" },
+    { "titulo": "PVGIS 5.2 (JRC, Comisión Europea), base PVGIS-NSRDB: 1 kWp horizontal en 4,73 N -74,34 O (Bojacá, 2.577 m)", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.73&lon=-74.34&peakpower=1&loss=14&angle=0&aspect=0&outputformat=json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "PVGIS 5.2, base PVGIS-NSRDB: 1 kWp horizontal en 4,70 N -74,25 O (Mosquera, 2.543 m)", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.70&lon=-74.25&peakpower=1&loss=14&angle=0&aspect=0&outputformat=json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "PVGIS 5.2, base PVGIS-NSRDB: 1 kWp con ángulo óptimo en 4,62 N -74,35 O (San Antonio del Tequendama, 1.587 m)", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.62&lon=-74.35&peakpower=1&loss=14&optimalangles=1&outputformat=json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "PVGIS 5.2, base PVGIS-ERA5: 1 kWp horizontal en 4,62 N -74,35 O", "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.62&lon=-74.35&peakpower=1&loss=14&angle=0&aspect=0&raddatabase=PVGIS-ERA5&outputformat=json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Homecenter Colombia. Panel solar monocristalino 580 W Znshine", "url": "https://www.homecenter.com.co/homecenter-co/product/734560/panel-solar-monocristalino-580w-hc-16bb-n-dv-znshine/734560/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Emergente. Batería de litio 12 V 100 Ah MUST (LiFePO4, 1,28 kWh)", "url": "https://www.emergente.com.co/producto/bateria-de-litio-12v-100ah-must", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Solartex. Inversor híbrido monofásico on/off grid 3 kW 24 V Powest PW3K24V", "url": "https://solartex.co/tienda/producto/inversor-hibrido-monofasico-on-off-grid-3kw-24v-pw3k24v-powest", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Todo Solar. Panel solar Jinko monocristalino 580 W (marcado 'exento de IVA', agotado, sin precio)", "url": "https://todosolar.com.co/es/productos/panel-solar-monocristalino-580w", "fecha_consulta": "2026-11-18" },
+    { "titulo": "DIAN, normograma. Ley 1715 de 2014, texto compilado con las modificaciones de la Ley 2099 de 2021", "url": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_1715_2014.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "CREG. Resolución 174 de 2021, autogeneración a pequeña escala y generación distribuida (texto compilado con sus modificaciones de 2025 y 2026)", "url": "https://gestornormativo.creg.gov.co/gestor/entorno/docs/resolucion_creg_0174_2021.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "UPME. Comunicado de prensa 66 (9-dic-2025): incentivos tributarios de las leyes 1715 de 2014 y 2099 de 2021", "url": "https://docs.upme.gov.co/SalaPrensa/ComunicadosPrensa/Comunicado_66_UPME_incentivos_tributarios_2025-12-10.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Decreto 1076 de 2015 (sector ambiente), parte de aguas: arts. 2.2.3.2.6.1 y 2.2.3.2.7.1, normograma de Colpensiones", "url": "https://normativa.colpensiones.gov.co/colpens/docs/decreto_1076_2015_pr026.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "University of Alaska Fairbanks, Cooperative Extension. Selecting, Brooding & Rearing Small Numbers of Chicks, LPM-00840 (revisada oct-2020)", "url": "https://uaf.edu/ces/publications/database/agriculture-livestock/selecting-chicks.php", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Brinsea. Getting the best out of your EcoGlow brooder", "url": "https://brinsea.com/t-ecoglow.aspx", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO (2004). Small-scale poultry production, cap. 5: Incubation and hatching (Sonaiya y Swan)", "url": "https://www.fao.org/4/y5169e/y5169e06.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO (2004). Small-scale poultry production, cap. 4: General management", "url": "https://www.fao.org/4/y5169e/y5169e05.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO. Manual de manejo poscosecha de granos a nivel rural: los granos y su calidad, secado de los granos", "url": "https://www.fao.org/4/x5027s/x5027S02.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Practical Action. Hydraulic ram pumps (ficha técnica), copia en SSWM", "url": "https://sswm.info/sites/default/files/reference_attachments/PRACTICAL%20ACTION%204000%20Hydraulic%20Ram%20Pumps.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Martí Herrero, J. (2019). Diseño de biodigestores tubulares (presentación), CTC-N", "url": "https://www.ctc-n.org/file-download/download/private/24047", "fecha_consulta": "2026-11-18" }
+  ]
+}

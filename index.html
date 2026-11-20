@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3f8f3a">
+<meta name="description" content="Administra tu finca: gallinas, cultivos, cuentas, calendario lunar y técnicas, con un mapa 3D que convierte el trabajo en juego.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Finca Viva">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="iconos/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="iconos/icono-180.png">
+<link rel="stylesheet" href="app/estilos.css">
+<title>Finca Viva</title>
+</head>
+<body>
+<div id="app"><div class="pantalla"><p class="suave">Abriendo la finca…</p></div></div>
+<nav id="nav" aria-label="Secciones">
+  <a href="#/finca" data-nav="finca"><span>🏡</span>Finca</a>
+  <a href="#/sistemas" data-nav="sistemas"><span>🐔</span>Sistemas</a>
+  <a href="#/anotar" data-nav="anotar" class="anotar"><span>➕</span>Anotar</a>
+  <a href="#/cuentas" data-nav="cuentas"><span>📒</span>Cuentas</a>
+  <a href="#/calendario" data-nav="calendario"><span>🌙</span>Calendario</a>
+</nav>
+<noscript>Finca Viva necesita JavaScript encendido.</noscript>
+<script type="module" src="app/app.js"></script>
+</body>
+</html>

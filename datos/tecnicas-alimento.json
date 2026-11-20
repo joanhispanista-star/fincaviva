@@ -1,0 +1,315 @@
+{
+  "tecnicas": [
+    {
+      "id": "alimento-lombricultura",
+      "titulo": "Lombricultura: proteína para las gallinas y abono para la huerta",
+      "categoria": "alimento",
+      "nivel": 1,
+      "resumen": "Lechos de lombriz roja bajo techo, alimentados con gallinaza precompostada y residuos de cocina y cosecha. Dan humus para la huerta y lombriz escaldada para las gallinas.",
+      "por_que": "Sin soya, lo que más le falta a la ración es metionina, y la harina de lombriz es la fuente de la finca que más tiene (0,94 %). Además, la lombriz convierte la gallinaza y los residuos en humus. En tierra fría los lechos van bajo techo y tapados, porque trabajan mejor entre 15 y 25 °C y con 80 a 90 % de humedad.",
+      "materiales": [
+        { "item": "Lecho de madera o ladrillo de 1 x 2 m, bajo techo y con desagüe", "cantidad": 2, "unidad": "m2", "costo_cop": null },
+        { "item": "Pie de cría de lombriz roja californiana (Eisenia fetida)", "cantidad": 5, "unidad": "kg", "costo_cop": null },
+        { "item": "Gallinaza o estiércol precompostado 2 a 3 semanas (cantidad aproximada para arrancar)", "cantidad": 100, "unidad": "kg", "costo_cop": null },
+        { "item": "Costal, paja o polisombra para tapar el lecho", "cantidad": 2, "unidad": "m2", "costo_cop": null },
+        { "item": "Termómetro", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Olla para escaldar la lombriz", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Arme el lecho bajo techo, con desagüe y protegido del sol directo, la lluvia, las ratas, los pájaros y las gallinas.",
+        "Precomposte la gallinaza o el estiércol 2 a 3 semanas: el fresco se calienta y suelta amoníaco, y eso mata la lombriz.",
+        "Llene el lecho con el sustrato precompostado y húmedo, y siembre de 2,5 a 5 kg de lombriz por m2.",
+        "Mantenga la humedad entre 80 y 90 %: al apretar un puñado deben salir apenas unas gotas. Tape con costal o paja y mire el termómetro: lo ideal es de 15 a 25 °C.",
+        "Agregue una capa nueva de comida (gallinaza precompostada y residuos picados de cocina y cosecha) solo cuando la anterior ya se transformó.",
+        "Cuando la población se duplique, divida el lecho en dos. En condiciones ideales tarda de 30 a 60 días; en tierra fría, de 60 a 90 (estimado).",
+        "Para cosechar, deje el lecho unos días sin comida, ponga comida fresca en una malla encima, levántela cuando las lombrices suban y cierna el humus de abajo.",
+        "Lave la lombriz y escáldela en agua hirviendo antes de dársela a las gallinas.",
+        "No deje que las gallinas escarben en el lecho y no use tierra ni estiércol de lugares contaminados."
+      ],
+      "listo_en_dias": 90,
+      "como_saber_si_salio_bien": "El lecho huele a tierra de monte y no a amoníaco, hay lombrices de todos los tamaños, la población se duplica en dos o tres meses y el humus sale suelto, oscuro y granulado.",
+      "errores_comunes": [
+        "Echar gallinaza fresca: se calienta, suelta amoníaco y mata la lombriz.",
+        "Dejar el lecho al sol, a la lluvia o dejar que se seque.",
+        "Dar la lombriz cruda: puede llevar parásitos de las aves (Capillaria, Heterakis, gusano de la tráquea) y su líquido es tóxico en cantidad.",
+        "Dejar que las gallinas entren al lecho: se comen el pie de cría.",
+        "Criarla con sustratos contaminados: la lombriz acumula cadmio y plomo."
+      ],
+      "dosis_o_uso": "Gallinas: hasta 35 g de lombriz fresca escaldada por gallina al día (5 % de la materia seca de la ración), o harina de lombriz hasta 5 % de la mezcla (tope estimado). Para 30 gallinas a 12 g diarios hacen falta unos 16 m2 de lecho; a 35 g, unos 48 m2 (estimado). El humus va a la huerta y al vivero.",
+      "mision": {
+        "titulo": "Primer kilo de lombriz",
+        "como_se_cumple": "Registrar en el sistema de Lombricultura una Cosecha de al menos 1 kg de lombriz fresca, pesada en báscula. Si tiene varios lechos, anotar como Nota de cuál salió.",
+        "xp": 120
+      },
+      "fuentes": [
+        { "titulo": "Feedipedia: Earthworm meal", "url": "https://www.feedipedia.org/node/665", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Merck Veterinary Manual: Helminthiasis in Poultry", "url": "https://www.merckvetmanual.com/poultry/helminthiasis/helminthiasis-in-poultry", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-desamargado-chocho",
+      "titulo": "Desamargar el chocho para las gallinas",
+      "categoria": "alimento",
+      "nivel": 2,
+      "resumen": "El chocho o tarwi tiene 44 % de proteína en materia seca, pero es tóxico hasta quitarle los alcaloides: 18 horas de remojo, una hora de cocción y de 6 a 8 días de lavado.",
+      "por_que": "Es una de las pocas proteínas que crecen bien en tierra fría (se cultiva entre 1.500 y 3.800 m) y, como toda leguminosa, deja nitrógeno en el suelo. Crudo tiene alcaloides que lo hacen amargo y tóxico. Con el proceso de un estudio de 2023, los alcaloides bajaron de 0,18-0,24 % a menos de lo que el laboratorio alcanza a detectar.",
+      "materiales": [
+        { "item": "Chocho seco y limpio", "cantidad": 10, "unidad": "kg", "costo_cop": null },
+        { "item": "Agua limpia para remojo, cocción y lavados (49 a 70 l por kg de grano)", "cantidad": 700, "unidad": "l", "costo_cop": null },
+        { "item": "Olla grande", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Caneca o tanque para el remojo y los lavados", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Plástico o zaranda para secar al sol", "cantidad": 4, "unidad": "m2", "costo_cop": null }
+      ],
+      "pasos": [
+        "Limpie el grano: saque piedras, granos partidos y granos con hongos.",
+        "Remoje 18 horas en 4 partes de agua por 1 de grano.",
+        "Cocine 1 hora en 3 partes de agua por 1 de grano y bote esa agua.",
+        "Lave en agua limpia y cámbiela cada 8 horas, durante 139 a 195 horas (6 a 8 días). En el estudio el agua estaba a 16 °C.",
+        "Pruebe un grano: si todavía amarga, siga lavando. La prueba de sabor es orientativa; el estudio midió los alcaloides en laboratorio.",
+        "Seque al sol sobre plástico o zaranda hasta que el grano quede duro, y muela solo lo que va a usar en una o dos semanas.",
+        "Empiece con 5 % de la mezcla y suba hasta 10 % como máximo (tope estimado), mirando el consumo y la postura.",
+        "No les dé a los animales el agua de cocción ni la de los lavados: es la que se lleva los alcaloides."
+      ],
+      "listo_en_dias": 9,
+      "como_saber_si_salio_bien": "El grano ya no amarga y las gallinas lo comen sin dejarlo. Al pesarlo seco, de 10 kg de chocho crudo quedan unos 7 kg, porque el proceso se lleva de 27 a 32 % de la materia seca.",
+      "errores_comunes": [
+        "Cortar el lavado antes de tiempo porque el grano 'ya sabe menos'.",
+        "Darles a los animales el agua de cocción o de los lavados.",
+        "Guardarlo sin secar bien: el grano húmedo se enmohece.",
+        "Pasar de 10 % de la mezcla desde el primer día."
+      ],
+      "dosis_o_uso": "De 5 a 10 % de la mezcla seca de postura o de levante (tope estimado). Gasta de 49 a 70 litros de agua por kilo: planee la tanda según el agua que tenga la finca.",
+      "mision": {
+        "titulo": "Primera tanda de chocho dulce",
+        "como_se_cumple": "Registrar una tanda desamargada como cuatro Mediciones, en el cultivo de chocho o en el gallinero: kilos crudos de entrada, kilos secos de salida, días de lavado y litros de agua usados.",
+        "xp": 150
+      },
+      "fuentes": [
+        { "titulo": "Urrego-Pava y Coy-Barrera 2023, Debittered Seeds of Andean Lupin, Foods 12(9):1841", "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10178703/fullTextXML", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Gulisano et al. 2019, Genetics and Breeding of Lupinus mutabilis", "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6831545/fullTextXML", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Gulisano et al. 2022, Diversity and Agronomic Performance of Lupinus mutabilis Germplasm", "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9226751/fullTextXML", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-quinua-y-amaranto",
+      "titulo": "Quinua lavada y amaranto tostado",
+      "categoria": "alimento",
+      "nivel": 1,
+      "resumen": "Dos granos andinos con más lisina que el maíz, que solo sirven preparados: la quinua, lavada hasta que no haga espuma; el amaranto, siempre tostado y nunca crudo.",
+      "por_que": "La quinua se cultiva desde el nivel del mar hasta 3.800 m, y el amaranto tiene casi el doble de metionina que el maíz. Crudos hacen daño: las saponinas de la cáscara de la quinua frenan el crecimiento de las aves, y en Australia el amaranto crudo causó convulsiones y muertes en pollos.",
+      "materiales": [
+        { "item": "Quinua trillada", "cantidad": 5, "unidad": "kg", "costo_cop": null },
+        { "item": "Amaranto trillado", "cantidad": 2, "unidad": "kg", "costo_cop": null },
+        { "item": "Frasco de vidrio con tapa para la prueba de espuma", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Plástico para secar al sol", "cantidad": 4, "unidad": "m2", "costo_cop": null },
+        { "item": "Paila o sartén grueso para tostar", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Quinua: remójela, frótela con las manos dentro del agua y cambie el agua varias veces.",
+        "Haga la prueba de espuma: eche un puñado en el frasco con agua, tape y agite 30 segundos. Si queda espuma, siga lavando.",
+        "Seque la quinua lavada al sol sobre plástico hasta que quede suelta y dura, y guárdela seca.",
+        "Amaranto: tuéstelo en paila caliente, revolviendo, hasta que el grano reviente. Deje enfriar y muela.",
+        "Agréguelos a la mezcla: quinua lavada hasta 15 % y amaranto tostado hasta 10 % (tope estimado)."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "La quinua no hace espuma en la prueba del frasco y no sabe amarga; el amaranto revienta y huele a tostado. Las gallinas no dejan el grano en el comedero y la postura no baja.",
+      "errores_comunes": [
+        "Dar quinua sin lavar porque 'es natural'.",
+        "Dar amaranto crudo o solo remojado: necesita calor.",
+        "Guardar la quinua húmeda después de lavarla.",
+        "Pasar los topes: 15 % de quinua y 10 % de amaranto."
+      ],
+      "dosis_o_uso": "Quinua lavada: hasta 15 % de la mezcla de postura. Amaranto tostado: hasta 10 % (tope estimado).",
+      "mision": {
+        "titulo": "Quinua sin espuma",
+        "como_se_cumple": "Registrar una tanda lavada en el cultivo de quinua o en el gallinero: los kilos secos que quedaron, como Medición, y el resultado de la prueba de espuma, como Nota.",
+        "xp": 60
+      },
+      "fuentes": [
+        { "titulo": "Feedipedia: Quinoa", "url": "https://www.feedipedia.org/node/229", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Feedipedia: Foxtail amaranth (Amaranthus caudatus)", "url": "https://www.feedipedia.org/node/573", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-secado-almacenamiento",
+      "titulo": "Secar y guardar el grano sin hongos ni ratas",
+      "categoria": "alimento",
+      "nivel": 1,
+      "resumen": "Secar el grano hasta menos de 15 % de humedad y guardarlo en canecas con tapa sobre estibas, para que no críe hongos con aflatoxinas ni alimente a las ratas.",
+      "por_que": "En una ladera húmeda, el maíz mal secado cría hongos como Aspergillus flavus, cuyas aflatoxinas dañan el hígado. El grano molido se enmohece y se enrancia rápido. Y cada kilo que se comen las ratas o se daña es un kilo que hubo que sembrar. La cuenta de cuánta tierra hay que sembrar para alimentar a las gallinas supone 10 % de pérdidas. Anote lo que se pierde y haga la cuenta a mano para saber si es cierto.",
+      "materiales": [
+        { "item": "Lona o plástico para secar, sobre una base levantada del suelo", "cantidad": 10, "unidad": "m2", "costo_cop": null },
+        { "item": "Canecas plásticas o metálicas con tapa hermética", "cantidad": 4, "unidad": "unidad", "costo_cop": null },
+        { "item": "Estibas de madera", "cantidad": 2, "unidad": "unidad", "costo_cop": null },
+        { "item": "Frasco de vidrio seco con tapa", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Sal de cocina seca para la prueba del frasco", "cantidad": 50, "unidad": "g", "costo_cop": null }
+      ],
+      "pasos": [
+        "Seque la mazorca bajo techo ventilado y termine el grano al sol, sobre lona levantada del suelo.",
+        "Haga la prueba del frasco: llene un tercio del frasco con grano, agregue dos o tres cucharadas de sal seca, tape, agite y espere 15 minutos. Si la sal se pega a las paredes, el grano sigue húmedo. Es un método casero difundido, pero no se encontró una fuente que lo respalde: orienta, no reemplaza un medidor de humedad.",
+        "Guarde solo grano limpio y entero, en canecas con tapa, sobre estibas y separadas de la pared. Nunca bultos en el piso.",
+        "Marque cada caneca con el grano, la fecha de cosecha y la fecha de guardado, y gaste primero lo más viejo.",
+        "Muela solo lo que va a usar en una o dos semanas.",
+        "Revise cada semana. Olor a moho, terrones, calor o polvo de color en el grano son señal de descarte: ese grano no va a las gallinas.",
+        "Recoja cada día lo que se riegue alrededor del galpón y de la bodega, y anote como Medición los kilos que se pierdan."
+      ],
+      "listo_en_dias": null,
+      "como_saber_si_salio_bien": "El grano suena seco al moverlo, la sal no se pega en la prueba del frasco, no huele a moho, no hay terrones y no aparecen excrementos de rata alrededor de las canecas. Al sumar a mano las pérdidas anotadas, quedan por debajo del 10 % supuesto.",
+      "errores_comunes": [
+        "Guardar el grano en costal sobre el piso.",
+        "Moler de una vez el grano de todo el mes.",
+        "Mezclar grano viejo con grano nuevo.",
+        "Darles a las gallinas el grano mohoso 'para no botarlo'."
+      ],
+      "dosis_o_uso": "Sirve para maíz, cebada, trigo, quinua, arveja, haba, chocho seco y las harinas de la finca. Meta: grano con menos de 15 % de humedad.",
+      "mision": {
+        "titulo": "Bodega revisada",
+        "como_se_cumple": "Crear un sistema de tipo Otro llamado «Bodega» y registrar ahí, como Nota, cada caneca con su grano y sus fechas. Después, registrar como Nota una revisión cada semana, con o sin moho, durante 4 semanas seguidas.",
+        "xp": 80
+      },
+      "fuentes": [
+        { "titulo": "Feedipedia: Maize grain", "url": "https://www.feedipedia.org/node/556", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-mezcla-propia",
+      "titulo": "Preparar 40 kg de mezcla de postura de la finca",
+      "categoria": "alimento",
+      "nivel": 2,
+      "resumen": "Receta pesada de un bulto de 40 kg de la mezcla de postura sin soya, con granos, leguminosas y lombriz de la finca, más forraje fresco del día y conchilla aparte.",
+      "por_que": "Mezclar en casa permite saber qué come la gallina y cuánto cuesta cada huevo. Esta fórmula es un cálculo, no una receta probada en campo: le falta cerca de 23 % de Met+Cis frente a la meta NRC de gallina comercial. Por eso todo se pesa, se mide la postura y la mezcla solo va a gallinas en postura: a las pollitas les sobra calcio.",
+      "materiales": [
+        { "item": "Maíz molido", "cantidad": 14.06, "unidad": "kg", "costo_cop": null },
+        { "item": "Cebada molida", "cantidad": 4, "unidad": "kg", "costo_cop": null },
+        { "item": "Quinua lavada y molida", "cantidad": 3.2, "unidad": "kg", "costo_cop": null },
+        { "item": "Arveja seca molida", "cantidad": 5.6, "unidad": "kg", "costo_cop": null },
+        { "item": "Haba seca molida", "cantidad": 2.4, "unidad": "kg", "costo_cop": null },
+        { "item": "Chocho desamargado, seco y molido", "cantidad": 4, "unidad": "kg", "costo_cop": null },
+        { "item": "Harina de lombriz", "cantidad": 2, "unidad": "kg", "costo_cop": null },
+        { "item": "Harina de alfalfa", "cantidad": 0.8, "unidad": "kg", "costo_cop": null },
+        { "item": "Conchilla (o conchilla con cáscara de huevo tostada)", "cantidad": 3.12, "unidad": "kg", "costo_cop": null },
+        { "item": "Harina de hueso", "cantidad": 0.48, "unidad": "kg", "costo_cop": null },
+        { "item": "Sal", "cantidad": 140, "unidad": "g", "costo_cop": null },
+        { "item": "Premezcla vitamínica y mineral (o la dosis de su etiqueta)", "cantidad": 200, "unidad": "g", "costo_cop": null },
+        { "item": "Báscula", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Lona para mezclar", "cantidad": 4, "unidad": "m2", "costo_cop": null }
+      ],
+      "pasos": [
+        "Pese cada ingrediente en la báscula; no use tarros ni cucharas como medida.",
+        "Muela grueso los granos y las leguminosas secas. El chocho tiene que estar desamargado y la quinua, lavada.",
+        "Mezcle primero la sal y la premezcla con 1 a 2 kg de maíz molido, y después esa mezcla con el resto.",
+        "Agregue la conchilla y la harina de hueso, y voltee el montón sobre la lona hasta que se vea parejo.",
+        "Guarde la mezcla en caneca con tapa y gaste el bulto en unas dos semanas.",
+        "Ofrézcala a voluntad, con forraje fresco o pastoreo todos los días y con conchilla gruesa en un comedero aparte. Si busca el sello ecológico, la certificadora exige forraje en la ración de las aves (art. 19 q del Reglamento de producción ecológica de la Res. MADR 187 de 2006, en el texto que le dio el art. 4 de la Res. 199 de 2016; su vigencia está en duda por el Decreto 1468 de 2020). También revisará que la premezcla, los minerales y las harinas de hueso y de lombriz estén en el Anexo III de ese Reglamento (art. 19 e, g y h).",
+        "Anote cada día lo que comen y los huevos que ponen. Si el huevo se achica o la pluma sale mala, aumente la lombriz fresca escaldada y revise los topes de cada ingrediente.",
+        "Cambie de alimento poco a poco, mezclándolo con el anterior durante unos días."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "El bulto pesa 40 kg, la mezcla se ve pareja, sin grumos de sal ni bolsas de conchilla, y en las semanas siguientes se sostienen la postura, el tamaño del huevo y la cáscara. Cada gallina come cerca de 115 g al día; si comen mucho más, a la mezcla le falta energía.",
+      "errores_comunes": [
+        "Diluir el concentrado con maíz 'para que rinda': mitad y mitad deja el calcio en 1,9 % y la proteína en 11 %.",
+        "Darles esta mezcla a pollitas o pollas de levante: tiene 3,45 % de calcio y ellas necesitan menos de 1 %.",
+        "Echar la premezcla directo al bulto sin repartirla antes en un poco de maíz.",
+        "Usar chocho sin desamargar, quinua sin lavar o amaranto crudo."
+      ],
+      "dosis_o_uso": "A voluntad, para gallinas en postura: cerca de 115 g por gallina al día (estimado para criolla en clima frío). Un bulto de 40 kg alcanza para 30 gallinas unos 11 a 12 días.",
+      "mision": {
+        "titulo": "Mi primer bulto propio",
+        "como_se_cumple": "Pesar cada ingrediente de un bulto de 40 kg y anotar los pesos como Nota en el gallinero. Sumar a mano lo que costaron y dividir entre 40: ese es el costo por kilo. En Cuentas, entrar a Inventario y crear el insumo «Mezcla de postura», de tipo Alimento, con 40 en «Cuánto hay hoy» y ese costo en «Costo por unidad»; si los granos salieron de la finca, marcar también «Lo produce la finca» para que cuente como comida de la finca: la app cuenta como propio el bulto entero, también la conchilla, el hueso, la sal y la premezcla que se compran (unos 4 de los 40 kg). Después, registrar en el gallinero, con Alimento, lo que comen cada día hasta terminar el bulto.",
+        "xp": 100
+      },
+      "fuentes": [
+        { "titulo": "Resolución 199 de 2016, Ministerio de Agricultura (Normograma INVIMA)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Merck Veterinary Manual: Nutrient Requirements of Laying Hens at Different Feed Intakes (NRC 1994)", "url": "https://www.merckvetmanual.com/multimedia/table/nutrient-requirements-of-laying-hens-at-different-feed-intakes", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Feedipedia: Earthworm meal", "url": "https://www.feedipedia.org/node/665", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1468 de 2020 (vigencia de los reglamentos técnicos)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-calcio-casero",
+      "titulo": "Calcio de la finca: cáscara tostada y conchilla",
+      "categoria": "alimento",
+      "nivel": 1,
+      "resumen": "Las ponedoras necesitan cerca de 3,5 % de calcio en la ración. La cáscara de sus propios huevos, tostada y molida, devuelve una parte; la conchilla gruesa aparte cubre el resto.",
+      "por_que": "Sin calcio suficiente salen huevos de cáscara delgada o sin cáscara. La cáscara de huevo tiene 36 % de calcio, con 94 % de disponibilidad, y puede reemplazar a la caliza. Pero 30 gallinas devuelven unos 32 kg de cáscara al año y su mezcla pide unos 108 kg de conchilla (estimado): la diferencia hay que comprarla.",
+      "materiales": [
+        { "item": "Cáscaras de huevo de la casa y del galpón (lo de un mes, estimado)", "cantidad": 3, "unidad": "kg", "costo_cop": null },
+        { "item": "Conchilla gruesa (lo de un mes para 30 gallinas, estimado)", "cantidad": 9, "unidad": "kg", "costo_cop": null },
+        { "item": "Horno o paila para tostar", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Pilón o molino", "cantidad": 1, "unidad": "unidad", "costo_cop": null },
+        { "item": "Comedero aparte para el calcio", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Junte las cáscaras, enjuáguelas y déjelas escurrir.",
+        "Tuéstelas en horno o paila hasta que queden secas y quebradizas, para matar gérmenes.",
+        "Muélalas en pedazos pequeños que no se reconozcan como cáscara.",
+        "Mézclelas con la conchilla y ofrézcalas en el comedero aparte, a voluntad, además del calcio que ya trae la mezcla.",
+        "No les dé conchilla ni cáscara a pollitas ni a pollas antes de que empiecen a poner: la tabla NRC les pide menos de 1 % de calcio.",
+        "Anote cada tanda tostada como Producción de un sistema Otro, pesada en kilos y guardada en el inventario, y cada compra de conchilla en Cuentas, como Compra. Después anote cada entrega en el gallinero con Alimento, en kilos (200 g son 0,2 kg), la cáscara y la conchilla por separado: sumando a mano sabrá cuánto calcio pone la finca y cuánto se compra."
+      ],
+      "listo_en_dias": 1,
+      "como_saber_si_salio_bien": "Los huevos salen con cáscara firme y lisa, casi no aparecen huevos sin cáscara ni rotos en el nido, y las gallinas consumen la conchilla del comedero aparte.",
+      "errores_comunes": [
+        "Dar las cáscaras crudas o en pedazos grandes.",
+        "Creer que las cáscaras propias alcanzan: devuelven cerca de un tercio de lo que se necesita (estimado).",
+        "Darles calcio de postura a las pollitas.",
+        "Usar cal de construcción en vez de conchilla."
+      ],
+      "dosis_o_uso": "Postura: la mezcla debe llegar a cerca de 3,5 % de calcio (meta NRC de gallina comercial), con conchilla gruesa a voluntad aparte. Cría y levante: de 0,8 a 0,9 % de calcio, sin conchilla aparte.",
+      "mision": {
+        "titulo": "Cáscara que vuelve",
+        "como_se_cumple": "Antes, registrar cada tanda tostada como Producción de un sistema Otro (por ejemplo «Calcio de la finca»), pesada en kilos, y guardarla en el inventario en un insumo que se lleve en kg: así cuenta como comida de la finca y la app no avisa que falta. Después, registrar en el gallinero, con Alimento, dos entregas de cáscara tostada y molida en una misma semana, con el peso en kilos (200 g son 0,2 kg).",
+        "xp": 40
+      },
+      "fuentes": [
+        { "titulo": "Feedipedia: Eggshells", "url": "https://www.feedipedia.org/node/210", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Feedipedia: Seashells and coral", "url": "https://www.feedipedia.org/node/736", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Merck Veterinary Manual: Nutrient Requirements of Laying Hens at Different Feed Intakes (NRC 1994)", "url": "https://www.merckvetmanual.com/multimedia/table/nutrient-requirements-of-laying-hens-at-different-feed-intakes", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Merck Veterinary Manual: Nutrient Requirements of Growing Pullets (NRC 1994)", "url": "https://www.merckvetmanual.com/multimedia/table/nutrient-requirements-of-growing-pullets", "fecha_consulta": "2026-11-18" }
+      ]
+    },
+    {
+      "id": "alimento-forraje-verde-hidroponico",
+      "titulo": "Forraje verde germinado sin moho",
+      "categoria": "alimento",
+      "nivel": 2,
+      "resumen": "Germinar cebada o maíz en bandejas durante unos 12 a 14 días para tener verde fresco cuando el potrero no alcanza. Es un complemento del día, no un reemplazo de la mezcla.",
+      "por_que": "El verde fresco trae carotenoides que ayudan a colorear la yema, y en la época seca el potrero puede no alcanzar. Si busca el sello ecológico, la certificadora exige además forraje en la ración de las aves (art. 19 q del Reglamento de producción ecológica de la Res. MADR 187 de 2006, en el texto que le dio el art. 4 de la Res. 199 de 2016; su vigencia está en duda por el Decreto 1468 de 2020). El germinado da verde, pero su valor nutritivo en materia seca es menor que el de una dieta completa, y los germinadores crían hongos con facilidad: en Francia se dejó de usar con conejos por las micotoxinas.",
+      "materiales": [
+        { "item": "Grano entero de cebada o maíz, limpio y sin tratar con fungicida", "cantidad": 1, "unidad": "kg", "costo_cop": null },
+        { "item": "Bandejas plásticas con huecos de drenaje (una por cada día del ciclo)", "cantidad": 14, "unidad": "unidad", "costo_cop": null },
+        { "item": "Estante bajo techo, con luz y aire y sin sol directo", "cantidad": 1, "unidad": "unidad", "costo_cop": null }
+      ],
+      "pasos": [
+        "Use grano entero y limpio; nunca semilla tratada con fungicida ni grano con hongos.",
+        "Lávelo, déjelo en remojo de un día para otro y escúrralo bien.",
+        "Extienda una capa delgada en la bandeja y póngala en el estante, con luz y aire y sin sol directo.",
+        "Riegue poco y seguido, para que no se seque ni quede agua empozada.",
+        "Siembre una bandeja cada día. Coseche cada bandeja a los 12 a 14 días, cuando mida de 10 a 12 cm, y désela entera a las gallinas.",
+        "Si aparece pelusa blanca, gris o verde, o si huele agrio, bote toda la bandeja, no se la dé a las gallinas y anótela como Nota.",
+        "Lave cada bandeja y déjela secar al sol antes de volver a sembrar."
+      ],
+      "listo_en_dias": 13,
+      "como_saber_si_salio_bien": "El tapete sale verde, con raíces blancas y olor a pasto fresco, sin pelusa ni olor agrio, y las gallinas se lo comen el mismo día.",
+      "errores_comunes": [
+        "Creer que multiplica el alimento: pesa más por el agua, no por los nutrientes.",
+        "Regar de más y criar moho.",
+        "Darles a las gallinas una bandeja con moho.",
+        "Usar semilla tratada o grano viejo de bodega."
+      ],
+      "dosis_o_uso": "Complemento verde: unos 30 a 40 g frescos por gallina al día (estimado), cerca de 1 kg diario para 30 gallinas. No reemplaza la mezcla seca ni el pastoreo.",
+      "mision": {
+        "titulo": "Dos semanas de verde",
+        "como_se_cumple": "Registrar cada corte de bandejas como Cosecha de un cultivo «Forraje verde», pesado en kilos, para las gallinas y guardado en el inventario en un insumo que se lleve en kg: así cuenta como comida de la finca y la app no avisa que falta. Después, registrar en el gallinero, con Alimento, 14 días seguidos de forraje verde entregado, con el peso de cada día en kilos. Si bota bandejas por moho, anotarlas como Nota.",
+        "xp": 70
+      },
+      "fuentes": [
+        { "titulo": "Feedipedia: Barley forage (forraje hidropónico)", "url": "https://www.feedipedia.org/node/432", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Resolución 199 de 2016, Ministerio de Agricultura (Normograma INVIMA)", "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_minagricultura_0199_2016.htm", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Reglamento de producción ecológica adoptado por la Res. MADR 187 de 2006 (copia publicada por Control Union)", "url": "https://peru.controlunion.com/wp-content/uploads/sites/5/2024/12/reglamento_187-2006.pdf", "fecha_consulta": "2026-11-18" },
+        { "titulo": "Decreto 1468 de 2020 (vigencia de los reglamentos técnicos)", "url": "https://normograma.invima.gov.co/normograma/compilacion/docs/decreto_1468_2020.htm", "fecha_consulta": "2026-11-18" }
+      ]
+    }
+  ]
+}

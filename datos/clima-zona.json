@@ -1,0 +1,285 @@
+{
+  "zona": "Ladera alta de la vía Mosquera–La Mesa, borde occidental de la Sabana de Bogotá (zona alta de Bojacá, Tena, Zipacón y San Antonio del Tequendama, Cundinamarca). Punto de referencia lat 4,66 / lon −74,33 (el modelo de elevación de 90 m de Open-Meteo le da 2.545 m); la finca está a unos 2.600 m. Climáticamente es el filo entre la Sabana seca (470–700 mm al año) y la vertiente húmeda hacia El Colegio y La Mesa (1.000–1.800 mm).",
+  "altitud_m": 2600,
+  "estaciones_referencia": [
+    { "nombre": "Acapulco (climatológica principal, automática con telemetría, activa desde 15-feb-1990)", "codigo_ideam": "21206280", "municipio": "Bojacá", "altitud_m": 2680, "lat": 4.64823, "lon": -74.32035, "lluvia_anual_mm": 848.3 },
+    { "nombre": "Tibaitatá (agrometeorológica)", "codigo_ideam": "21205420", "municipio": "Mosquera", "altitud_m": 2543, "lat": 4.69142, "lon": -74.209, "lluvia_anual_mm": 704.4 },
+    { "nombre": "El Salitre (Sabana plana; solo tiene normal de temperatura mínima)", "codigo_ideam": "21205870", "municipio": "Bojacá", "altitud_m": 2570, "lat": 4.73889, "lon": -74.33428, "lluvia_anual_mm": null },
+    { "nombre": "Base Aérea Madrid", "codigo_ideam": "21205770", "municipio": "Madrid", "altitud_m": 2550, "lat": 4.72881, "lon": -74.2725, "lluvia_anual_mm": 633.6 },
+    { "nombre": "Casablanca", "codigo_ideam": "21206060", "municipio": "Madrid", "altitud_m": 2575, "lat": 4.71711, "lon": -74.25333, "lluvia_anual_mm": 473.9 },
+    { "nombre": "Aeropuerto El Dorado", "codigo_ideam": "21205791", "municipio": "Bogotá D.C.", "altitud_m": 2547, "lat": 4.70558, "lon": -74.15067, "lluvia_anual_mm": 877.3 },
+    { "nombre": "El Corazón", "codigo_ideam": "21201070", "municipio": "Facatativá", "altitud_m": 2845, "lat": 4.86536, "lon": -74.28942, "lluvia_anual_mm": 900.2 },
+    { "nombre": "La Florida", "codigo_ideam": "21205670", "municipio": "Anolaima", "altitud_m": 1915, "lat": 4.77089, "lon": -74.43764, "lluvia_anual_mm": 1225.2 },
+    { "nombre": "Mercedes", "codigo_ideam": "21205660", "municipio": "Anapoima", "altitud_m": 810, "lat": 4.58189, "lon": -74.52661, "lluvia_anual_mm": 1143.7 }
+  ],
+  "mensual": [
+    { "mes": 1, "lluvia_mm": 43, "dias_lluvia": 6.3, "temp_media_c": 12.7, "temp_min_c": 9.5, "temp_max_c": 15.9, "riesgo_helada": "medio", "radiacion_kwh_m2_dia": 4.9 },
+    { "mes": 2, "lluvia_mm": 58, "dias_lluvia": 7.7, "temp_media_c": 12.7, "temp_min_c": 9.4, "temp_max_c": 16.0, "riesgo_helada": "medio", "radiacion_kwh_m2_dia": 4.8 },
+    { "mes": 3, "lluvia_mm": 76, "dias_lluvia": 10.0, "temp_media_c": 12.8, "temp_min_c": 9.8, "temp_max_c": 15.9, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.4 },
+    { "mes": 4, "lluvia_mm": 109, "dias_lluvia": 12.4, "temp_media_c": 13.1, "temp_min_c": 10.2, "temp_max_c": 16.0, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.1 },
+    { "mes": 5, "lluvia_mm": 92, "dias_lluvia": 12.2, "temp_media_c": 13.1, "temp_min_c": 10.2, "temp_max_c": 16.0, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 3.8 },
+    { "mes": 6, "lluvia_mm": 46, "dias_lluvia": 8.7, "temp_media_c": 12.9, "temp_min_c": 9.8, "temp_max_c": 15.9, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.0 },
+    { "mes": 7, "lluvia_mm": 39, "dias_lluvia": 8.7, "temp_media_c": 12.6, "temp_min_c": 9.3, "temp_max_c": 15.9, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.2 },
+    { "mes": 8, "lluvia_mm": 35, "dias_lluvia": 7.4, "temp_media_c": 12.5, "temp_min_c": 9.4, "temp_max_c": 15.6, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.5 },
+    { "mes": 9, "lluvia_mm": 59, "dias_lluvia": 8.0, "temp_media_c": 12.9, "temp_min_c": 9.7, "temp_max_c": 16.1, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.5 },
+    { "mes": 10, "lluvia_mm": 119, "dias_lluvia": 12.1, "temp_media_c": 12.7, "temp_min_c": 9.7, "temp_max_c": 15.6, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.4 },
+    { "mes": 11, "lluvia_mm": 102, "dias_lluvia": 12.2, "temp_media_c": 12.8, "temp_min_c": 9.9, "temp_max_c": 15.7, "riesgo_helada": "bajo", "radiacion_kwh_m2_dia": 4.1 },
+    { "mes": 12, "lluvia_mm": 71, "dias_lluvia": 7.5, "temp_media_c": 12.6, "temp_min_c": 9.5, "temp_max_c": 15.7, "riesgo_helada": "medio", "radiacion_kwh_m2_dia": 4.5 }
+  ],
+  "incertidumbre": "De dónde sale la tabla: lluvia y días con lluvia de 1 mm o más son la normal climatológica estándar 1991-2020 del IDEAM para la estación Acapulco (21206280, Bojacá), a 1-2 km del punto de referencia (300 y 338 meses válidos). La temperatura mínima es una media de 20 años (227 meses) y la máxima una media de 10 años (115 meses), porque la estación no completó los 30 años; la media se calculó como (máxima + mínima) / 2 y es estimada. La radiación es ESTIMADA con la fórmula de Ångström de FAO-56 (a = 0,25; b = 0,50) usando el brillo solar normal 1991-2020 de Tibaitatá (Mosquera), porque Acapulco no tiene normal de brillo solar; NASA POWER da en promedio un 7 % más (4,64 frente a 4,35 kWh/m²/día) y en un filo con niebla puede haber menos sol del calculado. Cuánto puede variar la finca: la lluvia cambia mucho en pocos kilómetros: la Sabana plana recibe 470-700 mm al año, el filo de Acapulco unos 850 mm y la vertiente hacia El Colegio y La Mesa entre 1.000 y 1.800 mm; según hacia dónde mire la ladera, la finca puede estar entre unos 700 y 1.200 mm al año (estimado). La niebla deja agua que el pluviómetro no mide y no hay cifra medida para esta ladera. Si la finca está en la parte baja que mira hacia la Sabana, sus noches se parecerán más a Tibaitatá o El Salitre (mínima media de enero de 5,0 y 5,3 °C) y el riesgo de helada de diciembre a febrero sería ALTO, no medio. Las mallas de reanálisis no sirven para la lluvia de este punto: ERA5 da 2.604 mm al año (1991-2020) y NASA POWER unos 1.620 mm, contra 848 mm medidos. Y un año concreto se aparta mucho de la normal: en octubre de 2026 Acapulco midió 184 mm (normal 119) y del 1 al 14 de noviembre solo 4,6 mm (normal del mes completo 102). Los datos horarios de la estación son crudos, con control de calidad básico del IDEAM.",
+  "temporadas": [
+    {
+      "id": "seca-dic-feb",
+      "nombre": "Verano de comienzo de año (se seca desde mediados de diciembre)",
+      "meses": [12, 1, 2],
+      "tipo": "seca",
+      "que_hacer": [
+        "Cosechar, secar y guardar grano y semilla de la segunda siembra.",
+        "Vigilar heladas cada tarde: es el riesgo principal del año y sube en años de El Niño como diciembre de 2026 a febrero de 2027.",
+        "Sembrar hortalizas solo donde haya riego; regar en la tarde.",
+        "Revisar y ampliar tanques, canales y canaletas de techo antes de que se acabe el agua.",
+        "Galpón: cerrar corrientes de aire frío de noche, cama seca y bebederos revisados a diario (en clima seco las aves toman más agua).",
+        "Preparar camas y compost para marzo; nada de quemas junto al bosque y rondas cortafuego si hay rastrojo seco."
+      ]
+    },
+    {
+      "id": "transicion-marzo",
+      "nombre": "Llegada de las primeras lluvias",
+      "meses": [3],
+      "tipo": "transicion",
+      "que_hacer": [
+        "Sembrar cuando ya hayan caído lluvias seguidas y la tierra esté húmeda en profundidad: en Acapulco la lluvia sube a unos 28 mm por decena desde la segunda decena de marzo.",
+        "Hacer el primer abonamiento al comienzo de las lluvias, no justo antes de un aguacero fuerte.",
+        "Sembrar forrajes y granos para las gallinas (maíz, fríjol, haba, avena) al principio de la temporada.",
+        "Plantar los árboles nativos del bosque con las primeras lluvias para que pasen el veranillo ya enraizados."
+      ]
+    },
+    {
+      "id": "lluvias-abr-may",
+      "nombre": "Primera temporada de lluvias",
+      "meses": [4, 5],
+      "tipo": "lluvias",
+      "que_hacer": [
+        "Ventana principal de la primera siembra: segunda quincena de marzo a mediados de abril (la decena más lluviosa del semestre es la segunda de abril, unos 44 mm).",
+        "Cuidar la ladera: surcos en curva de nivel, barreras vivas y nunca dejar la tierra desnuda.",
+        "Vigilar hongos en días nublados y húmedos (gota o tizón tardío en papa).",
+        "No trabajar el suelo encharcado porque se compacta.",
+        "Llenar tanques: lo que se recoja ahora es el agua del veranillo."
+      ]
+    },
+    {
+      "id": "seca-jun-ago",
+      "nombre": "Veranillo de mitad de año (en esta ladera es el más largo)",
+      "meses": [6, 7, 8],
+      "tipo": "seca",
+      "que_hacer": [
+        "Cosechar la primera siembra; secar y guardar semilla.",
+        "Regar hortalizas: agosto es el mes más seco en Acapulco (unos 35 mm) y la primera decena de agosto apenas da 8 mm.",
+        "Proteger del viento con cortinas rompevientos y cercas vivas donde pegue fuerte.",
+        "En la parte plana y en hondonadas hay riesgo secundario de heladas (los boletines agroclimáticos señalan picos de junio a agosto).",
+        "Hacer y voltear compost; preparar camas para septiembre."
+      ]
+    },
+    {
+      "id": "transicion-septiembre",
+      "nombre": "Vuelven las lluvias",
+      "meses": [9],
+      "tipo": "transicion",
+      "que_hacer": [
+        "Preparar la segunda siembra: la lluvia sube en la última decena de septiembre (unos 26 mm).",
+        "Sembrar a finales de septiembre o comienzos de octubre, cuando la lluvia ya sea seguida.",
+        "Según el boletín agroclimático de Cundinamarca, en septiembre empieza a bajar el riesgo de heladas por encima de 2.500 m; aun así, en las normales de la Sabana plana las noches de septiembre siguen entre las más frías del año (Tibaitatá: 6,3 °C de mínima media), así que en lo bajo hay que seguir vigilando."
+      ]
+    },
+    {
+      "id": "lluvias-oct-nov",
+      "nombre": "Segunda temporada de lluvias (la más fuerte en Acapulco)",
+      "meses": [10, 11],
+      "tipo": "lluvias",
+      "que_hacer": [
+        "Ventana de la segunda siembra: finales de septiembre a mediados de octubre.",
+        "Octubre es el mes más lluvioso (119 mm en promedio): drenajes, zanjas y suelo siempre cubierto.",
+        "Segunda oportunidad para plantar árboles del bosque.",
+        "Galpón: controlar la humedad de la cama para evitar enfermedades respiratorias.",
+        "Dejar los tanques llenos antes de diciembre."
+      ]
+    }
+  ],
+  "heladas": {
+    "meses_riesgo": [12, 1, 2, 7, 8, 9],
+    "umbral_alerta_c": 4,
+    "senales": [
+      "Riesgo principal de diciembre a febrero; secundario de julio a septiembre en la parte plana y en hondonadas. El boletín agroclimático de Cundinamarca (sección de Fedepapa) señala picos de junio a agosto y dice que en septiembre empieza a bajar el riesgo por encima de 2.500 m, pero en las normales del IDEAM de la Sabana plana las noches de septiembre son más frías que las de julio y agosto (Tibaitatá, mínima media: 6,3 °C en septiembre, 7,0 en agosto, 7,4 en julio y 7,9 en junio).",
+      "Tarde y noche despejadas, sin nubes ni niebla, y sin viento: es la helada de radiación, la típica de la Sabana.",
+      "Días secos y sin lluvia en los días anteriores: según el IDEAM (citado por Infobae el 25-ene-2025), las heladas resultan de la ausencia de nubosidad y de lluvias.",
+      "Pronóstico de mínima de 4 °C o menos para la finca (umbral ESTIMADO, porque los modelos no ven el frío que se empoza en lo bajo), o termómetro propio en 5 °C o menos al amanecer (el mapa del IDEAM que usó el DANE en su informe de heladas de enero de 2020 mostraba los municipios con mínimas de 5,0 °C o menos).",
+      "Escarcha blanca en el pasto de las partes bajas al amanecer.",
+      "Año de El Niño activo, como diciembre de 2026 a marzo de 2027: subir un nivel el riesgo de cada mes."
+    ],
+    "proteccion": [
+      "Poner lo sensible (papa en floración, fríjol, maíz, hortalizas, semilleros) en la parte media o alta de la ladera, nunca en hondonadas ni al pie de cercas cerradas: el aire frío corre como agua y se empoza abajo.",
+      "No tapar la salida del aire frío: si hay muro o cerca viva al pie de la pendiente, dejar portillos para que el frío siga bajando.",
+      "En temporada de heladas, el suelo firme, húmedo y desyerbado guarda más calor: humedecerlo uno o dos días antes de la noche de alerta (la FAO sugiere dejarlo cerca de capacidad de campo y que drene ese tiempo; el boletín de Cundinamarca dice regar en la tarde) y retirar la paja de las calles entre camas en esas noches (según la FAO, la superficie del suelo desnudo suele estar de 1 a 3 °C más caliente que la del suelo con pasto o maleza, y la cobertura vegetal vuelve el cultivo más propenso a la helada).",
+      "Tapar semilleros y camas con tela o plástico al anochecer y destapar en la mañana: según la FAO da alrededor de 1 a 1,5 °C de protección.",
+      "En las partes bajas, programar las siembras para que la floración y la formación de tubérculos no caigan en los picos de helada (diciembre-enero y junio-agosto según Fedepapa; en las normales de la Sabana, también septiembre); preferir variedades precoces o tolerantes al frío.",
+      "Árboles y cercas vivas de nativas alrededor de las camas devuelven calor de noche, sin cerrar la salida del aire frío.",
+      "Gallinas: galpón sin corrientes de aire frío en la noche, cama seca y mullida (cascarilla de arroz o viruta) y bebederos revisados a diario, porque en clima seco las aves toman más agua (boletín agroclimático de Cundinamarca, diciembre de 2025).",
+      "Medir: termómetro de máximas y mínimas a 1,5 m y otro a ras del suelo en la parte más baja de la finca, para calibrar la alerta de la app."
+    ]
+  },
+  "enso": {
+    "estado": "El Niño en curso, de intensidad muy fuerte. NOAA mantiene la 'Advertencia de El Niño' (El Niño Advisory) y el índice Niño-3.4 llegó a +2,5 °C; el IDEAM lo declaró oficialmente el 8 de octubre de 2026.",
+    "fecha_boletin": "2026-11-12",
+    "pronostico": "NOAA (12-nov-2026): El Niño seguirá fortaleciéndose antes de empezar a debilitarse a comienzos de 2027; más de 79 % de probabilidad de El Niño fuerte a muy fuerte hasta enero-marzo de 2027 y cerca de 60 % de que sea histórico (RONI de +2,5 °C o más) en octubre-diciembre y noviembre-enero. Probabilidad de El Niño por trimestre: dic-feb 100 %, ene-mar 100 %, feb-abr 98 %, mar-may 80 % (20 % neutral), abr-jun 38 % (61 % neutral), may-jul 12 % (75 % neutral). IDEAM (12-nov-2026): intensidad 'muy fuerte', 79 % de probabilidad de que baje de muy fuerte a fuerte en enero-marzo de 2027 y 61 % de que persista hasta mayo de 2027 (cifra que no coincide exactamente con la tabla de NOAA). Próxima actualización de ambos: 10 de diciembre de 2026.",
+    "que_significa_para_la_finca": "De diciembre de 2026 a marzo de 2027 conviene planear como si el verano fuera más seco y despejado de lo normal: el IDEAM espera lluvias por debajo de lo normal (incluye a Cundinamarca entre las zonas con déficit en noviembre) y temperaturas por encima de lo normal. Cielos despejados significan días calientes y noches más frías, así que el riesgo de helada sube en lo bajo (inferencia: las heladas de la Sabana se dan con poca nubosidad). Qué hacer: guardar agua ya; no hacer siembras grandes sin riego hasta que las lluvias de 2027 estén establecidas; sembrar escalonado y de ciclo corto; asegurar con tiempo el alimento y el forraje de las gallinas; rondas cortafuego y cero quemas junto al bosque. La primera temporada de lluvias de 2027 (marzo-mayo) puede llegar tarde o floja: NOAA todavía da 80 % de El Niño en marzo-mayo, y lo más probable es volver a neutral en abril-junio. El Niño cambia las probabilidades, no garantiza el resultado: en octubre de 2026, en pleno El Niño, Acapulco midió 184 mm, más de lo normal.",
+    "fuente": "NOAA Climate Prediction Center, ENSO Diagnostic Discussion del 12-nov-2026 (https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml) y tabla de probabilidades RONI; IDEAM, página Fenómeno de El Niño actualizada el 12-nov-2026 (https://ideam.gov.co/fenomeno-del-nino)."
+  },
+  "apis": [
+    {
+      "nombre": "Open-Meteo – Forecast API (pronóstico)",
+      "url_ejemplo": "https://api.open-meteo.com/v1/forecast?latitude=4.66&longitude=-74.33&elevation=2600&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,et0_fao_evapotranspiration,shortwave_radiation_sum&timezone=America%2FBogota&forecast_days=7",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Gratis solo para uso no comercial (sitios o apps sin suscripciones ni publicidad). Una app con suscripción o anuncios es uso comercial y necesita un plan pago con llave (API Standard, Professional o Enterprise). Los datos van con licencia CC BY 4.0: hay que mostrar el crédito a Open-Meteo.",
+      "limite": "Plan gratis: menos de 10.000 llamadas al día, 5.000 por hora y 600 por minuto (300.000 al mes). Una petición con más de 10 variables o más de 2 semanas de datos cuenta como varias llamadas. Probada el 18-nov-2026: costó 1 llamada.",
+      "que_da": "Pronóstico diario y horario hasta 16 días: máxima y mínima (para alertas de helada), lluvia y su probabilidad, evapotranspiración ET0 de FAO y radiación (MJ/m²; dividir por 3,6 para kWh/m²). Con elevation=2600 ajusta la temperatura a la altura de la finca; la celda del modelo cae en 4,67 / −74,26. Ojo: del 1-oct al 14-nov-2026 el modelo dio 260 mm de lluvia donde la estación Acapulco midió 188 mm."
+    },
+    {
+      "nombre": "Open-Meteo – Historical Weather API (reanálisis ERA5)",
+      "url_ejemplo": "https://archive-api.open-meteo.com/v1/archive?latitude=4.66&longitude=-74.33&elevation=2600&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,shortwave_radiation_sum,et0_fao_evapotranspiration&timezone=America%2FBogota&models=era5",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Los mismos de Open-Meteo: gratis no comercial, CC BY 4.0.",
+      "limite": "Los mismos límites, pero las peticiones largas pesan mucho: un año con 5 variables costó 13 llamadas y 30 años con 7 variables costaron 548 (casi todo el cupo de un minuto). La climatología se calcula una vez y se guarda; nunca desde el navegador de cada usuario.",
+      "que_da": "Reanálisis ERA5 (0,25°, desde 1940, con 5 días de retraso), ERA5-Land (0,1°, desde 1950) e IFS (9 km, desde 2017). Sirve para radiación y temperatura aproximadas. NO sirve para la lluvia de este punto: ERA5 da 2.604 mm al año (1991-2020) frente a 848 mm medidos. En este punto ERA5-Land solo devolvió temperatura; lluvia y radiación salieron vacías."
+    },
+    {
+      "nombre": "Open-Meteo – Elevation API",
+      "url_ejemplo": "https://api.open-meteo.com/v1/elevation?latitude=4.66&longitude=-74.33",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Los mismos de Open-Meteo (gratis no comercial); además pide dar crédito claro al programa Copernicus, de donde sale el modelo de elevación GLO-90, y a Open-Meteo.",
+      "limite": "Los mismos límites de Open-Meteo.",
+      "que_da": "Altura del modelo digital de elevación Copernicus GLO-90 (90 m): 2.545 m para el punto de referencia. Útil para ubicar cada lote en el mapa 3D y pasar la altura correcta a las otras consultas."
+    },
+    {
+      "nombre": "Open-Meteo – Climate Change API (escenarios CMIP6)",
+      "url_ejemplo": "https://climate-api.open-meteo.com/v1/climate?latitude=4.66&longitude=-74.33&start_date=2041-01-01&end_date=2041-01-10&models=MRI_AGCM3_2_S&daily=temperature_2m_max,temperature_2m_min,precipitation_sum",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Los mismos de Open-Meteo: gratis no comercial, CC BY 4.0.",
+      "limite": "Los mismos límites de Open-Meteo; la petición de prueba costó 1 llamada.",
+      "que_da": "Series diarias de modelos climáticos para años futuros (probada para enero de 2041). Sirve solo para tendencias de largo plazo, no para decidir cuándo sembrar."
+    },
+    {
+      "nombre": "NASA POWER – Climatology API",
+      "url_ejemplo": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN,CLRSKY_SFC_SW_DWN,T2M,T2M_MIN,T2M_MAX,PRECTOTCORR,RH2M&community=AG&longitude=-74.33&latitude=4.66&format=JSON",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "NASA da acceso no discriminatorio a sus datos de ciencias de la Tierra. POWER pide citar el servicio, la versión y la fecha de consulta (por ejemplo: POWER Climatology API v2.10.2, consultado el 2026-11-18) y avisar si los datos se pasan a otros investigadores. En las páginas leídas no encontré texto sobre uso comercial.",
+      "limite": "Las páginas leídas no publican una cifra; la documentación lista el código HTTP 429 (Too Many Requests) para cuando se pide demasiado. Máximo 20 parámetros por petición de un punto.",
+      "que_da": "Promedios mensuales enero 2001 - diciembre 2025 de radiación con cielo real y con cielo despejado (MJ/m²/día), temperatura, lluvia y humedad. La celda tiene 1.790 m de altura: su temperatura (18,8 °C) y su lluvia (unos 1.620 mm) NO representan la finca. La radiación sí sirve como referencia: 4,64 kWh/m²/día en promedio."
+    },
+    {
+      "nombre": "NASA POWER – Daily API",
+      "url_ejemplo": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN,T2M_MIN,T2M_MAX,PRECTOTCORR&community=AG&longitude=-74.33&latitude=4.66&start=20251101&end=20251107&format=JSON",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Los mismos de NASA POWER: citar servicio, versión (Daily API v2.10.4 en la prueba) y fecha.",
+      "limite": "Sin cifra publicada en las páginas leídas; la documentación lista el código HTTP 429 (Too Many Requests).",
+      "que_da": "Radiación diaria para seguir la producción de los paneles día a día. Su temperatura diaria (mínimas de 13,6 a 15,9 °C en la primera semana de noviembre de 2025) es la de una celda a 1.790 m y no sirve para heladas."
+    },
+    {
+      "nombre": "IDEAM en datos.gov.co – Precipitación cada 10 minutos (estación Acapulco, código 0021206280)",
+      "url_ejemplo": "https://www.datos.gov.co/resource/s54a-sgyg.json?codigoestacion=0021206280&$order=fechaobservacion%20DESC&$limit=5",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Licencia CC BY-SA 4.0 con atribución al IDEAM. Son datos crudos con control de calidad básico.",
+      "limite": "Sin token se limita por IP, sin cifra publicada; con un token propio (encabezado X-App-Token) no se limita salvo abuso. Las consultas con agregados (mínimo, conteo) sobre la estación se cayeron por tiempo (más de 90 s): pedir ventanas cortas de fechas y sumar en la app.",
+      "que_da": "La lluvia real a 1-2 km de la finca, cada 10 minutos, con unos 4 días de retraso (el 18-nov-2026 el último dato era del 14-nov a las 23:50)."
+    },
+    {
+      "nombre": "IDEAM en datos.gov.co – Temperatura del aire cada hora (estación Acapulco)",
+      "url_ejemplo": "https://www.datos.gov.co/resource/sbwg-7ju4.json?codigoestacion=0021206280&$order=fechaobservacion%20DESC&$limit=5",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Licencia CC BY-SA 4.0 con atribución al IDEAM.",
+      "limite": "Igual que la de precipitación.",
+      "que_da": "Temperatura a 2 m cada hora en Acapulco, para calibrar la alerta de helada del modelo. En ene-feb de 2025 y de dic-2025 a feb-2026 la hora más fría fue de 7,3 y 7,5 °C. Ojo: en parte de la serie las horas parecen estar en UTC (las temperaturas más bajas aparecen marcadas entre las 8 y las 12 h, que en hora de Colombia serían de madrugada); verificarlo antes de usar la hora."
+    },
+    {
+      "nombre": "USNO (Observatorio Naval de EE. UU.) – Fases de la Luna",
+      "url_ejemplo": "https://aa.usno.navy.mil/api/moon/phases/date?date=2026-11-18&nump=30",
+      "requiere_llave": false,
+      "cors": true,
+      "terminos": "Sitio oficial de la Armada de EE. UU.; la página de la API no publica términos de uso ni licencia. El parámetro ID es opcional.",
+      "limite": "No publica límites; nump va de 1 a 99 y los años de 1700 a 2100.",
+      "que_da": "Fecha y hora de luna nueva, cuarto creciente, llena y cuarto menguante en tiempo universal (restar 5 horas para la hora de Colombia). La app también puede calcularlas sin internet."
+    }
+  ],
+  "luna": {
+    "reglas": [
+      { "fase": "nueva", "labor": "Abonar y preparar", "regla": "En luna nueva no se siembra: se preparan camas, se abona y se desyerba.", "origen": "Tradición oral campesina. Lo escrito más antiguo que pude verificar es de Catón el Viejo (De Agricultura, siglo II a. C.): acarrear el estiércol y abonar los prados 'en lo oscuro de la luna' (capítulos 29 y 50)." },
+      { "fase": "creciente", "labor": "Siembra de hoja", "regla": "Sembrar hortalizas de hoja (lechuga, acelga, espinaca, repollo) entre luna nueva y llena, 'para que la planta tire hacia arriba'.", "origen": "La división de cultivos en hoja, fruto y raíz viene del calendario biodinámico (Rudolf Steiner, años veinte, y calendarios de siembra posteriores) y de almanaques populares; no encontré una fuente escrita colombiana verificable." },
+      { "fase": "creciente", "labor": "Siembra de fruto y grano", "regla": "Sembrar lo que da cosecha por encima del suelo (maíz, fríjol, arveja, haba, calabaza) en creciente.", "origen": "Almanaque popular (The Old Farmer's Almanac: los cultivos que producen sobre el suelo se siembran con la luna creciente) y tradición campesina." },
+      { "fase": "menguante", "labor": "Siembra de raíz y tubérculo", "regla": "Sembrar papa, zanahoria, remolacha, rábano, cebolla de bulbo y ajo entre luna llena y nueva.", "origen": "Almanaque popular (The Old Farmer's Almanac: los cultivos que producen bajo tierra se siembran con la luna menguante) y tradición campesina." },
+      { "fase": "menguante", "labor": "Trasplante", "regla": "Trasplantar en menguante 'para que enraíce y no se estire'.", "origen": "Tradición oral campesina; sin fuente escrita verificada en esta investigación." },
+      { "fase": "menguante", "labor": "Poda e injerto", "regla": "Podar en menguante 'porque la savia está baja y la planta sangra menos'.", "origen": "Tradición oral; Catón ya recomendaba injertar higueras, olivos, manzanos, perales y vides 'en lo oscuro de la luna', es decir hacia la luna nueva, al cierre del menguante (capítulo 40)." },
+      { "fase": "menguante", "labor": "Corte de madera", "regla": "Cortar árboles para madera con la luna menguante, en los días que siguen a la llena. Eso es tradición; lo que sigue es norma: el roble, el nogal, el pino romerón y el pino colombiano están en veda nacional (Res. INDERENA 0316 de 1974, 1408 y 1132 de 1975), y se debe mantener el bosque de al menos 100 m alrededor de un nacimiento y de al menos 30 m a cada lado de una quebrada (Decreto 1076 de 2015, art. 2.2.1.1.18.2). Antes de cortar, consulte a la CAR.", "origen": "Catón, De Agricultura (capítulos 31 y 37): talar con la luna en menguante y sacar la madera en los siete días que siguen a la luna llena." },
+      { "fase": "menguante", "labor": "Corte de guadua", "regla": "Cortar guadua madura en menguante y de madrugada, 'para que tenga menos agua y almidón y no se apolille'. Eso es tradición; lo que sigue es norma: se debe mantener el bosque de al menos 100 m alrededor de un nacimiento y de al menos 30 m a cada lado de una quebrada (Decreto 1076 de 2015, art. 2.2.1.1.18.2). Antes de cortar, consulte a la CAR.", "origen": "Tradición campesina colombiana, prolongación de la regla europea de la madera; no encontré un estudio controlado que pudiera leer." },
+      { "fase": "llena", "labor": "Cosecha de frutos y hojas para vender", "regla": "Cosechar en luna llena lo que se vende fresco, 'porque tiene más jugo'.", "origen": "Tradición oral; sin fuente escrita verificada." },
+      { "fase": "menguante", "labor": "Cosecha de grano y semilla para guardar", "regla": "Cosechar en menguante el grano y la semilla que se van a guardar, 'para que se gorgojeen menos'.", "origen": "Tradición oral; sin fuente escrita verificada." },
+      { "fase": "menguante", "labor": "Castración", "regla": "Capar cerdos, terneros y gallos en menguante 'para que sangren y se inflamen menos'.", "origen": "Tradición oral campesina; sin estudio verificado." },
+      { "fase": "creciente", "labor": "Echar gallinas a incubar", "regla": "Una versión que circula: echar la gallina en creciente; otras versiones dicen menguante. Como la incubación dura unos 21 días y el ciclo lunar unos 29,5, el pollito siempre nace en una fase distinta a la del día en que se echaron los huevos.", "origen": "Tradición oral; sin fuente escrita ni estudio verificado en esta investigación." }
+    ],
+    "evidencia": "No hay efecto demostrado. La revisión más completa que pude leer (Mayoral, Solbes, Cantó y Pina, 2020, revista Agronomy 10:955) revisó textos de agronomía, botánica y fisiología vegetal, la física de la Luna y la literatura científica, y concluyó que no hay evidencia científica confiable de relación entre las fases lunares y la fisiología de las plantas que justifique prácticas agrícolas guiadas por la Luna, y que la física tampoco apoya una relación causal. Hay trabajos que relacionan ritmos de la planta con la marea que causan el Sol y la Luna (el diámetro de los troncos, Zürcher y colegas 1998 en Nature; el crecimiento de raíces de Arabidopsis, Fisahn y colegas 2012; los movimientos de las hojas, Barlow 2015, una revisión), pero estudian cómo crece y se mueve la planta, no la cosecha ni la duración de la madera. Una revisión de 2001 (Kollerstrom y Staudenmaier) sostiene que hay ritmos en los rendimientos según la posición de la Luna frente a las constelaciones; la revisión de 2020 no encontró respaldo para las prácticas guiadas por la Luna. Una revisión de 2009 sobre agricultura biodinámica (Turinek y colegas) reporta efectos de los preparados biodinámicos en el rendimiento, el suelo y la biodiversidad, pero trata de los preparados, no del calendario lunar. Lo que sí está medido es que el manejo orgánico y biodinámico mejora el suelo: en un ensayo de 21 años en Europa central (Mäder y colegas, 2002, Science) los sistemas orgánicos dieron 20 % menos cosecha, pero con 34-53 % menos fertilizante y energía, 97 % menos pesticida y más fertilidad y biodiversidad del suelo. Eso viene del manejo, no de la Luna. Conclusión para la app: mostrar la luna como tradición y como experimento, nunca como garantía.",
+    "experimento_propuesto": "Comprobarlo con los propios registros. 1) Escoger un cultivo rápido y fácil de pesar: rábano (raíz) y lechuga (hoja). 2) Hacer 4 camas iguales, una junto a otra, con el mismo suelo, el mismo abono pesado y el mismo riego. 3) Sortear con una moneda cuáles dos se siembran en creciente y cuáles dos en menguante, con la misma semilla, del mismo sobre y la misma cantidad por metro. 4) Anotar en la app: fecha y fase de siembra, porcentaje de germinación a los 10 días, días hasta cosecha, peso cosechado por metro cuadrado, plagas y heladas. 5) Repetir al menos 3 ciclos lunares, en las dos temporadas de lluvia, cambiando de cama cada vez. 6) Compare usted con lo anotado (la app todavía no hace esta cuenta): si la diferencia entre fases es menor que la diferencia entre las dos camas sembradas en la misma fase, la luna no está pesando. Lo mismo sirve para la guadua (marcar culmos cortados en creciente y en menguante y revisar el gorgojo a los 6 meses) y para las gallinas (porcentaje de eclosión según la fase en que se echaron los huevos). Fechas para planear el primer ensayo (USNO, hora de Colombia): luna nueva 8-mar-2027, 4:29 a. m.; luna llena 22-mar-2027, 5:44 a. m.; luna nueva 6-abr-2027, 6:51 p. m.; luna llena 20-abr-2027, 5:27 p. m."
+  },
+  "fuentes": [
+    { "titulo": "IDEAM – Normales climatológicas estándar 1991-2020 (libro Excel por estación)", "url": "https://bart.ideam.gov.co/meteorologia/CLIMA/CLIMATOLOGIA/NORMALES%20CLIMATOLOGICAS/NC_ESTANDAR_1991-2020/Normales_Climatologicas_Estandar__1991-2020.xlsx", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Promedios decadales de precipitación 1991-2020 (Excel)", "url": "https://bart.ideam.gov.co/meteorologia/CLIMA/CLIMATOLOGIA/NORMALES%20CLIMATOLOGICAS/NC_ESTANDAR_1991-2020/Promedios%20Decadales_PRECIPITACION_1991-2020.xlsx", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Carpeta de normales climatológicas estándar 1991-2020", "url": "https://bart.ideam.gov.co/meteorologia/CLIMA/CLIMATOLOGIA/NORMALES%20CLIMATOLOGICAS/NC_ESTANDAR_1991-2020/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Catálogo Nacional de Estaciones en datos.gov.co (estación Acapulco 21206280)", "url": "https://www.datos.gov.co/resource/hp9r-jxuu.json?codigo=21206280", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Conjunto de datos Precipitación (metadatos y licencia)", "url": "https://www.datos.gov.co/api/views/s54a-sgyg.json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Conjunto de datos Temperatura Ambiente del Aire (metadatos y licencia)", "url": "https://www.datos.gov.co/api/views/sbwg-7ju4.json", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NOAA CPC – ENSO Diagnostic Discussion, 12 de noviembre de 2026", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NOAA CPC – Probabilidades oficiales ENSO (índice RONI), noviembre de 2026", "url": "https://cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/probabilities/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NOAA CPC – Pronóstico oficial ENSO (índice RONI), noviembre de 2026", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Fenómeno de El Niño (página de seguimiento, actualizada el 12-nov-2026)", "url": "https://ideam.gov.co/fenomeno-del-nino", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Actualización del fenómeno de El Niño: 61 % de probabilidad de que persista hasta mayo de 2027 (12-nov-2026)", "url": "https://www.ideam.gov.co/sala-de-prensa/noticia/actualizacion-del-fenomeno-de-el-nino-existe-el-61-de-propabilidad-de-que-persista-hasta-mayo-2027", "fecha_consulta": "2026-11-18" },
+    { "titulo": "IDEAM – Las condiciones tipo El Niño continúan fortaleciéndose (10-jul-2026)", "url": "https://www.ideam.gov.co/sala-de-prensa/noticia/ideam-indica-que-las-condiciones-tipo-el-nino-continuan-fortaleciendose", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Mesa Técnica Agroclimática de Cundinamarca – Boletín agroclimático diciembre 2025 - enero 2026 (Agronet)", "url": "https://agronet.gov.co/sites/default/files/agroclima/documents/DICIEMBRE_2025/CUN.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Mesa Técnica Agroclimática de Cundinamarca – Boletín agroclimático septiembre 2025 (Agronet)", "url": "https://agronet.gov.co/sites/default/files/agroclima/documents/Septiembre_2025/9%20BTA%20CUNDINAMARCA%20SEPTIEMBRE.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "DANE SIPSA – Informe de heladas, 24 de enero de 2020", "url": "https://www.dane.gov.co/files/investigaciones/agropecuario/sipsa/heladas/informe-heladas-24-ene-2020.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Infobae (fuente secundaria) – IDEAM alerta sobre posibles heladas, 25-ene-2025", "url": "https://www.infobae.com/colombia/2025/01/25/ideam-alerta-sobre-posibles-heladas-en-varios-departamentos-el-fin-de-semana-conozca-que-zonas-estan-en-riesgo/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Infobae (fuente secundaria) – IDEAM y El Niño, 17-nov-2026", "url": "https://www.infobae.com/colombia/2026/11/17/ideam-advirtio-de-un-aumento-en-las-lluvias-en-estos-departamentos-de-colombia-fuertes-precipitaciones-y-tormentas-electricas/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO – Snyder y de Melo-Abreu (2005), Frost Protection: fundamentals, practice and economics, vol. 1", "url": "https://www.fao.org/4/y7223e/y7223e00.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO – Frost Protection, capítulo 1 (definiciones de helada de radiación y de advección)", "url": "https://www.fao.org/4/y7223e/y7223e07.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO – Frost Protection, capítulo 4 (temperaturas críticas, cuadro 4.5)", "url": "https://www.fao.org/4/y7223e/y7223e0a.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO – Frost Protection, capítulo 6 (métodos pasivos)", "url": "https://www.fao.org/4/y7223e/y7223e0c.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "FAO – Allen y otros (1998), Estudio FAO Riego y Drenaje 56, capítulo 3 (fórmula de Ångström)", "url": "https://www.fao.org/4/x0490e/x0490e07.htm", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Open-Meteo – Términos de uso", "url": "https://open-meteo.com/en/terms", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Open-Meteo – Precios y planes", "url": "https://open-meteo.com/en/pricing", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Open-Meteo – Documentación de la Historical Weather API", "url": "https://open-meteo.com/en/docs/historical-weather-api", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Open-Meteo – Documentación de la Forecast API (hasta 16 días, modelo de elevación de 90 m)", "url": "https://open-meteo.com/en/docs", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Open-Meteo – Documentación de la Elevation API (Copernicus DEM GLO-90)", "url": "https://open-meteo.com/en/docs/elevation-api", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NASA POWER – Documentación de la API", "url": "https://power.larc.nasa.gov/docs/services/api/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NASA POWER – Climatology API", "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NASA POWER – Cómo citar los datos", "url": "https://power.larc.nasa.gov/docs/referencing/", "fecha_consulta": "2026-11-18" },
+    { "titulo": "NASA Earthdata – Política de datos e información", "url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-policy", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Socrata (Tyler Technologies) – App tokens y límites de la API", "url": "https://dev.socrata.com/docs/app-tokens.html", "fecha_consulta": "2026-11-18" },
+    { "titulo": "USNO – Documentación de las API de datos astronómicos", "url": "https://aa.usno.navy.mil/data/api", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Mayoral, Solbes, Cantó y Pina (2020). What Has Been Thought and Taught on the Lunar Influence on Plants in Agriculture? Agronomy 10(7): 955", "url": "https://doi.org/10.3390/agronomy10070955", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Kollerstrom y Staudenmaier (2001). Evidence for Lunar-Sidereal Rhythms in Crop Yield: A Review. Biological Agriculture & Horticulture 19(3): 247-259", "url": "https://doi.org/10.1080/01448765.2001.9754928", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Zürcher y otros (1998). Tree stem diameters fluctuate with tide. Nature 392: 665-666", "url": "https://doi.org/10.1038/33570", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Fisahn y otros (2012). Arabidopsis thaliana root growth kinetics and lunisolar tidal acceleration. New Phytologist 195: 346-355", "url": "https://doi.org/10.1111/j.1469-8137.2012.04162.x", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Barlow (2015). Leaf movements and their relationship with the lunisolar gravitational force. Annals of Botany 116: 149-187", "url": "https://doi.org/10.1093/aob/mcv096", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Turinek y otros (2009). Biodynamic agriculture research progress and priorities. Renewable Agriculture and Food Systems 24(2): 146-154", "url": "https://doi.org/10.1017/S174217050900252X", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Mäder y otros (2002). Soil Fertility and Biodiversity in Organic Farming. Science 296: 1694-1697", "url": "https://doi.org/10.1126/science.1071148", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Catón, De Agricultura, capítulos 1-52 (traducción Loeb en LacusCurtius)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cato/De_Agricultura/A*.html", "fecha_consulta": "2026-11-18" },
+    { "titulo": "The Old Farmer's Almanac – Planting by the Moon", "url": "https://www.almanac.com/content/planting-by-the-moon", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Wikipedia (fuente secundaria) – Biodynamic agriculture", "url": "https://en.wikipedia.org/wiki/Biodynamic_agriculture", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Anexo de la Circular MinAmbiente 8201-2-808 de 2019 (especies en veda)", "url": "https://www.minambiente.gov.co/wp-content/uploads/2021/10/Circular-MADS-8201-2-808-del-09-12-2019-Anexo.pdf", "fecha_consulta": "2026-11-18" },
+    { "titulo": "Decreto 1449 de 1977, hoy Decreto 1076 de 2015, arts. 2.2.1.1.18.1 y 2.2.1.1.18.2", "url": "https://normas.cra.gov.co/Gestor/Docs/decreto_1449_1977.htm", "fecha_consulta": "2026-11-18" }
+  ]
+}

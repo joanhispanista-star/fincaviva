@@ -1,0 +1,14 @@
+{
+  "nombre": "ejemplo",
+  "lat": 4.695,
+  "lon": -74.3425,
+  "lado_m": 3000,
+  "n": 257,
+  "zoom": 14,
+  "formato": "Uint16 little-endian, decímetros sobre el nivel del mar; fila 0 = norte, columna 0 = oeste",
+  "altura_min_m": 2009,
+  "altura_max_m": 2832,
+  "altura_centro_m": 2648,
+  "fuente": "AWS Terrain Tiles (Terrarium); en Colombia el dato de fondo es SRTM ~30 m",
+  "atribucion": "Relieve: datos SRTM, cortesía del U.S. Geological Survey (AWS Terrain Tiles)"
+}
