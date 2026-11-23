@@ -20,7 +20,8 @@ import { calcularXP, nivelDe, misionesDeSemana, arbolesSembrados, racha } from '
 import { rangoMes, inicioSemana, MESES, fechaCorta } from '../../lib/fechas.js'
 import { crearFincaDePrueba } from '../../lib/demo.js'
 import { ganadoDelMapa } from '../../lib/rebano.js'
-import { esc, pesos, porcentaje, enlazar } from '../ui.js'
+import { graficosDelMapa } from '../../lib/graficos.js'
+import { esc, pesos, porcentaje, enlazar, avisar } from '../ui.js'
 
 const huevosDe = (estado, fecha) => estado.registros.filter((r) => r.fecha === fecha && r.tipo === 'produccion' && r.datos?.producto?.startsWith('huevo')).reduce((s, r) => s + (r.datos.cantidad || 0), 0)
 
@@ -295,6 +296,7 @@ export async function pantallaFinca(raiz, ctx) {
 
   let mundo = null
   let vivo = true
+  const graficos = graficosDelMapa(estado.ajustes.graficos_mapa)
   try {
     mundo = await crearMundo(raiz.querySelector('#lienzo'), {
       base: './',
@@ -303,14 +305,18 @@ export async function pantallaFinca(raiz, ctx) {
       // La finca escaneada va siempre en Juguete: el Diorama recorta un cuadro
       // fijo de 240 m y una finca de verdad no tiene por qué caber ahí.
       estilo: !terreno && estado.ajustes.estilo_mapa === 'diorama' ? 'diorama' : 'juguete',
-      // «De antes» en Ajustes: sin pasto ni flores, para un teléfono al que le pese.
-      graficos: estado.ajustes.graficos_mapa === 'clasico' ? 'clasico' : 'nuevo',
+      // Lo escogido en Ajustes → «Gráficos del mapa» (lib/graficos.js): con
+      // fotos, los nuevos, o los de antes para un teléfono al que le pese.
+      graficos,
       finca: fincaMapa,
       relieveDatos,
       alDibujar: pintarEtiquetas,
       alTocar,
     })
     if (!vivo) mundo.destruir()
+    // Se pidieron las fotos y no llegaron: el mapa salió con los gráficos
+    // nuevos, y se dice. Sin el aviso parecería que el ajuste no hace nada.
+    else if (graficos === 'realista' && mundo.info.estilo === 'juguete' && mundo.info.graficos !== 'realista') avisar('Las fotos del mapa no cargaron (¿poca señal?). Se ve sin ellas.')
     // Solo en el computador de desarrollo: una manija para avanzar el mapa a
     // mano en las pruebas (con el panel oculto el navegador no lo dibuja solo).
     if (location.hostname === 'localhost') globalThis.FINCA_MAPA = mundo

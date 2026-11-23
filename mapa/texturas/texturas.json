@@ -1,0 +1,636 @@
+{
+ "generado": "2026-11-20",
+ "licencia": "Todo CC0 (dominio público): ambientCG y Poly Haven. Los árboles y las matas son modelos 3D de Poly Haven horneados con pruebas/horneador/.",
+ "texturas": {
+  "pasto": {
+   "archivo": "pasto.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "metros": 4,
+   "promedio": "#65842c",
+   "origen": "ambientCG - Grass005",
+   "url": "https://ambientcg.com/a/Grass005",
+   "licencia": "CC0"
+  },
+  "pasto_n": {
+   "archivo": "pasto_n.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 4,
+   "promedio": "#7e80d1",
+   "origen": "ambientCG - Grass005",
+   "url": "https://ambientcg.com/a/Grass005",
+   "licencia": "CC0"
+  },
+  "tierra": {
+   "archivo": "tierra.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 2.5,
+   "promedio": "#583f28",
+   "origen": "Poly Haven - farm_soil",
+   "url": "https://polyhaven.com/a/farm_soil",
+   "licencia": "CC0"
+  },
+  "camino": {
+   "archivo": "camino.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 3,
+   "promedio": "#63523e",
+   "origen": "Poly Haven - dirt",
+   "url": "https://polyhaven.com/a/dirt",
+   "licencia": "CC0"
+  },
+  "teja": {
+   "archivo": "teja.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 2.4,
+   "promedio": "#91502b",
+   "origen": "Poly Haven - clay_roof_tiles_02",
+   "url": "https://polyhaven.com/a/clay_roof_tiles_02",
+   "licencia": "CC0"
+  },
+  "pared": {
+   "archivo": "pared.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 3,
+   "promedio": "#bbb2a1",
+   "origen": "Poly Haven - white_plaster_02",
+   "url": "https://polyhaven.com/a/white_plaster_02",
+   "licencia": "CC0"
+  },
+  "madera": {
+   "archivo": "madera.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 2,
+   "promedio": "#604b39",
+   "origen": "Poly Haven - weathered_brown_planks",
+   "url": "https://polyhaven.com/a/weathered_brown_planks",
+   "licencia": "CC0"
+  },
+  "zinc": {
+   "archivo": "zinc.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 2,
+   "promedio": "#aab3ae",
+   "origen": "Poly Haven - corrugated_iron",
+   "url": "https://polyhaven.com/a/corrugated_iron",
+   "licencia": "CC0"
+  },
+  "paja": {
+   "archivo": "paja.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 2,
+   "promedio": "#8a765a",
+   "origen": "Poly Haven - reed_roof_03",
+   "url": "https://polyhaven.com/a/reed_roof_03",
+   "licencia": "CC0"
+  },
+  "concreto": {
+   "archivo": "concreto.webp",
+   "px": [
+    512,
+    512
+   ],
+   "repetible": true,
+   "metros": 3,
+   "promedio": "#786e5b",
+   "origen": "Poly Haven - concrete_floor_02",
+   "url": "https://polyhaven.com/a/concrete_floor_02",
+   "licencia": "CC0"
+  },
+  "corteza": {
+   "archivo": "corteza.webp",
+   "px": [
+    256,
+    256
+   ],
+   "repetible": true,
+   "metros": 1.2,
+   "promedio": "#5f5640",
+   "origen": "Poly Haven - bark_brown_02",
+   "url": "https://polyhaven.com/a/bark_brown_02",
+   "licencia": "CC0"
+  },
+  "aliso": {
+   "archivo": "aliso.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 2.913,
+     "alto_m": 4.553,
+     "eje_u": 0.5
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 4.287,
+     "alto_m": 4.553,
+     "eje_u": 0.5
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 2.918,
+     "alto_m": 4.291
+    }
+   },
+   "promedio": "#364025",
+   "origen": "Poly Haven - tree_small_02 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/tree_small_02",
+   "licencia": "CC0"
+  },
+  "roble": {
+   "archivo": "roble.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 4.745,
+     "alto_m": 5.023,
+     "eje_u": 0.5
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 4.801,
+     "alto_m": 5.023,
+     "eje_u": 0.499
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 4.728,
+     "alto_m": 4.805
+    }
+   },
+   "promedio": "#3a3d1d",
+   "origen": "Poly Haven - island_tree_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/island_tree_01",
+   "licencia": "CC0"
+  },
+  "encenillo": {
+   "archivo": "encenillo.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 4.203,
+     "alto_m": 3.4,
+     "eje_u": 0.5
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 4.059,
+     "alto_m": 3.4,
+     "eje_u": 0.5
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 4.203,
+     "alto_m": 4.055
+    }
+   },
+   "promedio": "#3c3e1f",
+   "origen": "Poly Haven - island_tree_02 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/island_tree_02",
+   "licencia": "CC0"
+  },
+  "sietecueros": {
+   "archivo": "sietecueros.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 4.059,
+     "alto_m": 3.4,
+     "eje_u": 0.5
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 4.203,
+     "alto_m": 3.4,
+     "eje_u": 0.5
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 4.203,
+     "alto_m": 4.055
+    }
+   },
+   "promedio": "#4f4644",
+   "origen": "Poly Haven - island_tree_02 (modelo 3D horneado aquí; flores o frutas pintadas encima)",
+   "url": "https://polyhaven.com/a/island_tree_02",
+   "licencia": "CC0"
+  },
+  "pino": {
+   "archivo": "pino.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 0.861,
+     "alto_m": 1.301,
+     "eje_u": 0.5
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 0.785,
+     "alto_m": 1.297,
+     "eje_u": 0.5
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 0.861,
+     "alto_m": 0.861
+    }
+   },
+   "promedio": "#383d23",
+   "origen": "Poly Haven - fir_sapling (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/fir_sapling",
+   "licencia": "CC0"
+  },
+  "arbusto": {
+   "archivo": "arbusto.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 1.77,
+     "alto_m": 2.339,
+     "eje_u": 0.511
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 1.965,
+     "alto_m": 2.339,
+     "eje_u": 0.499
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 1.797,
+     "alto_m": 1.961
+    }
+   },
+   "promedio": "#4c4d32",
+   "origen": "Poly Haven - searsia_lucida (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/searsia_lucida",
+   "licencia": "CC0"
+  },
+  "frutal": {
+   "archivo": "frutal.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "transparente": true,
+   "arbol": true,
+   "celdas": {
+    "lado0": {
+     "uv": [
+      0,
+      0.5,
+      0.5,
+      1
+     ],
+     "ancho_m": 1.499,
+     "alto_m": 1.679,
+     "eje_u": 0.501
+    },
+    "lado90": {
+     "uv": [
+      0.5,
+      0.5,
+      1,
+      1
+     ],
+     "ancho_m": 1.247,
+     "alto_m": 1.679,
+     "eje_u": 0.499
+    },
+    "arriba": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      0.5
+     ],
+     "ancho_m": 1.499,
+     "alto_m": 1.241
+    }
+   },
+   "promedio": "#555130",
+   "origen": "Poly Haven - searsia_lucida (modelo 3D horneado aquí; flores o frutas pintadas encima)",
+   "url": "https://polyhaven.com/a/searsia_lucida",
+   "licencia": "CC0"
+  },
+  "mata": {
+   "archivo": "mata.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.276,
+   "alto_m": 0.167,
+   "eje_u": 0.5,
+   "promedio": "#2d3212",
+   "vista": "lado",
+   "origen": "Poly Haven - grass_medium_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/grass_medium_01",
+   "licencia": "CC0"
+  },
+  "mata_alta": {
+   "archivo": "mata_alta.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.153,
+   "alto_m": 0.313,
+   "eje_u": 0.487,
+   "promedio": "#2e3616",
+   "vista": "lado",
+   "origen": "Poly Haven - grass_medium_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/grass_medium_01",
+   "licencia": "CC0"
+  },
+  "flor_amarilla": {
+   "archivo": "flor_amarilla.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.223,
+   "alto_m": 0.167,
+   "eje_u": 0.5,
+   "promedio": "#4c4b16",
+   "vista": "lado",
+   "origen": "Poly Haven - dandelion_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/dandelion_01",
+   "licencia": "CC0"
+  },
+  "trebol": {
+   "archivo": "trebol.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.067,
+   "alto_m": 0.046,
+   "eje_u": 0.503,
+   "promedio": "#3c4c1a",
+   "vista": "lado",
+   "origen": "Poly Haven - shrub_sorrel_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/shrub_sorrel_01",
+   "licencia": "CC0"
+  },
+  "celidonia": {
+   "archivo": "celidonia.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.253,
+   "alto_m": 0.145,
+   "eje_u": 0.501,
+   "promedio": "#3d4a18",
+   "vista": "lado",
+   "origen": "Poly Haven - celandine_01 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/celandine_01",
+   "licencia": "CC0"
+  },
+  "helecho": {
+   "archivo": "helecho.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.971,
+   "alto_m": 0.426,
+   "eje_u": 0.506,
+   "promedio": "#303d14",
+   "vista": "lado",
+   "origen": "Poly Haven - fern_02 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/fern_02",
+   "licencia": "CC0"
+  },
+  "hortaliza": {
+   "archivo": "hortaliza.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.218,
+   "alto_m": 0.072,
+   "eje_u": 0.499,
+   "promedio": "#3a401a",
+   "vista": "lado",
+   "origen": "Poly Haven - weed_plant_02 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/weed_plant_02",
+   "licencia": "CC0"
+  },
+  "hortaliza_arriba": {
+   "archivo": "hortaliza_arriba.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.218,
+   "alto_m": 0.288,
+   "promedio": "#444f22",
+   "vista": "arriba",
+   "origen": "Poly Haven - weed_plant_02 (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/weed_plant_02",
+   "licencia": "CC0"
+  },
+  "ortiga": {
+   "archivo": "ortiga.webp",
+   "px": [
+    256,
+    256
+   ],
+   "transparente": true,
+   "ancho_m": 0.101,
+   "alto_m": 0.213,
+   "eje_u": 0.498,
+   "promedio": "#2f3617",
+   "vista": "lado",
+   "origen": "Poly Haven - nettle_plant (modelo 3D horneado aquí)",
+   "url": "https://polyhaven.com/a/nettle_plant",
+   "licencia": "CC0"
+  },
+  "cielo": {
+   "archivo": "cielo.webp",
+   "px": [
+    2048,
+    512
+   ],
+   "media_esfera": true,
+   "sol_u": 0.5968,
+   "sol_altura": 48.5,
+   "horizonte": "#9ca2b1",
+   "cenit": "#8a96b1",
+   "origen": "Poly Haven - kloofendal_48d_partly_cloudy_puresky",
+   "url": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+   "licencia": "CC0"
+  }
+ }
+}

@@ -31,7 +31,10 @@ function semillaDe(texto) {
   return h >>> 0
 }
 
-export function crearVida({ escena, mat, suelo, local, poner, animables, tocables, estilo, camara, objetivo, distancia }) {
+// `vestir(geom)` da el material de un modelo (con sus fotos, si las hay) y
+// `fotos` = { R, T } trae mapa/realista.js y sus texturas ya cargadas. Los dos
+// faltan fuera de los gráficos realistas, y entonces todo se dibuja como siempre.
+export function crearVida({ escena, mat, suelo, local, poner, animables, tocables, estilo, camara, objetivo, distancia, vestir = () => mat, fotos = null }) {
   const m4 = new THREE.Matrix4(), mLocal = new THREE.Matrix4(), mGiro = new THREE.Matrix4(), mHijo = new THREE.Matrix4()
   const q = new THREE.Quaternion(), e = new THREE.Euler(), p = new THREE.Vector3(), s = new THREE.Vector3()
   const NADA = new THREE.Matrix4().makeScale(0, 0, 0)
@@ -181,7 +184,8 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
     const piezas = M.geomLombricultivoPartes()
     const grupo = poner(piezas.lecho, o.x, o.z, o.rot, { ...comun, alto: 2.8, edificio: true })
     // Material propio: su transparencia cambia y no debe arrastrar a todo lo demás.
-    const matTecho = mat.clone()
+    const deTecho = vestir(piezas.techo) // con fotos llega como lista: el techo es una sola tanda, la de paja
+    const matTecho = (Array.isArray(deTecho) ? deTecho[0] : deTecho).clone()
     matTecho.transparent = true
     const techo = new THREE.Mesh(piezas.techo, matTecho)
     techo.castShadow = true
@@ -306,8 +310,32 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
       im.receiveShadow = true
       escena.add(im)
     }
-    sembrar(M.geomMata(), matas, matSuelto, { minimo: 0.8, maximo: 1.5, tinte: (c, a) => c.setRGB(0.8 + a * 0.2, 0.86 + a * 0.14, 0.7 + a * 0.25) })
-    sembrar(M.geomFlor(), flores, matSuelto, { minimo: 1.2, maximo: 2, tinte: (c, a) => c.set(a < 0.55 ? '#ffffff' : a < 0.9 ? '#ffe04d' : '#d9b3ff') })
+    if (fotos) {
+      // Gráficos realistas: en los mismos sitios, láminas con la foto de una
+      // mata de verdad. Van más grandes que al natural (una mata de 17 cm no se
+      // ve desde la cámara del mapa), como los animales y las casas del estilo
+      // Juguete. El helecho es la maleza de los potreros de tierra fría; el
+      // «trébol» es una acedera horneada que hace de trébol blanco.
+      const { R, T } = fotos
+      const reparto = { mata: [], mata_alta: [], helecho: [], flor_amarilla: [], trebol: [] }
+      for (const punto of matas) { const r = azar(); reparto[r < 0.7 ? 'mata' : r < 0.975 ? 'mata_alta' : 'helecho'].push(punto) }
+      for (const punto of flores) reparto[azar() < 0.65 ? 'flor_amarilla' : 'trebol'].push(punto)
+      const fotoDe = (clave, { minimo, maximo, tono }) => {
+        const lista = reparto[clave]
+        if (!lista.length) return
+        const im = R.matas(T, clave, lista.map(([x, z]) => [x, suelo(x, z) - 0.02, z, minimo + azar() * (maximo - minimo), azar() * 6.283]), T.hacia(clave, color.set(tono)), { variar: 0.34 })
+        sembrados.push(im)
+        escena.add(im)
+      }
+      fotoDe('mata', { minimo: 0.34, maximo: 0.6, tono: '#84bd4c' })
+      fotoDe('mata_alta', { minimo: 0.55, maximo: 0.95, tono: '#79b045' })
+      fotoDe('helecho', { minimo: 0.6, maximo: 0.95, tono: '#5c9a3c' })
+      fotoDe('flor_amarilla', { minimo: 0.34, maximo: 0.52, tono: '#c9c93e' })
+      fotoDe('trebol', { minimo: 0.3, maximo: 0.45, tono: '#a9d98a' })
+    } else {
+      sembrar(M.geomMata(), matas, matSuelto, { minimo: 0.8, maximo: 1.5, tinte: (c, a) => c.setRGB(0.8 + a * 0.2, 0.86 + a * 0.14, 0.7 + a * 0.25) })
+      sembrar(M.geomFlor(), flores, matSuelto, { minimo: 1.2, maximo: 2, tinte: (c, a) => c.set(a < 0.55 ? '#ffffff' : a < 0.9 ? '#ffe04d' : '#d9b3ff') })
+    }
     sembrar(M.geomPiedra(), piedras, mat, { minimo: 0.6, maximo: 1.6, tinte: (c, a) => c.setScalar(0.85 + a * 0.25) })
     // Con la finca entera en pantalla cada mata mide menos de un punto: solo
     // ensucia el verde y le cuesta al teléfono. Se dibujan al acercarse.
@@ -327,11 +355,14 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
     const nu = Math.max(2, Math.ceil(ancho / celda)), nw = Math.max(2, Math.ceil(fondo / celda))
     const azar = crearAzar(semillaDe((o.id || 'parche') + tono))
     const c = new THREE.Color(tono)
-    const pos = [], col = [], indices = []
+    const pos = [], col = [], uv = [], indices = []
+    // Gráficos realistas: el parche lleva la foto de tierra y `tono` la tiñe.
+    const metros = fotos ? fotos.T.indice.tierra.metros : 0
     for (let j = 0; j <= nw; j++)
       for (let i = 0; i <= nu; i++) {
         const [x, z] = local(o, (i / nu - 0.5) * ancho, (j / nw - 0.5) * fondo)
         pos.push(x, suelo(x, z) + 0.1, z)
+        if (metros) uv.push(x / metros, z / metros)
         const borde = i === 0 || j === 0 || i === nu || j === nw
         col.push(c.r, c.g, c.b, borde ? 0 : fuerza * (0.6 + azar() * 0.4))
       }
@@ -343,9 +374,10 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
     const g = new THREE.BufferGeometry()
     g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3))
     g.setAttribute('color', new THREE.Float32BufferAttribute(col, 4))
+    if (metros) g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2))
     g.setIndex(indices)
     g.computeVertexNormals()
-    const m = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ vertexColors: true, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 }))
+    const m = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ vertexColors: true, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, ...(metros ? { map: fotos.T.tex.tierra, color: fotos.T.neutro('tierra') } : {}) }))
     m.receiveShadow = true
     escena.add(m)
   }

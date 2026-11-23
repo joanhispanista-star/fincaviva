@@ -153,10 +153,18 @@ function techo(ancho, fondo, altoParedes, subida, color, alero = 0.35, grosor = 
   const mitad = fondo / 2 + alero
   const largo = Math.hypot(mitad, subida)
   const ang = Math.atan2(subida, mitad)
-  return [
+  const aguas = [
     parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, mitad / 2 - alero / 2 + 0.02], r: [ang, 0, 0], tex }),
     parte(caja(ancho + alero * 2, grosor, largo), color, { p: [0, altoParedes + subida / 2, -mitad / 2 + alero / 2 - 0.02], r: [-ang, 0, 0], tex }),
   ]
+  // Con foto hace falta el caballete. Las dos láminas se cruzan en la cumbrera
+  // y el canto de cada una (unos centímetros) muestra una sola tira de la foto
+  // a todo lo largo: dos rayas claras encima del techo. El caballete las tapa,
+  // como en un techo de verdad, y va sin foto para no repetir el problema en
+  // sus propios cantos. Sin foto los cantos son del color del techo y no se
+  // nota: el modelo queda como siempre.
+  if (METROS[tex]) aguas.push(parte(caja(ancho + alero * 2, grosor + 0.06, alero + 0.1), new THREE.Color(color).multiplyScalar(0.72), { p: [0, altoParedes + subida + 0.05, 0] }))
+  return aguas
 }
 
 // Hastial: el triángulo de pared bajo el techo, como prisma que llena el entretecho.
@@ -261,30 +269,38 @@ export function geomCasa({ ancho = 9, fondo = 6, alto = 2.6 } = {}) {
   return unir(partes)
 }
 
-// Cama de huerta elevada, con borde de madera, y sus plantas.
-export function geomCama(largo = 4, ancho = 1.2, cultivo = 'hoja') {
+// Dónde va cada mata de una cama: [x, z, fila, puesto], en metros desde el
+// centro. El maíz va más ralo (dos surcos); lo demás, a tres. Lo comparten el
+// dibujo de siempre y el realista (mapa/mundo.js), que pone una lámina con foto
+// en cada puesto: la huerta tiene las mismas matas con los dos.
+export function puestosDeCama(largo = 4, ancho = 1.2, cultivo = 'hoja') {
+  const filas = cultivo === 'maiz' ? 2 : 3
+  const porFila = Math.floor(largo / (cultivo === 'maiz' ? 0.5 : 0.35))
+  const puestos = []
+  for (let f = 0; f < filas; f++)
+    for (let k = 0; k < porFila; k++) puestos.push([(f / (filas - 1) - 0.5) * (ancho - 0.4), (k / (porFila - 1) - 0.5) * (largo - 0.4), f, k])
+  return puestos
+}
+
+// Cama de huerta elevada, con borde de madera, y sus plantas. `matas: false`
+// deja solo la cama: las plantas las pone quien la pidió (gráficos realistas).
+export function geomCama(largo = 4, ancho = 1.2, cultivo = 'hoja', { matas = true } = {}) {
   const P = PALETA
   const partes = [
     parte(caja(ancho, 0.25, largo), P.maderaOscura, { p: [0, 0.125, 0], tex: 'madera' }),
     parte(caja(ancho - 0.12, 0.06, largo - 0.12), P.tierra, { p: [0, 0.27, 0], tex: 'tierra' }),
   ]
-  const filas = cultivo === 'maiz' ? 2 : 3
-  const porFila = Math.floor(largo / (cultivo === 'maiz' ? 0.5 : 0.35))
-  for (let f = 0; f < filas; f++) {
-    for (let k = 0; k < porFila; k++) {
-      const x = (f / (filas - 1) - 0.5) * (ancho - 0.4)
-      const z = (k / (porFila - 1) - 0.5) * (largo - 0.4)
-      if (cultivo === 'maiz') {
-        partes.push(parte(cil(0.02, 0.025, 1.6, 4), P.hojaClara, { p: [x, 1.1, z] }))
-        partes.push(parte(cono(0.22, 0.9, 4), P.hoja, { p: [x, 1.3, z], r: [0, k, 0] }))
-      } else if (cultivo === 'repollo') {
-        partes.push(parte(bola(0.16, 0), (k + f) % 2 ? P.hojaClara : '#93cf7a', { p: [x, 0.42, z] }))
-      } else if (cultivo === 'arveja') {
-        partes.push(parte(cil(0.01, 0.01, 1.2, 3), P.troncoClaro, { p: [x, 0.9, z] }))
-        partes.push(parte(bola(0.14, 0), P.hojaOscura, { p: [x, 0.75 + (k % 3) * 0.15, z], s: [0.8, 1.6, 0.8] }))
-      } else {
-        partes.push(parte(bola(0.13, 0), (k + f) % 3 === 0 ? P.hojaOscura : P.hoja, { p: [x, 0.36, z], s: [1, 0.7, 1] }))
-      }
+  for (const [x, z, f, k] of matas ? puestosDeCama(largo, ancho, cultivo) : []) {
+    if (cultivo === 'maiz') {
+      partes.push(parte(cil(0.02, 0.025, 1.6, 4), P.hojaClara, { p: [x, 1.1, z] }))
+      partes.push(parte(cono(0.22, 0.9, 4), P.hoja, { p: [x, 1.3, z], r: [0, k, 0] }))
+    } else if (cultivo === 'repollo') {
+      partes.push(parte(bola(0.16, 0), (k + f) % 2 ? P.hojaClara : '#93cf7a', { p: [x, 0.42, z] }))
+    } else if (cultivo === 'arveja') {
+      partes.push(parte(cil(0.01, 0.01, 1.2, 3), P.troncoClaro, { p: [x, 0.9, z] }))
+      partes.push(parte(bola(0.14, 0), P.hojaOscura, { p: [x, 0.75 + (k % 3) * 0.15, z], s: [0.8, 1.6, 0.8] }))
+    } else {
+      partes.push(parte(bola(0.13, 0), (k + f) % 3 === 0 ? P.hojaOscura : P.hoja, { p: [x, 0.36, z], s: [1, 0.7, 1] }))
     }
   }
   return unir(partes)

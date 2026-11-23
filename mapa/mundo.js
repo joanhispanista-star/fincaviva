@@ -12,6 +12,7 @@ import { cargarRelieve, crearRelieve } from './relieve.js'
 import * as M from './modelos.js'
 import { Controles } from './controles.js'
 import { crearVida } from './vida.js'
+import { ladoDeArbol } from '../lib/graficos.js'
 
 export const ESTILOS = {
   // escalaEdificios: en los estilos de juego las construcciones se agrandan un
@@ -205,9 +206,9 @@ function colorSuelo(x, z, h, pend, finca, estilo, nuevo = false) {
 // Rejilla de `lado` metros con celdas de `paso`. Si hay `hueco`, no dibuja los
 // cuadros que caen dentro (ahí va la malla más fina) y la baja un poco para que
 // en el borde la fina quede encima sin parpadeo.
-function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0, colorDe, uvDe = null, facetas = false }) {
+function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0, colorDe, uvDe = null, facetas = false, metrosFoto = 0 }) {
   const n = Math.round(lado / paso) + 1
-  if (facetas) return mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n })
+  if (facetas) return mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n, metrosFoto })
   const pos = new Float32Array(n * n * 3)
   const col = new Float32Array(n * n * 3)
   const uv = uvDe ? new Float32Array(n * n * 2) : null
@@ -261,12 +262,17 @@ function mallaRelieve(rel, h0, { lado, paso, suave = false, hueco = 0, bajar = 0
 // vértices, el borde entre un potrero y otro salía como una mancha borrosa en
 // escalera; en facetas sale nítido, que es como se ve un paisaje de juguete.
 // Cuesta memoria (cada triángulo lleva sus tres vértices), no triángulos.
-function mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n }) {
+//
+// `metrosFoto` (gráficos realistas): cuántos metros cubre una repetición de la
+// foto del suelo. La foto se tiende sobre el mapa visto desde arriba, así que
+// cada vértice la pide por su posición (x, z) y no hay costuras entre facetas.
+function mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n, metrosFoto = 0 }) {
   const H = new Float32Array(n * n)
   for (let f = 0; f < n; f++)
     for (let c = 0; c < n; c++) H[f * n + c] = (suave ? rel.alturaSuave(-lado / 2 + c * paso, -lado / 2 + f * paso) : rel.alturaEn(-lado / 2 + c * paso, -lado / 2 + f * paso))
   const total = (n - 1) * (n - 1) * 2
   const pos = new Float32Array(total * 9), col = new Float32Array(total * 9)
+  const uv = metrosFoto ? new Float32Array(total * 6) : null
   let o = 0
   const cara = (x1, z1, h1, x2, z2, h2, x3, z3, h3, semilla) => {
     // Pendiente de la cara: la de su plano.
@@ -276,6 +282,7 @@ function mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n }) {
     k.offsetHSL(0, 0, (semilla - 0.5) * 0.035)
     pos.set([x1, h1 - h0 - bajar, z1, x2, h2 - h0 - bajar, z2, x3, h3 - h0 - bajar, z3], o)
     col.set([k.r, k.g, k.b, k.r, k.g, k.b, k.r, k.g, k.b], o)
+    if (uv) uv.set([x1 / metrosFoto, z1 / metrosFoto, x2 / metrosFoto, z2 / metrosFoto, x3 / metrosFoto, z3 / metrosFoto], (o / 9) * 6)
     o += 9
   }
   for (let f = 0; f < n - 1; f++)
@@ -288,6 +295,7 @@ function mallaEnFacetas(rel, h0, { lado, paso, suave, bajar, colorDe, n }) {
   const g = new THREE.BufferGeometry()
   g.setAttribute('position', new THREE.BufferAttribute(pos, 3))
   g.setAttribute('color', new THREE.BufferAttribute(col, 3))
+  if (uv) g.setAttribute('uv', new THREE.BufferAttribute(uv, 2))
   g.computeVertexNormals()
   return g
 }
@@ -422,6 +430,17 @@ export async function crearMundo(lienzo, op = {}) {
   const escena = new THREE.Scene()
   const camara = new THREE.PerspectiveCamera(estilo.fov, 1, 1, 40000)
 
+  // Gráficos realistas (`graficos: 'realista'`): fotos de dominio público
+  // ENCIMA de los gráficos nuevos, solo en el estilo Juguete. Se piden mientras
+  // llega el relieve. Si el módulo o una sola foto no llega (sin señal, señal
+  // lenta, archivo que falta), `T` queda en null y todo lo que sigue dibuja los
+  // gráficos nuevos, igual que antes de que esto existiera. Por eso
+  // mapa/realista.js se importa aquí y no arriba: si faltara, se pierde este
+  // modo, no el mapa.
+  const fotos = nuevo && op.graficos === 'realista'
+    ? import('./realista.js').then(async (R) => ({ R, T: await R.cargarTexturas(base, renderer, { ladoArbol: ladoDeArbol(window.innerWidth, window.innerHeight), ...(op.esperaFotos ? { espera: op.esperaFotos } : {}) }) })).catch((e) => (console.warn('Sin gráficos realistas:', e.message), null))
+    : null
+
   // El relieve llega de dos maneras: horneado en datos/ (el mapa de ejemplo) o
   // ya leído del teléfono (`op.relieveDatos`: la finca escaneada, ver
   // mapa/relieve-vivo.js).
@@ -429,8 +448,24 @@ export async function crearMundo(lienzo, op = {}) {
   const h0 = rel.hCentro
   const suelo = (x, z) => rel.alturaSuave(x, z) - h0
 
+  const { R = null, T = null } = (await fotos) || {}
+  const realista = !!T
+  // Sin fotos, ninguna pieza pide textura y los modelos salen de colores planos.
+  M.usarTexturas(realista ? T.indice : null)
+
+  // Sol real a la hora pedida. Va antes del cielo: el de foto se gira hasta
+  // que su sol quede donde alumbra este.
+  const hora = op.hora ?? estilo.hora
+  const sol = direccionSol(hora, op.diaDelAnio ?? 322)
+
   // Cielo y niebla. A 2.600 m la neblina es parte del paisaje: se nota.
-  if (estilo.cielo) {
+  if (estilo.cielo && realista) {
+    // La niebla toma el color del horizonte de la foto: three.js la mezcla
+    // después de la curva de tonos, así que la montaña lejana se funde justo en
+    // el color que se ve en el cielo, sin un borde entre los dos.
+    escena.add(R.crearCielo(T, sol.vector))
+    escena.fog = new THREE.Fog(T.indice.cielo.horizonte, estilo.niebla[0], estilo.niebla[1])
+  } else if (estilo.cielo) {
     const [arriba, horizonte] = estilo.cielo.map((c) => new THREE.Color(c))
     const cielo = new THREE.SphereGeometry(30000, 24, 12)
     const cc = []
@@ -447,9 +482,7 @@ export async function crearMundo(lienzo, op = {}) {
     escena.fog = new THREE.Fog(horizonte, estilo.niebla[0], estilo.niebla[1])
   }
 
-  // Luz: sol real a la hora pedida + luz de cielo.
-  const hora = op.hora ?? estilo.hora
-  const sol = direccionSol(hora, op.diaDelAnio ?? 322)
+  // Luz: el sol + luz de cielo.
   // Gráficos nuevos: sol un poco más cálido y fuerte, y cielo más azul en lo
   // que queda a la sombra. Así los volúmenes se leen sin subir el brillo.
   const luzSol = new THREE.DirectionalLight(nuevo ? '#ffe9c4' : '#fff1d6', (2.4 * Math.max(0.15, Math.sin(Math.max(0.05, sol.elevacion))) + 0.6) * (nuevo ? 1.12 : 1))
@@ -471,8 +504,27 @@ export async function crearMundo(lienzo, op = {}) {
   const matPlan = new THREE.MeshBasicMaterial({ color: '#59c8ff', transparent: true, opacity: 0.32, depthWrite: false })
   const matPlanBorde = new THREE.LineBasicMaterial({ color: '#bfefff', transparent: true, opacity: 0.9 })
   const matSuelo = new THREE.MeshLambertMaterial({ vertexColors: true, flatShading: !estilo.satelite })
+  // Gráficos realistas: un material por foto. La foto pone el detalle y el
+  // color de cada vértice sigue poniendo el tono (ver mapa/realista.js): por
+  // eso el color del material es el que deja la foto blanca en promedio.
+  const deFoto = {}
+  const fotoSobre = (clave) => deFoto[clave] || (deFoto[clave] = new THREE.MeshLambertMaterial({ map: T.tex[clave], color: T.neutro(clave), vertexColors: true, flatShading: true }))
+  // Con qué se dibuja un modelo de modelos.js: sus piezas vienen juntas por
+  // foto (`unir`) y cada tanda lleva su material. Sin fotos, el de siempre.
+  const vestir = (geom) => {
+    const claves = geom.userData.texturas
+    return realista && claves && claves.some(Boolean) ? claves.map((clave) => (clave ? fotoSobre(clave) : mat)) : mat
+  }
+  // Gráficos realistas: los árboles (del monte y de la finca) y las matas de
+  // la huerta se van anotando mientras se arma el mapa y se siembran al final,
+  // cada especie en una sola llamada de dibujo. Árbol: [x, y, z, escala, giro].
+  const arboles = {}
+  const huerta = {}
+  const anotar = (donde, clave, dato) => (donde[clave] || (donde[clave] = [])).push(dato)
   const colorDe = (x, z, h, pend) => colorSuelo(x, z, h, pend, finca, estilo, nuevo)
-  const info = { estilo: op.estilo || 'juguete', graficos: nuevo ? 'nuevo' : 'clasico', satelite: null }
+  // `graficos` dice lo que de verdad se dibujó, no lo que se pidió: si las
+  // fotos no llegaron queda en 'nuevo' y la pantalla lo puede decir.
+  const info = { estilo: op.estilo || 'juguete', graficos: realista ? 'realista' : nuevo ? 'nuevo' : 'clasico', satelite: null }
 
   if (estilo.diorama) {
     const d = mallaDiorama(rel, h0, estilo.lado, 4, colorDe)
@@ -495,7 +547,10 @@ export async function crearMundo(lienzo, op = {}) {
         info.satelite = 'sin conexión: ' + e.message
       }
     }
-    const gCerca = mallaRelieve(rel, h0, { ...cerca, suave: true, colorDe, uvDe, facetas: nuevo })
+    // Gráficos realistas: la foto de pasto sobre el relieve de cerca (1,2 km).
+    // Más lejos no se pone: a esa distancia la foto ya es un solo color.
+    if (realista) matCerca = fotoSobre('pasto')
+    const gCerca = mallaRelieve(rel, h0, { ...cerca, suave: true, colorDe, uvDe, facetas: nuevo, metrosFoto: realista ? T.indice.pasto.metros : 0 })
     const mCerca = new THREE.Mesh(gCerca, matCerca)
     mCerca.receiveShadow = true
     escena.add(mCerca)
@@ -547,7 +602,7 @@ export async function crearMundo(lienzo, op = {}) {
     // Donde hay algo construido o sembrado no crece el pasto suelto (vida.pasto).
     if (!plan) ocupado.push([x, z, r * (edificio ? estilo.escalaEdificios || 1 : 1) + 0.5])
     const g = new THREE.Group()
-    const malla = new THREE.Mesh(geom, plan ? matPlan : mat)
+    const malla = new THREE.Mesh(geom, plan ? matPlan : vestir(geom))
     malla.castShadow = sombra && !plan
     malla.receiveShadow = !plan
     g.add(malla)
@@ -577,7 +632,7 @@ export async function crearMundo(lienzo, op = {}) {
 
   // Lo que se mueve (mapa/vida.js). `controles` se crea más abajo: por eso el
   // punto que se está mirando se pide con una función y no se pasa ya resuelto.
-  const vida = crearVida({ escena, mat, suelo, local, poner, animables, tocables, estilo, camara, objetivo: () => controles.objetivo, distancia: () => controles.dist })
+  const vida = crearVida({ escena, mat, suelo, local, poner, animables, tocables, estilo, camara, objetivo: () => controles.objetivo, distancia: () => controles.dist, vestir, fotos: realista ? { R, T } : null })
   // A qué se le puede pedir «acércame» y dónde se para la cámara (ver acercarA).
   const acercables = new Map()
 
@@ -637,7 +692,10 @@ export async function crearMundo(lienzo, op = {}) {
           // Las camas van a lo largo de la curva de nivel y se separan ladera
           // abajo: así el agua no arrastra el suelo entre surcos.
           const [x, z] = local(o, (i - (o.camas.length - 1) / 2) * 2.1, 0)
-          const g = poner(M.geomCama(5, 1.2, cultivo), x, z, o.rot, { sombra: true, plan })
+          // Gráficos realistas: la cama sale sin sus matas de bolitas y en cada
+          // puesto va una lámina con foto. La que es «plan» sigue de fantasma azul.
+          const conFotos = realista && !plan
+          const g = poner(M.geomCama(5, 1.2, cultivo, { matas: !conFotos }), x, z, o.rot, { sombra: true, plan })
           // Gráficos nuevos: la cama se acuesta sobre la ladera. Apoyada en su
           // punto más bajo (como una casa) quedaba enterrada y solo asomaban las matas.
           if (nuevo) {
@@ -647,31 +705,45 @@ export async function crearMundo(lienzo, op = {}) {
             g.rotation.x = -Math.atan2(alto(0, 2.5) - alto(0, -2.5), 5)
             g.rotation.z = Math.atan2(alto(0.6, 0) - alto(-0.6, 0), 1.2)
           }
+          if (conFotos) {
+            // Cada mata nace sobre la tierra de la cama ya acostada en la ladera.
+            g.updateMatrixWorld(true)
+            for (const [px, pz, f, k] of M.puestosDeCama(5, 1.2, cultivo)) {
+              const p = g.localToWorld(new THREE.Vector3(px, 0.3, pz))
+              anotar(huerta, cultivo, [p.x, p.y, p.z, hash2(f + i * 7, k), hash2(k, f + i * 7) * 6.283])
+            }
+          }
         })
         etiquetas.push({ id: o.id, texto: o.etiqueta, plan, punto: new THREE.Vector3(o.x, suelo(o.x, o.z) + 3, o.z) })
         break
       }
       case 'frutales': {
-        const g = M.geomArbol('frutal')
+        const g = realista ? null : M.geomArbol('frutal')
         for (let f = 0; f < o.filas; f++)
           for (let c = 0; c < o.columnas; c++) {
             const [x, z] = local(o, (c - o.columnas / 2) * 5, (f - o.filas / 2) * 5)
-            poner(g, x, z, hash2(f, c) * 6)
+            if (realista) {
+              anotar(arboles, 'frutal', [x, suelo(x, z) - 0.1, z, 0.88 + hash2(c, f) * 0.26, hash2(f, c) * 6])
+              ocupado.push([x, z, 1.5]) // bajo el árbol no crece el pasto suelto, igual que con `poner`
+            } else poner(g, x, z, hash2(f, c) * 6)
           }
         etiquetas.push({ id: o.id, texto: o.etiqueta, punto: new THREE.Vector3(o.x, suelo(o.x, o.z) + 5, o.z) })
         break
       }
       case 'bosque': {
         const tipos = ['aliso', 'roble', 'encenillo', 'sietecueros', 'arrayan']
-        const geoms = Object.fromEntries(tipos.map((t) => [t, M.geomArbol(t)]))
+        const geoms = realista ? null : Object.fromEntries(tipos.map((t) => [t, M.geomArbol(t)]))
         let k = 0
         for (let i = 0; i < 70; i++) {
           const a = hash2(i, 3) * Math.PI * 2, r = Math.sqrt(hash2(i, 9)) * o.radio
           const x = o.x + Math.cos(a) * r, z = o.z + Math.sin(a) * r
           if (!dentroLindero(x, z, finca.lindero, -2)) continue
           const t = tipos[k++ % tipos.length]
-          const g = poner(geoms[t], x, z, hash2(i, 1) * 6)
-          g.scale.setScalar((0.6 + hash2(i, 5) * 0.7) * estilo.escalaArboles)
+          const tam = (0.6 + hash2(i, 5) * 0.7) * estilo.escalaArboles
+          if (realista) {
+            anotar(arboles, t, [x, suelo(x, z) - 0.2, z, tam, hash2(i, 1) * 6])
+            ocupado.push([x, z, 2.5])
+          } else poner(geoms[t], x, z, hash2(i, 1) * 6).scale.setScalar(tam)
         }
         etiquetas.push({ id: o.id, texto: o.etiqueta, punto: new THREE.Vector3(o.x, suelo(o.x, o.z) + 14, o.z) })
         break
@@ -682,6 +754,12 @@ export async function crearMundo(lienzo, op = {}) {
   // dibujar una cerca que nadie midió.
   if (!finca.linderoProvisional) cerca(finca.lindero)
   if (finca.camino) camino(finca.camino)
+  // Gráficos realistas: se siembra lo anotado (el monte de alrededor, el bosque
+  // y los frutales de la finca, y la huerta).
+  if (realista) {
+    for (const [especie, lista] of Object.entries(arboles)) escena.add(R.arbolado(T, especie, lista))
+    for (const malla of R.huerta(T, huerta)) escena.add(malla)
+  }
   // Las garzas solo cruzan en el estilo Juguete, que es el paisaje abierto.
   if (estilo === ESTILOS.juguete) vida.pajaros()
   if (nuevo) vida.pasto({ lindero: finca.lindero, enFinca: (x, z, margen) => dentroLindero(x, z, finca.lindero, margen), ocupado, camino: finca.camino })
@@ -759,7 +837,7 @@ export async function crearMundo(lienzo, op = {}) {
       const n = Math.max(1, Math.round(largo / cada))
       for (let i = 0; i < n; i++) lista.push([a[0] + ((b[0] - a[0]) * i) / n, a[1] + ((b[1] - a[1]) * i) / n])
     }
-    const postes = new THREE.InstancedMesh(geo, plan ? matPlan : mat, lista.length)
+    const postes = new THREE.InstancedMesh(geo, plan ? matPlan : vestir(geo), lista.length)
     const alambre = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 0.04, 0.04), plan ? new THREE.MeshBasicMaterial({ color: '#bfefff', transparent: true, opacity: 0.9 }) : new THREE.MeshLambertMaterial({ color: '#e2e2e2' }), lista.length * 2)
     const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler()
     lista.forEach(([x, z], i) => {
@@ -780,7 +858,9 @@ export async function crearMundo(lienzo, op = {}) {
   }
 
   function camino(puntos) {
-    const pos = [], col = []
+    const pos = [], col = [], uv = []
+    // Gráficos realistas: la foto de tierra pisada, tendida como la del pasto.
+    const metros = realista ? T.indice.camino.metros : 0
     const ancho = 2.6
     const muestras = []
     for (let k = 0; k < puntos.length - 1; k++) {
@@ -796,12 +876,14 @@ export async function crearMundo(lienzo, op = {}) {
       const v = [[ax + nx, az + nz], [ax - nx, az - nz], [bx + nx, bz + nz], [bx - nx, bz - nz]].map(([x, z]) => [x, suelo(x, z) + 0.12, z])
       pos.push(...v[0], ...v[1], ...v[2], ...v[1], ...v[3], ...v[2])
       for (let j = 0; j < 6; j++) col.push(COL.camino.r, COL.camino.g, COL.camino.b)
+      if (metros) for (const j of [0, 1, 2, 1, 3, 2]) uv.push(v[j][0] / metros, v[j][2] / metros)
     }
     const g = new THREE.BufferGeometry()
     g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3))
     g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3))
+    if (metros) g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2))
     g.computeVertexNormals()
-    const m = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -2 }))
+    const m = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -2, ...(metros ? { map: T.tex.camino, color: T.neutro('camino') } : {}) }))
     m.receiveShadow = true
     escena.add(m)
   }
@@ -828,6 +910,12 @@ export async function crearMundo(lienzo, op = {}) {
     for (const t of tipos) {
       const l = listas[t]
       if (!l.length) continue
+      if (realista) {
+        // Los mismos árboles en los mismos sitios y del mismo tamaño; se
+        // siembran al final, junto con los de la finca, con su foto.
+        for (const [x, y, z, r] of l) anotar(arboles, t, [x, y - 0.3, z, (0.8 + r * 0.6) * estilo.escalaArboles, r * 6.28])
+        continue
+      }
       const im = new THREE.InstancedMesh(M.geomArbol(t), mat, l.length)
       const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), tinte = new THREE.Color()
       l.forEach(([x, y, z, r], i) => {
@@ -890,9 +978,10 @@ export async function crearMundo(lienzo, op = {}) {
     return m
   }
 
-  // Nubes sueltas que pasan despacio.
+  // Nubes sueltas que pasan despacio. Con el cielo de foto no van: la foto ya
+  // trae sus nubes, y unas de juguete delante se verían pegadas encima.
   const nubes = []
-  for (let i = 0; i < estilo.nubes; i++) {
+  for (let i = 0; i < (realista ? 0 : estilo.nubes); i++) {
     const n = new THREE.Mesh(M.geomNube(i + 1), new THREE.MeshLambertMaterial({ color: '#ffffff', flatShading: true, transparent: true, opacity: 0.93 }))
     const r = estilo.diorama ? 150 + hash2(i, 7) * 60 : 300 + hash2(i, 7) * 1600
     const a = hash2(i, 9) * Math.PI * 2
@@ -1032,6 +1121,11 @@ export async function crearMundo(lienzo, op = {}) {
     destruir() {
       vivo = false
       window.removeEventListener('resize', alCambiar)
+      // Las fotos ocupan decenas de MB en la tarjeta gráfica y se devuelven
+      // aquí, antes de soltar el renderer: después ya no hay a quién pedirle
+      // que las borre, y en un iPhone esa memoria es la que cierra la pestaña.
+      if (T) T.soltar()
+      for (const m of Object.values(deFoto)) m.dispose()
       renderer.dispose()
     },
   }
