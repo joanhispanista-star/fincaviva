@@ -1,6 +1,6 @@
 {
  "generado": "2026-11-20",
- "licencia": "Todo CC0 (dominio público): ambientCG y Poly Haven. Los árboles y las matas son modelos 3D de Poly Haven horneados con pruebas/horneador/.",
+ "licencia": "Las claves ia_* son imágenes hechas con IA (Higgsfield) para esta finca; el resto es CC0 (dominio público): ambientCG y Poly Haven. Los árboles y las matas CC0 son modelos 3D de Poly Haven horneados con pruebas/horneador/.",
  "texturas": {
   "pasto": {
    "archivo": "pasto.webp",
@@ -631,6 +631,355 @@
    "origen": "Poly Haven - kloofendal_48d_partly_cloudy_puresky",
    "url": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
    "licencia": "CC0"
+  },
+  "ia_pasto": {
+   "archivo": "ia_pasto.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "aereo": true,
+   "metros": 4.5,
+   "promedio": "#63803a",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_potrero": {
+   "archivo": "ia_potrero.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "aereo": true,
+   "metros": 62,
+   "promedio": "#637f39",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_monte": {
+   "archivo": "ia_monte.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "aereo": true,
+   "metros": 58,
+   "promedio": "#3c542f",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_seco": {
+   "archivo": "ia_seco.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "aereo": true,
+   "metros": 62,
+   "promedio": "#97915a",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_arado": {
+   "archivo": "ia_arado.webp",
+   "px": [
+    1024,
+    1024
+   ],
+   "repetible": true,
+   "aereo": true,
+   "metros": 34,
+   "promedio": "#5a5036",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_aliso": {
+   "archivo": "ia_aliso.webp",
+   "px": [
+    415,
+    640
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 6.484,
+   "alto_m": 10,
+   "eje_u": 0.491,
+   "promedio": "#535a38",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_roble": {
+   "archivo": "ia_roble.webp",
+   "px": [
+    640,
+    632
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 9.114,
+   "alto_m": 9,
+   "eje_u": 0.497,
+   "promedio": "#4e5233",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_encenillo": {
+   "archivo": "ia_encenillo.webp",
+   "px": [
+    625,
+    640
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 6.836,
+   "alto_m": 7,
+   "eje_u": 0.483,
+   "promedio": "#4a4f34",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_sietecueros": {
+   "archivo": "ia_sietecueros.webp",
+   "px": [
+    640,
+    607
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 5.799,
+   "alto_m": 5.5,
+   "eje_u": 0.485,
+   "promedio": "#634f51",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_arrayan": {
+   "archivo": "ia_arrayan.webp",
+   "px": [
+    621,
+    640
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 4.075,
+   "alto_m": 4.2,
+   "eje_u": 0.454,
+   "promedio": "#484f2f",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_eucalipto": {
+   "archivo": "ia_eucalipto.webp",
+   "px": [
+    420,
+    640
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 11.156,
+   "alto_m": 17,
+   "eje_u": 0.49,
+   "promedio": "#5e624d",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_pino": {
+   "archivo": "ia_pino.webp",
+   "px": [
+    477,
+    640
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 8.198,
+   "alto_m": 11,
+   "eje_u": 0.511,
+   "promedio": "#454f2c",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_frutal": {
+   "archivo": "ia_frutal.webp",
+   "px": [
+    640,
+    528
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 4.121,
+   "alto_m": 3.4,
+   "eje_u": 0.494,
+   "promedio": "#5f653a",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_lechuga": {
+   "archivo": "ia_lechuga.webp",
+   "px": [
+    256,
+    213
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.361,
+   "alto_m": 0.3,
+   "eje_u": 0.556,
+   "promedio": "#809c38",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_repollo": {
+   "archivo": "ia_repollo.webp",
+   "px": [
+    256,
+    201
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.459,
+   "alto_m": 0.36,
+   "eje_u": 0.35,
+   "promedio": "#768a73",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_maiz": {
+   "archivo": "ia_maiz.webp",
+   "px": [
+    222,
+    320
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 1.318,
+   "alto_m": 1.9,
+   "eje_u": 0.503,
+   "promedio": "#80964b",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_arveja": {
+   "archivo": "ia_arveja.webp",
+   "px": [
+    203,
+    320
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.888,
+   "alto_m": 1.4,
+   "eje_u": 0.5,
+   "promedio": "#758b4f",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_kikuyo": {
+   "archivo": "ia_kikuyo.webp",
+   "px": [
+    224,
+    155
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.361,
+   "alto_m": 0.25,
+   "eje_u": 0.651,
+   "promedio": "#74903c",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_pasto_alto": {
+   "archivo": "ia_pasto_alto.webp",
+   "px": [
+    178,
+    224
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.556,
+   "alto_m": 0.7,
+   "eje_u": 0.502,
+   "promedio": "#768039",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_helecho": {
+   "archivo": "ia_helecho.webp",
+   "px": [
+    224,
+    206
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.652,
+   "alto_m": 0.6,
+   "eje_u": 0.262,
+   "promedio": "#79913b",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_diente_leon": {
+   "archivo": "ia_diente_leon.webp",
+   "px": [
+    224,
+    217
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.258,
+   "alto_m": 0.25,
+   "eje_u": 0.584,
+   "promedio": "#899341",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_trebol": {
+   "archivo": "ia_trebol.webp",
+   "px": [
+    224,
+    195
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.23,
+   "alto_m": 0.2,
+   "eje_u": 0.564,
+   "promedio": "#788b57",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_lupino": {
+   "archivo": "ia_lupino.webp",
+   "px": [
+    184,
+    224
+   ],
+   "transparente": true,
+   "recorte": true,
+   "ancho_m": 0.493,
+   "alto_m": 0.6,
+   "eje_u": 0.468,
+   "promedio": "#707759",
+   "origen": "IA: GPT Image 2.6 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
+  },
+  "ia_cielo": {
+   "archivo": "ia_cielo.webp",
+   "px": [
+    2048,
+    512
+   ],
+   "media_esfera": true,
+   "sol_u": 0.5,
+   "sol_altura": 45,
+   "horizonte": "#d7e4ee",
+   "cenit": "#80a8d6",
+   "origen": "IA: Nano Banana 2.1 en Higgsfield (24-nov-2026)",
+   "licencia": "propia (hecha con IA)"
   }
  }
 }

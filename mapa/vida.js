@@ -24,6 +24,14 @@ const PINTAS = [
   ['#f4f1ea', '#26262a'], ['#f1e9d8', '#6b3a22'], ['#2a2a2e', '#f4f1ea'], ['#b98a5a', null], ['#f4f1ea', '#26262a'], ['#8c4a2a', null],
 ]
 
+// Con los gráficos realistas las manchas vienen en la textura, así que una vaca
+// «al revés» (negra de manchas blancas) saldría con las pezuñas blancas: la
+// negra va toda negra. Y los pelos de un solo color, menos encendidos: con la luz
+// suave de estos gráficos el colorado salía ladrillo.
+const PINTAS_REALISTAS = [
+  ['#f4f1ea', '#26262a'], ['#f1e9d8', '#5f3a26'], ['#34312f', '#2b292a'], ['#a8835c', null], ['#f4f1ea', '#26262a'], ['#75472f', null],
+]
+
 // Un número estable a partir del id del objeto: el mismo potrero arranca igual cada vez.
 function semillaDe(texto) {
   let h = 2166136261
@@ -47,6 +55,9 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
     const semilla = semillaDe(o.id || 'potrero')
     const rebano = crearRebano(n, { ancho, fondo, semilla })
     const azar = crearAzar(semilla + 1)
+    // Gráficos realistas: toda la vaca en una malla, con su textura; el paso y la
+    // cabeza se doblan en la tarjeta gráfica (mapa/modelos3d.js).
+    if (fotos) return vacasRealistas(o, n, { ancho, fondo, rebano, azar })
     const g = M.geomVaca()
     const mCuerpo = new THREE.InstancedMesh(g.cuerpo, mat, n)
     const mManchas = new THREE.InstancedMesh(g.manchas, mat, n)
@@ -104,6 +115,38 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
         }
       }
       for (const m of [mCuerpo, mManchas, mCabeza, mPatas]) m.instanceMatrix.needsUpdate = true
+    }
+    dibujar()
+    animables.push((dt) => {
+      t += dt
+      avanzarRebano(rebano, dt, { ancho, fondo, azar })
+      dibujar()
+    })
+  }
+
+  function vacasRealistas(o, n, { ancho, fondo, rebano, azar }) {
+    const { R, T } = fotos
+    const vacada = R.manada(T, n)
+    const escala = 1 + (estilo.escalaAnimales - 1) * 0.25
+    for (const [i, v] of rebano.entries()) vacada.pintar(i, ...PINTAS_REALISTAS[v.pinta % PINTAS.length])
+    vacada.malla.boundingSphere = new THREE.Sphere(new THREE.Vector3(o.x, suelo(o.x, o.z), o.z), Math.hypot(ancho, fondo) / 2 + 8)
+    escena.add(vacada.malla)
+    const φ = o.rot || 0
+    const largo = 0.7 * escala
+    let t = 0
+    function dibujar() {
+      for (const [i, v] of rebano.entries()) {
+        const [x, z] = local(o, v.u, v.w)
+        const rumbo = v.rumbo - φ
+        const cx = Math.cos(rumbo), cz = Math.sin(rumbo)
+        // Se inclina con la ladera, pero solo en parte: ver `vacas`.
+        const adelante = suelo(x + cx * largo, z + cz * largo), atras = suelo(x - cx * largo, z - cz * largo)
+        e.set(0, -rumbo, THREE.MathUtils.clamp(Math.atan2(adelante - atras, 2 * largo) * 0.6, -0.22, 0.22))
+        m4.compose(p.set(x, (adelante + atras) / 2, z), q.setFromEuler(e), s.setScalar(escala))
+        const mascar = v.cabeza > 0.9 ? Math.sin(t * 5 + i * 1.7) * 0.05 : 0
+        vacada.poner(i, m4, v.paso, v.marcha, v.cabeza + mascar)
+      }
+      vacada.listo()
     }
     dibujar()
     animables.push((dt) => {
@@ -270,8 +313,10 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
   function pasto({ lindero, enFinca, ocupado, camino = [] }) {
     let x0 = Infinity, x1 = -Infinity, z0 = Infinity, z1 = -Infinity
     for (const [x, z] of lindero) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z) }
-    // Tope de unas 9.000 matas: una finca grande las reparte más ralas en vez de pesar más.
-    const paso = Math.max(1.7, Math.sqrt(((x1 - x0) * (z1 - z0)) / 9000))
+    // Tope de unas 9.000 matas: una finca grande las reparte más ralas en vez de
+    // pesar más. Las láminas de los gráficos realistas cuestan la tercera parte de
+    // triángulos que la mata de siempre, así que caben más.
+    const paso = fotos ? Math.max(1.2, Math.sqrt(((x1 - x0) * (z1 - z0)) / 26000)) : Math.max(1.7, Math.sqrt(((x1 - x0) * (z1 - z0)) / 9000))
     const azar = crearAzar(77)
     const enCamino = (x, z) => {
       for (let i = 0; i < camino.length - 1; i++) {
@@ -289,8 +334,8 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
         if (!enFinca(px, pz, -1.2) || enCamino(px, pz) || ocupado.some(([ox, oz, or]) => (px - ox) ** 2 + (pz - oz) ** 2 < or * or)) continue
         // Las flores salen por manchones, como en un potrero de verdad.
         const manchon = Math.sin(px * 0.13 + 1.7) * Math.sin(pz * 0.11 + 0.4) > 0.3
-        if (r < 0.01) piedras.push([px, pz])
-        else if (r < (manchon ? 0.3 : 0.03)) flores.push([px, pz])
+        if (r < (fotos ? 0.004 : 0.01)) piedras.push([px, pz])
+        else if (r < (manchon ? (fotos ? 0.16 : 0.3) : fotos ? 0.015 : 0.03)) flores.push([px, pz])
         else if (r < 0.86) matas.push([px, pz])
       }
     const matSuelto = mat.clone()
@@ -311,32 +356,32 @@ export function crearVida({ escena, mat, suelo, local, poner, animables, tocable
       escena.add(im)
     }
     if (fotos) {
-      // Gráficos realistas: en los mismos sitios, láminas con la foto de una
-      // mata de verdad. Van más grandes que al natural (una mata de 17 cm no se
-      // ve desde la cámara del mapa), como los animales y las casas del estilo
-      // Juguete. El helecho es la maleza de los potreros de tierra fría; el
-      // «trébol» es una acedera horneada que hace de trébol blanco.
+      // Gráficos realistas: en los mismos sitios, láminas con la imagen de una
+      // mata. Van un poco más grandes que al natural: una de 17 cm no se ve
+      // desde la cámara del mapa. El helecho es la maleza de los potreros de
+      // tierra fría y el lupino, la flor morada de las cercas.
       const { R, T } = fotos
-      const reparto = { mata: [], mata_alta: [], helecho: [], flor_amarilla: [], trebol: [] }
-      for (const punto of matas) { const r = azar(); reparto[r < 0.7 ? 'mata' : r < 0.975 ? 'mata_alta' : 'helecho'].push(punto) }
-      for (const punto of flores) reparto[azar() < 0.65 ? 'flor_amarilla' : 'trebol'].push(punto)
-      const fotoDe = (clave, { minimo, maximo, tono }) => {
+      const reparto = { ia_kikuyo: [], ia_pasto_alto: [], ia_helecho: [], ia_diente_leon: [], ia_trebol: [], ia_lupino: [] }
+      for (const punto of matas) { const r = azar(); reparto[r < 0.86 ? 'ia_kikuyo' : r < 0.985 ? 'ia_pasto_alto' : 'ia_helecho'].push(punto) }
+      for (const punto of flores) { const r = azar(); reparto[r < 0.45 ? 'ia_diente_leon' : r < 0.92 ? 'ia_trebol' : 'ia_lupino'].push(punto) }
+      const fotoDe = (clave, minimo, maximo, k = 1) => {
         const lista = reparto[clave]
         if (!lista.length) return
-        const im = R.matas(T, clave, lista.map(([x, z]) => [x, suelo(x, z) - 0.02, z, minimo + azar() * (maximo - minimo), azar() * 6.283]), T.hacia(clave, color.set(tono)), { variar: 0.34 })
+        const im = R.matas(T, clave, lista.map(([x, z]) => [x, suelo(x, z) - 0.02, z, minimo + azar() * (maximo - minimo), azar() * 6.283]), new THREE.Color(k, k, k))
         sembrados.push(im)
         escena.add(im)
       }
-      fotoDe('mata', { minimo: 0.34, maximo: 0.6, tono: '#84bd4c' })
-      fotoDe('mata_alta', { minimo: 0.55, maximo: 0.95, tono: '#79b045' })
-      fotoDe('helecho', { minimo: 0.6, maximo: 0.95, tono: '#5c9a3c' })
-      fotoDe('flor_amarilla', { minimo: 0.34, maximo: 0.52, tono: '#c9c93e' })
-      fotoDe('trebol', { minimo: 0.3, maximo: 0.45, tono: '#a9d98a' })
+      fotoDe('ia_kikuyo', 0.18, 0.36, 0.92)
+      fotoDe('ia_pasto_alto', 0.35, 0.7, 0.95)
+      fotoDe('ia_helecho', 0.5, 0.8)
+      fotoDe('ia_diente_leon', 0.22, 0.36, 1.1)
+      fotoDe('ia_trebol', 0.2, 0.32, 1.1)
+      fotoDe('ia_lupino', 0.5, 0.8, 1.1)
     } else {
       sembrar(M.geomMata(), matas, matSuelto, { minimo: 0.8, maximo: 1.5, tinte: (c, a) => c.setRGB(0.8 + a * 0.2, 0.86 + a * 0.14, 0.7 + a * 0.25) })
       sembrar(M.geomFlor(), flores, matSuelto, { minimo: 1.2, maximo: 2, tinte: (c, a) => c.set(a < 0.55 ? '#ffffff' : a < 0.9 ? '#ffe04d' : '#d9b3ff') })
     }
-    sembrar(M.geomPiedra(), piedras, mat, { minimo: 0.6, maximo: 1.6, tinte: (c, a) => c.setScalar(0.85 + a * 0.25) })
+    sembrar(M.geomPiedra(), piedras, mat, fotos ? { minimo: 0.25, maximo: 0.7, tinte: (c, a) => c.setRGB(0.7, 0.68, 0.62).multiplyScalar(0.8 + a * 0.3) } : { minimo: 0.6, maximo: 1.6, tinte: (c, a) => c.setScalar(0.85 + a * 0.25) })
     // Con la finca entera en pantalla cada mata mide menos de un punto: solo
     // ensucia el verde y le cuesta al teléfono. Se dibujan al acercarse.
     let visible = true

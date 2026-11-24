@@ -316,7 +316,7 @@ export async function pantallaFinca(raiz, ctx) {
     if (!vivo) mundo.destruir()
     // Se pidieron las fotos y no llegaron: el mapa salió con los gráficos
     // nuevos, y se dice. Sin el aviso parecería que el ajuste no hace nada.
-    else if (graficos === 'realista' && mundo.info.estilo === 'juguete' && mundo.info.graficos !== 'realista') avisar('Las fotos del mapa no cargaron (¿poca señal?). Se ve sin ellas.')
+    else if (graficos === 'realista' && mundo.info.estilo === 'juguete' && mundo.info.graficos !== 'realista') avisar('Las imágenes del mapa no cargaron (¿poca señal?). Se ve sin ellas.')
     // Solo en el computador de desarrollo: una manija para avanzar el mapa a
     // mano en las pruebas (con el panel oculto el navegador no lo dibuja solo).
     if (location.hostname === 'localhost') globalThis.FINCA_MAPA = mundo

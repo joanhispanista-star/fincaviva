@@ -1,0 +1,82 @@
+{
+ "vaca": {
+  "archivo": "vaca.bin",
+  "textura": "ia_m_vaca.webp",
+  "lado": 512,
+  "vertices": 2679,
+  "indices": 11340,
+  "caja": [
+   [
+    -1.1077,
+    0.0,
+    -0.5162
+   ],
+   [
+    1.1077,
+    1.75,
+    0.5162
+   ]
+  ],
+  "origen": "IA: imagen de GPT Image 2.6 levantada a 3D con Tripo H3.1, en Higgsfield (24-nov-2026)"
+ },
+ "gallina": {
+  "archivo": "gallina.bin",
+  "textura": "ia_m_gallina.webp",
+  "lado": 512,
+  "vertices": 1390,
+  "indices": 5058,
+  "caja": [
+   [
+    -0.2612,
+    0.0,
+    -0.1351
+   ],
+   [
+    0.2612,
+    0.52,
+    0.1351
+   ]
+  ],
+  "origen": "IA: imagen de GPT Image 2.6 levantada a 3D con Tripo H3.1, en Higgsfield (24-nov-2026)"
+ },
+ "casa": {
+  "archivo": "casa.bin",
+  "textura": "ia_m_casa.webp",
+  "lado": 1024,
+  "vertices": 3734,
+  "indices": 14163,
+  "caja": [
+   [
+    -5.6,
+    0.0,
+    -4.5329
+   ],
+   [
+    5.6,
+    5.689,
+    4.5329
+   ]
+  ],
+  "origen": "IA: imagen de GPT Image 2.6 levantada a 3D con Tripo H3.1, en Higgsfield (24-nov-2026)"
+ },
+ "galpon": {
+  "archivo": "galpon.bin",
+  "textura": "ia_m_galpon.webp",
+  "lado": 1024,
+  "vertices": 3299,
+  "indices": 9582,
+  "caja": [
+   [
+    -2.3,
+    0.0,
+    -1.4451
+   ],
+   [
+    2.3,
+    2.6887,
+    1.4451
+   ]
+  ],
+  "origen": "IA: imagen de GPT Image 2.6 levantada a 3D con Tripo H3.1, en Higgsfield (24-nov-2026)"
+ }
+}
