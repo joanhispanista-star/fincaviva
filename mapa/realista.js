@@ -285,8 +285,15 @@ function deCara(programa, inclina, mece) {
 //    sierra. `alphaToCoverage` reparte el borde entre las muestras del
 //    suavizado que la pantalla ya hace, sin las mezclas que en un teléfono
 //    cuestan y se ordenan mal.
-function materialDeLamina(T, clave, corte, color, inclina, mece) {
-  const material = new THREE.MeshLambertMaterial({ map: T.tex[clave], alphaTest: 0.04, color, vertexColors: true, alphaToCoverage: true })
+//  · Ese reparto necesita escribir el alfa, y lo que se escribe queda en el
+//    lienzo: el borde salía medio transparente y el navegador le sumaba el fondo
+//    crema de la página (puntos amarillos por todo el potrero; el 2,4 % del mapa).
+//    La mezcla propia de abajo pinta el color tal cual y deja quieto el alfa del
+//    lienzo. Se mide con `herramientas/mapa-sin-ventana.mjs`: copiar el lienzo
+//    no lo muestra.
+export function materialDeLamina(T, clave, corte, color, inclina, mece) {
+  const material = new THREE.MeshLambertMaterial({ map: T.tex[clave], alphaTest: 0.04, color, vertexColors: true, alphaToCoverage: true,
+    blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.ZeroFactor, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor })
   material.onBeforeCompile = (programa) => {
     deCara(programa, inclina, mece)
     programa.fragmentShader = programa.fragmentShader
