@@ -21,6 +21,7 @@ import { rangoMes, inicioSemana, MESES, fechaCorta } from '../../lib/fechas.js'
 import { crearFincaDePrueba } from '../../lib/demo.js'
 import { ganadoDelMapa } from '../../lib/rebano.js'
 import { graficosDelMapa } from '../../lib/graficos.js'
+import { guardarImagenes } from '../../lib/imagenes-guardadas.js'
 import { sitioDelMapa, nivelDelSitio } from '../../lib/niveles.js'
 import { escalera } from './niveles.js'
 import { esc, pesos, porcentaje, enlazar, avisar } from '../ui.js'
@@ -327,6 +328,9 @@ export async function pantallaFinca(raiz, ctx) {
       alDibujar: pintarEtiquetas,
       alTocar,
     })
+    // Después de dibujar, para no competirle a lo que el mapa está bajando. Va
+    // también si las imágenes no llegaron a tiempo: así quedan para la próxima.
+    if (graficos === 'realista' && mundo.info.estilo === 'juguete') guardarImagenes()
     if (!vivo) mundo.destruir()
     // Se pidieron las fotos y no llegaron: el mapa salió con los gráficos
     // nuevos, y se dice. Sin el aviso parecería que el ajuste no hace nada.
