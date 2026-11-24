@@ -217,3 +217,43 @@ h1, h2, h3 { margin: 0; line-height: 1.2; }
 .pano-anillo [data-aguja] { position: absolute; left: -8px; top: -9px; width: 16px; color: #ffd166; font-size: 14px; line-height: 18px; text-align: center; }
 .velo.pano.destello::after { content: ''; position: absolute; inset: 0; background: #fff; opacity: 0.5; pointer-events: none; }
 .ficha-mapa img.foto-sitio { display: block; width: 100%; max-height: 180px; object-fit: cover; border-radius: 12px; margin-top: 10px; }
+
+/* ---------- Los niveles de cada sitio ---------- */
+.nivel-sitio { font-weight: 800; font-size: 13px; color: var(--verde-osc); margin-top: 4px; }
+.peldanos { display: flex; gap: 5px; margin: 8px 0 4px; }
+.peldanos i { flex: 1; height: 9px; border-radius: 9px; background: #e5e9dc; }
+.peldanos i.si { background: linear-gradient(90deg, #7ed957, var(--verde)); }
+.peldanos i.va { background: linear-gradient(90deg, #ffd166 0 var(--p, 0%), #e5e9dc var(--p, 0%)); }
+.sello { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 14px; font-weight: 900; font-size: 22px; color: #4a2f00; background: linear-gradient(180deg, #ffd166, #f4a72c); box-shadow: 0 3px 0 var(--oro-osc); flex: none; }
+.etiqueta.gris { background: #eceade; color: var(--tinta-suave); }
+.falta { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--linea); font-size: 14px; }
+.falta > span:first-child { font-size: 18px; line-height: 1.1; }
+.falta > div:nth-child(2) { min-width: 0; }
+.falta b { display: block; line-height: 1.25; }
+.falta em { font-style: normal; font-size: 12px; color: var(--tinta-suave); }
+.falta .valor { margin-left: auto; font-weight: 800; white-space: nowrap; text-align: right; }
+.falta .valor small { display: block; font-weight: 700; font-size: 11px; color: #7a5200; line-height: 1.25; }
+.falta .valor small.verde { color: var(--verde-osc); }
+.falta .valor small.suave { color: var(--tinta-suave); }
+.mejora { background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 13px 15px; margin-bottom: 12px; }
+.mejora.hecha { box-shadow: none; border: 1px solid var(--linea); }
+.mejora h4 { margin: 0 0 6px; font-size: 16px; line-height: 1.25; }
+.mejora dl { display: grid; grid-template-columns: 58px 1fr; gap: 5px 10px; margin: 0 0 8px; font-size: 13.5px; line-height: 1.35; }
+.mejora dt { font-weight: 800; color: var(--tinta-suave); font-size: 11px; padding-top: 2px; text-transform: uppercase; }
+.mejora dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.mejora .fuente { font-size: 12px; color: var(--tinta-suave); }
+.mejora .fuente summary { cursor: pointer; min-height: 32px; display: flex; align-items: center; font-weight: 700; }
+.mejora .fuente summary::after { content: ' ▾'; white-space: pre; }
+.mejora .fuente ul { margin: 0; padding-left: 18px; }
+.mejora .fuente li, .mejora .fuente p { margin: 0 0 4px; overflow-wrap: anywhere; }
+.mejora .acciones { flex-wrap: wrap; margin-top: 6px; }
+.hechos > summary { font-weight: 800; padding: 12px 14px; background: var(--papel); border-radius: 14px; box-shadow: var(--sombra); margin-bottom: 8px; list-style: none; display: flex; gap: 8px; align-items: center; cursor: pointer; font-size: 14px; min-height: 48px; }
+.hechos > summary::-webkit-details-marker, .escribir-meta > summary::-webkit-details-marker, .mejora .fuente summary::-webkit-details-marker { display: none; }
+.hechos > summary span:last-child { margin-left: auto; color: var(--tinta-suave); font-weight: 600; font-size: 12px; white-space: nowrap; }
+.escribir-meta > summary { list-style: none; }
+/* La ficha del mapa crece con la escalera: sin tope tapaba el tablero de arriba
+   en un celular bajo, y el botón quedaba fuera de la pantalla. */
+.ficha-mapa .tarjeta { max-height: calc(100vh - var(--nav) - 250px - env(safe-area-inset-bottom)); max-height: calc(100dvh - var(--nav) - 250px - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
+/* En un iPhone con la barra de Safari la ficha no cabe entera: el título (con la ✕) y el botón que sube se quedan fijos y lo de la mitad se desplaza. */
+.ficha-mapa .tarjeta > .fila-flex:first-child { position: sticky; top: -14px; z-index: 2; margin: -14px -16px 0; padding: 8px 16px 2px; background: var(--papel); }
+.ficha-mapa .tarjeta > a.btn.oro[href^="#/nivel/"] { position: sticky; bottom: -6px; z-index: 2; box-shadow: 0 3px 0 var(--oro-osc), 0 0 0 8px var(--papel); }

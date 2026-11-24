@@ -21,6 +21,8 @@ import { rangoMes, inicioSemana, MESES, fechaCorta } from '../../lib/fechas.js'
 import { crearFincaDePrueba } from '../../lib/demo.js'
 import { ganadoDelMapa } from '../../lib/rebano.js'
 import { graficosDelMapa } from '../../lib/graficos.js'
+import { sitioDelMapa, nivelDelSitio } from '../../lib/niveles.js'
+import { escalera } from './niveles.js'
 import { esc, pesos, porcentaje, enlazar, avisar } from '../ui.js'
 
 const huevosDe = (estado, fecha) => estado.registros.filter((r) => r.fecha === fecha && r.tipo === 'produccion' && r.datos?.producto?.startsWith('huevo')).reduce((s, r) => s + (r.datos.cantidad || 0), 0)
@@ -133,6 +135,7 @@ export async function pantallaFinca(raiz, ctx) {
   const hechas = misiones.filter((m) => m.hecha).length
   const dias = racha(estado, hoy)
   const clima = await ctx.catalogo('clima-zona')
+  const definiciones = (await ctx.catalogo('niveles'))?.sitios || {}
   const mesActual = Number(hoy.slice(5, 7))
   const temporada = clima?.temporadas?.find((t) => t.meses?.includes(mesActual))
   // El nombre largo de la temporada ("Segunda temporada de lluvias (la más
@@ -265,20 +268,31 @@ export async function pantallaFinca(raiz, ctx) {
     const tipoSistema = sitio ? CLASES_SITIO[sitio.clase]?.sistema : sistemaPara[o.id]
     const esGallinero = tipoSistema === 'gallinas'
     const s = tipoSistema ? estado.sistemas.find((x) => x.tipo === tipoSistema && !x.archivado) : null
+    // El nivel del sitio (fase C): qué falta para subirlo, con su precio.
+    const claseNivel = sitioDelMapa(sitio ? { clase: sitio.clase } : { id: o.id })
+    const nivelSitio = claseNivel && definiciones[claseNivel] ? nivelDelSitio(definiciones[claseNivel], claseNivel, estado, hoy) : null
+    // Con niveles, lo demás baja a botón suave: el dorado es «Ver cómo subir».
+    const suave = nivelSitio ? ' suave' : ''
     // Construir solo tiene el plan del gallinero: mandar ahí desde la huerta o el
     // panel prometía un plan con costos que no existe.
     const accion = o.plan
       ? (esGallinero
-        ? '<p class="suave" style="margin:6px 0 10px">Esto todavía no existe en tu finca. Mira cuánto cuesta y qué hace falta.</p><a class="btn oro ancho" href="#/construir">🏗️ Ver el plan</a>'
-        : `<p class="suave" style="margin:6px 0 10px">Esto todavía no existe en tu finca. Su plan con costos todavía no está en la app: por ahora solo está el del gallinero.</p>${tipoSistema ? `<a class="btn ancho" href="#/nuevo-sistema/${tipoSistema}">Crear el sistema</a>` : ''}`)
+        ? nivelSitio
+          ? '<a class="btn suave ancho" href="#/construir" style="margin-top:8px">🏗️ Ver el plan completo</a>'
+          : '<p class="suave" style="margin:6px 0 10px">Esto todavía no existe en tu finca. Mira cuánto cuesta y qué hace falta.</p><a class="btn oro ancho" href="#/construir">🏗️ Ver el plan</a>'
+        : nivelSitio
+          ? tipoSistema ? `<a class="btn suave ancho" href="#/nuevo-sistema/${tipoSistema}" style="margin-top:8px">Crear el sistema</a>` : ''
+          : `<p class="suave" style="margin:6px 0 10px">Esto todavía no existe en tu finca. Su plan con costos todavía no está en la app: por ahora solo está el del gallinero.</p>${tipoSistema ? `<a class="btn ancho" href="#/nuevo-sistema/${tipoSistema}">Crear el sistema</a>` : ''}`)
       : s
-        ? `<a class="btn ancho" href="#/sistema/${s.id}" style="margin-top:10px">Abrir la ficha</a>`
+        ? `<a class="btn${suave} ancho" href="#/sistema/${s.id}" style="margin-top:10px">Abrir la ficha</a>`
         : sitio && !tipoSistema
           ? ''
-          : `<p class="suave" style="margin:6px 0 10px">Para llevar sus cuentas, créalo como sistema.</p><a class="btn ancho" href="#/nuevo-sistema/${tipoSistema || 'otro'}">Crear el sistema</a>`
+          : claseNivel === 'casa'
+            ? ''
+            : `<p class="suave" style="margin:6px 0 10px">Para llevar sus cuentas, créalo como sistema.</p><a class="btn${suave} ancho" href="#/nuevo-sistema/${tipoSistema || 'otro'}">Crear el sistema</a>`
     const medida = sitio ? `<p class="suave chico" style="margin:6px 0 0">Marcado con el celular el ${fechaCorta(sitio.fecha)} · GPS a ±${sitio.precision} m</p>` : ''
     const acercar = !o.plan && (sitio ? sitio.clase === 'lombricultivo' : o.id === 'lombriz') ? '<button class="btn suave ancho" data-acercar style="margin-top:10px">🔍 Acercarme a las lombrices</button>' : ''
-    ficha.innerHTML = `<div class="tarjeta" style="margin:0"><div class="fila-flex"><b class="crece" style="font-size:16px">${esc(o.etiqueta || o.id)}</b><button class="icono-btn" data-cerrar aria-label="Cerrar">✕</button></div>${medida}${notaDeDibujo(o, sitio)}<div data-foto></div>${acercar}${accion}</div>`
+    ficha.innerHTML = `<div class="tarjeta" style="margin:0"><div class="fila-flex"><b class="crece" style="font-size:16px">${esc(o.etiqueta || o.id)}</b><button class="icono-btn" data-cerrar aria-label="Cerrar">✕</button></div>${medida}${nivelSitio ? escalera(nivelSitio) : ''}${notaDeDibujo(o, sitio)}<div data-foto></div>${acercar}${accion}</div>`
     ficha.querySelector('[data-cerrar]').addEventListener('click', () => { soltarFoto(); ficha.innerHTML = '' })
     // La ficha se cierra al volar: tapaba justo lo que se va a mirar.
     ficha.querySelector('[data-acercar]')?.addEventListener('click', () => { if (mundo?.acercarA(o.id)) { soltarFoto(); ficha.innerHTML = '' } })
@@ -296,7 +310,7 @@ export async function pantallaFinca(raiz, ctx) {
 
   let mundo = null
   let vivo = true
-  const graficos = graficosDelMapa(estado.ajustes.graficos_mapa)
+  const graficos = graficosDelMapa(estado.ajustes.graficos_mapa, estado.ajustes.graficos_elegidos === true)
   try {
     mundo = await crearMundo(raiz.querySelector('#lienzo'), {
       base: './',

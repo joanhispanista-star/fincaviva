@@ -1,0 +1,1909 @@
+{
+  "version": 1,
+  "fecha": "2026-11-24",
+  "nota": "Los niveles de cada sitio. Cada costo y cada cifra apunta a su dato en «de» (archivo de datos/ o línea de investigacion/): pruebas/niveles.test.js falla si una cifra no está escrita allá. «plazo» es meta de la app, no un dato.",
+  "sitios": {
+    "gallinero": {
+      "nombre": "Gallinero",
+      "emoji": "🐔",
+      "sistema": "gallinas",
+      "aviso": "Las cifras son del plan para 30 gallinas. Subir de nivel no dice si el huevo de color conviene: eso sale de los precios que midas.",
+      "niveles": [
+        {
+          "nombre": "Listo para recibirlas",
+          "mejoras": [
+            {
+              "id": "galpon",
+              "titulo": "Galpón de 12 m²",
+              "corto": "Para 30 gallinas: 2,5 por m²",
+              "detalle": "Estructura de madera o guadua, techo, zócalo contra ratas, malla, puerta y cortinas. La FAO aconseja máximo 3-4 gallinas por m² en cama profunda con salida.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "planes": [
+                  "Galpón sencillo"
+                ],
+                "gasto": {
+                  "palabras": "galp",
+                  "inversion": true
+                }
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Galpón con mano de obra",
+                    "valor": 2500000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Galpón sencillo].costo_cop"
+                  }
+                ],
+                "nota": "Rango razonable: 1,8-3,5 millones. Cotiza en la ferretería del municipio."
+              },
+              "de": [
+                "gallinas#manejo.notas_frio",
+                "gallinas#arranque_30_gallinas.items[item^=Galpón sencillo].item",
+                "gallinas#arranque_30_gallinas.items[item^=Galpón sencillo].fuente",
+                "gallinas#arranque_30_gallinas.supuestos"
+              ],
+              "cuentas": [
+                {
+                  "valor": "2,5",
+                  "cuenta": "30 / 12"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general",
+                  "url": "https://www.fao.org/4/y5169e/y5169e05.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "nidos-perchas",
+              "titulo": "8 nidos y 6 m de percha",
+              "corto": "Un nido por cada 4 gallinas",
+              "detalle": "Duermen arriba, ponen en el nido y la cama no se ensucia. Solla pide un nido por cada 4 gallinas (la FAO y Hy-Line dicen uno por cada 5) y la FAO 15-20 cm de percha por gallina.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "planes": [
+                  "Nidos de madera",
+                  "Perchas"
+                ],
+                "tecnicas": [
+                  "gallinas-nido-y-percha"
+                ]
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "8 nidos de madera",
+                    "valor": 240000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Nidos de madera].costo_cop"
+                  },
+                  {
+                    "que": "Perchas y tabla de excrementos",
+                    "valor": 100000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Perchas].costo_cop"
+                  }
+                ]
+              },
+              "de": [
+                "gallinas#arranque_30_gallinas.items[item^=Nidos de madera].cantidad",
+                "tecnicas-gallinas#tecnicas[id=gallinas-nido-y-percha].resumen",
+                "tecnicas-gallinas#tecnicas[id=gallinas-nido-y-percha].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial",
+                  "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general",
+                  "url": "https://www.fao.org/4/y5169e/y5169e05.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "rspp",
+              "titulo": "Predio inscrito en el ICA (RSPP)",
+              "corto": "Antes de vender huevos; sin mínimo de aves",
+              "detalle": "Lo pide la Resolución ICA 090464 de 2021 (arts. 3.13, 3.14, 4, 5 y 9) a quien produzca aves o huevos para vender, también de traspatio. Se hace en una oficina del ICA con cédula o RUT, ubicación y hectáreas.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "falta": "La resolución no menciona tarifa: confírmalo en la oficina del ICA."
+              },
+              "de": [
+                "legal-mercado#requisitos[id=rspp-ica]"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Resolución ICA 090464 de 2021 (registro de predios pecuarios, RSPP)",
+                  "url": "https://normograma.invima.gov.co/compilacion/docs/resolucion_ica_90464_2021.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Seguras",
+          "mejoras": [
+            {
+              "id": "llegada",
+              "titulo": "Las gallinas llegaron y su edad está anotada",
+              "corto": "Con la edad se sabe cuánto deberían poner",
+              "detalle": "La curva estimada empieza en la semana 23 con 2 % de postura. Sin la edad, la ficha no puede decir qué vacuna toca ni cuánto esperar.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "libro",
+                "regla": "registros",
+                "sistema": "gallinas",
+                "registro": "altas",
+                "n": 1,
+                "conEdad": true
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "30 pollonas de 16 semanas",
+                    "valor": 1050000,
+                    "sello": "publicado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Pollonas].costo_cop"
+                  },
+                  {
+                    "que": "Transporte",
+                    "valor": 150000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Transporte de las pollonas].costo_cop"
+                  }
+                ],
+                "nota": "$35.000 cada una, precio publicado sin fecha."
+              },
+              "de": [
+                "gallinas#curva_postura",
+                "gallinas#arranque_30_gallinas.items[item^=Pollonas].item",
+                "gallinas#arranque_30_gallinas.items[item^=Pollonas].fuente",
+                "gallinas#arranque_30_gallinas.items[item^=Pollonas].cantidad"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Granja Rosa Flor: productos y precios",
+                  "url": "https://granjarosaflor.com/productos",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "cerramiento",
+              "titulo": "Cerca del área de pastoreo",
+              "corto": "630 m² para 30 gallinas, 21 por gallina",
+              "detalle": "Son unos 100 m de malla de 1,5 m. El tope para el sello es 488 gallinas por hectárea, que redondeado da 21 m² por gallina. Sin sello, la cuenta del alimento usa 150 m² (5 por gallina), un supuesto de diseño.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "planes": [
+                  "Cerramiento"
+                ],
+                "gasto": {
+                  "palabras": "cerramiento|cerca de pastoreo",
+                  "inversion": true
+                }
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Malla y postes",
+                    "valor": 1400000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Cerramiento].costo_cop"
+                  }
+                ]
+              },
+              "de": [
+                "gallinas#manejo.notas_frio",
+                "gallinas#arranque_30_gallinas.items[item^=Cerramiento].item",
+                "alimento#area_para_30_gallinas"
+              ],
+              "cuentas": [
+                {
+                  "valor": "21",
+                  "cuenta": "630 / 30"
+                }
+              ],
+              "fuentes": []
+            },
+            {
+              "id": "cama",
+              "titulo": "Cama seca de 15 cm",
+              "corto": "Viruta o cascarilla en los 12 m²",
+              "detalle": "A 2.600 m el problema es la humedad: la cama mojada trae coccidiosis y amoníaco. La FAO pide voltearla a menudo y cambiarla cuando se moja.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "planes": [
+                  "Cama inicial"
+                ],
+                "tecnicas": [
+                  "gallinas-cama-profunda"
+                ]
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Cama inicial",
+                    "valor": 120000,
+                    "sello": "estimado",
+                    "de": "gallinas#arranque_30_gallinas.items[item^=Cama inicial].costo_cop"
+                  }
+                ]
+              },
+              "de": [
+                "tecnicas-gallinas#tecnicas[id=gallinas-cama-profunda].por_que",
+                "tecnicas-gallinas#tecnicas[id=gallinas-cama-profunda].dosis_o_uso",
+                "gallinas#arranque_30_gallinas.items[item^=Cama inicial].item"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial",
+                  "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "FAO (2004). Small-scale poultry production, cap. 4: manejo general",
+                  "url": "https://www.fao.org/4/y5169e/y5169e05.htm",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "FAO (2004). Small-scale poultry production, cap. 6: sanidad",
+                  "url": "https://www.fao.org/4/y5169e/y5169e07.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "sin-depredador",
+              "titulo": "30 días anotados sin bajas por depredador",
+              "corto": "Cuenta la racha más larga del libro",
+              "detalle": "Alrededor de la vía hay 3.366 registros de gavilán caminero en GBIF, además de chuchas, comadreja y zorro perro. Encerrar bien de noche y anotar cada ataque está en tus manos; la fauna no se caza ni se envenena.",
+              "efecto": null,
+              "plazo": "Los 30 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "sin-depredador",
+                "sistema": "gallinas",
+                "registro": "bajas",
+                "dias": 30
+              },
+              "costo": {
+                "falta": "Malla firme y pasadores."
+              },
+              "tecnica": "bosque-gallinas-y-depredadores",
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-gallinas-y-depredadores].por_que"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "GBIF - registros de posibles depredadores de gallinas en el mismo cuadro (ejemplo: gavilán caminero)",
+                  "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Rupornis%20magnirostris&geometry=POLYGON((-74.42%204.58,-74.22%204.58,-74.22%204.76,-74.42%204.76,-74.42%204.58))&limit=1",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Decreto-Ley 2811 de 1974, arts. 229 a 266, fauna silvestre (Normograma de la Cancillería)",
+                  "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_2811_1974_pr006.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Con cuentas",
+          "mejoras": [
+            {
+              "id": "huevos",
+              "titulo": "30 días con huevos anotados",
+              "corto": "Para comparar tu postura con la del plan",
+              "detalle": "El plan usa una curva estimada, no medida, que llega a 60 % en la semana 34. La tuya solo existe si se anota.",
+              "efecto": null,
+              "plazo": "Los 30 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "dias",
+                "sistema": "gallinas",
+                "registro": "produccion",
+                "producto": "^huevo",
+                "n": 30
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "gallinas#curva_postura",
+                "gallinas#curva_postura_origen"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Tovar-Paredes, J. L., Narváez-Solarte, W. y Agudelo-Giraldo, L. (2015). Tipificación de la gallina criolla en agroecosistemas campesinos (Caldas). Revista Luna Azul 41",
+                  "url": "https://www.redalyc.org/pdf/3217/321739268004.pdf",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Valencia, N. F., Muñoz, J. E. y Ramírez, L. M. Caracterización de la curva de crecimiento en cuatro tipos de gallina criolla. Acta Agronómica (UNAL Palmira)",
+                  "url": "https://revistas.unal.edu.co/index.php/acta_agronomica/article/download/48499/49700/237109",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "alimento",
+              "titulo": "30 días con alimento anotado",
+              "corto": "Es el 62 % del costo del huevo en el plan",
+              "detalle": "En la cuenta del plan (estimada) el alimento son 619 de cada 1.003 pesos que cuesta un huevo. Sin anotarlo no hay costo por huevo.",
+              "efecto": null,
+              "plazo": "Los 30 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "dias",
+                "sistema": "gallinas",
+                "registro": "alimentacion",
+                "n": 30
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "gallinas#arranque_30_gallinas.supuestos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Agrovet Valencia: Ponedora Extra 1 Contegral 40 kg",
+                  "url": "https://agrovetvalencia.com/inicio/647-ponedora-extra-1-alimento-para-pollas-postura-contegral-40kg.html",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Villavoexpress: Italcol Ponedora Campesina P x 40 kg",
+                  "url": "https://villavoexpress.com/en/products/ponedora-campesina-p-x-40-kg",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "limpios",
+              "titulo": "Sucios y rotos en 5 % o menos",
+              "corto": "La pérdida de una granja pequeña de Ubaté",
+              "detalle": "Cuéntalos una semana y márcalo: la app no cuenta los sucios ni los rotos. Es la pérdida que usa el modelo de Finagro. Se recogen mínimo 5 veces al día (Solla).",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "gallinas-huevo-limpio-seco"
+                ]
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "tecnicas-gallinas#tecnicas[id=gallinas-huevo-limpio-seco].como_saber_si_salio_bien",
+                "tecnicas-gallinas#tecnicas[id=gallinas-huevo-limpio-seco].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Finagro, Marco de Referencia Agroeconómico: huevos comercial, Ubaté (abril de 2018)",
+                  "url": "https://www.finagro.com.co/sites/default/files/2022-05/huevos_comercial_cundinamarca.pdf",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Solla S.A. (2018). Manual de manejo ponedoras para huevo comercial",
+                  "url": "https://www.solla.com/sites/default/files/productos/secciones/adjuntos/manual-ponedoras-solla-2018.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se paga",
+          "mejoras": [
+            {
+              "id": "margen",
+              "titulo": "Un mes vendiendo por encima del costo",
+              "corto": "Con tus horas contadas, siempre",
+              "detalle": "El plan calcula $1.003 por huevo sin tu trabajo y $1.390 con él (estimado). Aquí tus horas cuentan aunque en Ajustes estén apagadas: hay que anotarlas.",
+              "efecto": null,
+              "plazo": "El mes completo con 25 días de huevos y 25 de alimento",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "mes-rentable",
+                "sistema": "gallinas",
+                "registro": "produccion",
+                "dias": 25
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "gallinas#arranque_30_gallinas.supuestos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Finagro, Marco de Referencia Agroeconómico: huevos comercial, Ubaté (abril de 2018)",
+                  "url": "https://www.finagro.com.co/sites/default/files/2022-05/huevos_comercial_cundinamarca.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "comida-propia",
+              "titulo": "Un mes con 40 % de comida de la finca",
+              "corto": "En el plan, el huevo baja de $1.003 a unos $879",
+              "detalle": "Maíz, haba, arveja, forraje o lombriz que entren al inventario como cosecha propia. El plan de la investigación llega a 45 % en 2028.",
+              "efecto": "Si la finca produce el 40 % del alimento a la mitad del costo, el equilibrio baja a unos $879 (cuenta del plan, no medición).",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "mes-autosuficiente",
+                "sistema": "gallinas",
+                "registro": "alimentacion",
+                "pct": 40,
+                "dias": 25
+              },
+              "plazo": "El mes completo con 25 días de alimento",
+              "costo": {
+                "falta": "Semilla y siembra."
+              },
+              "de": [
+                "gallinas#arranque_30_gallinas.supuestos",
+                "alimento#transicion"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Finagro, Marco de Referencia Agroeconómico: huevos comercial, Ubaté (abril de 2018)",
+                  "url": "https://www.finagro.com.co/sites/default/files/2022-05/huevos_comercial_cundinamarca.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "huerta": {
+      "nombre": "Huerta",
+      "emoji": "🥬",
+      "sistema": "cultivo",
+      "niveles": [
+        {
+          "nombre": "Primera cama",
+          "mejoras": [
+            {
+              "id": "cama-alta",
+              "titulo": "Una cama alta de 1,25 × 8 m",
+              "corto": "Con 5 kg de compost por m²",
+              "detalle": "Aflojada a fondo, unos 20 cm más alta que el pasillo y atravesada a la pendiente. No se pisa nunca.",
+              "efecto": "La FAO calcula que 30 a 40 m² bien llevados dan verduras frescas todo el año a un hogar. Una cama son 10 m².",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-cama-alta"
+                ]
+              },
+              "costo": {
+                "falta": "Compost (50 kg), estacas y rastrojo."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].resumen",
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].por_que",
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: cultivo vegetal intensivo",
+                  "url": "https://www.fao.org/4/v5290s/v5290s36.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "siembra",
+              "titulo": "Una siembra anotada",
+              "corto": "Qué se sembró, cuánto y cuándo",
+              "detalle": "Con la fecha de siembra y la de cosecha sabes cuánto tarda cada cosa en tu finca.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "libro",
+                "regla": "registros",
+                "sistema": "cultivo",
+                "registro": "siembra",
+                "n": 1
+              },
+              "costo": {
+                "falta": "Semilla y plántulas."
+              },
+              "de": [],
+              "fuentes": []
+            },
+            {
+              "id": "abono",
+              "titulo": "Un abono anotado",
+              "corto": "5 kg de compost maduro por m²",
+              "detalle": "La FAO pone 5 kg de compost maduro por m² antes de cada siembra: una cama de 10 m² lleva 50 kg.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "libro",
+                "regla": "registros",
+                "sistema": "cultivo",
+                "registro": "aplicacion",
+                "n": 1
+              },
+              "costo": {
+                "falta": "Compost comprado. El de la finca entra por la compostera."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: cultivo vegetal intensivo",
+                  "url": "https://www.fao.org/4/v5290s/v5290s36.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Suelo conocido",
+          "mejoras": [
+            {
+              "id": "analisis",
+              "titulo": "Análisis de suelo en laboratorio",
+              "corto": "La línea base para saber si mejora",
+              "detalle": "Sin análisis, cualquier dosis de cal o de roca fosfórica es adivinar. El informe trae pH, acidez, fósforo, elementos menores y una recomendación.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "suelo-analisis-laboratorio"
+                ],
+                "gasto": {
+                  "palabras": "an[aá]lisis de suelo"
+                }
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "AGROSAVIA Tibaitatá, fertilidad",
+                    "valor": 179700,
+                    "sello": "publicado",
+                    "de": "suelos#laboratorios[0].precio_cop"
+                  }
+                ],
+                "nota": "Precio de noviembre de 2026. La muestra se envía."
+              },
+              "de": [
+                "tecnicas-suelo#tecnicas[id=suelo-analisis-laboratorio].por_que",
+                "tecnicas-suelo#tecnicas[id=suelo-analisis-laboratorio].como_saber_si_salio_bien",
+                "suelos#laboratorios[0].fecha"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "AGROSAVIA. Preguntas frecuentes: análisis de suelos",
+                  "url": "https://www.agrosavia.co/atenci%C3%B3n-al-usuario/preguntas-frecuentes",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "semillero",
+              "titulo": "Semillero protegido",
+              "corto": "Que sirvan 8 de cada 10 plántulas",
+              "detalle": "Alto, cercado y cerca de la casa. Al trasplante, al menos 8 de cada 10 plántulas sanas (meta propia, estimada).",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-semillero"
+                ]
+              },
+              "costo": {
+                "falta": "Tierra, arena, tablas y malla."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-semillero].como_saber_si_salio_bien"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: semilleros",
+                  "url": "https://www.fao.org/4/v5290s/v5290s39.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "heladas",
+              "titulo": "Guardia contra la helada",
+              "corto": "Tela lista para las noches de enero",
+              "detalle": "El DANE registra heladas en enero, en meses secos y de madrugada; en la Sabana las más dañadas fueron la lechuga Batavia y la acelga. Unos 18 m² de tela cubren una cama de 1,25 × 8 m (estimado).",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-guardia-de-heladas"
+                ]
+              },
+              "costo": {
+                "falta": "Tela, arcos y termómetro."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-guardia-de-heladas].por_que",
+                "tecnicas-cultivo#tecnicas[id=cultivo-guardia-de-heladas].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "DANE-SIPSA. Informe de heladas, 21 de febrero de 2020",
+                  "url": "https://www.dane.gov.co/files/investigaciones/agropecuario/sipsa/heladas/informe-heladas-21-feb-2020.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se pesa",
+          "mejoras": [
+            {
+              "id": "cosecha-3",
+              "titulo": "Cosechas en kilos en 3 meses distintos",
+              "corto": "Para saber cuánto da tu metro",
+              "detalle": "La única cifra cercana es de una entrevista: 4 a 9,3 kg por m² al año. No es un ensayo ni es tu finca.",
+              "efecto": null,
+              "plazo": "Los 3 meses",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "meses-cosecha",
+                "sistema": "cultivo",
+                "registro": "cosecha",
+                "n": 3
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "cultivos#huerta_familia_4.supuestos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Bichos de Campo (6-sep-2025). Fernando Pía explica qué es la huerta biointensiva",
+                  "url": "https://bichosdecampo.com/de-raiz-fernando-pia-explica-que-es-la-huerta-biointensiva-o-el-metodo-que-transforma-el-cultivo-en-abundancia-sostenible/",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "asociaciones",
+              "titulo": "Cultivos que se ayudan",
+              "corto": "Maíz con haba, uchuva con caléndula…",
+              "detalle": "Las leguminosas aportan nitrógeno al vecino (FAO 2000) y la caléndula ayuda a la uchuva contra los trips (FAO 2007).",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-asociaciones"
+                ]
+              },
+              "costo": {
+                "falta": "Semilla."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-asociaciones].por_que",
+                "tecnicas-cultivo#tecnicas[id=cultivo-asociaciones].resumen"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: asociación de cultivos",
+                  "url": "https://www.fao.org/4/v5290s/v5290s35.htm",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Tapia, M. E. y Fries, A. M. (2007). Guía de campo de los cultivos andinos. FAO y ANPE, Lima",
+                  "url": "https://www.fao.org/4/ai185s/ai185s.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se repite",
+          "mejoras": [
+            {
+              "id": "rueda",
+              "titulo": "La rueda de 4 años, escrita cama por cama",
+              "corto": "Ninguna familia repite cama",
+              "detalle": "Leguminosas, luego crucíferas, luego papa, luego tubérculos andinos, cebollas y raíces. La hernia de las crucíferas y la pudrición blanca se acumulan si la misma familia repite cama.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-rotacion-4-anios"
+                ]
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-rotacion-4-anios].resumen",
+                "tecnicas-cultivo#tecnicas[id=cultivo-rotacion-4-anios].por_que"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Royal Horticultural Society (RHS). Crop rotation",
+                  "url": "https://www.rhs.org.uk/vegetables/crop-rotation",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "ICA (2012). Manejo fitosanitario del cultivo de hortalizas",
+                  "url": "https://www.ica.gov.co/getattachment/bb883b42-80da-4ae5-851f-4db05edf581b/Manejo-fitosanitario-del-cultivo-de-hortalizas.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "semilla",
+              "titulo": "Semilla propia que germina",
+              "corto": "8 de cada 10 en la prueba de papel",
+              "detalle": "Haba, arveja, maíz, quinua, cilantro y tubérculos andinos. Meta propia, estimada: al menos 8 de 10. En papa, Fedepapa reporta que solo cerca del 5 % del área usa semilla certificada.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "cultivo-semilla-propia"
+                ]
+              },
+              "costo": {
+                "falta": "Frascos y muña seca."
+              },
+              "de": [
+                "tecnicas-cultivo#tecnicas[id=cultivo-semilla-propia].por_que",
+                "tecnicas-cultivo#tecnicas[id=cultivo-semilla-propia].como_saber_si_salio_bien"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Fedepapa. Ficha técnica del proyecto FNFP-F-FP-35-62: semilla certificada (2024)",
+                  "url": "https://fedepapa.com/home/wp-content/uploads/2026/02/8.-Ficha-tecnica-SEMILLA-CERTIFICADA-2024.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "cosecha-10",
+              "titulo": "Cosechas en kilos en 10 de 12 meses",
+              "corto": "La huerta casi no se queda vacía",
+              "detalle": "Para 4 personas la cuenta de la investigación da 160 m² de cama (16 camas de 1,25 × 8 m), con el rendimiento tomado por lo bajo.",
+              "efecto": null,
+              "plazo": "Los 10 de 12 meses",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "meses-cosecha",
+                "sistema": "cultivo",
+                "registro": "cosecha",
+                "n": 10,
+                "ventana": 12
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "cultivos#huerta_familia_4.supuestos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Bichos de Campo (6-sep-2025). Fernando Pía explica qué es la huerta biointensiva",
+                  "url": "https://bichosdecampo.com/de-raiz-fernando-pia-explica-que-es-la-huerta-biointensiva-o-el-metodo-que-transforma-el-cultivo-en-abundancia-sostenible/",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "OMS. Healthy diet, ficha descriptiva (26-ene-2026)",
+                  "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "pasturas": {
+      "nombre": "Pasturas",
+      "emoji": "🐄",
+      "sistema": "ganado",
+      "aviso": "Estos niveles son del suelo y del agua del potrero. Del ganado no hay investigación en la app: no trae metas, costos ni cuántas vacas caben. Para las vacas usa las metas de la familia.",
+      "niveles": [
+        {
+          "nombre": "Suelo medido",
+          "mejoras": [
+            {
+              "id": "pendiente",
+              "titulo": "Pendiente medida con el nivel A",
+              "corto": "Dice cada cuánto va una curva",
+              "detalle": "Distancia entre curvas (SCIAF 2018): 30 m al 2 % de pendiente, 10 m al 30 % y 4 m al 45 %.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "suelo-nivel-a-curvas"
+                ]
+              },
+              "costo": {
+                "falta": "Palos, cuerda y una piedra."
+              },
+              "de": [
+                "tecnicas-suelo#tecnicas[id=suelo-nivel-a-curvas].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "SCIAF y Unión Europea (2018). El aparato A y las curvas a nivel",
+                  "url": "https://sciaf.org.uk/assets/000/001/631/1.1_Booklet_-_A-frame_%28SPANISH%29_original_original.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "compactacion",
+              "titulo": "Compactación medida una vez",
+              "corto": "Con varilla, o densidad en laboratorio",
+              "detalle": "Con el suelo húmedo, empuja una varilla de 6 mm y anota a cuántos centímetros se frena. Umbrales estimados: menos de 10 cm, malo; más de 30, bueno.",
+              "efecto": "En un suelo de ceniza volcánica de Costa Rica el pastoreo subió la densidad de 0,52 a 0,64 Mg/m³ en promedio. No se midió en tu finca.",
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Laboratorio IGAC, densidad aparente (F-02)",
+                    "valor": 36000,
+                    "sello": "publicado",
+                    "de": "suelos#laboratorios[analisis^=F-02].precio_cop",
+                    "opcional": true
+                  }
+                ],
+                "nota": "La varilla no necesita laboratorio."
+              },
+              "de": [
+                "suelos#indicadores[id=compactacion-varilla]",
+                "suelos#suelos_zona",
+                "suelos#laboratorios[analisis^=F-02].analisis"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "WingChing-Jones, R., Cabalceta-Aguilar, G. y Alvarado-Hernández, A. (2009). Impacto del pastoreo con ganado Holstein y Jersey sobre la densidad aparente de un andisol. Agronomía Mesoamericana 20(2): 371-379",
+                  "url": "https://archivo.revistas.ucr.ac.cr//index.php/agromeso/article/download/4953/4763/7280",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "IGAC. Catálogo de productos y servicios 2025 (ajuste publicado en enero de 2026)",
+                  "url": "https://www.igac.gov.co/sites/default/files/2026-01/catalogo_productos_servicios_2025_03_ajuste_a.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "La ladera se queda",
+          "mejoras": [
+            {
+              "id": "barrera",
+              "titulo": "Barrera viva de pasto sobre la curva",
+              "corto": "63 % menos tierra perdida en un ciclo de papa",
+              "detalle": "Una planta cada 10 cm, es decir 100 por cada 10 m.",
+              "efecto": "En Nariño, a 2.710 m, la tierra perdida bajó de 450 a 165 kg por hectárea en un ciclo de papa (63 % menos). No es por año, y se midió en papa, no en potrero.",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "suelo-barrera-viva"
+                ]
+              },
+              "costo": {
+                "falta": "Material de siembra y jornales."
+              },
+              "de": [
+                "suelos#practicas_ladera[id=ladera-barrera-viva].efecto",
+                "tecnicas-suelo#tecnicas[id=suelo-barrera-viva].por_que",
+                "tecnicas-suelo#tecnicas[id=suelo-barrera-viva].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Alvarado Narváez, K., López Peñafiel, V. y Castillo Franco, J. (2011). Pérdida de suelo por erosión hídrica en diferentes sistemas de producción con papa. Revista de Ciencias Agrícolas 28(1): 64-72",
+                  "url": "https://dialnet.unirioja.es/descarga/articulo/5104125.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "franja",
+              "titulo": "30 m de monte a cada lado de la quebrada",
+              "corto": "Lo pide la ley, sea permanente o no",
+              "detalle": "Decreto 1076 de 2015, art. 2.2.1.1.18.2: faja no inferior a 30 m a cada lado de quebradas y arroyos, en cobertura boscosa. Cercar, no quemar y dejar volver el monte.",
+              "efecto": null,
+              "noAplica": "Aquí no hay quebrada",
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "falta": "Cerca y plántulas."
+              },
+              "de": [
+                "bosque-agua#agua.proteccion_legal",
+                "bosque-agua#estrategias[id=franjas-del-agua].como"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Decreto 1449 de 1977 con notas de compilación en el Decreto 1076 de 2015 (CRA)",
+                  "url": "https://normas.cra.gov.co/Gestor/Docs/decreto_1449_1977.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "El agua entra",
+          "mejoras": [
+            {
+              "id": "zanja",
+              "titulo": "Una zanja piloto de 40 × 40 cm",
+              "corto": "Para pendientes de 10 a 40 %",
+              "detalle": "Sobre la curva a nivel, con el bordo sembrado del lado de abajo. Primero una de prueba: si el agua se queda muchos días, ese suelo no infiltra bien y no conviene hacer más ahí (estimado).",
+              "efecto": null,
+              "noAplica": "Mi ladera no está entre 10 y 40 %",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "suelo-zanja-infiltracion"
+                ]
+              },
+              "costo": {
+                "falta": "Jornales."
+              },
+              "de": [
+                "suelos#practicas_ladera[id=ladera-zanja-infiltracion].efecto",
+                "tecnicas-suelo#tecnicas[id=suelo-zanja-infiltracion].dosis_o_uso",
+                "tecnicas-suelo#tecnicas[id=suelo-zanja-infiltracion].como_saber_si_salio_bien"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "CSIRO Chile (2020). Ficha 1.3: Zanjas de infiltración",
+                  "url": "https://research.csiro.au/rag-chile/wp-content/uploads/sites/374/2020/10/1.3-Ficha_zanjas.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "cerca-viva",
+              "titulo": "20 m de cerca viva de nativas",
+              "corto": "Divide y sirve de camino a la fauna",
+              "detalle": "Distancias sugeridas (estimadas): 1 m entre arbustos y un árbol cada 3 m. Anota cuáles prenden: no se leyó una ficha que diga cuál va mejor aquí.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "bosque-cerca-viva"
+                ]
+              },
+              "costo": {
+                "falta": "20 plántulas, alambre y abono."
+              },
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-cerca-viva].dosis_o_uso",
+                "tecnicas-bosque#tecnicas[id=bosque-cerca-viva].materiales",
+                "tecnicas-bosque#tecnicas[id=bosque-cerca-viva].por_que"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "SDA Bogotá - Lineamientos para la implementación de Áreas de Vida en el Distrito Capital (abril de 2026): plateo de 1,5 m, frecuencia de mantenimiento, nucleación",
+                  "url": "https://www.ambientebogota.gov.co/documents/10184/9204786/LINEAMIENTOS+AREAS+DE+VIDA+VERSION+260416.pdf/75f3fe08-cb60-495d-960d-225b2a06f670",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Mejora",
+          "mejoras": [
+            {
+              "id": "compactacion-2",
+              "titulo": "La varilla entra más hondo que la primera vez",
+              "corto": "La misma prueba, un año después",
+              "detalle": "Una vez al año, con el suelo húmedo y en los mismos puntos. Cuenta que mejore, no que llegue a una cifra.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "suelos#indicadores[id=compactacion-varilla]"
+              ],
+              "fuentes": []
+            },
+            {
+              "id": "lombrices",
+              "titulo": "Más de 8 lombrices por palada",
+              "corto": "Bloque de 20 × 20 × 20 cm",
+              "detalle": "Desmenuza el bloque sobre un plástico y cuenta. Compáralo con el borde del bosque, que es tu testigo. El umbral es estimado: no se pudo leer una guía oficial.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "suelos#indicadores[id=lombrices-palada]"
+              ],
+              "fuentes": []
+            }
+          ]
+        }
+      ]
+    },
+    "lombricultivo": {
+      "nombre": "Lombricultivo",
+      "emoji": "🪱",
+      "sistema": "lombricultura",
+      "niveles": [
+        {
+          "nombre": "Primer lecho",
+          "mejoras": [
+            {
+              "id": "lecho",
+              "titulo": "Un lecho de 1 × 2 m bajo techo",
+              "corto": "Daría unos 16 kg de lombriz al año (est.)",
+              "detalle": "De madera o ladrillo, con desagüe y tapado con costal o paja: a 2.600 m el frío frena a la lombriz.",
+              "efecto": "Unos 16 kg de lombriz fresca al año, a 8 kg por m² (estimado).",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "alimento-lombricultura",
+                  "suelo-lombricompost"
+                ]
+              },
+              "costo": {
+                "falta": "Lecho, techo y costal."
+              },
+              "de": [
+                "md:02-alimento#**Lombriz para cosechar:**",
+                "md:02-alimento#**Ejemplo: un lecho de",
+                "tecnicas-alimento#tecnicas[id=alimento-lombricultura].materiales",
+                "tecnicas-suelo#tecnicas[id=suelo-lombricompost].por_que"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Feedipedia: Earthworm meal",
+                  "url": "https://www.feedipedia.org/node/665",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "pie",
+              "titulo": "Pie de cría de lombriz roja sembrado",
+              "corto": "Las fuentes no coinciden en cuánta poner",
+              "detalle": "Feedipedia da de 2,5 a 5 kg por m²; la ficha de lombricompost, 1 kg por m². El nivel no exige una cantidad.",
+              "efecto": "A 2.600 m se duplicaría en 60 a 90 días (estimado); Feedipedia dice 30 a 60.",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "alimento-lombricultura",
+                  "suelo-lombricompost"
+                ]
+              },
+              "costo": {
+                "falta": "Pie de cría."
+              },
+              "de": [
+                "md:02-alimento#la densidad va de",
+                "md:02-alimento#la población puede duplicarse",
+                "md:02-alimento#**A 2.600 m** el aire",
+                "tecnicas-suelo#tecnicas[id=suelo-lombricompost].pasos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Feedipedia: Earthworm meal",
+                  "url": "https://www.feedipedia.org/node/665",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Vive",
+          "mejoras": [
+            {
+              "id": "alimentaciones",
+              "titulo": "4 días con comida anotada",
+              "corto": "Gallinaza precompostada y residuos",
+              "detalle": "La gallinaza va precompostada 2 a 3 semanas: la fresca se calienta y suelta amoníaco. Se agrega una capa cuando la anterior ya se transformó.",
+              "efecto": null,
+              "plazo": "Los 4 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "dias",
+                "sistema": "lombricultura",
+                "registro": "alimentacion",
+                "n": 4
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "md:02-alimento#**Comida:** gallinaza"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Feedipedia: Earthworm meal",
+                  "url": "https://www.feedipedia.org/node/665",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "humus",
+              "titulo": "Primera cosecha de humus",
+              "corto": "100 a 150 kg por m² al año (est.)",
+              "detalle": "Anótala como Cosecha, con «humus» en el producto.",
+              "efecto": "Del orden de 100 a 150 kg por m² al año si se alimenta bien (estimado; hay que medirlo).",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "registros",
+                "sistema": "lombricultura",
+                "registro": "cosecha",
+                "producto": "humus|lombricomp",
+                "n": 1
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "md:02-alimento#**Humus:** del orden"
+              ],
+              "fuentes": []
+            }
+          ]
+        },
+        {
+          "nombre": "Da proteína",
+          "mejoras": [
+            {
+              "id": "kilo",
+              "titulo": "1 kg de lombriz cosechada",
+              "corto": "Es lo de la finca con más metionina",
+              "detalle": "Sin soya, lo que más le falta a la ración es metionina. La lombriz se da siempre escaldada: el calor reduce lo que la hace tóxica.",
+              "efecto": "La harina de lombriz tiene 0,94 % de metionina. De 100 g frescos salen 11,6 a 15,2 g secos.",
+              "plazo": "El kilo",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "kilos",
+                "sistema": "lombricultura",
+                "registro": "cosecha",
+                "producto": "lombri",
+                "excepto": "comp|humus",
+                "kg": 1
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "tecnicas-alimento#tecnicas[id=alimento-lombricultura].por_que",
+                "alimento#ingredientes[id=harina-de-lombriz].fuente_composicion",
+                "alimento#ingredientes[id=lombriz-fresca-escaldada]",
+                "md:02-alimento#**Cuánta darles:**"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Feedipedia: Earthworm meal",
+                  "url": "https://www.feedipedia.org/node/665",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Alcanza",
+          "mejoras": [
+            {
+              "id": "alcanza",
+              "titulo": "12 g de lombriz por gallina al día, 30 días",
+              "corto": "Con 30 gallinas son 10,8 kg",
+              "detalle": "Cuenta la lombriz cosechada «para las gallinas» en 30 días seguidos, contra las gallinas vivas en el libro. Para 30 gallinas hacen falta unos 16 m² de lecho (estimado).",
+              "efecto": "Con lombriz fresca hasta el 5 % de la materia seca de la ración (unos 35 g por gallina al día) se mantuvo la postura (Mekada 1979).",
+              "plazo": "Los 30 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "lombriz-alcanza",
+                "sistema": "lombricultura",
+                "registro": "cosecha",
+                "producto": "lombri",
+                "excepto": "comp|humus",
+                "gramos": 12,
+                "dias": 30
+              },
+              "costo": {
+                "falta": "Más lechos."
+              },
+              "de": [
+                "tecnicas-alimento#tecnicas[id=alimento-lombricultura].dosis_o_uso",
+                "alimento#ingredientes[id=lombriz-fresca-escaldada].fuente_composicion",
+                "md:02-alimento#**Cuánta darles:**"
+              ],
+              "cuentas": [
+                {
+                  "valor": "10,8",
+                  "cuenta": "12 * 30 * 30 / 1000"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Feedipedia: Earthworm meal",
+                  "url": "https://www.feedipedia.org/node/665",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "agua": {
+      "nombre": "Agua",
+      "emoji": "💧",
+      "sistema": "agua",
+      "niveles": [
+        {
+          "nombre": "Se recoge",
+          "mejoras": [
+            {
+              "id": "tanque",
+              "titulo": "Tanque de 1.000 L con tapa",
+              "corto": "Unos 80 días para 50 gallinas, lleno",
+              "detalle": "En una base firme y nivelada: 1.000 L pesan una tonelada. La lluvia que cae en tu predio se usa sin concesión mientras corra por él.",
+              "efecto": "Con 849 mm de lluvia al año, 24 m² de techo darían unos 16.000 L si se pierde 1 de cada 5 litros (estimado).",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "bosque-cosecha-lluvia"
+                ],
+                "gasto": {
+                  "palabras": "tanque.*1\\.?000"
+                }
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Tanque Eternit de 1.000 L",
+                    "valor": 541900,
+                    "sello": "publicado",
+                    "de": "bosque-agua#agua.cosecha_lluvia.costo_tanque_1000l_cop"
+                  }
+                ],
+                "nota": "Homecenter, 18-nov-2026. Los de 1.000 L iban de $416.900 a $731.900."
+              },
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].por_que",
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].dosis_o_uso",
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].pasos",
+                "bosque-agua#agua.cosecha_lluvia.fuente"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Homecenter - tanques de agua de 1.000 litros",
+                  "url": "https://www.homecenter.com.co/homecenter-co/search?Ntt=tanque%20agua%201000%20litros",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Decreto 1076 de 2015, arts. 2.2.3.2.14.3 a 2.2.3.2.16.18, aguas lluvias y subterráneas (Normograma de la Cancillería)",
+                  "url": "https://cancilleria.gov.co/sites/default/files/Normograma/docs/decreto_1076_2015_pr029.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "canaleta",
+              "titulo": "Canaleta, bajante y desviador",
+              "corto": "Se pierde 1 de cada 5 litros (est.)",
+              "detalle": "El desviador bota las primeras aguas, que lavan el techo, antes del tanque (Resolución 0844 de 2018, art. 34).",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "bosque-cosecha-lluvia"
+                ]
+              },
+              "costo": {
+                "falta": "Canaleta, bajante, desviador y malla."
+              },
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].por_que",
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].pasos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Resolución 0844 de 2018 de MinVivienda (agua y saneamiento rural), art. 34",
+                  "url": "https://normas.cra.gov.co/gestor/docs/resolucion_minviviendact_0844_2018.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se mide",
+          "mejoras": [
+            {
+              "id": "pluviometro",
+              "titulo": "Pluviómetro puesto",
+              "corto": "El satélite da el doble o el triple",
+              "detalle": "NASA POWER da 1.624 mm al año y ERA5 2.516, frente a 849 de la estación Acapulco del IDEAM. Por eso hay que medir en la finca.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "gasto": {
+                  "palabras": "pluvi"
+                }
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Pluviómetro",
+                    "valor": 59900,
+                    "sello": "publicado",
+                    "de": "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].materiales[item=Pluviómetro].costo_cop"
+                  }
+                ],
+                "nota": "Homecenter, 18-nov-2026. Un vaso recto también sirve."
+              },
+              "de": [
+                "bosque-agua#agua.cosecha_lluvia.formula",
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].por_que",
+                "md:06-bosque-y-agua#**Precios en Homecenter"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Homecenter - pluviómetros",
+                  "url": "https://www.homecenter.com.co/homecenter-co/search?Ntt=pluviometro",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "NASA POWER - climatología de precipitación 2001-2025 (MERRA-2), punto 4,66 N; 74,32 O",
+                  "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=-74.32&latitude=4.66&format=JSON",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Open-Meteo - precipitación diaria ERA5 2001-2024, celda 4,75 N; 74,25 O",
+                  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=4.70&longitude=-74.28&start_date=2001-01-01&end_date=2024-12-31&daily=precipitation_sum&models=era5&timezone=America%2FBogota",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "lluvia-30",
+              "titulo": "30 días de lluvia anotados",
+              "corto": "Con 0 mm también se anota",
+              "detalle": "Con 30 días de datos y el nivel del tanque ya tienes tu coeficiente real, en vez del 0,8 estimado.",
+              "efecto": null,
+              "plazo": "Los 30 días",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "dias",
+                "sistema": "clima",
+                "registro": "lluvia",
+                "n": 30
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].como_saber_si_salio_bien",
+                "tecnicas-bosque#tecnicas[id=bosque-cosecha-lluvia].dosis_o_uso"
+              ],
+              "cuentas": [
+                {
+                  "valor": "0",
+                  "cuenta": "0"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "NASA POWER - climatología de precipitación 2001-2025 (MERRA-2), punto 4,66 N; 74,32 O",
+                  "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=-74.32&latitude=4.66&format=JSON",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se protege",
+          "mejoras": [
+            {
+              "id": "nacimiento",
+              "titulo": "100 m de bosque alrededor del nacimiento",
+              "corto": "Lo pide la ley; son unas 3,1 ha",
+              "detalle": "Decreto 1076 de 2015, art. 2.2.1.1.18.2: por lo menos 100 m a la redonda. La cerca completa del círculo mide unos 628 m.",
+              "efecto": null,
+              "noAplica": "Aquí no hay nacimiento",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "bosque-proteger-nacimiento"
+                ]
+              },
+              "costo": {
+                "falta": "628 m de cerca y 50 plántulas."
+              },
+              "de": [
+                "bosque-agua#agua.proteccion_legal",
+                "tecnicas-bosque#tecnicas[id=bosque-proteger-nacimiento].dosis_o_uso",
+                "tecnicas-bosque#tecnicas[id=bosque-proteger-nacimiento].materiales"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Decreto 1449 de 1977 con notas de compilación en el Decreto 1076 de 2015 (CRA)",
+                  "url": "https://normas.cra.gov.co/Gestor/Docs/decreto_1449_1977.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "caudal",
+              "titulo": "Caudal medido y anotado",
+              "corto": "Balde de 10 L y cronómetro",
+              "detalle": "Litros por segundo = 10 ÷ segundos; repítelo 3 veces y promedia. Anótalo como Medición en Agua, con «caudal» en «Qué se midió».",
+              "efecto": null,
+              "noAplica": "Aquí no hay nacimiento ni quebrada",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "registros",
+                "sistema": "agua",
+                "registro": "medicion",
+                "variable": "caudal",
+                "n": 1
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "tecnicas-bosque#tecnicas[id=bosque-proteger-nacimiento].pasos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Decreto 1449 de 1977 con notas de compilación en el Decreto 1076 de 2015 (CRA)",
+                  "url": "https://normas.cra.gov.co/Gestor/Docs/decreto_1449_1977.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Alcanza el año",
+          "mejoras": [
+            {
+              "id": "doce-meses",
+              "titulo": "12 meses con una medición del agua",
+              "corto": "Nivel del tanque o caudal, cada mes",
+              "detalle": "El tamaño del tanque sale mes a mes: lo que entra menos lo que gastan casa, gallinas y huerta. La app no hace esa cuenta; guarda las mediciones.",
+              "efecto": null,
+              "plazo": "Los 12 meses",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "meses",
+                "sistema": "agua",
+                "registro": "medicion",
+                "n": 12
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "bosque-agua#agua.cosecha_lluvia.formula"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "NASA POWER - climatología de precipitación 2001-2025 (MERRA-2), punto 4,66 N; 74,32 O",
+                  "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=-74.32&latitude=4.66&format=JSON",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "energia": {
+      "nombre": "Energía",
+      "emoji": "☀️",
+      "sistema": "energia",
+      "niveles": [
+        {
+          "nombre": "Se lee",
+          "mejoras": [
+            {
+              "id": "contador",
+              "titulo": "4 semanas seguidas leyendo el contador",
+              "corto": "En estrato 1, pasar de 130 kWh vale más del doble",
+              "detalle": "En estrato 1, Enel cobró en octubre de 2026 $411 por kWh hasta 130 al mes y $991 de ahí en adelante. Si la cabecera del municipio está más abajo de 1.000 m, la subsistencia es de 173. Anótala como Medición: «Lectura del contador».",
+              "efecto": null,
+              "noAplica": "Aquí no llega la red",
+              "plazo": "Las 4 semanas",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "semanas-seguidas",
+                "sistema": "energia",
+                "registro": "medicion",
+                "variable": "contador|lectura",
+                "n": 4
+              },
+              "costo": {
+                "compra": false
+              },
+              "tecnica": "energia-leer-el-contador",
+              "de": [
+                "energia#tarifas[0]",
+                "energia#tarifas[1]",
+                "tecnicas-energia#tecnicas[id=energia-leer-el-contador].por_que",
+                "tecnicas-energia#tecnicas[id=energia-leer-el-contador].como_saber_si_salio_bien"
+              ],
+              "cuentas": [
+                {
+                  "valor": "411",
+                  "cuenta": "round(411.2028)"
+                },
+                {
+                  "valor": "991",
+                  "cuenta": "round(990.5273)"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Enel Colombia. Pliego tarifario de energía eléctrica, octubre de 2026 (tarifas reguladas por la CREG, $/kWh)",
+                  "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Se sabe quién gasta",
+          "mejoras": [
+            {
+              "id": "equipo",
+              "titulo": "Un equipo medido 24 horas",
+              "corto": "La placa casi nunca dice lo que gasta",
+              "detalle": "Los equipos con termostato o motor gastan distinto de lo que dice su placa. 24 horas con un medidor de enchufe convierten un estimado en un dato.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "energia-medir-un-equipo"
+                ]
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Medidor de enchufe (vatímetro)",
+                    "valor": 60000,
+                    "sello": "estimado",
+                    "de": "energia#medicion[metodo^=Medidor de consumo].costo_cop"
+                  }
+                ]
+              },
+              "de": [
+                "tecnicas-energia#tecnicas[id=energia-medir-un-equipo].por_que",
+                "tecnicas-energia#tecnicas[id=energia-medir-un-equipo].dosis_o_uso"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "University of Alaska Fairbanks, Cooperative Extension. Selecting, Brooding & Rearing Small Numbers of Chicks, LPM-00840 (revisada oct-2020)",
+                  "url": "https://uaf.edu/ces/publications/database/agriculture-livestock/selecting-chicks.php",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gasta menos",
+          "mejoras": [
+            {
+              "id": "clueca",
+              "titulo": "Cría con clueca o placa, no con bombillo",
+              "corto": "Un mes de bombillo: unos $178.000",
+              "detalle": "Un bombillo de 250 W gasta 6 kWh al día. La incubación natural da alrededor de 80 % de nacimientos (FAO) y la placa usa 12-18 W.",
+              "efecto": "Cada mes de bombillo que se evita son 180 kWh, unos $178.000 con la tarifa de Enel de octubre de 2026 (990,53 por kWh).",
+              "noAplica": "Aquí no se crían pollitos",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "energia-clueca-en-vez-de-bombillo",
+                  "gallinas-crianza-clueca"
+                ]
+              },
+              "costo": {
+                "falta": "Placa de calor. La clueca no se compra."
+              },
+              "de": [
+                "tecnicas-energia#tecnicas[id=energia-clueca-en-vez-de-bombillo].dosis_o_uso",
+                "tecnicas-energia#tecnicas[id=energia-clueca-en-vez-de-bombillo].por_que",
+                "energia#equipos[id=criadora-infrarroja-250w].notas",
+                "energia#equipos[id=placa-calor-pollitos].notas"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "Enel Colombia. Pliego tarifario de energía eléctrica, octubre de 2026 (tarifas reguladas por la CREG, $/kWh)",
+                  "url": "https://www.enel.com.co/content/dam/enel-co/espa%C3%B1ol/personas/1-17-1/2026/pliego-tarifario-digital-octubre-2026.pdf",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "University of Alaska Fairbanks, Cooperative Extension. Selecting, Brooding & Rearing Small Numbers of Chicks, LPM-00840 (revisada oct-2020)",
+                  "url": "https://uaf.edu/ces/publications/database/agriculture-livestock/selecting-chicks.php",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Brinsea. Getting the best out of your EcoGlow brooder",
+                  "url": "https://brinsea.com/t-ecoglow.aspx",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "FAO (2004). Small-scale poultry production, cap. 5: Incubation and hatching (Sonaiya y Swan)",
+                  "url": "https://www.fao.org/4/y5169e/y5169e06.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Aguanta",
+          "mejoras": [
+            {
+              "id": "solar",
+              "titulo": "El cálculo del sol para el galpón, escrito",
+              "corto": "Por ahorro solo, un panel no se paga",
+              "detalle": "Unos 98 Wh en un día normal y 530 en época de cría. Se justifica si la red no llega al galpón o se va la luz: esa carga en la red vale unos $3.000 al mes. Comprar el panel no es requisito.",
+              "efecto": "Un panel de 580 W y una batería de 1,28 kWh aguantan unos 10 días de consumo normal o 2 de cría sin sol (cálculo, no medición).",
+              "cumple": {
+                "tipo": "marca",
+                "tecnicas": [
+                  "energia-panel-galpon"
+                ]
+              },
+              "costo": {
+                "items": [
+                  {
+                    "que": "Panel de 580 W",
+                    "valor": 494900,
+                    "sello": "publicado",
+                    "de": "energia#solar.fuentes[4]",
+                    "opcional": true
+                  },
+                  {
+                    "que": "Batería de 1,28 kWh",
+                    "valor": 1260480,
+                    "sello": "publicado",
+                    "de": "energia#solar.fuentes[5]",
+                    "opcional": true
+                  }
+                ],
+                "nota": "El panel estaba sin stock el 18-nov-2026. Faltan controlador, cable y soporte: sin precio con fuente."
+              },
+              "de": [
+                "tecnicas-energia#tecnicas[id=energia-panel-galpon].pasos",
+                "tecnicas-energia#tecnicas[id=energia-panel-galpon].por_que",
+                "energia#solar.fuentes[4]",
+                "energia#solar.fuentes[5]"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "PVGIS 5.2 (JRC, Comisión Europea), base PVGIS-NSRDB: 1 kWp horizontal en 4,73 N -74,34 O (Bojacá, 2.577 m)",
+                  "url": "https://re.jrc.ec.europa.eu/api/v5_2/PVcalc?lat=4.73&lon=-74.34&peakpower=1&loss=14&angle=0&aspect=0&outputformat=json",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Homecenter Colombia. Panel solar monocristalino 580 W Znshine",
+                  "url": "https://www.homecenter.com.co/homecenter-co/product/734560/panel-solar-monocristalino-580w-hc-16bb-n-dv-znshine/734560/",
+                  "fecha_consulta": "2026-11-18"
+                },
+                {
+                  "titulo": "Emergente. Batería de litio 12 V 100 Ah MUST (LiFePO4, 1,28 kWh)",
+                  "url": "https://www.emergente.com.co/producto/bateria-de-litio-12v-100ah-must",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "casa": {
+      "nombre": "Casa",
+      "emoji": "🏡",
+      "sistema": null,
+      "aviso": "Cuenta todo lo cosechado «para la casa» en kilos, también papa y granos, que la cuenta de los 584 kg deja aparte.",
+      "niveles": [
+        {
+          "nombre": "En regla",
+          "mejoras": [
+            {
+              "id": "rurh",
+              "titulo": "Agua de la casa inscrita en el RURH",
+              "corto": "Es inscripción en la CAR, no concesión",
+              "detalle": "Si la familia vive en la finca y usa el agua para la casa y la producción de subsistencia, no necesita concesión, pero sí inscribirse en el RURH de la CAR (Ley 1955 de 2019, art. 279).",
+              "efecto": null,
+              "noAplica": "Nadie vive en la finca o el agua es de acueducto",
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "falta": "La investigación no trae tarifa de la inscripción: pregúntala en la CAR."
+              },
+              "de": [
+                "bosque-agua#agua.concesion_car",
+                "tecnicas-bosque#tecnicas[id=bosque-proteger-nacimiento].pasos"
+              ],
+              "fuentes": [
+                {
+                  "titulo": "MinAmbiente - Concepto jurídico sobre el RURH para viviendas rurales dispersas y comunidades organizadas (radicado 2024E1047497)",
+                  "url": "https://www.minambiente.gov.co/wp-content/uploads/2024/09/concep_241202_048120-REGISTRO-USUARIOS-RECURSO-HIDRICO-VIVIENDAS-RURALES-DISPERSAS-Y-COMUNIDADES-ORGANIZADAS.pdf",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Come de la finca",
+          "mejoras": [
+            {
+              "id": "casa-3",
+              "titulo": "Cosecha para la casa en 3 meses distintos",
+              "corto": "En kilos y con destino «Para la casa»",
+              "detalle": "Se anota en cada cultivo, al cosechar.",
+              "efecto": null,
+              "plazo": "Los 3 meses",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "meses-cosecha",
+                "sistema": "cultivo",
+                "registro": "cosecha",
+                "destino": "casa",
+                "n": 3
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [],
+              "fuentes": []
+            }
+          ]
+        },
+        {
+          "nombre": "Verde todo el año",
+          "mejoras": [
+            {
+              "id": "camas-30",
+              "titulo": "30 m² de camas para la casa",
+              "corto": "El mínimo de la FAO: 30-40 m²",
+              "detalle": "La FAO dice que 30-40 m² dan verduras frescas todo el año a un hogar: es un mínimo, no la meta. Son 3 camas de 1,25 × 8 m.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "marca"
+              },
+              "costo": {
+                "falta": "Compost para 3 camas (150 kg)."
+              },
+              "de": [
+                "cultivos#huerta_familia_4.supuestos",
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].por_que",
+                "tecnicas-cultivo#tecnicas[id=cultivo-cama-alta].dosis_o_uso"
+              ],
+              "cuentas": [
+                {
+                  "valor": "3",
+                  "cuenta": "30 / 10"
+                },
+                {
+                  "valor": "150",
+                  "cuenta": "30 * 5"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "FAO (2000). Mejorando la nutrición a través de huertos y granjas familiares: cultivo vegetal intensivo",
+                  "url": "https://www.fao.org/4/v5290s/v5290s36.htm",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            },
+            {
+              "id": "casa-10",
+              "titulo": "Cosecha para la casa en 10 de 12 meses",
+              "corto": "Casi todo el año hay algo de la finca",
+              "detalle": "Cuenta los meses con al menos una cosecha en kilos para la casa, en 12 meses seguidos.",
+              "efecto": null,
+              "plazo": "Los 10 de 12 meses",
+              "cumple": {
+                "tipo": "libro",
+                "regla": "meses-cosecha",
+                "sistema": "cultivo",
+                "registro": "cosecha",
+                "destino": "casa",
+                "n": 10,
+                "ventana": 12
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [],
+              "fuentes": []
+            }
+          ]
+        },
+        {
+          "nombre": "Se llena la mesa",
+          "mejoras": [
+            {
+              "id": "mesa",
+              "titulo": "584 kg para la casa en un año",
+              "corto": "La meta de la OMS para 4 personas",
+              "detalle": "La OMS pide al menos 400 g diarios de frutas y verduras por persona: 584 kg al año para 4. La cuenta de la investigación pone para eso 160 m² de cama.",
+              "efecto": null,
+              "cumple": {
+                "tipo": "libro",
+                "regla": "suma-anual",
+                "sistema": "cultivo",
+                "registro": "cosecha",
+                "destino": "casa",
+                "kg": 584,
+                "dias": 365
+              },
+              "costo": {
+                "compra": false
+              },
+              "de": [
+                "cultivos#huerta_familia_4.supuestos"
+              ],
+              "cuentas": [
+                {
+                  "valor": "584",
+                  "cuenta": "400 * 4 * 365 / 1000"
+                }
+              ],
+              "fuentes": [
+                {
+                  "titulo": "OMS. Healthy diet, ficha descriptiva (26-ene-2026)",
+                  "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+                  "fecha_consulta": "2026-11-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

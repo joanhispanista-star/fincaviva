@@ -4,6 +4,8 @@
 import { TIPOS_SISTEMA, TIPOS_REGISTRO, nuevoId } from '../../lib/modelo.js'
 import { indicadoresGallinas, costosPorSistema, avesVivas } from '../../lib/libro.js'
 import { sumarDias, rangoMes, fechaCorta, diasEntre } from '../../lib/fechas.js'
+import { sitioDelSistema } from '../../lib/niveles.js'
+import { nivelDe, renglonNivel } from './niveles.js'
 import { esc, pesos, numero, porcentaje, cabeza, opciones, errores, enlazar, nombreProducto, leerNumero } from '../ui.js'
 
 export function resumenRegistro(r, estado) {
@@ -167,10 +169,20 @@ export async function pantallaFicha(raiz, ctx, [id, periodo = 'mes30']) {
     if (s.tipo === 'ganado') cuerpo += `<form class="fila-flex" data-hato style="gap:8px;align-items:flex-end;margin:12px 0 4px"><label class="campo crece" style="margin:0"><span>Animales hoy</span><input name="tamano" inputmode="numeric" value="${esc(s.tamano ?? '')}"></label><button class="btn">Guardar</button></form><p class="suave chico">Son los que se dibujan en el potrero del mapa. Cámbialo cuando nazca, llegue o salga un animal.</p>`
   }
 
+  // El nivel del sitio. Ganado no tiene: del ganado no hay investigación, y sus
+  // metas las escribe la familia en Pasturas.
+  const nivel = await nivelDe(ctx, sitioDelSistema(s.tipo))
+  const bloqueNivel = nivel
+    ? `<div class="lista">${renglonNivel(nivel)}</div>`
+    : s.tipo === 'ganado'
+      ? '<div class="nota">El ganado no tiene niveles: no se ha investigado para esta app, así que no hay metas ni costos de referencia. <a href="#/nivel/pasturas">El suelo y el agua del potrero sí los tienen</a>, y ahí puedes escribir tus metas.</div>'
+      : ''
+
   const filasCosto = [['Insumos usados', 'insumos'], ['Gastos', 'gastos'], ['Depreciación (lo que dura)', 'depreciacion'], ['Energía', 'energia'], ['Mano de obra', 'mano_obra']]
   raiz.innerHTML = `<div class="pantalla">
     ${cabeza(`${tipo.emoji} ${s.nombre}`)}
     <div class="pestanas">${Object.entries(PERIODOS).map(([k, [t]]) => `<button data-ir="sistema/${esc(s.id)}/${k}" class="${k === periodo ? 'activo' : ''}">${t}</button>`).join('')}</div>
+    ${bloqueNivel}
     ${cuerpo}
     <h3 class="seccion">De qué está hecho el costo</h3>
     <div class="lista">${filasCosto.map(([t, k]) => `<div class="item"><div class="cuerpo"><b>${t}</b></div><span class="valor">${pesos(costos?.[k] || 0)}</span></div>`).join('')}

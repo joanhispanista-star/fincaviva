@@ -28,6 +28,7 @@ const RUTAS = {
   construir: ['construir', 'pantallaConstruir', ''],
   precios: ['precios', 'pantallaPrecios', ''],
   logros: ['logros', 'pantallaLogros', ''],
+  nivel: ['niveles', 'pantallaNivel', ''],
   ajustes: ['ajustes', 'pantallaAjustes', ''],
   escanear: ['escanear', 'pantallaEscanear', ''],
 }

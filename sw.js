@@ -11,8 +11,8 @@
 // guardada solo después de abrirla con señal, y Escanear se usa justo donde no
 // la hay: en la finca.
 
-const ARCHIVOS = ["./","./app/app.js","./app/estilos.css","./app/fotos.js","./app/panorama.js","./app/pantallas/ajustes.js","./app/pantallas/anotar.js","./app/pantallas/aprende.js","./app/pantallas/calendario.js","./app/pantallas/construir.js","./app/pantallas/cuentas.js","./app/pantallas/escanear.js","./app/pantallas/finca.js","./app/pantallas/logros.js","./app/pantallas/precios.js","./app/pantallas/sistemas.js","./app/ui.js","./datos/clima-zona.json","./datos/energia.json","./datos/gallinas.json","./datos/legal-mercado.json","./datos/tecnicas-alimento.json","./datos/tecnicas-bosque.json","./datos/tecnicas-cultivo.json","./datos/tecnicas-energia.json","./datos/tecnicas-gallinas.json","./datos/tecnicas-suelo.json","./datos/terreno-ejemplo-paisaje.bin","./datos/terreno-ejemplo-paisaje.json","./datos/terreno-ejemplo.bin","./datos/terreno-ejemplo.json","./iconos/icono-180.png","./iconos/icono-192.png","./iconos/icono-512.png","./iconos/icono.svg","./index.html","./lib/almacen.js","./lib/demo.js","./lib/fechas.js","./lib/graficos.js","./lib/juego.js","./lib/libro.js","./lib/luna.js","./lib/modelo.js","./lib/precios.js","./lib/rebano.js","./lib/relieve-descarga.js","./lib/topografia.js","./manifest.webmanifest","./mapa/controles.js","./mapa/modelos.js","./mapa/modelos3d.js","./mapa/mundo.js","./mapa/realista.js","./mapa/relieve-vivo.js","./mapa/relieve.js","./mapa/vida.js","./vendor/three/three.module.js"]
-const CACHE = 'finca-viva-20261124-1223'
+const ARCHIVOS = ["./","./app/app.js","./app/estilos.css","./app/fotos.js","./app/panorama.js","./app/pantallas/ajustes.js","./app/pantallas/anotar.js","./app/pantallas/aprende.js","./app/pantallas/calendario.js","./app/pantallas/construir.js","./app/pantallas/cuentas.js","./app/pantallas/escanear.js","./app/pantallas/finca.js","./app/pantallas/logros.js","./app/pantallas/niveles.js","./app/pantallas/precios.js","./app/pantallas/sistemas.js","./app/ui.js","./datos/clima-zona.json","./datos/energia.json","./datos/gallinas.json","./datos/legal-mercado.json","./datos/niveles.json","./datos/tecnicas-alimento.json","./datos/tecnicas-bosque.json","./datos/tecnicas-cultivo.json","./datos/tecnicas-energia.json","./datos/tecnicas-gallinas.json","./datos/tecnicas-suelo.json","./datos/terreno-ejemplo-paisaje.bin","./datos/terreno-ejemplo-paisaje.json","./datos/terreno-ejemplo.bin","./datos/terreno-ejemplo.json","./iconos/icono-180.png","./iconos/icono-192.png","./iconos/icono-512.png","./iconos/icono.svg","./index.html","./lib/almacen.js","./lib/demo.js","./lib/fechas.js","./lib/graficos.js","./lib/juego.js","./lib/libro.js","./lib/luna.js","./lib/modelo.js","./lib/niveles.js","./lib/precios.js","./lib/rebano.js","./lib/relieve-descarga.js","./lib/topografia.js","./manifest.webmanifest","./mapa/controles.js","./mapa/modelos.js","./mapa/modelos3d.js","./mapa/mundo.js","./mapa/realista.js","./mapa/relieve-vivo.js","./mapa/relieve.js","./mapa/vida.js","./vendor/three/three.module.js"]
+const CACHE = 'finca-viva-20261124-1601'
 
 // Las imágenes del mapa con gráficos realistas (mapa/texturas/ y los modelos de
 // mapa/modelos3d/, unos 3 MB) son
@@ -20,7 +20,8 @@ const CACHE = 'finca-viva-20261124-1223'
 //  · No entran en la instalación. Es todo o nada (addAll): con 3 MB más, una
 //    señal floja la haría fallar entera y se perdería lo que de verdad hace
 //    falta en la finca, que Escanear abra sin internet. Las fotos son un
-//    adorno que solo baja quien lo escoge en Ajustes.
+//    adorno: bajan cuando se abre el mapa (desde el 24-nov los realistas son
+//    lo normal) y, si no alcanzan a llegar, el mapa se dibuja sin ellas.
 //  · Primero lo guardado. Se bajan la primera vez que el mapa las pide y de
 //    ahí en adelante salen del teléfono sin tocar la red: son 3 MB de datos
 //    que no se gastan en cada visita. No mezclan versiones, porque la caja se

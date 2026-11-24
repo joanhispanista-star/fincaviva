@@ -5,11 +5,10 @@
 // pantalla no puede hacerlo pasar por precio firme. Marcar un paso da XP y
 // mueve el mapa; anotar su gasto lo lleva a las cuentas.
 
-import { nuevoId } from '../../lib/modelo.js'
+import { nuevoId, clavePlan as clave } from '../../lib/modelo.js'
 import { fechaCorta } from '../../lib/fechas.js'
 import { esc, pesos, numero, cabeza, enlazar } from '../ui.js'
 
-const clave = (texto) => 'plan-' + texto.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').slice(0, 40)
 const esEstimado = (fuente) => /^estimad/i.test(fuente || '')
 // Lo que dura se anota como inversión, con su vida útil; lo que se gasta en el mes, como gasto.
 function tipoDeGasto(item) {
